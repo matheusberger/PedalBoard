@@ -1,0 +1,6 @@
+framework module Pods_PedalPrototypeTests {
+  umbrella header "Pods-PedalPrototypeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
