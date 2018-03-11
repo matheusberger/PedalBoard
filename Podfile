@@ -8,6 +8,7 @@ target 'PedalPrototype' do
   # Pods for PedalPrototype
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'FirebaseUI'
 
   target 'PedalPrototypeTests' do
     inherit! :search_paths
