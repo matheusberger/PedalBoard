@@ -22,6 +22,7 @@ extension Pedal {
         
         let key: String = dataSnapshot.key
         
+        
         guard let name: String = data["name"] as? String else {
             return nil
         }
@@ -35,6 +36,7 @@ extension Pedal {
         for (name, value) in dKnobs {
             knobs.append(Knob(withName: name, andValue: value as! Int))
         }
+        
         
         return Pedal(withKey: key, withName: name, andKnobs: knobs)
     }

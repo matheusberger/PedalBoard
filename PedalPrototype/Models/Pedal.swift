@@ -8,11 +8,13 @@
 
 import UIKit
 
-class Pedal: NSObject {
+class Pedal {
     
     var key: String?
+    
     var name: String
     var knobs: [Knob]
+    
     
     init(withKey key: String? = nil, withName name: String, andKnobs knobs: [Knob]) {
         
@@ -25,9 +27,14 @@ class Pedal: NSObject {
         
         var dictionary: [String : Any] = [String : Any]()
         
-        dictionary["key"] = self.key
+        var knobsDictionary: [String : Int] = [String : Int]()
+        
+        for knob in self.knobs {
+            knobsDictionary[knob.name] = knob.value
+        }
+        
         dictionary["name"] = self.name
-        dictionary["knobs"] = self.knobs
+        dictionary["knobs"] = knobsDictionary
         
         return dictionary
     }
