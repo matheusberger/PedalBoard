@@ -28,7 +28,7 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         
-        guard error != nil else {
+        guard error == nil else {
             print(error!)
             return
         }
@@ -37,7 +37,7 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
             return
         }
         
-        print("deu bom com \(user)")
+        print("deu bom com \(user.displayName!)")
     }
     
     func application(_ app: UIApplication, open url: URL,
