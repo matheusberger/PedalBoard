@@ -12,7 +12,7 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 
-class FirUIDelegate: NSObject,FUIAuthDelegate {
+class FirUIDelegate: NSObject, FUIAuthDelegate {
     
     var authUI: FUIAuth?
     

@@ -11,11 +11,18 @@ import Firebase
 import FirebaseAuthUI
 
 class LoginViewController: UIViewController {
-
+    
+    var authDelegate: FirUIDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.authDelegate = FirUIDelegate()
+        
+        let fuiController = self.authDelegate.getAuthViewController()
+        
+        self.navigationController?.present(fuiController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
