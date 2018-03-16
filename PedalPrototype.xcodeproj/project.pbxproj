@@ -27,6 +27,9 @@
 		0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129842054AF19005A3099 /* PedalTableViewCellViewModel.swift */; };
 		0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129862054B2AC005A3099 /* PedalListView.swift */; };
 		0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */; };
+		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
+		0A835946205C0CA1004B29EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginViewController.swift */; };
+		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
 		0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CEF120478615002FA202 /* AppDelegate.swift */; };
 		0A90CEF720478615002FA202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEF520478615002FA202 /* Main.storyboard */; };
 		0A90CEF920478615002FA202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEF820478615002FA202 /* Assets.xcassets */; };
@@ -74,6 +77,10 @@
 		0A6129842054AF19005A3099 /* PedalTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		0A6129862054B2AC005A3099 /* PedalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListView.swift; sourceTree = "<group>"; };
 		0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellView.swift; sourceTree = "<group>"; };
+		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
+		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
+		0A835945205C0CA1004B29EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0A835948205C0D76004B29EB /* FirUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUIDelegate.swift; sourceTree = "<group>"; };
 		0A90CEEE20478615002FA202 /* PedalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CEF120478615002FA202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A90CEF620478615002FA202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -202,6 +209,7 @@
 				0A90CEF120478615002FA202 /* AppDelegate.swift */,
 				0A90CEFD20478615002FA202 /* Info.plist */,
 				0A532EB82048203400CA8FEA /* GoogleService-Info.plist */,
+				0A835948205C0D76004B29EB /* FirUIDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 		0A532EB720481E0200CA8FEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0A835944205C0C81004B29EB /* Login */,
 				0A6129752054AB6A005A3099 /* PedalList */,
 				0A381E2B204CC26B001D7DB9 /* CreatePedal */,
 				0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */,
@@ -279,6 +288,23 @@
 			path = PedalTableViewCell;
 			sourceTree = "<group>";
 		};
+		0A835944205C0C81004B29EB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0A835947205C0CA9004B29EB /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0A835947205C0CA9004B29EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A835945205C0CA1004B29EB /* LoginViewController.swift */,
+				0A835942205C0C51004B29EB /* LoginFlow.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0A90CEE520478615002FA202 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +330,7 @@
 		0A90CEF020478615002FA202 /* PedalPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				0A835941205C088C004B29EB /* PedalPrototype.entitlements */,
 				0A532EB620481DAD00CA8FEA /* App */,
 				0A532EA92048161700CA8FEA /* Models */,
 				0A532EB120481B0700CA8FEA /* Data */,
@@ -432,6 +459,11 @@
 					0A90CEED20478615002FA202 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					0A90CF0120478615002FA202 = {
 						CreatedOnToolsVersion = 9.2;
@@ -474,6 +506,7 @@
 				0A532EB92048203400CA8FEA /* GoogleService-Info.plist in Resources */,
 				0A90CEF920478615002FA202 /* Assets.xcassets in Resources */,
 				0A90CEF720478615002FA202 /* Main.storyboard in Resources */,
+				0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,10 +721,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
 				0A532EAD204819DA00CA8FEA /* Knobs.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
 				0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
+				0A835946205C0CA1004B29EB /* LoginViewController.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
@@ -872,6 +907,7 @@
 			baseConfigurationReference = A3B9BB065BBE05EDF78D2843 /* Pods-PedalPrototype.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PedalPrototype/PedalPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y648E928RU;
 				INFOPLIST_FILE = "$(SRCROOT)/PedalPrototype/App/Info.plist";
@@ -888,6 +924,7 @@
 			baseConfigurationReference = 0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PedalPrototype/PedalPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y648E928RU;
 				INFOPLIST_FILE = "$(SRCROOT)/PedalPrototype/App/Info.plist";
