@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol AuthProtocol {
+    
+    static func createUser(withEmail email: String,
+                           andPassword password: String,
+                           withCompletionBlock completionBlock: @escaping (_ user: PBUser?, Error?) -> Void)
+    
+    static func singInUser(withEmail email: String,
+                          andPassword password: String,
+                          withCompletionBlock completionBlock: @escaping (_ user: PBUser?, Error?) -> Void)
+    
+    static func signOutUser(withCompletionBlock completionBlock: @escaping (_ success: Bool) -> Void)
+    
+}

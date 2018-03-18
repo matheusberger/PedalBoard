@@ -20,7 +20,8 @@ class PedalListViewModel: NSObject, PedalListViewModelProtocol {
     
     func getPedals() {
         
-        PedalProvider.getPedals(forUser: "user_key") { (pedal) in
+        
+        PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserUID()!) { (pedal) in
             self.pedals.append(pedal)
         }
     }

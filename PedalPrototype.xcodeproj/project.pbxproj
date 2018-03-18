@@ -10,6 +10,11 @@
 		0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */; };
 		0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */; };
 		0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */; };
+		0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EB205DF77D00A641BD /* PBUser.swift */; };
+		0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */; };
+		0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */; };
+		0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */; };
+		0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */; };
 		0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */; };
 		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
 		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
@@ -63,6 +68,11 @@
 		0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewProtocol.swift; sourceTree = "<group>"; };
 		0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewDelegate.swift; sourceTree = "<group>"; };
 		0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		0A25C6EB205DF77D00A641BD /* PBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUser.swift; sourceTree = "<group>"; };
+		0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthProvider.swift; sourceTree = "<group>"; };
+		0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBUser+Firebase.swift"; sourceTree = "<group>"; };
+		0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProtocol.swift; sourceTree = "<group>"; };
+		0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProvider.swift; sourceTree = "<group>"; };
 		0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalView.swift; sourceTree = "<group>"; };
 		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
 		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -165,6 +175,7 @@
 		0A532EA92048161700CA8FEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A25C6EB205DF77D00A641BD /* PBUser.swift */,
 				0A532EAA2048163300CA8FEA /* Pedal.swift */,
 				0A532EAC204819DA00CA8FEA /* Knobs.swift */,
 				0A532EAE20481AB000CA8FEA /* Models+Firebase */,
@@ -176,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */,
+				0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */,
 			);
 			path = "Models+Firebase";
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 			children = (
 				0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */,
 				0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */,
+				0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				0A532EBC2048275900CA8FEA /* PedalProvider.swift */,
+				0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */,
+				0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -733,14 +748,19 @@
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
+				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
+				0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */,
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,
+				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
+				0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */,
+				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
 				0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,

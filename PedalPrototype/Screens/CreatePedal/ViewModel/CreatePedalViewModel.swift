@@ -21,7 +21,7 @@ class CreatePedalViewModel: NSObject, CreatePedalViewModelProtocol {
         }
         
         let pedal = Pedal(withName: name, andKnobs: knobs)
-        PedalProvider.create(pedal: pedal, forUser: "user_key") { (success: Bool) in
+        PedalProvider.create(pedal: pedal, forUser: PBUserProvider.getCurrentUserUID()!) { (success: Bool) in
             completionBlock()
         }
     }
