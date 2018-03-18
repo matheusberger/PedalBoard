@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class EmailAuthProvider: AuthProtocol {
     
-    static func createUser(withEmail email: String, andPassword password: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
+    static func createUser(withEmail email: String, password: String, andName name: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
             guard let user = user else {
@@ -19,7 +19,7 @@ class EmailAuthProvider: AuthProtocol {
                 return
             }
             
-            completionBlock(PBUser.from(firebaseUser: user), error)
+            completionBlock(PBUser.newFrom(firebaseUser: user, withName: name)!, error)
         }
     }
     

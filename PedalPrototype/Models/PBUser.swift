@@ -17,7 +17,7 @@ class PBUser {
     var surname: String
     
     var fullName: String {
-        return self.firstName + " " + self.surname
+        return self.firstName + self.surname
     }
     
     init(withUID uid: String? = nil,

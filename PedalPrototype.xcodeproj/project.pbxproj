@@ -15,6 +15,9 @@
 		0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */; };
 		0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */; };
 		0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */; };
+		0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F6205EA94300A641BD /* LoginViewModel.swift */; };
+		0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F8205EA96600A641BD /* LoginViewModelProtocol.swift */; };
+		0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6FA205EAC4000A641BD /* LoginViewModelDelegate.swift */; };
 		0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */; };
 		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
 		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
@@ -34,7 +37,7 @@
 		0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129862054B2AC005A3099 /* PedalListView.swift */; };
 		0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */; };
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
-		0A835946205C0CA1004B29EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginViewController.swift */; };
+		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
 		0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CEF120478615002FA202 /* AppDelegate.swift */; };
 		0A90CEF720478615002FA202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEF520478615002FA202 /* Main.storyboard */; };
@@ -73,6 +76,9 @@
 		0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBUser+Firebase.swift"; sourceTree = "<group>"; };
 		0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProtocol.swift; sourceTree = "<group>"; };
 		0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProvider.swift; sourceTree = "<group>"; };
+		0A25C6F6205EA94300A641BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0A25C6F8205EA96600A641BD /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A25C6FA205EAC4000A641BD /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalView.swift; sourceTree = "<group>"; };
 		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
 		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -91,7 +97,7 @@
 		0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellView.swift; sourceTree = "<group>"; };
 		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
-		0A835945205C0CA1004B29EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0A835948205C0D76004B29EB /* FirUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUIDelegate.swift; sourceTree = "<group>"; };
 		0A90CEEE20478615002FA202 /* PedalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CEF120478615002FA202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +150,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A25C6F5205EA87F00A641BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A25C6F6205EA94300A641BD /* LoginViewModel.swift */,
+				0A25C6F8205EA96600A641BD /* LoginViewModelProtocol.swift */,
+				0A25C6FA205EAC4000A641BD /* LoginViewModelDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0A381E2B204CC26B001D7DB9 /* CreatePedal */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				0A835947205C0CA9004B29EB /* View */,
+				0A25C6F5205EA87F00A641BD /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -317,7 +334,7 @@
 		0A835947205C0CA9004B29EB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A835945205C0CA1004B29EB /* LoginViewController.swift */,
+				0A835945205C0CA1004B29EB /* LoginView.swift */,
 				0A835942205C0C51004B29EB /* LoginFlow.storyboard */,
 			);
 			path = View;
@@ -743,11 +760,14 @@
 				0A532EAD204819DA00CA8FEA /* Knobs.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
 				0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */,
+				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
-				0A835946205C0CA1004B29EB /* LoginViewController.swift in Sources */,
+				0A835946205C0CA1004B29EB /* LoginView.swift in Sources */,
+				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
+				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
 				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
 				0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */,
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,

@@ -35,4 +35,23 @@ extension PBUser {
         
         return PBUser(withUID: uid, withEmail: email, withFirstName: first, andSurname: last)
     }
+    
+    static func newFrom(firebaseUser: User, withName name: String) -> PBUser? {
+        let uid = firebaseUser.uid
+        
+        guard let email = firebaseUser.email else {
+            return nil
+        }
+        
+        var full = name.components(separatedBy: " ")
+        let first = full[0]
+        full.remove(at: 0)
+        
+        var last: String = String()
+        for surname in full {
+            last = last + " " + surname
+        }
+        
+        return PBUser(withUID: uid, withEmail: email, withFirstName: first, andSurname: last)
+    }
 }

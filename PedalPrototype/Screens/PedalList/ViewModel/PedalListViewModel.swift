@@ -19,8 +19,6 @@ class PedalListViewModel: NSObject, PedalListViewModelProtocol {
     }
     
     func getPedals() {
-        
-        
         PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserUID()!) { (pedal) in
             self.pedals.append(pedal)
         }

@@ -11,7 +11,8 @@ import Foundation
 protocol AuthProtocol {
     
     static func createUser(withEmail email: String,
-                           andPassword password: String,
+                           password: String,
+                           andName: String,
                            withCompletionBlock completionBlock: @escaping (_ user: PBUser?, Error?) -> Void)
     
     static func singInUser(withEmail email: String,
