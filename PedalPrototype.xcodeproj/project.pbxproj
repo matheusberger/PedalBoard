@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */; };
 		0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */; };
+		0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */; };
 		0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */; };
 		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
 		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewProtocol.swift; sourceTree = "<group>"; };
 		0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewDelegate.swift; sourceTree = "<group>"; };
+		0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalView.swift; sourceTree = "<group>"; };
 		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
 		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */,
+				0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
+				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */,

@@ -26,6 +26,10 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
         self.authUI?.providers = providers
     }
     
+    func getAuthViewController() -> UINavigationController {
+        return self.authUI!.authViewController()
+    }
+    
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
         
         guard error == nil else {
@@ -38,6 +42,7 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
         }
         
         print("deu bom com \(user.displayName!)")
+        
     }
     
     func application(_ app: UIApplication, open url: URL,
@@ -49,10 +54,6 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
         }
         // other URL handling goes here.
         return false
-    }
-    
-    func getAuthViewController() -> UINavigationController {
-        return self.authUI!.authViewController()
     }
     
     func singOut(withCompletionBlock completionBlock: @escaping (_ success: Bool) -> Void)  {
@@ -68,4 +69,5 @@ class FirUIDelegate: NSObject, FUIAuthDelegate {
 
         completionBlock(success)
     }
+    
 }
