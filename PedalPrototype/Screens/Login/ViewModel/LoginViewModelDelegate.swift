@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginViewModelDelegate {
+protocol LoginViewModelDelegate: class {
     
     func didSignIn()
     
