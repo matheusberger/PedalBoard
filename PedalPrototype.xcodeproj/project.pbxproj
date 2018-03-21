@@ -39,6 +39,8 @@
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
+		0A8F676F20629FB900A148E8 /* SongProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F676E20629FB900A148E8 /* SongProtocol.swift */; };
+		0A8F67712062A03C00A148E8 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F67702062A03C00A148E8 /* Song.swift */; };
 		0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CEF120478615002FA202 /* AppDelegate.swift */; };
 		0A90CEF720478615002FA202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEF520478615002FA202 /* Main.storyboard */; };
 		0A90CEF920478615002FA202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEF820478615002FA202 /* Assets.xcassets */; };
@@ -99,6 +101,8 @@
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0A835948205C0D76004B29EB /* FirUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUIDelegate.swift; sourceTree = "<group>"; };
+		0A8F676E20629FB900A148E8 /* SongProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongProtocol.swift; sourceTree = "<group>"; };
+		0A8F67702062A03C00A148E8 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0A90CEEE20478615002FA202 /* PedalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CEF120478615002FA202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A90CEF620478615002FA202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			children = (
 				0A25C6EB205DF77D00A641BD /* PBUser.swift */,
 				0A532EAA2048163300CA8FEA /* Pedal.swift */,
+				0A8F67702062A03C00A148E8 /* Song.swift */,
 				0A532EAC204819DA00CA8FEA /* Knobs.swift */,
 				0A532EAE20481AB000CA8FEA /* Models+Firebase */,
 			);
@@ -220,8 +225,9 @@
 		0A532EB220481B1900CA8FEA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */,
 				0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */,
+				0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */,
+				0A8F676E20629FB900A148E8 /* SongProtocol.swift */,
 				0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */,
 			);
 			path = Protocols;
@@ -773,6 +779,7 @@
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
+				0A8F67712062A03C00A148E8 /* Song.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
@@ -782,6 +789,7 @@
 				0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
+				0A8F676F20629FB900A148E8 /* SongProtocol.swift in Sources */,
 				0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,
 				0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */,
