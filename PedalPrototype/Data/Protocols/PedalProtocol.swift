@@ -11,10 +11,10 @@ import Foundation
 protocol PedalProtocol {
     
     static func getPedals(forUser: String,
-                          withContinousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
+                          withContinuousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
     
-    static func getPedals(forUser: String, forSong: String,
-                          withContinousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
+    static func getPedals(forUser: String, forTune: String,
+                          withContinuousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
     
     static func create(pedal: Pedal,
                        forUser: String,

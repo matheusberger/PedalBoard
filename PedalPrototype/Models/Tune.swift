@@ -1,5 +1,5 @@
 //
-//  Song.swift
+//  Tune.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 21/03/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Song {
+class Tune {
     
     var key: String?
     

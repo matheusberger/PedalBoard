@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class PedalProvider: PedalProtocol {
     
-    static func getPedals(forUser user: String, withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void) {
+    static func getPedals(forUser user: String, withContinuousFetchBlock continuousBlock: @escaping (_ pedal: Pedal) -> Void) {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
@@ -21,22 +21,22 @@ class PedalProvider: PedalProtocol {
             
             if dataSnapshot.exists() {
                 if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-                    continousBlock(pedal)
+                    continuousBlock(pedal)
                 }
             }
         }
     }
     
-    static func getPedals(forUser user: String, forSong song: String, withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void) {
+    static func getPedals(forUser user: String, forTune Tune: String, withContinuousFetchBlock continuousBlock: @escaping (_ pedal: Pedal) -> Void) {
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalsReference: DatabaseReference = databaseReference.child(user).child(song)
+        let pedalsReference: DatabaseReference = databaseReference.child(user).child(Tune)
         
         pedalsReference.observe(.childAdded) { (dataSnapshot) in
             
             if dataSnapshot.exists() {
                 if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-                    continousBlock(pedal)
+                    continuousBlock(pedal)
                 }
             }
         }
