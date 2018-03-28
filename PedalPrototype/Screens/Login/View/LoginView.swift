@@ -12,7 +12,6 @@ import FirebaseAuthUI
 
 class LoginView: UIViewController, LoginViewModelDelegate {
     
-    var authDelegate: FirUIDelegate!
     var vieModel: LoginViewModel!
     
     
@@ -27,11 +26,6 @@ class LoginView: UIViewController, LoginViewModelDelegate {
         // Do any additional setup after loading the view.
         self.vieModel = LoginViewModel()
         self.vieModel.delegate = self
-        self.authDelegate = FirUIDelegate()
-        
-        let fuiController = self.authDelegate.getAuthViewController()
-        
-        self.navigationController?.present(fuiController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,8 +52,6 @@ class LoginView: UIViewController, LoginViewModelDelegate {
     */
 
     func didSignIn() {
-        print("rolou login")
-        print(PBUserProvider.getCurrentUser()!.email)
         print(PBUserProvider.getCurrentUser()!.fullName)
         self.performSegue(withIdentifier: "login", sender: nil)
     }

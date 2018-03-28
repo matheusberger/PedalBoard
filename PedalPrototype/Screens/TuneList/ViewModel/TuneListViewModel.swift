@@ -11,6 +11,7 @@ import Foundation
 class TuneListViewModel: TuneListViewModelProtocol {
     
     weak var delegate: TuneListViewModelDelegate?
+    weak var dataSource: PedalSourceProtocol?
     
     fileprivate var tunes: [Tune] = [] {
         didSet {
@@ -42,6 +43,10 @@ class TuneListViewModel: TuneListViewModelProtocol {
     }
     
     func getTuneSetupViewModel() -> TuneSetupViewModelProtocol {
+        let list = self.dataSource?.getPedalList()
+        for pedal in list! {
+            print(pedal.name)
+        }
         return TuneSetupViewModel()
     }
     

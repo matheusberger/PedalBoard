@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePedalViewModel: NSObject, CreatePedalViewModelProtocol {
+class CreatePedalViewModel: CreatePedalViewModelProtocol {
     
     func createPedal(withName name: String, andKnobs knobNames: [String], withCompletionBlock completionBlock: @escaping () -> Void) {
         

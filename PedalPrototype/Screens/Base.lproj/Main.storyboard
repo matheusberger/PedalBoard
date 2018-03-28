@@ -67,7 +67,7 @@
         <!--Pedais-->
         <scene sceneID="dbG-dH-0vd">
             <objects>
-                <viewController id="53S-1C-0zj" customClass="PedalListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PedalListView" id="53S-1C-0zj" customClass="PedalListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HVj-Qb-1Hc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,18 +263,18 @@
             </objects>
             <point key="canvasLocation" x="-1188" y="80"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab Controller-->
         <scene sceneID="GX6-9v-f1S">
             <objects>
-                <tabBarController storyboardIdentifier="RootTabBarController" id="RhD-kf-PGX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarController" id="RhD-kf-PGX" customClass="RootTabController" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lC9-UW-x6M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="d88-yg-JM4" kind="relationship" relationship="viewControllers" id="NtX-MU-NkB"/>
                         <segue destination="2LA-dD-Auf" kind="relationship" relationship="viewControllers" id="6pm-sV-Ieu"/>
+                        <segue destination="d88-yg-JM4" kind="relationship" relationship="viewControllers" id="NtX-MU-NkB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cby-by-I7O" userLabel="First Responder" sceneMemberID="firstResponder"/>

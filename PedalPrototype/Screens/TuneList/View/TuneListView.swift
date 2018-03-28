@@ -10,7 +10,7 @@ import UIKit
 
 class TuneListView: UIViewController, TuneListViewModelDelegate {
 
-    fileprivate var viewModel: TuneListViewModel!
+    fileprivate var viewModel: TuneListViewModel! //initialized by RootTabController
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,7 +21,6 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.viewModel = TuneListViewModel()
         self.viewModel.delegate = self
         self.viewModel.getTunes()
     }
@@ -29,6 +28,10 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setViewModel(viewModel: TuneListViewModel) {
+        self.viewModel = viewModel
     }
     
     func didUpdateTuneList() {
@@ -48,7 +51,7 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
 
 extension TuneListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //go to tune setup
+        self.viewModel.getTuneSetupViewModel()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
