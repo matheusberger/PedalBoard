@@ -12,9 +12,9 @@ protocol TuneProtocol {
     
     static func getTunes(forUser: String, withContinuousFetchBlock: @escaping (_ Tune: Tune) -> Void)
     
-    static func create(Tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func create(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
     
-    static func delete(Tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func delete(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
     
-    static func update(Tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func update(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
 }

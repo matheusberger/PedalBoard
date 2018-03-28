@@ -15,24 +15,9 @@ class PedalProvider: PedalProtocol {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalsReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals")
+        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user)
         
         pedalsReference.queryOrdered(byChild: "name").observe(.childAdded) { (dataSnapshot) in
-            
-            if dataSnapshot.exists() {
-                if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-                    continuousBlock(pedal)
-                }
-            }
-        }
-    }
-    
-    static func getPedals(forUser user: String, forTune Tune: String, withContinuousFetchBlock continuousBlock: @escaping (_ pedal: Pedal) -> Void) {
-        let databaseReference: DatabaseReference = Database.database().reference()
-        
-        let pedalsReference: DatabaseReference = databaseReference.child(user).child(Tune)
-        
-        pedalsReference.observe(.childAdded) { (dataSnapshot) in
             
             if dataSnapshot.exists() {
                 if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
@@ -45,7 +30,7 @@ class PedalProvider: PedalProtocol {
     static func create(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").childByAutoId()
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).childByAutoId()
         
         pedal.key = pedalReference.key
         pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
@@ -61,7 +46,7 @@ class PedalProvider: PedalProtocol {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").child(pedalKey)
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
         
         pedalReference.removeValue() { (error, databaseReference) in
             completionBlock(error == nil)
@@ -76,7 +61,7 @@ class PedalProvider: PedalProtocol {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").child(pedalKey)
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
         
         pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
             completionBlock(error == nil)

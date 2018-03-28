@@ -26,15 +26,42 @@ class TuneProvider: TuneProtocol {
         }
     }
     
-    static func create(Tune: Tune, forUser: String, withCompletionBlock: @escaping (Bool) -> Void) {
+    static func create(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
+        let databaseReference: DatabaseReference = Database.database().reference()
         
+        let tunesReference = databaseReference.child("tunes").child(user).childByAutoId()
+        
+        tune.key = tunesReference.key
+        tunesReference.setValue(tune.toDictionary()) { (error, databaseReferences) in
+            completionBlock(error == nil)
+        }
     }
     
-    static func delete(Tune: Tune, forUser: String, withCompletionBlock: @escaping (Bool) -> Void) {
+    static func delete(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
         
+        guard let tuneKey = tune.key else {
+            return
+        }
+        
+        let databaseReference: DatabaseReference = Database.database().reference()
+        
+        let tunesReference = databaseReference.child("tunes").child(user).child(tuneKey)
+        tunesReference.removeValue { (error, databaseReference) in
+            completionBlock(error == nil)
+        }
     }
     
-    static func update(Tune: Tune, forUser: String, withCompletionBlock: @escaping (Bool) -> Void) {
+    static func update(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
         
+        guard let tuneKey = tune.key else {
+            return
+        }
+        
+        let databaseReference: DatabaseReference = Database.database().reference()
+        
+        let tunesReference = databaseReference.child("tunes").child(user).child(tuneKey)
+        tunesReference.setValue(tune.toDictionary()) { (error, databaseReference) in
+            completionBlock(error == nil)
+        }
     }
 }

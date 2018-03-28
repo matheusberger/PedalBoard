@@ -27,8 +27,6 @@ extension Tune {
             return nil
         }
         
-        var pedals = [String]()
-        
-        return Tune(withKey: key, withName: name, andPedals: pedals)
+        return Tune(withKey: key, withName: name)
     }
 }

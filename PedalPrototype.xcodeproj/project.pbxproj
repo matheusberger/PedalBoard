@@ -22,7 +22,6 @@
 		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
 		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
 		0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAA2048163300CA8FEA /* Pedal.swift */; };
-		0A532EAD204819DA00CA8FEA /* Knobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAC204819DA00CA8FEA /* Knobs.swift */; };
 		0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */; };
 		0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */; };
 		0A532EB92048203400CA8FEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
@@ -39,6 +38,7 @@
 		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
 		0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
+		0A817904206B0BE2008A00B8 /* TuneConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneConfig.swift */; };
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
@@ -92,7 +92,6 @@
 		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
 		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A532EAA2048163300CA8FEA /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
-		0A532EAC204819DA00CA8FEA /* Knobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knobs.swift; sourceTree = "<group>"; };
 		0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pedal+Firebase.swift"; sourceTree = "<group>"; };
 		0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProtocol.swift; sourceTree = "<group>"; };
 		0A532EB82048203400CA8FEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalSourceProtocol.swift; sourceTree = "<group>"; };
 		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
+		0A817903206B0BE2008A00B8 /* TuneConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneConfig.swift; sourceTree = "<group>"; };
 		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 				0A25C6EB205DF77D00A641BD /* PBUser.swift */,
 				0A532EAA2048163300CA8FEA /* Pedal.swift */,
 				0A8F67702062A03C00A148E8 /* Tune.swift */,
-				0A532EAC204819DA00CA8FEA /* Knobs.swift */,
+				0A817903206B0BE2008A00B8 /* TuneConfig.swift */,
 				0A532EAE20481AB000CA8FEA /* Models+Firebase */,
 			);
 			path = Models;
@@ -832,9 +832,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
-				0A532EAD204819DA00CA8FEA /* Knobs.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
 				0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */,
+				0A817904206B0BE2008A00B8 /* TuneConfig.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */,

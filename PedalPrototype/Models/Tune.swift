@@ -13,13 +13,22 @@ class Tune {
     var key: String?
     
     var name: String
-    var pedals: [String]
+    var tuneConfig: TuneConfig?
     
-    init(withKey key: String? = nil, withName name: String, andPedals pedals: [String]) {
+    
+    init(withKey key: String? = nil, withName name: String, andTuneConfig config: TuneConfig? = nil) {
         
         self.key = key
         
         self.name = name
-        self.pedals = pedals
+        self.tuneConfig = config
+    }
+    
+    func toDictionary() -> [String : Any] {
+        var dictionary: [String : Any] = [String : Any]()
+        
+        dictionary["name"] = self.name
+        
+        return dictionary
     }
 }
