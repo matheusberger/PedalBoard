@@ -101,11 +101,20 @@
                         <outlet property="emailTxtField" destination="sQo-G5-LOV" id="DZh-wV-yPk"/>
                         <outlet property="nameTxtField" destination="zFm-BF-JCq" id="eyY-Z0-NKv"/>
                         <outlet property="passwordTxtField" destination="Axl-jF-p1C" id="wEV-df-kJz"/>
+                        <segue destination="PWm-c8-VcC" kind="presentation" identifier="login" id="wjW-Ud-jGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XnK-cm-9GD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-282.39999999999998" y="17.541229385307346"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="jKZ-ET-9VG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="RootTabBarController" storyboardName="Main" id="PWm-c8-VcC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQI-oi-S0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="17"/>
         </scene>
     </scenes>
 </document>

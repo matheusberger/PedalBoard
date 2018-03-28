@@ -10,7 +10,13 @@ import Foundation
 
 protocol TuneListViewModelProtocol {
     
+    weak var delegate: TuneListViewModelDelegate? { get set }
+    
     func getTunes()
     
+    func getTuneCellViewModel(forIndex: Int) -> TuneTableViewCellViewModelProtocol
+    
     func getCreateTuneViewModel() -> CreateTuneViewModelProtocol
+    
+    func getTuneSetupViewModel() -> TuneSetupViewModelProtocol
 }

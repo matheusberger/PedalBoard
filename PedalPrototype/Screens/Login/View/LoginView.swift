@@ -61,6 +61,7 @@ class LoginView: UIViewController, LoginViewModelDelegate {
         print("rolou login")
         print(PBUserProvider.getCurrentUser()!.email)
         print(PBUserProvider.getCurrentUser()!.fullName)
+        self.performSegue(withIdentifier: "login", sender: nil)
     }
     
     func didSignUp() {

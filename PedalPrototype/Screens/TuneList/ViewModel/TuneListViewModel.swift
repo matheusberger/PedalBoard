@@ -10,7 +10,13 @@ import Foundation
 
 class TuneListViewModel: TuneListViewModelProtocol {
     
-    fileprivate var tunes: [Tune] = []
+    weak var delegate: TuneListViewModelDelegate?
+    
+    fileprivate var tunes: [Tune] = [] {
+        didSet {
+            self.delegate?.didUpdateTuneList()
+        }
+    }
     
     func getTunes() {
         
@@ -23,7 +29,20 @@ class TuneListViewModel: TuneListViewModelProtocol {
         }
     }
     
+    func getTuneCount() -> Int {
+        return self.tunes.count
+    }
+    
+    func getTuneCellViewModel(forIndex index: Int) -> TuneTableViewCellViewModelProtocol {
+        return TuneTableViewCellViewModel(withTune: self.tunes[index])
+    }
+    
     func getCreateTuneViewModel() -> CreateTuneViewModelProtocol {
         return CreateTuneViewModel()
     }
+    
+    func getTuneSetupViewModel() -> TuneSetupViewModelProtocol {
+        return TuneSetupViewModel()
+    }
+    
 }

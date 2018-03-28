@@ -11,39 +11,58 @@
     </dependencies>
     <scenes>
         <!--Músicas-->
-        <scene sceneID="nCA-Nt-CwS">
+        <scene sceneID="oZe-ua-Xe8">
             <objects>
-                <tableViewController id="C0P-RX-kHw" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N15-hQ-r7C">
+                <viewController id="Amm-KB-0j2" customClass="TuneListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vuo-1O-O1Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qdc-SM-Ngl">
+                                <rect key="frame" x="0.0" y="148" width="375" height="482"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TuneTableViewCell" id="5k6-rA-lEn" customClass="TuneTableViewCellView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5k6-rA-lEn" id="MVJ-k8-Kem">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4J-s7-ob8">
+                                                    <rect key="frame" x="42" y="11" width="281" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tuneNameLabel" destination="O4J-s7-ob8" id="tF6-9Z-Hnp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GYJ-hr-3Fd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GYJ-hr-3Fd" id="E3X-iP-q6e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="C0P-RX-kHw" id="dxp-tA-QYc"/>
-                            <outlet property="delegate" destination="C0P-RX-kHw" id="SYV-0q-hcd"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Músicas" id="Ohh-Y9-Crn">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="1ZJ-ae-CPD">
+                        <viewLayoutGuide key="safeArea" id="Koh-3o-YfC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Músicas" id="i0w-lg-Uy9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pek-ma-If0">
                             <connections>
-                                <segue destination="bsA-9O-cZv" kind="show" id="fuG-Jw-f83"/>
+                                <segue destination="bsA-9O-cZv" kind="show" id="pGW-Fd-YkI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yg1-6F-Q0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="tableView" destination="Qdc-SM-Ngl" id="gK9-lo-0Zn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7v-4U-Qdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418" y="80"/>
+            <point key="canvasLocation" x="-418.39999999999998" y="79.610194902548727"/>
         </scene>
         <!--Pedais-->
         <scene sceneID="dbG-dH-0vd">
@@ -191,9 +210,6 @@
                                 <rect key="frame" x="104" y="570" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OK"/>
-                                <connections>
-                                    <segue destination="3fT-2r-Jkp" kind="show" id="ZVs-WA-Ju4"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ig5-q1-HTk">
                                 <rect key="frame" x="16" y="260" width="343" height="302"/>
@@ -230,14 +246,6 @@
             </objects>
             <point key="canvasLocation" x="336.80000000000001" y="79.610194902548727"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="TrN-w2-bha">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="3fT-2r-Jkp" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MC4-nJ-nja" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1119" y="80"/>
-        </scene>
         <!--Item-->
         <scene sceneID="WzQ-vK-IUx">
             <objects>
@@ -248,7 +256,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="C0P-RX-kHw" kind="relationship" relationship="rootViewController" id="o1X-Kw-PdT"/>
+                        <segue destination="Amm-KB-0j2" kind="relationship" relationship="rootViewController" id="Ldq-uc-E4D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ce6-Zi-Zge" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,7 +266,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="GX6-9v-f1S">
             <objects>
-                <tabBarController id="RhD-kf-PGX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarController" id="RhD-kf-PGX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lC9-UW-x6M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -35,6 +35,11 @@
 		0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129842054AF19005A3099 /* PedalTableViewCellViewModel.swift */; };
 		0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129862054B2AC005A3099 /* PedalListView.swift */; };
 		0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */; };
+		0A6707CE206BD242008B796D /* TuneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6707CD206BD242008B796D /* TuneListView.swift */; };
+		0A6707D0206BD79A008B796D /* TuneListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6707CF206BD79A008B796D /* TuneListViewModelDelegate.swift */; };
+		0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6707D6206BD97C008B796D /* TuneTableViewCellView.swift */; };
+		0A6707D9206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6707D8206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift */; };
+		0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6707DB206BDAC1008B796D /* TuneTableViewCellViewModel.swift */; };
 		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
 		0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
@@ -42,6 +47,8 @@
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
+		0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */; };
+		0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85744B206B33AC00F1FDEC /* TuneSetupViewModel.swift */; };
 		0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFE9C206A77BE00388F10 /* TuneListViewModelProtocol.swift */; };
 		0A8AFE9F206A7C8C00388F10 /* TuneListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFE9E206A7C8C00388F10 /* TuneListViewModel.swift */; };
 		0A8AFEA3206A7CC500388F10 /* TuneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFEA2206A7CC500388F10 /* TuneProvider.swift */; };
@@ -103,6 +110,11 @@
 		0A6129842054AF19005A3099 /* PedalTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		0A6129862054B2AC005A3099 /* PedalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListView.swift; sourceTree = "<group>"; };
 		0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellView.swift; sourceTree = "<group>"; };
+		0A6707CD206BD242008B796D /* TuneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListView.swift; sourceTree = "<group>"; };
+		0A6707CF206BD79A008B796D /* TuneListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListViewModelDelegate.swift; sourceTree = "<group>"; };
+		0A6707D6206BD97C008B796D /* TuneTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneTableViewCellView.swift; sourceTree = "<group>"; };
+		0A6707D8206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneTableViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A6707DB206BDAC1008B796D /* TuneTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalSourceProtocol.swift; sourceTree = "<group>"; };
 		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +123,8 @@
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0A835948205C0D76004B29EB /* FirUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUIDelegate.swift; sourceTree = "<group>"; };
+		0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A85744B206B33AC00F1FDEC /* TuneSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupViewModel.swift; sourceTree = "<group>"; };
 		0A8AFE9C206A77BE00388F10 /* TuneListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A8AFE9E206A7C8C00388F10 /* TuneListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListViewModel.swift; sourceTree = "<group>"; };
 		0A8AFEA2206A7CC500388F10 /* TuneProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneProvider.swift; sourceTree = "<group>"; };
@@ -273,6 +287,7 @@
 		0A532EB720481E0200CA8FEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0A857446206B334E00F1FDEC /* TuneSetup */,
 				0A74908A2066B397002AF1E8 /* TuneList */,
 				0A74908D2066B404002AF1E8 /* CreateTune */,
 				0A835944205C0C81004B29EB /* Login */,
@@ -347,6 +362,40 @@
 			path = PedalTableViewCell;
 			sourceTree = "<group>";
 		};
+		0A6707D1206BD865008B796D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A6707D2206BD8AE008B796D /* TuneTableViewCell */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		0A6707D2206BD8AE008B796D /* TuneTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A6707D5206BD8CC008B796D /* View */,
+				0A6707D4206BD8BE008B796D /* ViewModel */,
+			);
+			path = TuneTableViewCell;
+			sourceTree = "<group>";
+		};
+		0A6707D4206BD8BE008B796D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A6707D8206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift */,
+				0A6707DB206BDAC1008B796D /* TuneTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A6707D5206BD8CC008B796D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A6707D6206BD97C008B796D /* TuneTableViewCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0A74908A2066B397002AF1E8 /* TuneList */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +408,8 @@
 		0A74908B2066B3AB002AF1E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A6707CD206BD242008B796D /* TuneListView.swift */,
+				0A6707D1206BD865008B796D /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +419,7 @@
 			children = (
 				0A8AFE9E206A7C8C00388F10 /* TuneListViewModel.swift */,
 				0A8AFE9C206A77BE00388F10 /* TuneListViewModelProtocol.swift */,
+				0A6707CF206BD79A008B796D /* TuneListViewModelDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -411,6 +463,31 @@
 			children = (
 				0A835945205C0CA1004B29EB /* LoginView.swift */,
 				0A835942205C0C51004B29EB /* LoginFlow.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A857446206B334E00F1FDEC /* TuneSetup */ = {
+			isa = PBXGroup;
+			children = (
+				0A857448206B336500F1FDEC /* View */,
+				0A857447206B335B00F1FDEC /* ViewModel */,
+			);
+			path = TuneSetup;
+			sourceTree = "<group>";
+		};
+		0A857447206B335B00F1FDEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */,
+				0A85744B206B33AC00F1FDEC /* TuneSetupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A857448206B336500F1FDEC /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -839,7 +916,9 @@
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */,
 				0A835946205C0CA1004B29EB /* LoginView.swift in Sources */,
+				0A6707D9206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift in Sources */,
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
+				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
@@ -852,12 +931,16 @@
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
 				0A8AFE9F206A7C8C00388F10 /* TuneListViewModel.swift in Sources */,
 				0A8AFEA3206A7CC500388F10 /* TuneProvider.swift in Sources */,
+				0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */,
 				0A8F67712062A03C00A148E8 /* Tune.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
+				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
+				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
 				0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
+				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
@@ -869,6 +952,7 @@
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,
 				0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */,
 				0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */,
+				0A6707D0206BD79A008B796D /* TuneListViewModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

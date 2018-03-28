@@ -6,9 +6,9 @@
 //  Copyright © 2018 mcb3. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class PedalTableViewCellViewModel: NSObject, PedalTableViewCellViewModelProtocol {
+class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
     
     private var pedal: Pedal
     
