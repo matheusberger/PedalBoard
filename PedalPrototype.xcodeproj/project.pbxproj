@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */; };
-		0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */; };
 		0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */; };
 		0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */; };
 		0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EB205DF77D00A641BD /* PBUser.swift */; };
@@ -62,6 +60,7 @@
 		0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */; };
 		0A90CF0720478615002FA202 /* PedalPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF0620478615002FA202 /* PedalPrototypeTests.swift */; };
 		0A90CF1220478615002FA202 /* PedalPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */; };
+		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
@@ -85,8 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewProtocol.swift; sourceTree = "<group>"; };
-		0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewDelegate.swift; sourceTree = "<group>"; };
 		0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		0A25C6EB205DF77D00A641BD /* PBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUser.swift; sourceTree = "<group>"; };
@@ -145,6 +142,7 @@
 		0A90CF0D20478615002FA202 /* PedalPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedalPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalPrototypeUITests.swift; sourceTree = "<group>"; };
 		0A90CF1320478615002FA202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31155E3FE56981148C12F111 /* Pods-PedalPrototypeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototypeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,8 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */,
-				0A0508B5204DAAFA00645478 /* CreatePedalViewProtocol.swift */,
-				0A0508B7204DAC4100645478 /* CreatePedalViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,6 +452,7 @@
 		0A74908F2066B415002AF1E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -921,9 +918,9 @@
 			files = (
 				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
-				0A0508B6204DAAFA00645478 /* CreatePedalViewProtocol.swift in Sources */,
 				0A817904206B0BE2008A00B8 /* TuneConfig.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
+				0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */,
 				0A835946205C0CA1004B29EB /* LoginView.swift in Sources */,
@@ -953,7 +950,6 @@
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
-				0A0508B8204DAC4100645478 /* CreatePedalViewDelegate.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
 				0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */,

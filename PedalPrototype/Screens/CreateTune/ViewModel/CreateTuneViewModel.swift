@@ -9,17 +9,43 @@
 import Foundation
 
 class CreateTuneViewModel: CreateTuneViewModelProtocol {
+
+    var tune: Tune?
+    var pedals: [Pedal]
     
-    weak var pedalSource: PedalSourceProtocol?
-    
-    func createTune(withName: String, andPedals: [Pedal], withCompletionBlock: @escaping (Tune) -> Void) {
-        
+    init(withPedals pedals: [Pedal]) {
+        self.pedals = pedals
     }
     
-    func getPedalsForExhibition() -> [String] {
+    func createTune(withName name: String, withCompletionBlock completionBlock: @escaping () -> Void) {
+        let tune = Tune(withName: name)
+        TuneProvider.create(tune: tune, forUser: PBUserProvider.getCurrentUserUID()!) { (success) in
+            if success {
+                self.tune = tune
+                completionBlock()
+            }
+        }
+    }
+    
+    func getTuneSetupViewModel(forIndexPaths indexPaths: [IndexPath]) -> TuneSetupViewModel {
         
-        var pedalNames = [String]()
+        var selectedPedals = [Pedal]()
         
-        return pedalNames
+        for index in indexPaths {
+            selectedPedals.append(self.pedals[index.row])
+        }
+        
+        let config = TuneConfig(withPedals: selectedPedals)
+        self.tune?.tuneConfig = config
+        
+        return TuneSetupViewModel(withTune: tune!)
+    }
+    
+    func getPedalForExhibition(atIndex index: Int) -> String {
+        return self.pedals[index].name
+    }
+    
+    func getPedalCount() -> Int {
+        return self.pedals.count
     }
 }

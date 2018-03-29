@@ -10,11 +10,12 @@ import Foundation
 
 protocol CreateTuneViewModelProtocol {
     
-    weak var pedalSource: PedalSourceProtocol? { get set }
-    
     func createTune(withName: String,
-                    andPedals: [Pedal],
-                    withCompletionBlock: @escaping (Tune) -> Void)
+                    withCompletionBlock: @escaping () -> Void)
     
-    func getPedalsForExhibition() -> [String]
+    func getPedalForExhibition(atIndex: Int) -> String
+    
+    func getPedalCount() -> Int
+    
+    func getTuneSetupViewModel(forIndexPaths: [IndexPath]) -> TuneSetupViewModel
 }

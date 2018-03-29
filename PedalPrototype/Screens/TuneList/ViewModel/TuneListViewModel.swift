@@ -9,7 +9,7 @@
 import Foundation
 
 class TuneListViewModel: TuneListViewModelProtocol {
-    
+
     weak var delegate: TuneListViewModelDelegate?
     weak var dataSource: PedalSourceProtocol?
     
@@ -38,16 +38,15 @@ class TuneListViewModel: TuneListViewModelProtocol {
         return TuneTableViewCellViewModel(withTune: self.tunes[index])
     }
     
-    func getCreateTuneViewModel() -> CreateTuneViewModelProtocol {
-        return CreateTuneViewModel()
+    func getCreateTuneViewModel() -> CreateTuneViewModel {
+        
+        let viewModel = CreateTuneViewModel(withPedals: (self.dataSource?.getPedalList())!)
+        
+        return viewModel
     }
     
-    func getTuneSetupViewModel() -> TuneSetupViewModelProtocol {
-        let list = self.dataSource?.getPedalList()
-        for pedal in list! {
-            print(pedal.name)
-        }
-        return TuneSetupViewModel()
+    func getTuneSetupViewModel(forTuneInIndex index: IndexPath) -> TuneSetupViewModelProtocol {
+        return TuneSetupViewModel(withTune: self.tunes[index.row])
     }
     
 }

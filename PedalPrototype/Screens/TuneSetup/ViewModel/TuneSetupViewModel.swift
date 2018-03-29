@@ -10,4 +10,9 @@ import Foundation
 
 class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
+    var tune: Tune
+    
+    init(withTune tune: Tune) {
+        self.tune = tune
+    }
 }

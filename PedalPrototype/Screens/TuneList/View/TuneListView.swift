@@ -38,20 +38,39 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
         self.tableView.reloadData()
     }
 
-    /*
+    
+    @IBAction func createTuneButton(_ sender: Any){
+        self.performSegue(withIdentifier: "createTune", sender: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let index = self.tableView.indexPathForSelectedRow
+        self.tableView.deselectRow(at: index!, animated: true)
+        
+        if segue.identifier == "createTune" {
+            //get pedal list and initialize viewModel with them
+            let viewModel = self.viewModel.getCreateTuneViewModel()
+            let view = segue.destination as! CreateTuneView
+            view.viewModel = viewModel
+        }
+        else {
+            
+            let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
+//            let view = segue.destination as! CreateTuneView
+//            view.viewModel = viewModel
+        }
     }
-    */
+ 
 }
 
 extension TuneListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.getTuneSetupViewModel()
+        self.performSegue(withIdentifier: "tuneSetup", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
