@@ -15,7 +15,7 @@ protocol PedalProtocol {
     
     static func getPedal(pedalKey: String,
                          forUser: String,
-                         withCompletionBlock: @escaping (Pedal) -> Void)
+                         withCompletionBlock: @escaping (Pedal?) -> Void)
     
     static func create(pedal: Pedal,
                        forUser: String,

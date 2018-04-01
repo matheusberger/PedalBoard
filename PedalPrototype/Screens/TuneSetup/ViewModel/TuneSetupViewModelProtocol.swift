@@ -11,4 +11,6 @@ import Foundation
 protocol TuneSetupViewModelProtocol {
     
     func getTuneSetup()
+    
+    func saveTuneSetup(withCompletionBlock: @escaping () -> Void)
 }

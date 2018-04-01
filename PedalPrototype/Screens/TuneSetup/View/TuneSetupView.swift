@@ -25,7 +25,12 @@ class TuneSetupView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func saveButton(_ sender: Any) {
+        self.viewModel.saveTuneSetup {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

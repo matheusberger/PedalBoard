@@ -20,9 +20,11 @@ extension TuneSetup {
             return
         }
         
-        for (knobName, value) in data {
-            pedal.knobs[knobName] = value
-        }
+//        for (knobName, value) in data {
+//            pedal.knobs[knobName] = value
+//        }
+        
+        pedal.knobs = data
         
         self.pedals.append(pedal)
     }
