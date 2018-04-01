@@ -14,5 +14,17 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     init(withTune tune: Tune) {
         self.tune = tune
+        
+        if self.tune.tuneSetup == nil {
+            self.tune.tuneSetup = TuneSetup()
+        }
+    }
+    
+    func getTuneSetup() {
+        
+        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserUID()!) { () in
+            //show new setup
+            print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
+        }
     }
 }

@@ -17,7 +17,7 @@ protocol TuneListViewModelProtocol {
     
     func getTuneCellViewModel(forIndex: Int) -> TuneTableViewCellViewModelProtocol
     
-    func getCreateTuneViewModel() -> CreateTuneViewModel
+    func getCreateTuneViewModel() -> CreateTuneViewModelProtocol
     
     func getTuneSetupViewModel(forTuneInIndex: IndexPath) -> TuneSetupViewModelProtocol
 }

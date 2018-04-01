@@ -38,7 +38,7 @@ class TuneListViewModel: TuneListViewModelProtocol {
         return TuneTableViewCellViewModel(withTune: self.tunes[index])
     }
     
-    func getCreateTuneViewModel() -> CreateTuneViewModel {
+    func getCreateTuneViewModel() -> CreateTuneViewModelProtocol {
         
         let viewModel = CreateTuneViewModel(withPedals: (self.dataSource?.getPedalList())!)
         

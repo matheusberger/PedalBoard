@@ -42,7 +42,7 @@
 		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
 		0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
-		0A817904206B0BE2008A00B8 /* TuneConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneConfig.swift */; };
+		0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneSetup.swift */; };
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
@@ -52,6 +52,9 @@
 		0A8AFE9F206A7C8C00388F10 /* TuneListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFE9E206A7C8C00388F10 /* TuneListViewModel.swift */; };
 		0A8AFEA3206A7CC500388F10 /* TuneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFEA2206A7CC500388F10 /* TuneProvider.swift */; };
 		0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8AFEA5206A7FBF00388F10 /* Tune+Firebase.swift */; };
+		0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B7164207064500046F59A /* TuneSetupProtocol.swift */; };
+		0A8B7167207065320046F59A /* TuneSetupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B7166207065320046F59A /* TuneSetupProvider.swift */; };
+		0A8B7169207067970046F59A /* TuneSetup+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8B7168207067970046F59A /* TuneSetup+Firebase.swift */; };
 		0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F676E20629FB900A148E8 /* TuneProtocol.swift */; };
 		0A8F67712062A03C00A148E8 /* Tune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F67702062A03C00A148E8 /* Tune.swift */; };
 		0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CEF120478615002FA202 /* AppDelegate.swift */; };
@@ -61,6 +64,7 @@
 		0A90CF0720478615002FA202 /* PedalPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF0620478615002FA202 /* PedalPrototypeTests.swift */; };
 		0A90CF1220478615002FA202 /* PedalPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */; };
 		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
+		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
@@ -117,7 +121,7 @@
 		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalSourceProtocol.swift; sourceTree = "<group>"; };
 		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
-		0A817903206B0BE2008A00B8 /* TuneConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneConfig.swift; sourceTree = "<group>"; };
+		0A817903206B0BE2008A00B8 /* TuneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetup.swift; sourceTree = "<group>"; };
 		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,9 @@
 		0A8AFE9E206A7C8C00388F10 /* TuneListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListViewModel.swift; sourceTree = "<group>"; };
 		0A8AFEA2206A7CC500388F10 /* TuneProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneProvider.swift; sourceTree = "<group>"; };
 		0A8AFEA5206A7FBF00388F10 /* Tune+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tune+Firebase.swift"; sourceTree = "<group>"; };
+		0A8B7164207064500046F59A /* TuneSetupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupProtocol.swift; sourceTree = "<group>"; };
+		0A8B7166207065320046F59A /* TuneSetupProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupProvider.swift; sourceTree = "<group>"; };
+		0A8B7168207067970046F59A /* TuneSetup+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuneSetup+Firebase.swift"; sourceTree = "<group>"; };
 		0A8F676E20629FB900A148E8 /* TuneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneProtocol.swift; sourceTree = "<group>"; };
 		0A8F67702062A03C00A148E8 /* Tune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tune.swift; sourceTree = "<group>"; };
 		0A90CEEE20478615002FA202 /* PedalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +150,7 @@
 		0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalPrototypeUITests.swift; sourceTree = "<group>"; };
 		0A90CF1320478615002FA202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
+		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31155E3FE56981148C12F111 /* Pods-PedalPrototypeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototypeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,7 +240,7 @@
 				0A25C6EB205DF77D00A641BD /* PBUser.swift */,
 				0A532EAA2048163300CA8FEA /* Pedal.swift */,
 				0A8F67702062A03C00A148E8 /* Tune.swift */,
-				0A817903206B0BE2008A00B8 /* TuneConfig.swift */,
+				0A817903206B0BE2008A00B8 /* TuneSetup.swift */,
 				0A532EAE20481AB000CA8FEA /* Models+Firebase */,
 			);
 			path = Models;
@@ -244,6 +252,7 @@
 				0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */,
 				0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */,
 				0A8AFEA5206A7FBF00388F10 /* Tune+Firebase.swift */,
+				0A8B7168207067970046F59A /* TuneSetup+Firebase.swift */,
 			);
 			path = "Models+Firebase";
 			sourceTree = "<group>";
@@ -261,9 +270,10 @@
 			isa = PBXGroup;
 			children = (
 				0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */,
+				0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */,
 				0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */,
 				0A8F676E20629FB900A148E8 /* TuneProtocol.swift */,
-				0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */,
+				0A8B7164207064500046F59A /* TuneSetupProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -271,10 +281,11 @@
 		0A532EB320481B2200CA8FEA /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				0A532EBC2048275900CA8FEA /* PedalProvider.swift */,
 				0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */,
 				0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */,
+				0A532EBC2048275900CA8FEA /* PedalProvider.swift */,
 				0A8AFEA2206A7CC500388F10 /* TuneProvider.swift */,
+				0A8B7166207065320046F59A /* TuneSetupProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -496,6 +507,7 @@
 		0A857448206B336500F1FDEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AF50481206D5D8F004881F0 /* TuneSetupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -918,13 +930,15 @@
 			files = (
 				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
-				0A817904206B0BE2008A00B8 /* TuneConfig.swift in Sources */,
+				0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */,
+				0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */,
 				0A835946205C0CA1004B29EB /* LoginView.swift in Sources */,
 				0A6707D9206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift in Sources */,
+				0A8B7167207065320046F59A /* TuneSetupProvider.swift in Sources */,
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
@@ -934,6 +948,7 @@
 				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
 				0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */,
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,
+				0A8B7169207067970046F59A /* TuneSetup+Firebase.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */,
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
@@ -952,6 +967,7 @@
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
+				0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */,
 				0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
 				0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */,

@@ -36,23 +36,30 @@ class CreateTuneView: UIViewController {
         }
         
         self.viewModel.createTune(withName: name) {
-            //perform segue to setup then create setup viewModel with self.viewmodel.pedals (the selected ones)
-            let selectedIndexPaths = self.tableView.indexPathsForSelectedRows
-            let viewModel = self.viewModel.getTuneSetupViewModel(forIndexPaths: selectedIndexPaths!)
-            
+            //perform segue to setup then create setup viewModel with self.viewmodel.pedals (the selected ones
             self.performSegue(withIdentifier: "initialTuneSetup", sender: nil)
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "initialTuneSetup" {
+            guard let selectedIndexPaths = self.tableView.indexPathsForSelectedRows else {
+                return
+            }
+            
+            let viewModel = self.viewModel.getTuneSetupViewModel(forIndexPaths: selectedIndexPaths)
+            
+            let tuneSetupView = segue.destination as! TuneSetupView
+            tuneSetupView.viewModel = viewModel
+        }
+        
     }
-    */
 
 }
 

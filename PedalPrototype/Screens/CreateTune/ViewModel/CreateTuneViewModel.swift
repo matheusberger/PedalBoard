@@ -35,8 +35,8 @@ class CreateTuneViewModel: CreateTuneViewModelProtocol {
             selectedPedals.append(self.pedals[index.row])
         }
         
-        let config = TuneConfig(withPedals: selectedPedals)
-        self.tune?.tuneConfig = config
+        let setup = TuneSetup(withPedals: selectedPedals)
+        self.tune?.tuneSetup = setup
         
         return TuneSetupViewModel(withTune: tune!)
     }

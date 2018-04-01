@@ -27,6 +27,16 @@ class PedalProvider: PedalProtocol {
         }
     }
     
+    static func getPedal(pedalKey: String, forUser user: String, withCompletionBlock completionBlock: @escaping (Pedal) -> Void) {
+        let databaseReference: DatabaseReference = Database.database().reference()
+        
+        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
+        
+        pedalsReference.observeSingleEvent(of: .childAdded) { (dataSnapshot) in
+            completionBlock(Pedal.from(dataSnapshot: dataSnapshot)!)
+        }
+    }
+    
     static func create(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
         let databaseReference: DatabaseReference = Database.database().reference()
         

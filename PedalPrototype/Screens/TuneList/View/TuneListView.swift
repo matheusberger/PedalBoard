@@ -50,8 +50,10 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let index = self.tableView.indexPathForSelectedRow
-        self.tableView.deselectRow(at: index!, animated: true)
-        
+        if index != nil {
+            self.tableView.deselectRow(at: index!, animated: true)
+        }
+
         if segue.identifier == "createTune" {
             //get pedal list and initialize viewModel with them
             let viewModel = self.viewModel.getCreateTuneViewModel()
@@ -61,8 +63,8 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
         else {
             
             let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
-//            let view = segue.destination as! CreateTuneView
-//            view.viewModel = viewModel
+            let view = segue.destination as! TuneSetupView
+            view.viewModel = viewModel
         }
     }
  

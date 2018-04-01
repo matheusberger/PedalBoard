@@ -10,4 +10,5 @@ import Foundation
 
 protocol TuneSetupViewModelProtocol {
     
+    func getTuneSetup()
 }

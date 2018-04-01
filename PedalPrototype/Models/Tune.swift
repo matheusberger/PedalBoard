@@ -13,15 +13,15 @@ class Tune {
     var key: String?
     
     var name: String
-    var tuneConfig: TuneConfig?
+    var tuneSetup: TuneSetup?
     
     
-    init(withKey key: String? = nil, withName name: String, andTuneConfig config: TuneConfig? = nil) {
+    init(withKey key: String? = nil, withName name: String, andTuneSetup config: TuneSetup? = nil) {
         
         self.key = key
         
         self.name = name
-        self.tuneConfig = config
+        self.tuneSetup = config
     }
     
     func toDictionary() -> [String : Any] {

@@ -13,6 +13,10 @@ protocol PedalProtocol {
     static func getPedals(forUser: String,
                           withContinuousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
     
+    static func getPedal(pedalKey: String,
+                         forUser: String,
+                         withCompletionBlock: @escaping (Pedal) -> Void)
+    
     static func create(pedal: Pedal,
                        forUser: String,
                        withCompletionBlock: @escaping (_ success: Bool) -> Void)
