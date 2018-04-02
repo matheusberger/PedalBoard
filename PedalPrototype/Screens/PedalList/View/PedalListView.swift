@@ -10,7 +10,7 @@ import UIKit
 
 class PedalListView: UIViewController {
 
-    fileprivate var viewModel: PedalListViewModel!
+    fileprivate var viewModel: PedalListViewModel! //initialized by RootBarController
     
     @IBOutlet weak var pedalTableView: UITableView!
     
@@ -18,7 +18,6 @@ class PedalListView: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.viewModel = PedalListViewModel()
         self.viewModel.delegate = self
         
         self.pedalTableView.dataSource = self
@@ -31,6 +30,9 @@ class PedalListView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setViewModel(viewModel: PedalListViewModel) {
+        self.viewModel = viewModel
+    }
 
     /*
     // MARK: - Navigation

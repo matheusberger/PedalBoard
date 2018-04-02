@@ -13,5 +13,5 @@ protocol PBUserProtocol {
     static func getCurrentUser() -> PBUser?
     static func getCurrentUserUID() -> String?
     
-    static func update(user: PBUser, withCompletionBlock completionBlock: @escaping (_ error: Error?) -> Void)
+    static func update(user: PBUser, withCompletionBlock: @escaping (_ error: Error?) -> Void)
 }

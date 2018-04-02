@@ -27,16 +27,15 @@ extension Pedal {
             return nil
         }
         
-        guard let dKnobs: [String : Any] = data["knobs"] as? [String : Any] else {
+        guard let dataKnobs: [String : Any] = data["knobs"] as? [String : Any] else {
             return nil
         }
         
-        var knobs: [Knob] = [Knob]()
+        var knobs = [String : Int]()
         
-        for (name, value) in dKnobs {
-            knobs.append(Knob(withName: name, andValue: value as! Int))
+        for (knobName, _) in dataKnobs {
+            knobs[knobName] = 0
         }
-        
         
         return Pedal(withKey: key, withName: name, andKnobs: knobs)
     }

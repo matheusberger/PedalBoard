@@ -13,10 +13,10 @@ class Pedal {
     var key: String?
     
     var name: String
-    var knobs: [Knob]
+    var knobs: [String : Int]
     
     
-    init(withKey key: String? = nil, withName name: String, andKnobs knobs: [Knob]) {
+    init(withKey key: String? = nil, withName name: String, andKnobs knobs: [String : Int]) {
         
         self.key = key
         self.name = name
@@ -29,8 +29,8 @@ class Pedal {
         
         var knobsDictionary: [String : Int] = [String : Int]()
         
-        for knob in self.knobs {
-            knobsDictionary[knob.name] = knob.value
+        for (knob, value) in self.knobs {
+            knobsDictionary[knob] = value
         }
         
         dictionary["name"] = self.name

@@ -10,7 +10,7 @@ import Foundation
 
 protocol LoginViewModelProtocol {
     
-    weak var delegate: LoginViewModelDelegate? { get set }
+    var delegate: LoginViewModelDelegate? { get set }
     
     func signIn(withEmail email: String, andPassword password: String)
     

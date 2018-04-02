@@ -11,18 +11,19 @@ import Foundation
 protocol PedalProtocol {
     
     static func getPedals(forUser: String,
-                          withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void)
+                          withContinuousFetchBlock: @escaping (_ pedal: Pedal) -> Void)
     
-    static func getPedals(forUser: String, forSong: String,
-                          withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void)
+    static func getPedal(pedalKey: String,
+                         forUser: String,
+                         withCompletionBlock: @escaping (Pedal?) -> Void)
     
     static func create(pedal: Pedal,
-                       forUser user: String,
-                       withCompletionBlock completionBlock: @escaping (_ success: Bool) -> Void)
+                       forUser: String,
+                       withCompletionBlock: @escaping (_ success: Bool) -> Void)
     static func delete(pedal: Pedal,
                        forUser user: String,
-                       withCompletionBlock completionBlock: @escaping (_ success: Bool) -> Void)
+                       withCompletionBlock: @escaping (_ success: Bool) -> Void)
     static func update(pedal: Pedal,
                        forUser user: String,
-                       withCompletionBlock completionBlock: @escaping (_ success: Bool) -> Void)
+                       withCompletionBlock: @escaping (_ success: Bool) -> Void)
 }

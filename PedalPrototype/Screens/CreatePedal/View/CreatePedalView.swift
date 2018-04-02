@@ -8,11 +8,10 @@
 
 import UIKit
 
-class CreatePedalView: UIViewController, CreatePedalViewProtocol {
+class CreatePedalView: UIViewController {
     
     fileprivate var viewModel: CreatePedalViewModel!
     
-    weak var delegate: CreatePedalViewDelegate?
     
     @IBOutlet weak var pedalName: UITextField!
     @IBOutlet weak var knobTableView: UITableView!
@@ -23,9 +22,8 @@ class CreatePedalView: UIViewController, CreatePedalViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        self.viewModel = CreatePedalViewModel()
         
+        self.viewModel = CreatePedalViewModel()
         self.knobTableView.dataSource = self
         
         self.knobs = [String]()
@@ -43,7 +41,6 @@ class CreatePedalView: UIViewController, CreatePedalViewProtocol {
         }
         
         self.viewModel.createPedal(withName: name, andKnobs: self.knobs) {
-            self.delegate?.didCreatePedal()
             self.navigationController?.popViewController(animated: true)
         }
     }

@@ -8,16 +8,14 @@
 
 import UIKit
 
-class CreatePedalViewModel: NSObject, CreatePedalViewModelProtocol {
-    
-    
+class CreatePedalViewModel: CreatePedalViewModelProtocol {
     
     func createPedal(withName name: String, andKnobs knobNames: [String], withCompletionBlock completionBlock: @escaping () -> Void) {
         
-        var knobs = [Knob]()
+        var knobs = [String : Int]()
         
         for name in knobNames {
-            knobs.append(Knob(withName: name, andValue: 0))
+            knobs[name] = 0
         }
         
         let pedal = Pedal(withName: name, andKnobs: knobs)

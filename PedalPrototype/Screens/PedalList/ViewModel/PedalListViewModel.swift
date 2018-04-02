@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PedalListViewModel: NSObject, PedalListViewModelProtocol {
+class PedalListViewModel: PedalListViewModelProtocol, PedalSourceProtocol {
     
     weak var delegate: PedalListViewModelDelegate?
     
-    private var pedals: [Pedal] = [] {
+    fileprivate var pedals: [Pedal] = [] {
         didSet {
             self.delegate?.didUpdatePedalList()
         }
@@ -24,6 +24,10 @@ class PedalListViewModel: NSObject, PedalListViewModelProtocol {
         }
     }
     
+    func getPedalList() -> [Pedal] {
+        return self.pedals
+    }
+    
     func getPedalCellViewModel(forIndex index: Int) -> PedalTableViewCellViewModelProtocol {
         return PedalTableViewCellViewModel(withPedal: self.pedals[index])
     }
@@ -31,6 +35,4 @@ class PedalListViewModel: NSObject, PedalListViewModelProtocol {
     func getPedalCount() -> Int {
         return self.pedals.count
     }
-    
-
 }

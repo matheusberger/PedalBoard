@@ -11,41 +11,36 @@ import FirebaseDatabase
 
 class PedalProvider: PedalProtocol {
     
-    static func getPedals(forUser user: String, withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void) {
+    static func getPedals(forUser user: String, withContinuousFetchBlock continuousBlock: @escaping (_ pedal: Pedal) -> Void) {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalsReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals")
+        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user)
         
         pedalsReference.queryOrdered(byChild: "name").observe(.childAdded) { (dataSnapshot) in
             
             if dataSnapshot.exists() {
                 if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-                    continousBlock(pedal)
+                    continuousBlock(pedal)
                 }
             }
         }
     }
     
-    static func getPedals(forUser user: String, forSong song: String, withContinousFetchBlock continousBlock: @escaping (_ pedal: Pedal) -> Void) {
+    static func getPedal(pedalKey: String, forUser user: String, withCompletionBlock completionBlock: @escaping (Pedal?) -> Void) {
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalsReference: DatabaseReference = databaseReference.child(user).child(song)
+        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
         
-        pedalsReference.observe(.childAdded) { (dataSnapshot) in
-            
-            if dataSnapshot.exists() {
-                if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-                    continousBlock(pedal)
-                }
-            }
+        pedalsReference.observeSingleEvent(of: .value) { (dataSnapshot) in
+            completionBlock(Pedal.from(dataSnapshot: dataSnapshot))
         }
     }
     
     static func create(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").childByAutoId()
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).childByAutoId()
         
         pedal.key = pedalReference.key
         pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
@@ -61,7 +56,7 @@ class PedalProvider: PedalProtocol {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").child(pedalKey)
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
         
         pedalReference.removeValue() { (error, databaseReference) in
             completionBlock(error == nil)
@@ -76,7 +71,7 @@ class PedalProvider: PedalProtocol {
         
         let databaseReference: DatabaseReference = Database.database().reference()
         
-        let pedalReference: DatabaseReference = databaseReference.child("users").child(user).child("pedals").child(pedalKey)
+        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
         
         pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
             completionBlock(error == nil)
