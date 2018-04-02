@@ -12,12 +12,17 @@ class TuneSetupView: UIViewController {
     
     var viewModel: TuneSetupViewModelProtocol!
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("vamo pegar as config")
+        self.viewModel.delegate = self
         self.viewModel.getTuneSetup()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,5 +45,36 @@ class TuneSetupView: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension TuneSetupView: TuneSetupViewModelDelegate {
+    
+    func didUpdateSetupList() {
+        self.tableView.reloadData()
+    }
+}
+
+extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return self.viewModel.getPedalName(atIndex: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "setupCell") as! KnobSetupTVCView
+        
+        cell.viewModel = self.viewModel.getKnobSetupViewModel(forPedalAtSection: indexPath.section, withIndex: indexPath.row)
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.viewModel.getPedalCount()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.getKnobsCount(forPedalAtIndex: section)
+    }
 }

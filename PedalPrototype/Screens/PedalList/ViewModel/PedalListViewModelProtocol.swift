@@ -10,7 +10,7 @@ import Foundation
 
 protocol PedalListViewModelProtocol {
     
-    weak var delegate: PedalListViewModelDelegate? { get set }
+    var delegate: PedalListViewModelDelegate? { get set }
     
     func getPedals()
     

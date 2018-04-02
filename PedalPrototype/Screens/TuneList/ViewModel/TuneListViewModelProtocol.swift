@@ -10,8 +10,8 @@ import Foundation
 
 protocol TuneListViewModelProtocol {
     
-    weak var delegate: TuneListViewModelDelegate? { get set }
-    weak var dataSource: PedalSourceProtocol? { get set }
+    var delegate: TuneListViewModelDelegate? { get set }
+    var dataSource: PedalSourceProtocol? { get set }
     
     func getTunes()
     

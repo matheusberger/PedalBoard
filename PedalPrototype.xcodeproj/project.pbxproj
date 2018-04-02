@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A092D0A2071BDA800E048E3 /* TuneSetupViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A092D092071BDA800E048E3 /* TuneSetupViewModelDelegate.swift */; };
 		0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */; };
 		0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */; };
 		0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EB205DF77D00A641BD /* PBUser.swift */; };
@@ -42,6 +43,9 @@
 		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
 		0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
+		0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */; };
+		0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */; };
+		0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */; };
 		0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneSetup.swift */; };
 		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
@@ -88,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A092D092071BDA800E048E3 /* TuneSetupViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		0A25C6EB205DF77D00A641BD /* PBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUser.swift; sourceTree = "<group>"; };
@@ -121,6 +126,9 @@
 		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalSourceProtocol.swift; sourceTree = "<group>"; };
 		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
+		0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCView.swift; sourceTree = "<group>"; };
+		0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModel.swift; sourceTree = "<group>"; };
 		0A817903206B0BE2008A00B8 /* TuneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetup.swift; sourceTree = "<group>"; };
 		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
 		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
@@ -468,6 +476,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0A7CE3052071565400183B91 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE3062071565C00183B91 /* TuneSetupTableViewCell */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		0A7CE3062071565C00183B91 /* TuneSetupTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE308207158E100183B91 /* View */,
+				0A7CE307207158DC00183B91 /* ViewModel */,
+			);
+			path = TuneSetupTableViewCell;
+			sourceTree = "<group>";
+		};
+		0A7CE307207158DC00183B91 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */,
+				0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A7CE308207158E100183B91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0A835944205C0C81004B29EB /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +542,7 @@
 			children = (
 				0A85744B206B33AC00F1FDEC /* TuneSetupViewModel.swift */,
 				0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */,
+				0A092D092071BDA800E048E3 /* TuneSetupViewModelDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -508,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF50481206D5D8F004881F0 /* TuneSetupView.swift */,
+				0A7CE3052071565400183B91 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -660,7 +704,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = mcb3;
 				TargetAttributes = {
 					0A90CEED20478615002FA202 = {
@@ -928,6 +972,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
 				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
 				0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */,
@@ -960,10 +1005,13 @@
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
+				0A092D0A2071BDA800E048E3 /* TuneSetupViewModelDelegate.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
+				0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */,
 				0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
+				0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
@@ -1045,6 +1093,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1052,6 +1101,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1102,6 +1152,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1109,6 +1160,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
