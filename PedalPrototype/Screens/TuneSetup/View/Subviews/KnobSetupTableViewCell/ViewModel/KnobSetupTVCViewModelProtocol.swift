@@ -9,6 +9,9 @@
 import Foundation
 
 protocol KnobSetupTVCViewModelProtocol {
+    
+    var completionHandler: (Int) -> Void { get set }
+    
     func getKnobName() -> String
     
     func getKnobValue() -> Int

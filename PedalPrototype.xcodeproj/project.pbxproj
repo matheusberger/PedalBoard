@@ -479,18 +479,18 @@
 		0A7CE3052071565400183B91 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				0A7CE3062071565C00183B91 /* TuneSetupTableViewCell */,
+				0A7CE3062071565C00183B91 /* KnobSetupTableViewCell */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
 		};
-		0A7CE3062071565C00183B91 /* TuneSetupTableViewCell */ = {
+		0A7CE3062071565C00183B91 /* KnobSetupTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				0A7CE308207158E100183B91 /* View */,
 				0A7CE307207158DC00183B91 /* ViewModel */,
 			);
-			path = TuneSetupTableViewCell;
+			path = KnobSetupTableViewCell;
 			sourceTree = "<group>";
 		};
 		0A7CE307207158DC00183B91 /* ViewModel */ = {

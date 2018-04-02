@@ -18,9 +18,9 @@ protocol TuneSetupViewModelProtocol {
     
     func getPedalCount() -> Int
     
-    func getPedal(atIndex: Int) -> [String : Any]
-    
     func getPedalName(atIndex: Int) -> String
+    
+    func updateSetupForPedal(atIndex: Int, forKnobNamed: String, withValue: Int)
     
     func getKnob(forPedalAtSection: Int, withIndex: Int) -> [String : Int]
     

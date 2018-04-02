@@ -18,7 +18,6 @@ class TuneSetupView: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("vamo pegar as config")
         self.viewModel.delegate = self
         self.viewModel.getTuneSetup()
         self.tableView.delegate = self
@@ -31,6 +30,7 @@ class TuneSetupView: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        
         self.viewModel.saveTuneSetup {
             self.navigationController?.popToRootViewController(animated: true)
         }
@@ -65,7 +65,10 @@ extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "setupCell") as! KnobSetupTVCView
         
-        cell.viewModel = self.viewModel.getKnobSetupViewModel(forPedalAtSection: indexPath.section, withIndex: indexPath.row)
+        
+        if cell.viewModel == nil {
+            cell.viewModel = self.viewModel.getKnobSetupViewModel(forPedalAtSection: indexPath.section, withIndex: indexPath.row)
+        }
         
         return cell
     }

@@ -14,10 +14,12 @@ class KnobSetupTVCView: UITableViewCell {
     @IBOutlet weak var knobName: UILabel!
     @IBOutlet weak var knobSlider: UISlider!
     
-    var value: Float! {
+    fileprivate var value: Float! {
         didSet {
             let intV = Int(value)
             self.knobValue.text = String(intV)
+            self.viewModel.setKnobValue(value: intV)
+            self.viewModel.completionHandler(intV)
         }
     }
     

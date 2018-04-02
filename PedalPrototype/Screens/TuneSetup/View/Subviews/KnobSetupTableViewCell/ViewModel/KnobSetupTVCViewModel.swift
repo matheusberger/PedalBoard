@@ -10,12 +10,17 @@ import Foundation
 
 class KnobSetupTVCViewModel: KnobSetupTVCViewModelProtocol {
     
-    var name: String!
-    var value: Int!
+    fileprivate var name: String!
+    fileprivate var value: Int!
     
-    init(withName name: String, andValue value: Int) {
+    var completionHandler: (Int) -> Void
+    
+    init(withName name: String, andValue value: Int, withCompletionHandler completionHandler: @escaping (Int) -> Void) {
+        
         self.name = name
         self.value = value
+        
+        self.completionHandler = completionHandler
     }
     
     func getKnobName() -> String {
