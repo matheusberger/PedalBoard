@@ -14,11 +14,12 @@ class LoginView: UIViewController, LoginViewModelDelegate {
     
     var vieModel: LoginViewModel!
     
-    
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var nameTxtField: UITextField!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class LoginView: UIViewController, LoginViewModelDelegate {
         // Do any additional setup after loading the view.
         self.vieModel = LoginViewModel()
         self.vieModel.delegate = self
+        self.navigationController?.navigationBar.isHidden = true
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,30 +36,21 @@ class LoginView: UIViewController, LoginViewModelDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func createAccount(_ sender: Any) {
-        self.vieModel.signUp(withEmail: self.emailTxtField.text!, password: self.passwordTxtField.text!, andName: self.nameTxtField.text!)
-    }
-    
     @IBAction func login(_ sender: Any) {
-        self.vieModel.signIn(withEmail: self.emailTxtField.text!, andPassword: self.passwordTxtField.text!)
+        
+        guard let email = self.emailTxtField.text else {
+            return
+        }
+        
+        guard let password = self.passwordTxtField.text else {
+            return
+        }
+        
+        self.vieModel.signIn(withEmail: email, andPassword: password)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     func didSignIn() {
         print(PBUserProvider.getCurrentUser()!.fullName)
         self.performSegue(withIdentifier: "login", sender: nil)
-    }
-    
-    func didSignUp() {
-        print("rolou criar conta")
     }
 }

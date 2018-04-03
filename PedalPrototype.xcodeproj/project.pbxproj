@@ -47,7 +47,7 @@
 		0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */; };
 		0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */; };
 		0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneSetup.swift */; };
-		0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* LoginFlow.storyboard */; };
+		0A835943205C0C51004B29EB /* AuthFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* AuthFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
 		0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835948205C0D76004B29EB /* FirUIDelegate.swift */; };
 		0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */; };
@@ -67,6 +67,16 @@
 		0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */; };
 		0A90CF0720478615002FA202 /* PedalPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF0620478615002FA202 /* PedalPrototypeTests.swift */; };
 		0A90CF1220478615002FA202 /* PedalPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */; };
+		0AA792792072E7C700177C04 /* PurpleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA792782072E7C700177C04 /* PurpleImageView.swift */; };
+		0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */; };
+		0AA7927E2073094D00177C04 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7927D2073094D00177C04 /* PurpleButton.swift */; };
+		0AA7928020730B4700177C04 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7927F20730B4700177C04 /* RoundView.swift */; };
+		0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */; };
+		0AA792862073131400177C04 /* StatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA792852073131400177C04 /* StatusBarNavigationController.swift */; };
+		0AA7928C20731CFA00177C04 /* SignupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928B20731CFA00177C04 /* SignupViewModelProtocol.swift */; };
+		0AA7928E20731D2100177C04 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928D20731D2100177C04 /* SignupViewModel.swift */; };
+		0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928F20731D3000177C04 /* SignupViewModelDelegate.swift */; };
+		0AA7929220731E0600177C04 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7929120731E0600177C04 /* SignupView.swift */; };
 		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
@@ -131,7 +141,7 @@
 		0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModel.swift; sourceTree = "<group>"; };
 		0A817903206B0BE2008A00B8 /* TuneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetup.swift; sourceTree = "<group>"; };
 		0A835941205C088C004B29EB /* PedalPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PedalPrototype.entitlements; sourceTree = "<group>"; };
-		0A835942205C0C51004B29EB /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
+		0A835942205C0C51004B29EB /* AuthFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthFlow.storyboard; sourceTree = "<group>"; };
 		0A835945205C0CA1004B29EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0A835948205C0D76004B29EB /* FirUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirUIDelegate.swift; sourceTree = "<group>"; };
 		0A857449206B337400F1FDEC /* TuneSetupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -157,6 +167,16 @@
 		0A90CF0D20478615002FA202 /* PedalPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedalPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalPrototypeUITests.swift; sourceTree = "<group>"; };
 		0A90CF1320478615002FA202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA792782072E7C700177C04 /* PurpleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleImageView.swift; sourceTree = "<group>"; };
+		0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hanpurple.swift"; sourceTree = "<group>"; };
+		0AA7927D2073094D00177C04 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
+		0AA7927F20730B4700177C04 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleNegativeButton.swift; sourceTree = "<group>"; };
+		0AA792852073131400177C04 /* StatusBarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarNavigationController.swift; path = "PedalPrototype/Screens/Custom UI/StatusBarNavigationController.swift"; sourceTree = SOURCE_ROOT; };
+		0AA7928B20731CFA00177C04 /* SignupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelProtocol.swift; sourceTree = "<group>"; };
+		0AA7928D20731D2100177C04 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		0AA7928F20731D3000177C04 /* SignupViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelDelegate.swift; sourceTree = "<group>"; };
+		0AA7929120731E0600177C04 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
 		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
@@ -312,13 +332,11 @@
 		0A532EB720481E0200CA8FEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0AA792772072E79800177C04 /* Custom UI */,
 				0A0F06C3206C1E1A005DF6E5 /* RootTabController */,
-				0A857446206B334E00F1FDEC /* TuneSetup */,
-				0A74908A2066B397002AF1E8 /* TuneList */,
-				0A74908D2066B404002AF1E8 /* CreateTune */,
-				0A835944205C0C81004B29EB /* Login */,
-				0A6129752054AB6A005A3099 /* PedalList */,
-				0A381E2B204CC26B001D7DB9 /* CreatePedal */,
+				0AA7929420732A4200177C04 /* Tune */,
+				0AA7928720731C9D00177C04 /* Auth */,
+				0AA7929320732A2B00177C04 /* Pedal */,
 				0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */,
 				0A90CEF520478615002FA202 /* Main.storyboard */,
 			);
@@ -523,7 +541,6 @@
 			isa = PBXGroup;
 			children = (
 				0A835945205C0CA1004B29EB /* LoginView.swift */,
-				0A835942205C0C51004B29EB /* LoginFlow.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +624,83 @@
 				0A90CF1320478615002FA202 /* Info.plist */,
 			);
 			path = PedalPrototypeUITests;
+			sourceTree = "<group>";
+		};
+		0AA792772072E79800177C04 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AA7928420730DCC00177C04 /* Colors */,
+				0AA792852073131400177C04 /* StatusBarNavigationController.swift */,
+				0AA7927F20730B4700177C04 /* RoundView.swift */,
+				0AA792782072E7C700177C04 /* PurpleImageView.swift */,
+				0AA7927D2073094D00177C04 /* PurpleButton.swift */,
+				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		0AA7928420730DCC00177C04 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		0AA7928720731C9D00177C04 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0A835942205C0C51004B29EB /* AuthFlow.storyboard */,
+				0A835944205C0C81004B29EB /* Login */,
+				0AA7928820731CA300177C04 /* Signup */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0AA7928820731CA300177C04 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				0AA7928A20731CD300177C04 /* View */,
+				0AA7928920731CCD00177C04 /* ViewModel */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		0AA7928920731CCD00177C04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AA7928D20731D2100177C04 /* SignupViewModel.swift */,
+				0AA7928B20731CFA00177C04 /* SignupViewModelProtocol.swift */,
+				0AA7928F20731D3000177C04 /* SignupViewModelDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AA7928A20731CD300177C04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AA7929120731E0600177C04 /* SignupView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AA7929320732A2B00177C04 /* Pedal */ = {
+			isa = PBXGroup;
+			children = (
+				0A6129752054AB6A005A3099 /* PedalList */,
+				0A381E2B204CC26B001D7DB9 /* CreatePedal */,
+			);
+			path = Pedal;
+			sourceTree = "<group>";
+		};
+		0AA7929420732A4200177C04 /* Tune */ = {
+			isa = PBXGroup;
+			children = (
+				0A74908A2066B397002AF1E8 /* TuneList */,
+				0A74908D2066B404002AF1E8 /* CreateTune */,
+				0A857446206B334E00F1FDEC /* TuneSetup */,
+			);
+			path = Tune;
 			sourceTree = "<group>";
 		};
 		314F6528288BC78E8D35DA7E /* Frameworks */ = {
@@ -757,7 +851,7 @@
 				0A532EB92048203400CA8FEA /* GoogleService-Info.plist in Resources */,
 				0A90CEF920478615002FA202 /* Assets.xcassets in Resources */,
 				0A90CEF720478615002FA202 /* Main.storyboard in Resources */,
-				0A835943205C0C51004B29EB /* LoginFlow.storyboard in Resources */,
+				0A835943205C0C51004B29EB /* AuthFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +1066,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA7929220731E0600177C04 /* SignupView.swift in Sources */,
 				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
 				0A835949205C0D76004B29EB /* FirUIDelegate.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
@@ -980,6 +1075,7 @@
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
+				0AA792792072E7C700177C04 /* PurpleImageView.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+Firebase.swift in Sources */,
 				0A835946205C0CA1004B29EB /* LoginView.swift in Sources */,
 				0A6707D9206BDA81008B796D /* TuneTableViewCellViewModelProtocol.swift in Sources */,
@@ -987,6 +1083,9 @@
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
+				0AA7928020730B4700177C04 /* RoundView.swift in Sources */,
+				0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */,
+				0AA7927E2073094D00177C04 /* PurpleButton.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
 				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
@@ -996,10 +1095,12 @@
 				0A8B7169207067970046F59A /* TuneSetup+Firebase.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */,
+				0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */,
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
 				0A8AFE9F206A7C8C00388F10 /* TuneListViewModel.swift in Sources */,
 				0A8AFEA3206A7CC500388F10 /* TuneProvider.swift in Sources */,
 				0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */,
+				0AA792862073131400177C04 /* StatusBarNavigationController.swift in Sources */,
 				0A8F67712062A03C00A148E8 /* Tune.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
@@ -1010,14 +1111,17 @@
 				0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */,
 				0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
+				0AA7928E20731D2100177C04 /* SignupViewModel.swift in Sources */,
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
 				0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */,
+				0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
 				0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */,
 				0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
+				0AA7928C20731CFA00177C04 /* SignupViewModelProtocol.swift in Sources */,
 				0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */,
 				0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,

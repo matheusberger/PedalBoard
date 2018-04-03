@@ -13,6 +13,4 @@ protocol LoginViewModelProtocol {
     var delegate: LoginViewModelDelegate? { get set }
     
     func signIn(withEmail email: String, andPassword password: String)
-    
-    func signUp(withEmail email: String, password: String, andName name: String)
 }
