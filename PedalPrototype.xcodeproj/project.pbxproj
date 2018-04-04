@@ -21,6 +21,7 @@
 		0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */; };
 		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
 		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
+		0A3FCEF120747AC200B7CF79 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */; };
 		0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAA2048163300CA8FEA /* Pedal.swift */; };
 		0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */; };
 		0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */; };
@@ -116,6 +117,7 @@
 		0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalView.swift; sourceTree = "<group>"; };
 		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
 		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		0A532EAA2048163300CA8FEA /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
 		0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pedal+Firebase.swift"; sourceTree = "<group>"; };
 		0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProtocol.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				0AA792782072E7C700177C04 /* PurpleImageView.swift */,
 				0AA7927D2073094D00177C04 /* PurpleButton.swift */,
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
+				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -1110,6 +1113,7 @@
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
 				0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */,
 				0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */,
+				0A3FCEF120747AC200B7CF79 /* UILabelExtension.swift in Sources */,
 				0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */,
 				0AA7928E20731D2100177C04 /* SignupViewModel.swift in Sources */,
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
