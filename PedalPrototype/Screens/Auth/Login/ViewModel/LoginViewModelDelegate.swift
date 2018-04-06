@@ -11,4 +11,6 @@ import Foundation
 protocol LoginViewModelDelegate: class {
     
     func didSignIn()
+    
+    func faliedToLogin()
 }

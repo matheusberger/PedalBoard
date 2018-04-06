@@ -10,5 +10,9 @@ import Foundation
 
 protocol TuneTableViewCellViewModelProtocol {
     
-    func getTuneName() -> String 
+    var delegate: TuneTableViewCellViewModelDelegate? { get set }
+    
+    func getTuneName() -> String
+    
+    func selectTune()
 }

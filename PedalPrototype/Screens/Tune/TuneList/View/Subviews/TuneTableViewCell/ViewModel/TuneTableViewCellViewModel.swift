@@ -11,12 +11,20 @@ import Foundation
 class TuneTableViewCellViewModel: TuneTableViewCellViewModelProtocol {
     
     private var tune: Tune!
+    private var index: Int
     
-    init(withTune tune: Tune) {
+    weak var delegate: TuneTableViewCellViewModelDelegate?
+    
+    init(withTune tune: Tune, inIndex index: Int) {
         self.tune = tune
+        self.index = index
     }
     
     func getTuneName() -> String {
         return self.tune.name
+    }
+    
+    func selectTune() {
+         self.delegate?.didSelectSetup(atIndex: self.index)
     }
 }

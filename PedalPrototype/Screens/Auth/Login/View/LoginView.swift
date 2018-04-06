@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 
-class LoginView: UIViewController, LoginViewModelDelegate {
+class LoginView: BaseViewController {
     
-    var vieModel: LoginViewModel!
+    var viewModel: LoginViewModel!
     
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -25,8 +25,8 @@ class LoginView: UIViewController, LoginViewModelDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.vieModel = LoginViewModel()
-        self.vieModel.delegate = self
+        self.viewModel = LoginViewModel()
+        
         self.navigationController?.navigationBar.isHidden = true
         self.setNeedsStatusBarAppearanceUpdate()
     }
@@ -46,11 +46,14 @@ class LoginView: UIViewController, LoginViewModelDelegate {
             return
         }
         
-        self.vieModel.signIn(withEmail: email, andPassword: password)
-    }
-
-    func didSignIn() {
-        print(PBUserProvider.getCurrentUser()!.fullName)
+        self.viewModel.signIn(withEmail: email, andPassword: password)
         self.performSegue(withIdentifier: "login", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "login" {
+            let loadingView = segue.destination as! LoadingView
+            self.viewModel.delegate = loadingView
+        }
     }
 }

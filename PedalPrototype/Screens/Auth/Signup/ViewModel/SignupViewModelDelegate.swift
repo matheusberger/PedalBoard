@@ -12,4 +12,5 @@ protocol SignupViewModelDelegate: class {
     
     func didSignUp()
     
+    func faliedToSignup()
 }

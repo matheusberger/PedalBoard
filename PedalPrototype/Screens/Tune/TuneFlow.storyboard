@@ -1,7 +1,308 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="icz-dT-XO7">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Storyboard Reference-->
+        <scene sceneID="Gnd-iA-cVW">
+            <objects>
+                <viewControllerPlaceholder id="3Yn-LA-P1j" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPx-Nv-5zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="-430"/>
+        </scene>
+        <!--Músicas-->
+        <scene sceneID="bwg-7Q-deb">
+            <objects>
+                <viewController id="icz-dT-XO7" customClass="TuneListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0h-Im-RFu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qL-ff-cxN">
+                                <rect key="frame" x="0.0" y="150" width="320" height="418"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TuneTableViewCell" id="C0i-mA-XnL" customClass="TuneTableViewCellView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C0i-mA-XnL" id="UUd-Jv-48A">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N37-dV-ngT" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0B-Tz-qi5">
+                                                            <rect key="frame" x="52" y="7" width="171" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ne7-MA-VbT">
+                                                            <rect key="frame" x="10" y="6" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEu-Kc-ZMw" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                                            <rect key="frame" x="225" y="12" width="44" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                            <state key="normal" title="SETUPS"/>
+                                                            <connections>
+                                                                <action selector="setupTuneButton:" destination="C0i-mA-XnL" eventType="touchUpInside" id="3Dl-dv-6SG"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQY-N4-GC1">
+                                                            <rect key="frame" x="52" y="24" width="164" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="5V3-2Z-2jK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N37-dV-ngT" firstAttribute="centerY" secondItem="UUd-Jv-48A" secondAttribute="centerY" id="NqU-bv-OcB"/>
+                                                <constraint firstAttribute="trailing" secondItem="N37-dV-ngT" secondAttribute="trailing" constant="20" id="Xrn-uk-wT9"/>
+                                                <constraint firstItem="N37-dV-ngT" firstAttribute="leading" secondItem="UUd-Jv-48A" secondAttribute="leading" constant="20" id="eJq-hm-dcv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="gQY-N4-GC1" id="07W-Ms-m3r"/>
+                                            <outlet property="roundView" destination="N37-dV-ngT" id="hsd-Eg-JdG"/>
+                                            <outlet property="tuneNameLabel" destination="O0B-Tz-qi5" id="BHd-dJ-C8o"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tunelist_txt" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-f8-dh1">
+                                <rect key="frame" x="18" y="40" width="253" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOUR TUNES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-Jy-trX">
+                                <rect key="frame" x="28" y="97" width="64" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-9E-eHy" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="51" y="118" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14E-Db-6X5">
+                                <rect key="frame" x="28" y="121" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search_button"/>
+                                <connections>
+                                    <action selector="beginSearch:" destination="icz-dT-XO7" eventType="touchUpInside" id="sGa-nh-Z2c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2i-QL-ixu">
+                                <rect key="frame" x="20" y="40" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add_button"/>
+                                <connections>
+                                    <action selector="createTuneButton:" destination="icz-dT-XO7" eventType="touchUpInside" id="xe1-Ue-d7p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-JS-Q5a">
+                                <rect key="frame" x="235" y="34" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PROFILE"/>
+                                <connections>
+                                    <segue destination="3Yn-LA-P1j" kind="show" id="Iq6-Y9-NK8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7qL-ff-cxN" firstAttribute="top" secondItem="T5U-0t-obF" secondAttribute="top" constant="130" id="0b3-hl-lFn"/>
+                            <constraint firstItem="7qL-ff-cxN" firstAttribute="leading" secondItem="T5U-0t-obF" secondAttribute="leading" id="GdX-5G-R51"/>
+                            <constraint firstItem="7qL-ff-cxN" firstAttribute="trailing" secondItem="T5U-0t-obF" secondAttribute="trailing" id="jRv-Qo-9XX"/>
+                            <constraint firstItem="T5U-0t-obF" firstAttribute="bottom" secondItem="7qL-ff-cxN" secondAttribute="bottom" id="vQg-5S-FIA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T5U-0t-obF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Músicas" largeTitleDisplayMode="always" id="aj5-vj-Ba2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="5NI-Te-51i"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="searchTxtField" destination="cA2-9E-eHy" id="Kxx-jp-Gl5"/>
+                        <outlet property="tableView" destination="7qL-ff-cxN" id="loY-vC-fJv"/>
+                        <segue destination="YJG-n5-dd4" kind="show" identifier="tuneSetup" id="5BV-M2-5tp"/>
+                        <segue destination="i0C-uD-940" kind="show" identifier="createTune" id="MNa-Vi-srX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a67-dO-O2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.25" y="116.19718309859155"/>
+        </scene>
+        <!--Tune Setup View-->
+        <scene sceneID="g3s-Jk-djh">
+            <objects>
+                <viewController id="YJG-n5-dd4" customClass="TuneSetupView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uEh-2n-byB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVs-og-jz1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="448" id="SBa-I8-EDX"/>
+                                    <constraint firstAttribute="height" constant="448" id="U5i-BX-MSv"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="setupCell" rowHeight="60" id="c29-Mx-Znx" customClass="KnobSetupTVCView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c29-Mx-Znx" id="cs6-1p-5Eg">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-3w-wlH">
+                                                    <rect key="frame" x="24" y="20" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-qW-jIP">
+                                                    <rect key="frame" x="83" y="-5" width="163" height="70"/>
+                                                    <connections>
+                                                        <action selector="didChangeValue:" destination="c29-Mx-Znx" eventType="valueChanged" id="Hcl-6I-c4V"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HW5-PJ-iwb">
+                                                    <rect key="frame" x="252" y="20" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZVU-qW-jIP" firstAttribute="centerY" secondItem="cs6-1p-5Eg" secondAttribute="centerY" id="00U-tA-cjo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HW5-PJ-iwb" secondAttribute="trailing" constant="11" id="42N-vC-Tcb"/>
+                                                <constraint firstItem="K3s-3w-wlH" firstAttribute="leading" secondItem="cs6-1p-5Eg" secondAttribute="leadingMargin" constant="9" id="4Ls-LL-9wg"/>
+                                                <constraint firstItem="ZVU-qW-jIP" firstAttribute="top" secondItem="cs6-1p-5Eg" secondAttribute="topMargin" constant="-16" id="LUO-i4-RSX"/>
+                                                <constraint firstItem="HW5-PJ-iwb" firstAttribute="leading" secondItem="ZVU-qW-jIP" secondAttribute="trailing" constant="8" symbolic="YES" id="Tkp-xX-CnG"/>
+                                                <constraint firstItem="ZVU-qW-jIP" firstAttribute="leading" secondItem="K3s-3w-wlH" secondAttribute="trailing" constant="19" id="dFT-ma-PTu"/>
+                                                <constraint firstItem="K3s-3w-wlH" firstAttribute="centerY" secondItem="cs6-1p-5Eg" secondAttribute="centerY" id="p3P-cx-dyK"/>
+                                                <constraint firstItem="K3s-3w-wlH" firstAttribute="baseline" secondItem="HW5-PJ-iwb" secondAttribute="baseline" id="p7k-qx-Y0Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="knobName" destination="K3s-3w-wlH" id="5fB-Fp-SIy"/>
+                                            <outlet property="knobSlider" destination="ZVU-qW-jIP" id="NeD-M7-HI3"/>
+                                            <outlet property="knobValue" destination="HW5-PJ-iwb" id="siB-73-pax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-dG-dI9">
+                                <rect key="frame" x="157" y="478" width="43" height="30"/>
+                                <state key="normal" title="Salvar"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="YJG-n5-dd4" eventType="touchUpInside" id="5f1-99-Cb9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vVs-og-jz1" firstAttribute="centerX" secondItem="uEh-2n-byB" secondAttribute="centerX" id="4wv-2R-Ejo"/>
+                            <constraint firstItem="vVs-og-jz1" firstAttribute="leading" secondItem="dgC-sc-DQG" secondAttribute="leading" id="Sru-sj-jY5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sjn-dG-dI9" secondAttribute="trailing" constant="20" symbolic="YES" id="YjY-A5-hnp"/>
+                            <constraint firstItem="Sjn-dG-dI9" firstAttribute="leading" secondItem="dgC-sc-DQG" secondAttribute="leading" constant="157" id="f2s-td-gVw"/>
+                            <constraint firstItem="vVs-og-jz1" firstAttribute="top" secondItem="dgC-sc-DQG" secondAttribute="top" id="iPc-ij-MDh"/>
+                            <constraint firstItem="Sjn-dG-dI9" firstAttribute="top" secondItem="vVs-og-jz1" secondAttribute="bottom" constant="10" id="pvL-Vj-Qo4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dgC-sc-DQG"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vVs-og-jz1" id="e16-aw-hCR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4e-yp-6kM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="116"/>
+        </scene>
+        <!--Create Tune View-->
+        <scene sceneID="CIQ-QK-UOk">
+            <objects>
+                <viewController id="i0C-uD-940" customClass="CreateTuneView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9PO-af-vGy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNH-WE-ktw">
+                                <rect key="frame" x="104" y="570" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="createTuneButton:" destination="i0C-uD-940" eventType="touchUpInside" id="dPp-Fv-RWh"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ApF-bS-ign">
+                                <rect key="frame" x="16" y="260" width="343" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome da música" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-Nu-BmM">
+                                <rect key="frame" x="24" y="133" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pedais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-1j-0b9">
+                                <rect key="frame" x="24" y="231" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAL-E5-B62">
+                                <rect key="frame" x="24" y="162" width="319" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Sz9-gP-wd5"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ApF-bS-ign" id="I8J-1O-lBK"/>
+                        <outlet property="tuneNameTxtField" destination="bAL-E5-B62" id="ycY-9Z-Nh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcL-N6-XhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="898"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add_button" width="21" height="19"/>
+        <image name="search_button" width="15" height="15"/>
+        <image name="tunelist_txt" width="157" height="89"/>
+    </resources>
 </document>

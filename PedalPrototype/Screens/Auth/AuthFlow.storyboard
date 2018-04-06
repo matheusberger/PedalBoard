@@ -54,21 +54,21 @@
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7G-dT-eom">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="matheuscberger@gmail.com" borderStyle="roundedRect" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y7G-dT-eom">
                                         <rect key="frame" x="50" y="34" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vN8-L6-pAl">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rosequartz" borderStyle="roundedRect" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vN8-L6-pAl">
                                         <rect key="frame" x="50" y="90" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-Ad-NCm" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-Ad-NCm" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="140" width="220" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -100,6 +100,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_txt" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-TD-EQM">
+                                <rect key="frame" x="50" y="40" width="252" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -118,7 +122,7 @@
                     <connections>
                         <outlet property="emailTxtField" destination="Y7G-dT-eom" id="vjI-ka-yfx"/>
                         <outlet property="passwordTxtField" destination="vN8-L6-pAl" id="xCB-EV-5iB"/>
-                        <segue destination="PWm-c8-VcC" kind="presentation" identifier="login" id="crG-Se-fjP"/>
+                        <segue destination="4T1-eu-iKC" kind="show" identifier="login" id="1cM-7O-bid"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nx-Ix-BMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +185,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czE-36-gNS" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czE-36-gNS" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="196" width="220" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -204,6 +208,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signup_txt" translatesAutoresizingMaskIntoConstraints="NO" id="PJp-B2-mu6">
+                                <rect key="frame" x="40" y="50" width="252" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -222,27 +230,64 @@
                         <outlet property="emailTxtField" destination="K5a-3I-Skb" id="8rp-md-4pr"/>
                         <outlet property="nameTxtField" destination="GcY-7F-NBt" id="1eS-AR-07w"/>
                         <outlet property="passwordTxtField" destination="ZK9-z2-Ie3" id="KiP-zR-5vB"/>
-                        <segue destination="PWm-c8-VcC" kind="presentation" identifier="signup" id="DQe-vP-yXn"/>
+                        <segue destination="4T1-eu-iKC" kind="show" identifier="signup" id="0cM-5X-qex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHs-d8-v4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-309" y="767"/>
         </scene>
-        <!--Main-->
+        <!--RootSetupFlow-->
         <scene sceneID="jKZ-ET-9VG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RootTabBarController" storyboardName="Main" id="PWm-c8-VcC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="RootTabBarController" storyboardName="RootSetupFlow" id="PWm-c8-VcC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQI-oi-S0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="17"/>
+            <point key="canvasLocation" x="1515" y="377"/>
+        </scene>
+        <!--Loading View-->
+        <scene sceneID="fhT-MB-s4N">
+            <objects>
+                <viewController id="4T1-eu-iKC" customClass="LoadingView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r3y-R4-nyb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_picture" translatesAutoresizingMaskIntoConstraints="NO" id="lKW-zG-l49" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading_txt" translatesAutoresizingMaskIntoConstraints="NO" id="WLW-dp-Hcy">
+                                <rect key="frame" x="50" y="234" width="252" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t0I-F5-VqT" firstAttribute="trailing" secondItem="lKW-zG-l49" secondAttribute="trailing" id="4d6-4I-eXP"/>
+                            <constraint firstItem="lKW-zG-l49" firstAttribute="leading" secondItem="t0I-F5-VqT" secondAttribute="leading" id="RSK-LB-5CH"/>
+                            <constraint firstItem="t0I-F5-VqT" firstAttribute="bottom" secondItem="lKW-zG-l49" secondAttribute="bottom" id="gIn-Mq-mZN"/>
+                            <constraint firstItem="lKW-zG-l49" firstAttribute="top" secondItem="r3y-R4-nyb" secondAttribute="top" id="xG9-dg-2L4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t0I-F5-VqT"/>
+                    </view>
+                    <connections>
+                        <segue destination="PWm-c8-VcC" kind="presentation" identifier="success" modalTransitionStyle="coverVertical" id="a5C-da-8e4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlB-vV-AAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808" y="378"/>
         </scene>
     </scenes>
     <resources>
+        <image name="loading_picture" width="320" height="568"/>
+        <image name="loading_txt" width="216" height="90"/>
         <image name="login_picture" width="320" height="261"/>
+        <image name="login_txt" width="221" height="139"/>
         <image name="signup_picture" width="320" height="300"/>
+        <image name="signup_txt" width="218" height="190"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="crG-Se-fjP"/>
+        <segue reference="0cM-5X-qex"/>
     </inferredMetricsTieBreakers>
 </document>

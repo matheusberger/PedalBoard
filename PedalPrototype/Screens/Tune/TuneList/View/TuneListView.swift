@@ -8,16 +8,17 @@
 
 import UIKit
 
-class TuneListView: UIViewController, TuneListViewModelDelegate {
+class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableViewCellViewModelDelegate {
 
     fileprivate var viewModel: TuneListViewModel! //initialized by RootTabController
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTxtField: PurpleTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -37,7 +38,11 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
     func didUpdateTuneList() {
         self.tableView.reloadData()
     }
-
+    
+    func didSelectSetup(atIndex index: Int) {
+        self.viewModel.selectedTune = index
+        self.performSegue(withIdentifier: "tuneSetup", sender: nil)
+    }
     
     @IBAction func createTuneButton(_ sender: Any){
         self.performSegue(withIdentifier: "createTune", sender: nil)
@@ -49,35 +54,29 @@ class TuneListView: UIViewController, TuneListViewModelDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let index = self.tableView.indexPathForSelectedRow
-        if index != nil {
-            self.tableView.deselectRow(at: index!, animated: true)
-        }
+        let index = self.viewModel.selectedTune
 
         if segue.identifier == "createTune" {
-            //get pedal list and initialize viewModel with them
             let viewModel = self.viewModel.getCreateTuneViewModel()
             let view = segue.destination as! CreateTuneView
             view.viewModel = viewModel
         }
         else {
-            
             let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
             let view = segue.destination as! TuneSetupView
             view.viewModel = viewModel
         }
     }
  
+    @IBAction func beginSearch(_ sender: Any) {
+        self.searchTxtField.becomeFirstResponder()
+    }
 }
 
 extension TuneListView: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "tuneSetup", sender: nil)
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 52
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,7 +87,12 @@ extension TuneListView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TuneTableViewCell", for: indexPath) as! TuneTableViewCellView
         
         cell.viewModel = self.viewModel.getTuneCellViewModel(forIndex: indexPath.item)
+        cell.viewModel?.delegate = self
         
         return cell
     }
+}
+
+extension TuneListView {
+    
 }

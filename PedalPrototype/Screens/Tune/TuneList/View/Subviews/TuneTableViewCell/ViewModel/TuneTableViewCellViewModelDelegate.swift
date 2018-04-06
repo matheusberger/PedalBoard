@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol TuneTableViewCellViewModelDelegate: class {
+    
+    func didSelectSetup(atIndex: Int)
+}

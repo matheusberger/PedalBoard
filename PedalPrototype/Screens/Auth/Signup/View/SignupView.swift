@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupView: UIViewController, SignupViewModelDelegate {
+class SignupView: BaseViewController {
     
     var viewModel: SignupViewModelProtocol!
     
@@ -25,7 +25,6 @@ class SignupView: UIViewController, SignupViewModelDelegate {
 
         // Do any additional setup after loading the view.
         self.viewModel = SignupViewModel()
-        self.viewModel.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,13 +47,18 @@ class SignupView: UIViewController, SignupViewModelDelegate {
         }
         
         self.viewModel.signUp(withEmail: email, password: password, andName: name)
+        self.performSegue(withIdentifier: "signup", sender: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func didSignUp() {
-        self.performSegue(withIdentifier: "signup", sender: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signup" {
+            let loadingView = segue.destination as! LoadingView
+            self.viewModel.delegate = loadingView
+        }
     }
+    
 }

@@ -13,6 +13,7 @@ class TuneListViewModel: TuneListViewModelProtocol {
     weak var delegate: TuneListViewModelDelegate?
     weak var dataSource: PedalSourceProtocol?
     
+    var selectedTune: Int?
     fileprivate var tunes: [Tune] = [] {
         didSet {
             self.delegate?.didUpdateTuneList()
@@ -35,7 +36,7 @@ class TuneListViewModel: TuneListViewModelProtocol {
     }
     
     func getTuneCellViewModel(forIndex index: Int) -> TuneTableViewCellViewModelProtocol {
-        return TuneTableViewCellViewModel(withTune: self.tunes[index])
+        return TuneTableViewCellViewModel(withTune: self.tunes[index], inIndex: index)
     }
     
     func getCreateTuneViewModel() -> CreateTuneViewModelProtocol {
@@ -45,8 +46,8 @@ class TuneListViewModel: TuneListViewModelProtocol {
         return viewModel
     }
     
-    func getTuneSetupViewModel(forTuneInIndex index: IndexPath) -> TuneSetupViewModelProtocol {
-        return TuneSetupViewModel(withTune: self.tunes[index.row])
+    func getTuneSetupViewModel(forTuneInIndex index: Int) -> TuneSetupViewModelProtocol {
+        return TuneSetupViewModel(withTune: self.tunes[index])
     }
     
 }
