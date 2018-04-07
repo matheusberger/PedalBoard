@@ -22,13 +22,14 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.searchTxtField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        
         self.viewModel.delegate = self
         self.viewModel.getTunes()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        self.viewModel.filter = textField.text
     }
     
     func setViewModel(viewModel: TuneListViewModel) {
@@ -49,11 +50,8 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
         let index = self.viewModel.selectedTune
 
         if segue.identifier == "createTune" {
@@ -91,8 +89,4 @@ extension TuneListView: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-}
-
-extension TuneListView {
-    
 }
