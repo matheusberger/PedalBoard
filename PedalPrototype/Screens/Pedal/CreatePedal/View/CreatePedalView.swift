@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePedalView: UIViewController {
+class CreatePedalView: BaseViewController {
     
     fileprivate var viewModel: CreatePedalViewModel!
     

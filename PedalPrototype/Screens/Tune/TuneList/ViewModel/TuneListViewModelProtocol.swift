@@ -11,7 +11,6 @@ import Foundation
 protocol TuneListViewModelProtocol {
     
     var delegate: TuneListViewModelDelegate? { get set }
-    var dataSource: PedalSourceProtocol? { get set }
     
     func getTunes()
     

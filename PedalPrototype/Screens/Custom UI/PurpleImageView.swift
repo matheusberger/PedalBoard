@@ -17,12 +17,12 @@ class PurpleImageView: UIImageView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        UIGraphicsBeginImageContextWithOptions(self.image!.size, false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0.0)
         
-        let purple = UIColor(displayP3Red: 77/255, green: 5/255, blue: 253/255, alpha: 1)
+        let purple = UIColor.hanPurple
         purple.setFill()
         
-        let bounds = CGRect(x: 0, y: 0, width: self.image!.size.width, height: self.image!.size.height)
+        let bounds = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         UIRectFill(bounds)
         
         self.image?.draw(in: bounds, blendMode: .hardLight, alpha: 1)

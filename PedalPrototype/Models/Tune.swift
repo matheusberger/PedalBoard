@@ -13,14 +13,16 @@ class Tune {
     var key: String?
     
     var name: String
+    var artist: String
     var tuneSetup: TuneSetup?
     
     
-    init(withKey key: String? = nil, withName name: String, andTuneSetup config: TuneSetup? = nil) {
+    init(withKey key: String? = nil, withName name: String, withArtist artist: String, andTuneSetup config: TuneSetup? = nil) {
         
         self.key = key
         
         self.name = name
+        self.artist = artist
         self.tuneSetup = config
     }
     
@@ -28,6 +30,7 @@ class Tune {
         var dictionary: [String : Any] = [String : Any]()
         
         dictionary["name"] = self.name
+        dictionary["artist"] = self.artist
         
         return dictionary
     }

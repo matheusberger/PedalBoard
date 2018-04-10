@@ -14,5 +14,7 @@ protocol TuneTableViewCellViewModelProtocol {
     
     func getTuneName() -> String
     
+    func getArtistName() -> String
+    
     func selectTune()
 }

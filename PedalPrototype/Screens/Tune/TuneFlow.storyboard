@@ -11,13 +11,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Storyboard Reference-->
+        <!--ProfileFlow-->
         <scene sceneID="Gnd-iA-cVW">
             <objects>
-                <viewControllerPlaceholder id="3Yn-LA-P1j" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ProfileFlow" id="3Yn-LA-P1j" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPx-Nv-5zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="-430"/>
+            <point key="canvasLocation" x="552" y="-423"/>
         </scene>
         <!--Músicas-->
         <scene sceneID="bwg-7Q-deb">
@@ -38,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N37-dV-ngT" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N37-dV-ngT" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="0.0" width="280" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0B-Tz-qi5">
@@ -55,7 +55,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEu-Kc-ZMw" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
                                                             <rect key="frame" x="225" y="12" width="44" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
                                                             <state key="normal" title="SETUPS"/>
                                                             <connections>
                                                                 <action selector="setupTuneButton:" destination="C0i-mA-XnL" eventType="touchUpInside" id="3Dl-dv-6SG"/>
@@ -93,14 +93,14 @@
                                 <rect key="frame" x="18" y="40" width="253" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOUR TUNES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-Jy-trX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOUR TUNES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-Jy-trX">
                                 <rect key="frame" x="28" y="97" width="64" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-9E-eHy" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-9E-eHy" customClass="PurpleThinTextField" customModule="PedalPrototype" customModuleProvider="target">
                                 <rect key="frame" x="51" y="118" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,10 +123,11 @@
                                     <action selector="createTuneButton:" destination="icz-dT-XO7" eventType="touchUpInside" id="xe1-Ue-d7p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-JS-Q5a">
-                                <rect key="frame" x="235" y="34" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PROFILE"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-JS-Q5a" customClass="CircleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="260" y="40" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="PROFILE" image="signup_picture"/>
                                 <connections>
                                     <segue destination="3Yn-LA-P1j" kind="show" id="Iq6-Y9-NK8"/>
                                 </connections>
@@ -149,12 +150,12 @@
                         <outlet property="searchTxtField" destination="cA2-9E-eHy" id="Kxx-jp-Gl5"/>
                         <outlet property="tableView" destination="7qL-ff-cxN" id="loY-vC-fJv"/>
                         <segue destination="YJG-n5-dd4" kind="show" identifier="tuneSetup" id="5BV-M2-5tp"/>
-                        <segue destination="i0C-uD-940" kind="show" identifier="createTune" id="MNa-Vi-srX"/>
+                        <segue destination="J26-ba-xc7" kind="show" identifier="createTune" id="TaP-aD-BFz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a67-dO-O2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221.25" y="116.19718309859155"/>
+            <point key="canvasLocation" x="-99" y="115"/>
         </scene>
         <!--Tune Setup View-->
         <scene sceneID="g3s-Jk-djh">
@@ -242,67 +243,127 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4e-yp-6kM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="116"/>
+            <point key="canvasLocation" x="1498" y="115"/>
         </scene>
         <!--Create Tune View-->
-        <scene sceneID="CIQ-QK-UOk">
+        <scene sceneID="Hys-yO-HDe">
             <objects>
-                <viewController id="i0C-uD-940" customClass="CreateTuneView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9PO-af-vGy">
+                <viewController id="J26-ba-xc7" customClass="CreateTuneView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k31-er-zJK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNH-WE-ktw">
-                                <rect key="frame" x="104" y="570" width="182" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK"/>
-                                <connections>
-                                    <action selector="createTuneButton:" destination="i0C-uD-940" eventType="touchUpInside" id="dPp-Fv-RWh"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ApF-bS-ign">
-                                <rect key="frame" x="16" y="260" width="343" height="302"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_picture" translatesAutoresizingMaskIntoConstraints="NO" id="y9z-a6-i3N" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="g21-3q-W2u"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iT-Gy-dL3" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="197" width="320" height="371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPK-X9-pDc">
+                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="cancel_button"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="J26-ba-xc7" eventType="touchUpInside" id="JtL-SS-AWS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEW TUNE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pti-gt-4jf">
+                                        <rect key="frame" x="50" y="16" width="55" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT'S THE TUNE'S NAME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-aH-HiV">
+                                        <rect key="frame" x="52" y="49" width="82" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WHAT'S THE TUNE'S NAME?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-15-CTJ" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="65" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT'S THE ARTIST'S  NAME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDw-mW-4NO">
+                                        <rect key="frame" x="52" y="107" width="87" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WHAT'S THE ARTIST'S  NAME?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-H9-Isk" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="123" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD TO A SETLIST?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sW-G8-KHn">
+                                        <rect key="frame" x="52" y="165" width="55" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WOULD YOU LIKE TO SAVE YOUR SETUP TO THIS TUNE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ij4-5J-6uG">
+                                        <rect key="frame" x="52" y="217" width="162" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bo-JI-TZ9" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="291" width="220" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="SAVE"/>
+                                        <connections>
+                                            <action selector="createTuneButton:" destination="J26-ba-xc7" eventType="touchUpInside" id="4tb-Hz-rue"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr7-6c-EzZ" customClass="PurpleLetterButton" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="233" width="220" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <state key="normal" title="SETUP SETTINGS"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome da música" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-Nu-BmM">
-                                <rect key="frame" x="24" y="133" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pedais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-1j-0b9">
-                                <rect key="frame" x="24" y="231" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAL-E5-B62">
-                                <rect key="frame" x="24" y="162" width="319" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Sz9-gP-wd5"/>
+                        <constraints>
+                            <constraint firstItem="Iau-Vd-egP" firstAttribute="trailing" secondItem="y9z-a6-i3N" secondAttribute="trailing" id="BwZ-JE-xtO"/>
+                            <constraint firstItem="y9z-a6-i3N" firstAttribute="top" secondItem="k31-er-zJK" secondAttribute="top" id="HZq-1R-yAZ"/>
+                            <constraint firstItem="2iT-Gy-dL3" firstAttribute="top" secondItem="Iau-Vd-egP" secondAttribute="top" constant="177" id="Vdi-kf-c5I"/>
+                            <constraint firstItem="Iau-Vd-egP" firstAttribute="trailing" secondItem="2iT-Gy-dL3" secondAttribute="trailing" id="W6S-24-jj7"/>
+                            <constraint firstItem="Iau-Vd-egP" firstAttribute="bottom" secondItem="2iT-Gy-dL3" secondAttribute="bottom" id="su2-sK-KS3"/>
+                            <constraint firstItem="2iT-Gy-dL3" firstAttribute="leading" secondItem="Iau-Vd-egP" secondAttribute="leading" id="uVQ-yX-L9W"/>
+                            <constraint firstItem="y9z-a6-i3N" firstAttribute="leading" secondItem="Iau-Vd-egP" secondAttribute="leading" id="wlE-kF-uvL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Iau-Vd-egP"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="ApF-bS-ign" id="I8J-1O-lBK"/>
-                        <outlet property="tuneNameTxtField" destination="bAL-E5-B62" id="ycY-9Z-Nh1"/>
+                        <outlet property="artistNameTxtField" destination="g1L-H9-Isk" id="gkY-iQ-5lo"/>
+                        <outlet property="tuneNameTxtField" destination="0bZ-15-CTJ" id="li0-Lv-fAO"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jcL-N6-XhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-sA-NuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="898"/>
+            <point key="canvasLocation" x="694" y="116"/>
         </scene>
     </scenes>
     <resources>
         <image name="add_button" width="21" height="19"/>
+        <image name="cancel_button" width="10" height="9"/>
         <image name="search_button" width="15" height="15"/>
+        <image name="signup_picture" width="320" height="300"/>
         <image name="tunelist_txt" width="157" height="89"/>
     </resources>
 </document>

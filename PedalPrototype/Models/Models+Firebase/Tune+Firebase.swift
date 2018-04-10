@@ -27,6 +27,10 @@ extension Tune {
             return nil
         }
         
-        return Tune(withKey: key, withName: name)
+        guard let artist: String = data["artist"] as? String else {
+            return nil
+        }
+        
+        return Tune(withKey: key, withName: name, withArtist: artist)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PedalListViewModel: PedalListViewModelProtocol, PedalSourceProtocol {
+class PedalListViewModel: PedalListViewModelProtocol {
     
     weak var delegate: PedalListViewModelDelegate?
     
@@ -22,10 +22,6 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalSourceProtocol {
         PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserUID()!) { (pedal) in
             self.pedals.append(pedal)
         }
-    }
-    
-    func getPedalList() -> [Pedal] {
-        return self.pedals
     }
     
     func getPedalCellViewModel(forIndex index: Int) -> PedalTableViewCellViewModelProtocol {

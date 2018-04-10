@@ -24,6 +24,10 @@ class TuneTableViewCellViewModel: TuneTableViewCellViewModelProtocol {
         return self.tune.name
     }
     
+    func getArtistName() -> String {
+        return tune.artist
+    }
+    
     func selectTune() {
          self.delegate?.didSelectSetup(atIndex: self.index)
     }

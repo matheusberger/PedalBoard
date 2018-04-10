@@ -10,7 +10,7 @@ import UIKit
 
 class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableViewCellViewModelDelegate {
 
-    fileprivate var viewModel: TuneListViewModel! //initialized by RootTabController
+    fileprivate var viewModel: TuneListViewModel!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTxtField: PurpleTextField!
@@ -24,8 +24,17 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
         
         self.searchTxtField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
         
+        self.viewModel = TuneListViewModel()
+        
         self.viewModel.delegate = self
         self.viewModel.getTunes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let rootTabBarController = self.tabBarController as! RootTabController
+        rootTabBarController.toogleTabBar(on: true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -60,9 +69,11 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
             view.viewModel = viewModel
         }
         else {
-            let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
-            let view = segue.destination as! TuneSetupView
-            view.viewModel = viewModel
+            if segue.identifier == "tuneSetup" {
+                let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
+                let view = segue.destination as! TuneSetupView
+                view.viewModel = viewModel
+            }
         }
     }
  

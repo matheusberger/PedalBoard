@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SFZ-Yl-HyD">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View-->
+        <scene sceneID="hnk-ot-SO2">
+            <objects>
+                <viewController id="SFZ-Yl-HyD" customClass="ProfileView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DRP-Xs-XaF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-R7-3V6" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="USC-VP-6Te"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-Pw-LpC" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAV-3M-6LL" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="49" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_icon" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-ek-Vrx">
+                                                <rect key="frame" x="12" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTR-Ek-WMb">
+                                                <rect key="frame" x="48" y="7" width="155" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-mh-1My">
+                                                <rect key="frame" x="48" y="25" width="168" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWs-7o-sth" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                                <rect key="frame" x="224" y="12" width="44" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
+                                                <state key="normal" title="EDIT"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIF-70-kWr" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="105" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage your pedals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-6K-QrS">
+                                                <rect key="frame" x="12" y="6" width="115" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x pedals registered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mb-W3-vCa">
+                                                <rect key="frame" x="12" y="24" width="88" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovX-EV-0oH">
+                                                <rect key="frame" x="244" y="10" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="settings_button"/>
+                                                <connections>
+                                                    <segue destination="Pef-Qw-rqL" kind="show" identifier="pedalListSegue" id="Vdh-Iy-Gqx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-hn-TBW" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="206" width="220" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <state key="normal" title="LOGOUT"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cd-em-CX6">
+                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="cancel_button"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="SFZ-Yl-HyD" eventType="touchUpInside" id="Ema-nf-Urh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-gL-8TJ">
+                                        <rect key="frame" x="50" y="16" width="39" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_txt" translatesAutoresizingMaskIntoConstraints="NO" id="zRv-Vt-n7x">
+                                <rect key="frame" x="50" y="76" width="252" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xlg-RV-9dN" firstAttribute="trailing" secondItem="bi5-R7-3V6" secondAttribute="trailing" id="2dZ-EX-mpp"/>
+                            <constraint firstItem="hh6-Pw-LpC" firstAttribute="top" secondItem="xlg-RV-9dN" secondAttribute="top" constant="262" id="9MT-EV-aUB"/>
+                            <constraint firstItem="bi5-R7-3V6" firstAttribute="top" secondItem="DRP-Xs-XaF" secondAttribute="top" id="A8C-4V-4gP"/>
+                            <constraint firstItem="hh6-Pw-LpC" firstAttribute="leading" secondItem="xlg-RV-9dN" secondAttribute="leading" id="cxg-m8-aMc"/>
+                            <constraint firstItem="xlg-RV-9dN" firstAttribute="trailing" secondItem="hh6-Pw-LpC" secondAttribute="trailing" id="f29-A3-iqN"/>
+                            <constraint firstItem="xlg-RV-9dN" firstAttribute="bottom" secondItem="hh6-Pw-LpC" secondAttribute="bottom" id="jsD-Ae-wKN"/>
+                            <constraint firstItem="bi5-R7-3V6" firstAttribute="leading" secondItem="xlg-RV-9dN" secondAttribute="leading" id="snB-vP-ASO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xlg-RV-9dN"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="Czf-mh-1My" id="kxV-pP-S4q"/>
+                        <outlet property="logoutButtonOutlet" destination="b3w-hn-TBW" id="2ps-Vh-N89"/>
+                        <outlet property="numRegisteredPedals" destination="6mb-W3-vCa" id="5W1-NT-Agf"/>
+                        <outlet property="userNameLabel" destination="RTR-Ek-WMb" id="gJJ-xK-Q1T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vU1-lG-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.375" y="119.36619718309859"/>
+        </scene>
+        <!--PedalFlow-->
+        <scene sceneID="6t9-dz-s3Q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PedalFlow" id="Pef-Qw-rqL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gME-6y-Zhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cancel_button" width="10" height="9"/>
+        <image name="profile_icon" width="16" height="20"/>
+        <image name="profile_txt" width="216" height="89"/>
+        <image name="settings_button" width="20" height="20"/>
+    </resources>
+</document>

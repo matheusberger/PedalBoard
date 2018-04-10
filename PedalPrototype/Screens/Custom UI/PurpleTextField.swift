@@ -13,7 +13,6 @@ class PurpleTextField: UITextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.frame.size.height = 20
         self.layer.backgroundColor = UIColor.concrete.cgColor
         self.textColor = UIColor.hanPurple
         

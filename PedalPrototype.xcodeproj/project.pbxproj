@@ -49,7 +49,6 @@
 		0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75A2075756A00621E38 /* PurpleButton.swift */; };
 		0A6FB75D2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */; };
 		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
-		0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
 		0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */; };
 		0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */; };
@@ -84,10 +83,19 @@
 		0AA7928E20731D2100177C04 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928D20731D2100177C04 /* SignupViewModel.swift */; };
 		0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7928F20731D3000177C04 /* SignupViewModelDelegate.swift */; };
 		0AA7929220731E0600177C04 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7929120731E0600177C04 /* SignupView.swift */; };
+		0ABB124D207D319B00790FC0 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB124C207D319B00790FC0 /* RoundShadowView.swift */; };
+		0ABB124F207D3EEC00790FC0 /* UIColor+Watermelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB124E207D3EEC00790FC0 /* UIColor+Watermelon.swift */; };
+		0ABB1251207D42A300790FC0 /* ProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB1250207D42A300790FC0 /* ProfileViewModelProtocol.swift */; };
+		0ABB1253207D433800790FC0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB1252207D433800790FC0 /* ProfileViewModel.swift */; };
+		0ABB1255207D587F00790FC0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB1254207D587F00790FC0 /* CircleButton.swift */; };
 		0ABFB03F2075189300B221D3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFB03E2075189300B221D3 /* BaseViewController.swift */; };
 		0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */; };
 		0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */; };
 		0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */; };
+		0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */; };
+		0AEFAA212079431200C832A9 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */; };
+		0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */; };
+		0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2620798CAE00C832A9 /* ProfileView.swift */; };
 		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
@@ -153,7 +161,6 @@
 		0A6FB75A2075756A00621E38 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneTableViewCellViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
-		0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalSourceProtocol.swift; sourceTree = "<group>"; };
 		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
 		0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCView.swift; sourceTree = "<group>"; };
 		0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -195,10 +202,19 @@
 		0AA7928D20731D2100177C04 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		0AA7928F20731D3000177C04 /* SignupViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelDelegate.swift; sourceTree = "<group>"; };
 		0AA7929120731E0600177C04 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		0ABB124C207D319B00790FC0 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
+		0ABB124E207D3EEC00790FC0 /* UIColor+Watermelon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Watermelon.swift"; sourceTree = "<group>"; };
+		0ABB1250207D42A300790FC0 /* ProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelProtocol.swift; sourceTree = "<group>"; };
+		0ABB1252207D433800790FC0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0ABB1254207D587F00790FC0 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		0ABFB03E2075189300B221D3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootSetupFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuneFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PedalFlow.storyboard; sourceTree = "<group>"; };
+		0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleThinTextField.swift; sourceTree = "<group>"; };
+		0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileFlow.storyboard; sourceTree = "<group>"; };
+		0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleLetterButton.swift; sourceTree = "<group>"; };
+		0AEFAA2620798CAE00C832A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
 		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,9 +373,10 @@
 				0A90CEF520478615002FA202 /* Main.storyboard */,
 				0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */,
 				0AA792772072E79800177C04 /* Custom UI */,
+				0AA7928720731C9D00177C04 /* Auth */,
 				0A0F06C3206C1E1A005DF6E5 /* RootTabController */,
 				0AA7929420732A4200177C04 /* Tune */,
-				0AA7928720731C9D00177C04 /* Auth */,
+				0AEFAA1F20791EF900C832A9 /* Profile */,
 				0AA7929320732A2B00177C04 /* Pedal */,
 			);
 			path = Screens;
@@ -389,7 +406,6 @@
 				0A6129822054ADEB005A3099 /* PedalListViewModel.swift */,
 				0A6129782054ABA8005A3099 /* PedalListViewModelProtocol.swift */,
 				0A61297A2054ABD1005A3099 /* PedalListViewModelDelegate.swift */,
-				0A7490932066BAB4002AF1E8 /* PedalSourceProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -656,10 +672,14 @@
 				0ABFB03E2075189300B221D3 /* BaseViewController.swift */,
 				0AA792852073131400177C04 /* StatusBarNavigationController.swift */,
 				0AA7927F20730B4700177C04 /* RoundView.swift */,
+				0ABB124C207D319B00790FC0 /* RoundShadowView.swift */,
 				0AA792782072E7C700177C04 /* PurpleImageView.swift */,
 				0A1D37AA2078235A003CE3F3 /* PurpleTextField.swift */,
+				0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */,
+				0ABB1254207D587F00790FC0 /* CircleButton.swift */,
 				0A6FB75A2075756A00621E38 /* PurpleButton.swift */,
 				0AA7927D2073094D00177C04 /* PurpleShadowButton.swift */,
+				0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */,
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 			);
@@ -669,6 +689,7 @@
 		0AA7928420730DCC00177C04 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
+				0ABB124E207D3EEC00790FC0 /* UIColor+Watermelon.swift */,
 				0A1D37AC20782435003CE3F3 /* UIColor+Bluechalk.swift */,
 				0A1D37AE207824D5003CE3F3 /* UIColor+Concrete.swift */,
 				0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */,
@@ -734,6 +755,65 @@
 				0A857446206B334E00F1FDEC /* TuneSetup */,
 			);
 			path = Tune;
+			sourceTree = "<group>";
+		};
+		0AEFAA1F20791EF900C832A9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */,
+				0AEFAA2820798D2000C832A9 /* ProfileMain */,
+				0AEFAA2920798D2B00C832A9 /* EditProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0AEFAA2420798C8A00C832A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0ABB1252207D433800790FC0 /* ProfileViewModel.swift */,
+				0ABB1250207D42A300790FC0 /* ProfileViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AEFAA2520798C9400C832A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AEFAA2620798CAE00C832A9 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AEFAA2820798D2000C832A9 /* ProfileMain */ = {
+			isa = PBXGroup;
+			children = (
+				0AEFAA2520798C9400C832A9 /* View */,
+				0AEFAA2420798C8A00C832A9 /* ViewModel */,
+			);
+			path = ProfileMain;
+			sourceTree = "<group>";
+		};
+		0AEFAA2920798D2B00C832A9 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				0AEFAA2B20798D5300C832A9 /* View */,
+				0AEFAA2A20798D4E00C832A9 /* ViewModel */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		0AEFAA2A20798D4E00C832A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AEFAA2B20798D5300C832A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		314F6528288BC78E8D35DA7E /* Frameworks */ = {
@@ -887,6 +967,7 @@
 				0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */,
 				0A90CEF920478615002FA202 /* Assets.xcassets in Resources */,
 				0A90CEF720478615002FA202 /* Main.storyboard in Resources */,
+				0AEFAA212079431200C832A9 /* ProfileFlow.storyboard in Resources */,
 				0A835943205C0C51004B29EB /* AuthFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1118,6 +1199,7 @@
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
 				0A1D37AF207824D5003CE3F3 /* UIColor+Concrete.swift in Sources */,
+				0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0AA7928020730B4700177C04 /* RoundView.swift in Sources */,
 				0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */,
@@ -1146,6 +1228,7 @@
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
+				0ABB124F207D3EEC00790FC0 /* UIColor+Watermelon.swift in Sources */,
 				0A092D0A2071BDA800E048E3 /* TuneSetupViewModelDelegate.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
 				0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */,
@@ -1158,17 +1241,22 @@
 				0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
+				0ABB1255207D587F00790FC0 /* CircleButton.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
 				0A6FB75920756B4D00621E38 /* LoadingView.swift in Sources */,
 				0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */,
+				0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */,
+				0ABB1253207D433800790FC0 /* ProfileViewModel.swift in Sources */,
 				0A1D37AB2078235A003CE3F3 /* PurpleTextField.swift in Sources */,
-				0A7490942066BAB4002AF1E8 /* PedalSourceProtocol.swift in Sources */,
+				0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */,
+				0ABB1251207D42A300790FC0 /* ProfileViewModelProtocol.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
 				0AA7928C20731CFA00177C04 /* SignupViewModelProtocol.swift in Sources */,
 				0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */,
 				0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */,
 				0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,
+				0ABB124D207D319B00790FC0 /* RoundShadowView.swift in Sources */,
 				0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */,
 				0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */,
 				0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */,

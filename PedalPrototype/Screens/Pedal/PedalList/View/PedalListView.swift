@@ -8,41 +8,23 @@
 
 import UIKit
 
-class PedalListView: UIViewController {
+class PedalListView: BaseViewController {
 
-    fileprivate var viewModel: PedalListViewModel! //initialized by RootBarController
+    var viewModel: PedalListViewModelProtocol!
     
     @IBOutlet weak var pedalTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.viewModel.delegate = self
         
         self.pedalTableView.dataSource = self
-        
-        self.viewModel.getPedals()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func setViewModel(viewModel: PedalListViewModel) {
-        self.viewModel = viewModel
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension PedalListView: PedalListViewModelDelegate {
@@ -52,10 +34,14 @@ extension PedalListView: PedalListViewModelDelegate {
     }
 }
 
-extension PedalListView: UITableViewDataSource {
+extension PedalListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.getPedalCount()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 112
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

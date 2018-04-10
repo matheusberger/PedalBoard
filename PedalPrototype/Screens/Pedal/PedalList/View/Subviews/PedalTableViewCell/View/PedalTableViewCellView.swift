@@ -11,6 +11,7 @@ import UIKit
 class PedalTableViewCellView: UITableViewCell {
     
     @IBOutlet weak var pedalName: UILabel!
+    @IBOutlet weak var roundView: RoundShadowView!
     
     var viewModel: PedalTableViewCellViewModelProtocol? {
         didSet {

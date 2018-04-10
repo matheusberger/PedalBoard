@@ -15,36 +15,35 @@ class RootTabController: UITabBarController {
     @IBOutlet weak var tunesButton: UIButton!
     @IBOutlet weak var setlistButton: UIButton!
     
+    fileprivate var defaultTabBarPosition: CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupTabBar()
-        
-        var views: [UIViewController] = []
-        
-        for vc in self.viewControllers! {
-            let nc = vc as! UINavigationController
-
-            views.append(nc.viewControllers[0])
+    }
+    
+    func toogleTabBar(on: Bool) {
+        var toogle: CGFloat
+        if on {
+            toogle = -1.0
         }
-
-        let pedalListView = views[0] as! PedalListView
-        let tuneListView = views[1] as! TuneListView
-
-        let pedalViewModel = PedalListViewModel()
-        let tuneViewModel = TuneListViewModel()
-
-        tuneViewModel.dataSource = pedalViewModel
-
-        tuneListView.setViewModel(viewModel: tuneViewModel)
-        pedalListView.setViewModel(viewModel: pedalViewModel)
+        else {
+            toogle = 1.0
+        }
+        
+        UIView.animate(withDuration: 0.4) {
+            self.customTabBar.frame.origin.y = self.defaultTabBarPosition! + CGFloat(49*toogle)
+        }
     }
     
     func setupTabBar() {
         let width = self.view.frame.size.width
         self.customTabBar.frame.size.height = 49
         
-        self.customTabBar.frame = CGRect(x: 0, y: self.view.frame.size.height-49, width: width, height: 49)
+        self.customTabBar.frame = CGRect(x: 0, y: self.view.frame.size.height, width: width, height: 49)
+        self.defaultTabBarPosition = self.customTabBar.frame.origin.y
+        self.toogleTabBar(on: true)
         
         self.customTabBar.layer.borderColor = UIColor.silverSand.cgColor
         self.customTabBar.layer.borderWidth = 0.3
@@ -67,6 +66,7 @@ class RootTabController: UITabBarController {
         self.discoverButton.setTitleColor(UIColor.silverSand, for: .normal)
         self.discoverButton.setTitleColor(UIColor.hanPurple, for: .selected)
         self.discoverButton.frame = CGRect(x: 0, y: 0, width: width, height: 49)
+        self.discoverButton.isEnabled = false
         
         self.tunesButton.setTitle("TUNES", for: .normal)
         self.tunesButton.setTitleColor(UIColor.silverSand, for: .normal)

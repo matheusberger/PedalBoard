@@ -10,7 +10,7 @@ import Foundation
 
 protocol CreateTuneViewModelProtocol {
     
-    func createTune(withName: String,
+    func createTune(withName: String, andArtist: String,
                     withCompletionBlock: @escaping () -> Void)
     
     func getPedalForExhibition(atIndex: Int) -> String
