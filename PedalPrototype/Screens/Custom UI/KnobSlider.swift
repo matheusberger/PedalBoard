@@ -13,6 +13,7 @@ class KnobSlider: UIView {
     
     var slider: MSCircularSlider!
     var knobImageView: UIImageView!
+    var titleLabel: UILabel!
     
     var value: Int!
     
@@ -28,6 +29,23 @@ class KnobSlider: UIView {
         super.init(coder: aDecoder)
         
         self.setupView()
+    }
+    
+    init(withTitle title: String, andValue value: Int, withFrame frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.setupView()
+        
+        let labelRect = CGRect(x: 0, y: 32, width: 45, height: 10)
+        self.titleLabel = UILabel(frame: labelRect)
+        self.titleLabel.center.x = self.slider.center.x
+        self.titleLabel.textColor = UIColor.silverSand
+        self.titleLabel.text = title
+        self.titleLabel.font = UIFont(name: "Futura", size: 8)
+        self.titleLabel.textAlignment = .center
+        
+        self.addSubview(self.titleLabel)
+        self.slider._currentValue = Double(value)
     }
     
     func setupView() {
