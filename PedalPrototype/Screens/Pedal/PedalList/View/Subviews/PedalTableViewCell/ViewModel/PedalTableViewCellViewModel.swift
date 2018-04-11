@@ -19,4 +19,8 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
     func getPedalName() -> String {
         return self.pedal.name
     }
+    
+    func getKnobs() -> [String : Int] {
+        return self.pedal.knobs
+    }
 }

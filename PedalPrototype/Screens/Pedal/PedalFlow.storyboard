@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="112" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tPM-Bw-L22">
-                                <rect key="frame" x="0.0" y="150" width="320" height="418"/>
+                                <rect key="frame" x="0.0" y="151.5" width="320" height="416.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PedalTableViewCell" rowHeight="112" id="8q3-Uh-oPV" customClass="PedalTableViewCellView" customModule="PedalPrototype" customModuleProvider="target">
@@ -149,27 +149,39 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-cy-qFT" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="4" width="280" height="104"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pedal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-FM-yho">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-FM-yho">
                                                             <rect key="frame" x="12" y="15" width="171" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-NC-uMz" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-NC-uMz" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
                                                             <rect key="frame" x="224" y="12" width="44" height="20"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="ZRT-cJ-Qn9"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
                                                             <state key="normal" title="EDIT"/>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-Ux-UMl">
-                                                            <rect key="frame" x="0.0" y="44" width="280" height="3"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-Ux-UMl">
+                                                            <rect key="frame" x="0.0" y="43" width="280" height="3"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="3" id="de7-MV-Yci"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="104" id="CFk-2l-0EZ"/>
+                                                        <constraint firstItem="NRo-NC-uMz" firstAttribute="leading" secondItem="Lsx-FM-yho" secondAttribute="trailing" constant="41" id="E1I-A0-QQI"/>
+                                                        <constraint firstItem="zb2-Ux-UMl" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" id="RxB-Zv-b1J"/>
+                                                        <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="NRo-NC-uMz" secondAttribute="bottom" constant="12" id="b4f-MR-Xxb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zb2-Ux-UMl" secondAttribute="bottom" constant="57" id="dhE-oo-7FR"/>
+                                                        <constraint firstItem="NRo-NC-uMz" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="12" id="hFJ-6G-i7x"/>
+                                                        <constraint firstItem="Lsx-FM-yho" firstAttribute="centerY" secondItem="NRo-NC-uMz" secondAttribute="centerY" id="kar-rP-o8D"/>
+                                                        <constraint firstItem="Lsx-FM-yho" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="12" id="oUU-Qq-EFu"/>
+                                                        <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="Lsx-FM-yho" secondAttribute="bottom" constant="14" id="qvb-UG-Owa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NRo-NC-uMz" secondAttribute="trailing" constant="12" id="v9L-yc-Xhq"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -190,33 +202,33 @@
                                 <rect key="frame" x="18" y="40" width="253" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOUR PEDALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLF-Kd-E0C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR PEDALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLF-Kd-E0C">
                                 <rect key="frame" x="28" y="97" width="67" height="13"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-qe-Zf2" customClass="PurpleThinTextField" customModule="PedalPrototype" customModuleProvider="target">
-                                <rect key="frame" x="51" y="118" width="220" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-qe-Zf2" customClass="PurpleThinTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="51" y="113" width="220" height="30"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXh-54-xpx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXh-54-xpx">
                                 <rect key="frame" x="28" y="121" width="15" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Rff-K9-fJ3"/>
+                                </constraints>
                                 <state key="normal" image="search_button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDY-qc-RJp">
                                 <rect key="frame" x="276" y="40" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add_button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-tO-ivD">
                                 <rect key="frame" x="20" y="40" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
                                     <action selector="backButton:" destination="xlf-cs-9sf" eventType="touchUpInside" id="Hli-KK-6Yt"/>
@@ -226,9 +238,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eBH-Nc-o7B" firstAttribute="bottom" secondItem="tPM-Bw-L22" secondAttribute="bottom" id="3md-AE-2Px"/>
-                            <constraint firstItem="tPM-Bw-L22" firstAttribute="top" secondItem="eBH-Nc-o7B" secondAttribute="top" constant="130" id="fF8-U5-4Wi"/>
+                            <constraint firstItem="bgb-qe-Zf2" firstAttribute="leading" secondItem="eBH-Nc-o7B" secondAttribute="leading" constant="51" id="DlN-5b-aoM"/>
+                            <constraint firstItem="KXh-54-xpx" firstAttribute="top" secondItem="SLF-Kd-E0C" secondAttribute="bottom" constant="11" id="LcY-69-Pn3"/>
+                            <constraint firstItem="KXh-54-xpx" firstAttribute="leading" secondItem="SLF-Kd-E0C" secondAttribute="leading" id="Q6h-YM-dNE"/>
+                            <constraint firstItem="KXh-54-xpx" firstAttribute="top" secondItem="wDk-Qi-OOe" secondAttribute="top" constant="121" id="Qsc-kz-l9T"/>
+                            <constraint firstItem="bgb-qe-Zf2" firstAttribute="leading" secondItem="KXh-54-xpx" secondAttribute="trailing" constant="8" symbolic="YES" id="XaQ-UQ-PLo"/>
+                            <constraint firstItem="tPM-Bw-L22" firstAttribute="top" secondItem="bgb-qe-Zf2" secondAttribute="bottom" constant="8" id="fF8-U5-4Wi"/>
                             <constraint firstItem="tPM-Bw-L22" firstAttribute="leading" secondItem="eBH-Nc-o7B" secondAttribute="leading" id="gj3-Jk-5ma"/>
                             <constraint firstItem="tPM-Bw-L22" firstAttribute="trailing" secondItem="eBH-Nc-o7B" secondAttribute="trailing" id="i9o-HD-nfY"/>
+                            <constraint firstItem="bgb-qe-Zf2" firstAttribute="centerY" secondItem="KXh-54-xpx" secondAttribute="centerY" id="lpF-HG-GzS"/>
+                            <constraint firstItem="eBH-Nc-o7B" firstAttribute="trailing" secondItem="bgb-qe-Zf2" secondAttribute="trailing" constant="49" id="tvn-H2-cT4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eBH-Nc-o7B"/>
                     </view>

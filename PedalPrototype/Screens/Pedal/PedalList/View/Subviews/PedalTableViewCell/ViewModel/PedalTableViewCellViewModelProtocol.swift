@@ -11,4 +11,6 @@ import Foundation
 protocol PedalTableViewCellViewModelProtocol {
     
     func getPedalName() -> String
+    
+    func getKnobs() -> [String : Int]
 }

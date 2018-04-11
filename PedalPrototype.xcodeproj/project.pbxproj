@@ -92,6 +92,7 @@
 		0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */; };
 		0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */; };
 		0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */; };
+		0AE4AEF2207E4D240095EF6F /* KnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */; };
 		0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */; };
 		0AEFAA212079431200C832A9 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */; };
 		0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */; };
@@ -211,6 +212,7 @@
 		0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootSetupFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuneFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PedalFlow.storyboard; sourceTree = "<group>"; };
+		0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSlider.swift; sourceTree = "<group>"; };
 		0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleThinTextField.swift; sourceTree = "<group>"; };
 		0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileFlow.storyboard; sourceTree = "<group>"; };
 		0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleLetterButton.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */,
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
+				0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -1129,8 +1132,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/MSCircularSlider/MSCircularSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/MTCircularSlider/MTCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -1147,8 +1155,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSCircularSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MTCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -1208,6 +1221,7 @@
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
 				0A1D37AD20782435003CE3F3 /* UIColor+Bluechalk.swift in Sources */,
 				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
+				0AE4AEF2207E4D240095EF6F /* KnobSlider.swift in Sources */,
 				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
 				0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */,
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,

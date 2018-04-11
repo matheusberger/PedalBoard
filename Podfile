@@ -10,6 +10,7 @@ target 'PedalPrototype' do
   pod 'Firebase/Database'
   pod 'FirebaseUI'
   pod 'FBSDKLoginKit'
+  pod 'MSCircularSlider', '~> 1.2'
 
   target 'PedalPrototypeTests' do
     inherit! :search_paths

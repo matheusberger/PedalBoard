@@ -64,6 +64,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HGCircularSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MSCircularSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MTCircularSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PedalPrototype.xcscheme</key>
 		<dict>
 			<key>isShown</key>
