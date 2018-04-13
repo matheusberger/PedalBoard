@@ -21,10 +21,11 @@
 		0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F6205EA94300A641BD /* LoginViewModel.swift */; };
 		0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F8205EA96600A641BD /* LoginViewModelProtocol.swift */; };
 		0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6FA205EAC4000A641BD /* LoginViewModelDelegate.swift */; };
-		0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */; };
-		0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */; };
-		0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */; };
+		0A381E2A204B93DC001D7DB9 /* ConfigurePedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E29204B93DC001D7DB9 /* ConfigurePedalView.swift */; };
+		0A381E2F204CC309001D7DB9 /* ConfigurePedalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E2E204CC309001D7DB9 /* ConfigurePedalViewModel.swift */; };
+		0A381E31204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A381E30204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift */; };
 		0A3FCEF120747AC200B7CF79 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */; };
+		0A4F7EB9207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4F7EB8207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift */; };
 		0A532EAB2048163300CA8FEA /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAA2048163300CA8FEA /* Pedal.swift */; };
 		0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */; };
 		0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */; };
@@ -136,10 +137,11 @@
 		0A25C6F6205EA94300A641BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0A25C6F8205EA96600A641BD /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A25C6FA205EAC4000A641BD /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
-		0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalView.swift; sourceTree = "<group>"; };
-		0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModel.swift; sourceTree = "<group>"; };
-		0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePedalViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A381E29204B93DC001D7DB9 /* ConfigurePedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurePedalView.swift; sourceTree = "<group>"; };
+		0A381E2E204CC309001D7DB9 /* ConfigurePedalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurePedalViewModel.swift; sourceTree = "<group>"; };
+		0A381E30204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurePedalViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		0A4F7EB8207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A532EAA2048163300CA8FEA /* Pedal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
 		0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pedal+Firebase.swift"; sourceTree = "<group>"; };
 		0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProtocol.swift; sourceTree = "<group>"; };
@@ -289,7 +291,7 @@
 		0A381E2C204CC274001D7DB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A381E29204B93DC001D7DB9 /* CreatePedalView.swift */,
+				0A381E29204B93DC001D7DB9 /* ConfigurePedalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,8 +299,8 @@
 		0A381E2D204CC27A001D7DB9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0A381E2E204CC309001D7DB9 /* CreatePedalViewModel.swift */,
-				0A381E30204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift */,
+				0A381E2E204CC309001D7DB9 /* ConfigurePedalViewModel.swift */,
+				0A381E30204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -425,6 +427,7 @@
 			children = (
 				0A6129842054AF19005A3099 /* PedalTableViewCellViewModel.swift */,
 				0A6129802054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift */,
+				0A4F7EB8207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1082,14 +1085,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1126,42 +1122,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MSCircularSlider/MSCircularSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSCircularSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1194,8 +1172,9 @@
 			files = (
 				0AA7929220731E0600177C04 /* SignupView.swift in Sources */,
 				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
-				0A381E31204CC31B001D7DB9 /* CreatePedalViewModelProtocol.swift in Sources */,
+				0A381E31204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift in Sources */,
 				0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */,
+				0A4F7EB9207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift in Sources */,
 				0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */,
@@ -1213,7 +1192,7 @@
 				0AA7928020730B4700177C04 /* RoundView.swift in Sources */,
 				0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */,
 				0AA7927E2073094D00177C04 /* PurpleShadowButton.swift in Sources */,
-				0A381E2A204B93DC001D7DB9 /* CreatePedalView.swift in Sources */,
+				0A381E2A204B93DC001D7DB9 /* ConfigurePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
 				0A1D37AD20782435003CE3F3 /* UIColor+Bluechalk.swift in Sources */,
 				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
@@ -1249,7 +1228,7 @@
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
 				0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */,
 				0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */,
-				0A381E2F204CC309001D7DB9 /* CreatePedalViewModel.swift in Sources */,
+				0A381E2F204CC309001D7DB9 /* ConfigurePedalViewModel.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0ABB1255207D587F00790FC0 /* CircleButton.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class PedalListViewModel: PedalListViewModelProtocol {
+class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewModelDelegate {
     
     weak var delegate: PedalListViewModelDelegate?
+    
+    var selectedPedal: Pedal?
     
     fileprivate var pedals: [Pedal] = [] {
         didSet {
@@ -25,10 +27,23 @@ class PedalListViewModel: PedalListViewModelProtocol {
     }
     
     func getPedalCellViewModel(forIndex index: Int) -> PedalTableViewCellViewModelProtocol {
-        return PedalTableViewCellViewModel(withPedal: self.pedals[index])
+        
+        let viewModel = PedalTableViewCellViewModel(withPedal: self.pedals[index])
+        viewModel.delegate = self
+        
+        return viewModel
     }
     
     func getPedalCount() -> Int {
         return self.pedals.count
+    }
+    
+    func getCreatePedalViewModel() -> ConfigurePedalViewModelProtocol {
+        return ConfigurePedalViewModel(withPedal: self.selectedPedal)
+    }
+    
+    func setEditingPedal(pedal: Pedal) {
+        self.selectedPedal = pedal
+        self.delegate?.editPedal()
     }
 }

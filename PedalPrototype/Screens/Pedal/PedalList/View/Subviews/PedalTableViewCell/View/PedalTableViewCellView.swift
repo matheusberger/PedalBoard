@@ -38,4 +38,8 @@ class PedalTableViewCellView: UITableViewCell {
             self.roundView.addSubview(knobView)
         }
     }
+    
+    @IBAction func editButton(_ sender: Any) {
+        self.viewModel?.edit()
+    }
 }

@@ -10,7 +10,11 @@ import Foundation
 
 protocol PedalTableViewCellViewModelProtocol {
     
+    var delegate: PedalTableViewCellViewModelDelegate? { get set }
+    
     func getPedalName() -> String
     
     func getKnobs() -> [String : Int]
+    
+    func edit()
 }

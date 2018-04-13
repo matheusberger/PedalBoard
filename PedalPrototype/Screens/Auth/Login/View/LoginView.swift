@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuthUI
+import FirebaseAuth
 
 class LoginView: BaseViewController {
     

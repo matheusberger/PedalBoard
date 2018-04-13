@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol CreatePedalViewModelProtocol {
+protocol ConfigurePedalViewModelProtocol {
     
-    func createPedal(withName: String,
+    func configurePedal(withName: String,
                      andKnobs: [String],
                      withCompletionBlock completionBlock: @escaping () -> Void)
+    
+    func getPedalName() -> String
 }

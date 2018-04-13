@@ -8,7 +8,8 @@ target 'PedalPrototype' do
   # Pods for PedalPrototype
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'FirebaseUI'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'MSCircularSlider', '~> 1.2'
 

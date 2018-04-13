@@ -10,123 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pedais-->
-        <scene sceneID="bPQ-IQ-WMw">
-            <objects>
-                <viewController storyboardIdentifier="PedalListView" id="tgY-Bz-F3D" customClass="PedalListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Alv-LT-Xlr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9l3-Um-boq">
-                                <rect key="frame" x="0.0" y="131" width="375" height="466"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PedalTableViewCell" id="5Uk-ja-dsN" customClass="PedalTableViewCellView" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Uk-ja-dsN" id="dxe-UQ-zdk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-bb-K1I">
-                                                    <rect key="frame" x="44" y="11" width="119" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="pedalName" destination="Srz-bb-K1I" id="Xaz-bW-80B"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NNN-tY-EsV"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pedais" id="bHl-0a-Tg2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S6F-EV-VZ8">
-                            <connections>
-                                <segue destination="PHo-WX-vrV" kind="show" id="2jI-HA-rn0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="pedalTableView" destination="9l3-Um-boq" id="hTB-ug-bYu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eNx-sh-Ow2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1553" y="446"/>
-        </scene>
-        <!--Create Pedal View-->
-        <scene sceneID="Ohn-PY-uFK">
-            <objects>
-                <viewController id="PHo-WX-vrV" customClass="CreatePedalView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nCP-qc-BUy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Pedal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLI-KT-NAw">
-                                <rect key="frame" x="16" y="121" width="190" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="digite aqui" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edb-7u-kos">
-                                <rect key="frame" x="16" y="174" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Controles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgD-rU-1sb">
-                                <rect key="frame" x="16" y="212" width="190" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MVJ-Ce-qN2">
-                                <rect key="frame" x="16" y="265" width="343" height="302"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTv-1T-68i">
-                                <rect key="frame" x="23" y="575" width="142" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Adicionar Knob"/>
-                                <connections>
-                                    <action selector="addKnobButton:" destination="PHo-WX-vrV" eventType="touchUpInside" id="iJd-yF-2TM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBn-cU-BDM">
-                                <rect key="frame" x="192" y="575" width="167" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Salvar"/>
-                                <connections>
-                                    <action selector="createPedalButton:" destination="PHo-WX-vrV" eventType="touchUpInside" id="Zt4-gE-Kmq"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="MMf-WW-B7Q"/>
-                    </view>
-                    <connections>
-                        <outlet property="knobTableView" destination="MVJ-Ce-qN2" id="zX6-j8-13E"/>
-                        <outlet property="pedalName" destination="edb-7u-kos" id="oB3-3t-H4b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4wN-xn-cC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-798" y="446"/>
-        </scene>
         <!--Músicas-->
         <scene sceneID="luu-lc-M7N">
             <objects>
@@ -162,9 +45,12 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
                                                             <state key="normal" title="EDIT"/>
+                                                            <connections>
+                                                                <action selector="editButton:" destination="8q3-Uh-oPV" eventType="touchUpInside" id="wSb-45-xl3"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-Ux-UMl">
-                                                            <rect key="frame" x="0.0" y="43" width="280" height="3"/>
+                                                            <rect key="frame" x="0.0" y="44" width="280" height="3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="3" id="de7-MV-Yci"/>
                                                             </constraints>
@@ -225,6 +111,9 @@
                                 <rect key="frame" x="276" y="40" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add_button"/>
+                                <connections>
+                                    <action selector="addPedalButton:" destination="xlf-cs-9sf" eventType="touchUpInside" id="epZ-22-FBo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-tO-ivD">
                                 <rect key="frame" x="20" y="40" width="24" height="24"/>
@@ -257,17 +146,133 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="pedalTableView" destination="tPM-Bw-L22" id="5pm-AP-1X7"/>
+                        <segue destination="9GK-uk-bnK" kind="show" identifier="configurePedalSegue" id="S8N-2R-Pil"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNL-Zr-eBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1554.375" y="-252.46478873239437"/>
         </scene>
+        <!--Configure Pedal View-->
+        <scene sceneID="6Ox-TA-xzt">
+            <objects>
+                <viewController id="9GK-uk-bnK" customClass="ConfigurePedalView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Ht-S2-76N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_picture" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-Wi-fEA" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="AET-VO-iA9"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQb-ak-2aA" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-YE-lMp">
+                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="cancel_button"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="9GK-uk-bnK" eventType="touchUpInside" id="GJY-lS-VKU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEW PEDAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-ic-Q2E">
+                                        <rect key="frame" x="50" y="16" width="58" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT'S THE PEDAL'S NAME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw7-ed-Zhp">
+                                        <rect key="frame" x="52" y="49" width="84" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PEDAL NAME" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="V4k-gw-q9P" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="65" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHICH KNOBS DOES IT HAVE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELa-7N-x0K">
+                                        <rect key="frame" x="52" y="107" width="91" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REVERB, OVERDRIVE, BASS..." minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-cD-I9f" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="123" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQR-qJ-5Y6">
+                                        <rect key="frame" x="53" y="164" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="add_button"/>
+                                        <connections>
+                                            <action selector="addKnobButton:" destination="9GK-uk-bnK" eventType="touchUpInside" id="PcN-23-Z5N"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quf-X5-lNa">
+                                        <rect key="frame" x="88" y="169" width="56" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-2h-cgb" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="206" width="220" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <state key="normal" title="SAVE"/>
+                                        <connections>
+                                            <action selector="createPedalButton:" destination="9GK-uk-bnK" eventType="touchUpInside" id="bKu-KG-xXZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedal_txt" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-vW-hVN">
+                                <rect key="frame" x="113" y="76" width="189" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0MX-Qv-l7K" firstAttribute="bottom" secondItem="jQb-ak-2aA" secondAttribute="bottom" id="6bA-iD-4CU"/>
+                            <constraint firstItem="0MX-Qv-l7K" firstAttribute="trailing" secondItem="jQb-ak-2aA" secondAttribute="trailing" id="DZx-1W-SPI"/>
+                            <constraint firstItem="Sa4-Wi-fEA" firstAttribute="leading" secondItem="0MX-Qv-l7K" secondAttribute="leading" id="Pf1-7z-P5u"/>
+                            <constraint firstItem="jQb-ak-2aA" firstAttribute="leading" secondItem="0MX-Qv-l7K" secondAttribute="leading" id="Uhc-ku-x6u"/>
+                            <constraint firstItem="Sa4-Wi-fEA" firstAttribute="top" secondItem="3Ht-S2-76N" secondAttribute="top" id="dpV-XG-eyi"/>
+                            <constraint firstItem="0MX-Qv-l7K" firstAttribute="trailing" secondItem="Sa4-Wi-fEA" secondAttribute="trailing" id="jzr-2h-NXZ"/>
+                            <constraint firstItem="jQb-ak-2aA" firstAttribute="top" secondItem="0MX-Qv-l7K" secondAttribute="top" constant="262" id="tv5-pe-UHi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0MX-Qv-l7K"/>
+                    </view>
+                    <connections>
+                        <outlet property="pedalName" destination="V4k-gw-q9P" id="3to-Qh-8Wi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBd-Dk-4RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-800.625" y="-252.46478873239437"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_button" width="21" height="19"/>
         <image name="back_button" width="20" height="6"/>
+        <image name="cancel_button" width="10" height="9"/>
         <image name="line" width="280" height="2"/>
+        <image name="login_picture" width="320" height="261"/>
+        <image name="pedal_txt" width="155" height="138"/>
         <image name="pedallist_txt" width="217" height="89"/>
         <image name="search_button" width="15" height="15"/>
     </resources>

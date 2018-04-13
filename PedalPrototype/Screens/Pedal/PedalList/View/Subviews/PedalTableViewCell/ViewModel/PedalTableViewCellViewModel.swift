@@ -10,17 +10,33 @@ import Foundation
 
 class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
     
-    private var pedal: Pedal
+    weak var delegate: PedalTableViewCellViewModelDelegate?
     
-    init(withPedal pedal: Pedal) {
+    private var pedal: Pedal?
+    
+    init(withPedal pedal: Pedal?) {
         self.pedal = pedal
     }
     
     func getPedalName() -> String {
-        return self.pedal.name
+        
+        guard let pedal = self.pedal else {
+             return ""
+        }
+       
+        return pedal.name
     }
     
     func getKnobs() -> [String : Int] {
-        return self.pedal.knobs
+        
+        guard let pedal = self.pedal else {
+            return [String : Int]()
+        }
+
+        return pedal.knobs
+    }
+    
+    func edit() {
+        self.delegate?.setEditingPedal(pedal: self.pedal!)
     }
 }

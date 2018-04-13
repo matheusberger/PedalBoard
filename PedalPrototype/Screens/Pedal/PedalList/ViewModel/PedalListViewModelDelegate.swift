@@ -11,4 +11,6 @@ import Foundation
 protocol PedalListViewModelDelegate: class {
     
     func didUpdatePedalList()
+    
+    func editPedal()
 }

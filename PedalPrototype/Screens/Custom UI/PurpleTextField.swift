@@ -23,6 +23,8 @@ class PurpleTextField: UITextField {
         self.layer.borderColor = UIColor.blueChalk.cgColor
         self.layer.borderWidth = 0.5
         self.clipsToBounds = true
+        
+        self.font = UIFont(name: "Futura", size: 10)
     }
 
 }
