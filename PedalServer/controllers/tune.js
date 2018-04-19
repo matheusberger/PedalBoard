@@ -73,8 +73,6 @@ router.get('/', (req, res, next) => {
 
 router.put('/:id', [
 
-	check('id', 'The tune id was not informed.').exists(),
-
 	check('name', 'The new user name was not informed.').exists(),
 
 	check('artist', 'The new artist name was not informed.').exists()
@@ -118,43 +116,35 @@ router.put('/:id', [
 
 router.delete('/:id', (req, res, next) => {
 
-	try {
+	if (!req.session.userId)
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
-		validationResult(req).throw();
+	Tune.findOne({ _id: req.params.id }, function(findError, tune) {
 
-		if (!req.session.userId)
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message}});
+		else if (!tune)
+			return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
+		else {
 
-		Tune.findOne({ _id: req.params.id }, function(findError, tune) {
+			Tune.remove({ _id: req.params.id }, function(removeError) {
 
-			if (findError)
-				return res.status(500).json({ errors: { msg: findError.message}});
-			else if (!tune)
-				return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
-			else {
+				if (removeError)
+					return res.status(500).json({ errors: { msg: removeError.message}});
+				else {
 
-				Tune.remove({ _id: req.params.id }, function(removeError) {
+					User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
+						
+						if (updateUserError)
+							return res.status(500).json({ errors: { msg: updateUserError.message}});
+						else
+							return res.sendStatus(200);
+					});
+				}
+			});
 
-					if (removeError)
-						return res.status(500).json({ errors: { msg: removeError.message}});
-					else {
-
-						User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
-							
-							if (updateUserError)
-								return res.status(500).json({ errors: { msg: updateUserError.message}});
-							else
-								return res.sendStatus(200);
-						});
-					}
-				});
-
-			}
-		});
-
-	} catch (validationError) {
-		return res.status(422).json({ errors: validationError.mapped() });
-	}
+		}
+	});
 
 });
 
