@@ -22,7 +22,9 @@ router.post('/', [
 	try {
 		validationResult(req).throw();
 
-		User.authenticate(req.body.email, req.body.password, function(authError, user) {
+		const reqFields = matchedData(req);
+
+		User.authenticate(reqFields.email, reqFields.password, function(authError, user) {
 			if (authError) {
 				return res.status(403).json({ errors: { msg: authError.message }});
 			}

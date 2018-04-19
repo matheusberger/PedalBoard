@@ -60,7 +60,9 @@ router.get('/', function (req, res) {
 
 			let userPublicInformations = new User({
 				_id: user._id,
-				name: user.name
+				name: user.name,
+				pedals: user.pedals,
+				tunes: user.tunes
 			});
 
 			return res.status(200).send(userPublicInformations);
@@ -90,7 +92,9 @@ router.put('/', [
 
 				let userPublicInformations = new User({
 					_id: updatedUser._id,
-					name: updatedUser.name
+					name: updatedUser.name,
+					pedals: updatedUser.pedals,
+					tunes: updatedUser.tunes
 				});
 
 				return res.status(200).send(userPublicInformations);

@@ -44,6 +44,14 @@ userSchema.methods.updateName = function(newName, callback) {
 	return this.save(callback);
 };
 
+userSchema.statics.removeTune = function(id, tuneId) {
+ 	return this.update({ _id: id }, { '$pull': { 'tunes': tuneId }});
+}
+
+userSchema.statics.removePedal = function(id, pedalId) {
+ 	return this.update({ _id: id }, { '$pull': { 'pedals': pedalId }});
+}
+
 userSchema.statics.addPedal = function(id, pedalId, callback) {
 	User.findWithId(id).then(user => {
 		user.pedals.push(pedalId);
@@ -57,9 +65,26 @@ userSchema.statics.addPedal = function(id, pedalId, callback) {
 
 	}).catch(() => {
 		let errorFind = new Error('There was a problem while getting the user from the database.');
-		return callback(error);
+		return callback(errorFind);
 	})
 }
+
+userSchema.statics.addTune = function(id, tuneId, callback) {
+	User.findWithId(id).then(user => {
+		user.tunes.push(tuneId);
+
+		user.save().then(() => {
+			return callback();
+		}).catch(() => {
+			let errorUpdate = new Error('There was a problem while updating the user.');
+			return callback(errorUpdate);
+		});
+
+	}).catch(() => {
+		let errorFind = new Error('There was a problem while getting the user from the database.');
+		return callback(errorFind);
+	});
+};
 
 userSchema.statics.findWithEmail = function(email, callback) {
 	return this.find({ 
