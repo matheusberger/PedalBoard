@@ -12,6 +12,7 @@ class PedalTableViewCellView: UITableViewCell {
     
     @IBOutlet weak var pedalName: UILabel!
     @IBOutlet weak var roundView: RoundShadowView!
+    @IBOutlet weak var knobBaseView: UIView!
     
     var viewModel: PedalTableViewCellViewModelProtocol? {
         didSet {
@@ -26,16 +27,25 @@ class PedalTableViewCellView: UITableViewCell {
             return
         }
         
-        var i = 1
+        if knobs.keys.count > 5 {
+            self.roundView.frame.size.height = self.roundView.frame.size.height + 46
+        }
+        
+        var i = 0
+        var j = 0
         
         for (knob, value) in knobs {
             let knobView = KnobSlider(withTitle: knob,
                                       andValue: value,
-                                      withFrame: CGRect(x: 30 * i, y: 55, width: 30, height: 40))
+                                      withFrame: CGRect(x: 50 * i, y: j * 50 , width: 20, height: 30))
             
-            i = i+2
+            i = i + 1
+            if i == 5 {
+                i = 0
+                j = j + 1
+            }
             
-            self.roundView.addSubview(knobView)
+            self.knobBaseView.addSubview(knobView)
         }
     }
     

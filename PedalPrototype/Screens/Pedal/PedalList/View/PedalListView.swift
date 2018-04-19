@@ -19,7 +19,14 @@ class PedalListView: BaseViewController {
 
         self.viewModel.delegate = self
         
+        self.pedalTableView.delegate = self
         self.pedalTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.viewModel.clearSelectedPedal()
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -57,7 +64,7 @@ extension PedalListView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 112
+        return CGFloat(self.viewModel.getCellHeight(forIndex: indexPath.row))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

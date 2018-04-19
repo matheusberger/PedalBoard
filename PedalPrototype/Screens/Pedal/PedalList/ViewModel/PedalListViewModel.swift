@@ -38,6 +38,17 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
         return self.pedals.count
     }
     
+    func getCellHeight(forIndex index: Int) -> Int {
+        let knobs = self.pedals[index].knobs
+        let knobCount = knobs.keys.count
+        
+        if knobCount > 5 {
+            return 158
+        }
+        
+        return 112
+    }
+    
     func getCreatePedalViewModel() -> ConfigurePedalViewModelProtocol {
         return ConfigurePedalViewModel(withPedal: self.selectedPedal)
     }
@@ -45,5 +56,9 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
     func setEditingPedal(pedal: Pedal) {
         self.selectedPedal = pedal
         self.delegate?.editPedal()
+    }
+    
+    func clearSelectedPedal() {
+        self.selectedPedal = nil
     }
 }

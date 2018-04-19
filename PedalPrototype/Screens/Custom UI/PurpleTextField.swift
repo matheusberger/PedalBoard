@@ -12,12 +12,34 @@ class PurpleTextField: UITextField {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.layer.backgroundColor = UIColor.concrete.cgColor
+        self.setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
+    func setup() {
+        self.layer.backgroundColor = UIColor.white.cgColor
         self.textColor = UIColor.hanPurple
         
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.blueChalk])
         
+        var placeholder = self.placeholder
+        if placeholder == nil {
+            placeholder = ""
+        }
+        
+        self.autocorrectionType = .default
+        self.keyboardType = .default
+        self.clearButtonMode = .never
+        self.contentHorizontalAlignment = .leading
+        self.contentVerticalAlignment = .center
+        self.borderStyle = .roundedRect
+        self.autocapitalizationType = .none
+        
+        
+        self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.blueChalk])
         
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.blueChalk.cgColor
@@ -25,6 +47,7 @@ class PurpleTextField: UITextField {
         self.clipsToBounds = true
         
         self.font = UIFont(name: "Futura", size: 10)
+        
     }
 
 }

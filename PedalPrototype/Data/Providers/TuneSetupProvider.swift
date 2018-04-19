@@ -52,7 +52,7 @@ class TuneSetupProvider: TuneSetupProtocol {
         
     }
     
-    static func daleteSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void) {
+    static func deleteSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void) {
         
     }
     

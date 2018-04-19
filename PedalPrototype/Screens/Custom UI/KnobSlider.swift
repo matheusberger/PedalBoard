@@ -36,7 +36,7 @@ class KnobSlider: UIView {
         
         self.setupView()
         
-        let labelRect = CGRect(x: 0, y: 32, width: 45, height: 10)
+        let labelRect = CGRect(x: 0, y: 22, width: 45, height: 10)
         self.titleLabel = UILabel(frame: labelRect)
         self.titleLabel.center.x = self.slider.center.x
         self.titleLabel.textColor = UIColor.silverSand
@@ -50,10 +50,10 @@ class KnobSlider: UIView {
     
     func setupView() {
         self.value = 0
-        self.frame.size = CGSize(width: 30, height: 30)
+        self.frame.size = CGSize(width: 20, height: 20)
         
         self.slider = MSCircularSlider()
-        self.slider.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        self.slider.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.slider._filledColor = UIColor.hanPurple
         self.slider.unfilledColor = UIColor.silverSand
         self.slider.handleType = .smallCircle
@@ -68,7 +68,7 @@ class KnobSlider: UIView {
         self.slider.delegate = self
         
         self.knobImageView = UIImageView(image: UIImage.init(named: "knob_icon"))
-        self.knobImageView.frame.size = CGSize(width: 18, height: 18)
+        self.knobImageView.frame.size = CGSize(width: 12, height: 12)
         self.knobImageView.center = self.slider.center
         
         self.knobTransform = self.knobImageView.transform

@@ -16,7 +16,11 @@ protocol PedalListViewModelProtocol {
     
     func getPedalCount() -> Int
     
+    func getCellHeight(forIndex: Int) -> Int
+    
     func getPedalCellViewModel(forIndex: Int) -> PedalTableViewCellViewModelProtocol
     
     func getCreatePedalViewModel() -> ConfigurePedalViewModelProtocol
+    
+    func clearSelectedPedal()
 }

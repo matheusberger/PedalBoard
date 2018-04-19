@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,10 +31,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-cy-qFT" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="4" width="280" height="104"/>
+                                                    <rect key="frame" x="20" y="2.5" width="280" height="107"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-FM-yho">
-                                                            <rect key="frame" x="12" y="15" width="171" height="15"/>
+                                                            <rect key="frame" x="12" y="14.5" width="171" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -42,6 +43,7 @@
                                                             <rect key="frame" x="224" y="12" width="44" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="ZRT-cJ-Qn9"/>
+                                                                <constraint firstAttribute="height" constant="20" id="uuY-hO-hPg"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
                                                             <state key="normal" title="EDIT"/>
@@ -50,21 +52,27 @@
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-Ux-UMl">
-                                                            <rect key="frame" x="0.0" y="44" width="280" height="3"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="280" height="3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="3" id="de7-MV-Yci"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-5U-sOj">
+                                                            <rect key="frame" x="25" y="58.5" width="230" height="36.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="104" id="CFk-2l-0EZ"/>
+                                                        <constraint firstItem="aeh-5U-sOj" firstAttribute="top" secondItem="zb2-Ux-UMl" secondAttribute="bottom" constant="11" id="Bj8-dE-cxY"/>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="leading" secondItem="Lsx-FM-yho" secondAttribute="trailing" constant="41" id="E1I-A0-QQI"/>
+                                                        <constraint firstItem="aeh-5U-sOj" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="25" id="PC5-m1-5dL"/>
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" id="RxB-Zv-b1J"/>
-                                                        <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="NRo-NC-uMz" secondAttribute="bottom" constant="12" id="b4f-MR-Xxb"/>
-                                                        <constraint firstAttribute="bottom" secondItem="zb2-Ux-UMl" secondAttribute="bottom" constant="57" id="dhE-oo-7FR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aeh-5U-sOj" secondAttribute="bottom" constant="12" id="SxE-7o-W8d"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aeh-5U-sOj" secondAttribute="trailing" constant="25" id="aAZ-Hh-akr"/>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="12" id="hFJ-6G-i7x"/>
                                                         <constraint firstItem="Lsx-FM-yho" firstAttribute="centerY" secondItem="NRo-NC-uMz" secondAttribute="centerY" id="kar-rP-o8D"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zb2-Ux-UMl" secondAttribute="trailing" id="nHF-w8-ilw"/>
                                                         <constraint firstItem="Lsx-FM-yho" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="12" id="oUU-Qq-EFu"/>
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="Lsx-FM-yho" secondAttribute="bottom" constant="14" id="qvb-UG-Owa"/>
                                                         <constraint firstAttribute="trailing" secondItem="NRo-NC-uMz" secondAttribute="trailing" constant="12" id="v9L-yc-Xhq"/>
@@ -73,11 +81,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DAy-cy-qFT" firstAttribute="leading" secondItem="CRg-lp-txh" secondAttribute="leading" constant="20" id="9dN-PS-m8K"/>
+                                                <constraint firstItem="DAy-cy-qFT" firstAttribute="top" secondItem="CRg-lp-txh" secondAttribute="top" constant="2.5" id="HVY-ev-GKA"/>
+                                                <constraint firstAttribute="bottom" secondItem="DAy-cy-qFT" secondAttribute="bottom" constant="2.5" id="Zh0-JE-vT4"/>
                                                 <constraint firstItem="DAy-cy-qFT" firstAttribute="centerY" secondItem="CRg-lp-txh" secondAttribute="centerY" id="lIM-aF-nWh"/>
                                                 <constraint firstAttribute="trailing" secondItem="DAy-cy-qFT" secondAttribute="trailing" constant="20" id="sjW-bQ-cks"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="knobBaseView" destination="aeh-5U-sOj" id="PlB-dR-oKN"/>
                                             <outlet property="pedalName" destination="Lsx-FM-yho" id="cAV-Y2-SIe"/>
                                             <outlet property="roundView" destination="DAy-cy-qFT" id="YEp-bI-TWo"/>
                                         </connections>
@@ -167,70 +178,85 @@
                                     <constraint firstAttribute="height" constant="298" id="AET-VO-iA9"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedal_txt" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-vW-hVN">
+                                <rect key="frame" x="113" y="76" width="189" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQb-ak-2aA" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="282" width="320" height="286"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-YE-lMp">
-                                        <rect key="frame" x="10" y="10" width="24" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-YE-lMp">
+                                        <rect key="frame" x="10" y="10" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9ul-YE-lMp" secondAttribute="height" multiplier="1:1" id="bsL-1e-ghp"/>
+                                        </constraints>
                                         <state key="normal" image="cancel_button"/>
                                         <connections>
                                             <action selector="cancelButton:" destination="9GK-uk-bnK" eventType="touchUpInside" id="GJY-lS-VKU"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NEW PEDAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-ic-Q2E">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW PEDAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-ic-Q2E">
                                         <rect key="frame" x="50" y="16" width="58" height="13"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="2A2-yX-N7u"/>
+                                            <constraint firstAttribute="width" constant="58" id="dXp-ED-ZQC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT'S THE PEDAL'S NAME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw7-ed-Zhp">
-                                        <rect key="frame" x="52" y="49" width="84" height="8"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT'S THE PEDAL'S NAME?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw7-ed-Zhp">
+                                        <rect key="frame" x="52" y="51" width="84" height="8"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PEDAL NAME" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="V4k-gw-q9P" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PEDAL NAME" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="V4k-gw-q9P" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="65" width="220" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="V4k-gw-q9P" secondAttribute="height" multiplier="22:3" id="zx2-PA-CxA"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHICH KNOBS DOES IT HAVE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELa-7N-x0K">
-                                        <rect key="frame" x="52" y="107" width="91" height="8"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHICH KNOBS DOES IT HAVE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELa-7N-x0K">
+                                        <rect key="frame" x="52" y="109" width="91" height="8"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REVERB, OVERDRIVE, BASS..." minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-cD-I9f" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REVERB, OVERDRIVE, BASS..." minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-cD-I9f" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="123" width="220" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hcP-cD-I9f" secondAttribute="height" multiplier="22:3" id="wK7-zg-ZeC"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQR-qJ-5Y6">
-                                        <rect key="frame" x="53" y="164" width="24" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQR-qJ-5Y6">
+                                        <rect key="frame" x="53" y="166" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uQR-qJ-5Y6" secondAttribute="height" multiplier="1:1" id="F0R-z9-58H"/>
+                                        </constraints>
                                         <state key="normal" image="add_button"/>
                                         <connections>
                                             <action selector="addKnobButton:" destination="9GK-uk-bnK" eventType="touchUpInside" id="PcN-23-Z5N"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quf-X5-lNa">
-                                        <rect key="frame" x="88" y="169" width="56" height="13"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quf-X5-lNa">
+                                        <rect key="frame" x="88" y="171" width="56" height="13"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-2h-cgb" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-2h-cgb" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="206" width="220" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Cui-2h-cgb" secondAttribute="height" multiplier="11:2" id="DMU-4H-Ek9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="c7W-Dx-BxA"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <state key="normal" title="SAVE"/>
                                         <connections>
@@ -239,11 +265,31 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hcP-cD-I9f" firstAttribute="top" secondItem="ELa-7N-x0K" secondAttribute="bottom" constant="6" id="1p4-zD-3UK"/>
+                                    <constraint firstAttribute="trailing" secondItem="hcP-cD-I9f" secondAttribute="trailing" constant="50" id="6pd-9T-t7i"/>
+                                    <constraint firstItem="Cui-2h-cgb" firstAttribute="top" secondItem="uQR-qJ-5Y6" secondAttribute="bottom" constant="18" id="9Hi-9A-ucg"/>
+                                    <constraint firstItem="V4k-gw-q9P" firstAttribute="centerX" secondItem="jQb-ak-2aA" secondAttribute="centerX" id="Fjd-8l-6lw"/>
+                                    <constraint firstItem="hcP-cD-I9f" firstAttribute="top" secondItem="V4k-gw-q9P" secondAttribute="bottom" constant="28" id="Moy-Du-Lat"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cui-2h-cgb" secondAttribute="bottom" constant="40" id="PhH-mM-V5A"/>
+                                    <constraint firstItem="uQR-qJ-5Y6" firstAttribute="centerY" secondItem="quf-X5-lNa" secondAttribute="centerY" id="QPM-X1-sS2"/>
+                                    <constraint firstItem="V4k-gw-q9P" firstAttribute="leading" secondItem="jQb-ak-2aA" secondAttribute="leading" constant="50" id="SFF-D3-e1i"/>
+                                    <constraint firstItem="bn2-ic-Q2E" firstAttribute="top" secondItem="jQb-ak-2aA" secondAttribute="top" constant="16" id="Sf3-hG-8BL"/>
+                                    <constraint firstItem="9ul-YE-lMp" firstAttribute="top" secondItem="jQb-ak-2aA" secondAttribute="top" constant="10" id="XGw-UP-har"/>
+                                    <constraint firstItem="V4k-gw-q9P" firstAttribute="top" secondItem="jQb-ak-2aA" secondAttribute="top" constant="65" id="XWW-dn-Q5q"/>
+                                    <constraint firstItem="V4k-gw-q9P" firstAttribute="top" secondItem="zw7-ed-Zhp" secondAttribute="bottom" constant="6" id="XqO-8m-6X6"/>
+                                    <constraint firstItem="bn2-ic-Q2E" firstAttribute="leading" secondItem="jQb-ak-2aA" secondAttribute="leading" constant="50" id="YQe-30-F0t"/>
+                                    <constraint firstItem="uQR-qJ-5Y6" firstAttribute="leading" secondItem="hcP-cD-I9f" secondAttribute="leading" constant="3" id="bvq-dm-BHS"/>
+                                    <constraint firstItem="9ul-YE-lMp" firstAttribute="leading" secondItem="jQb-ak-2aA" secondAttribute="leading" constant="10" id="h81-Lu-MfH"/>
+                                    <constraint firstItem="zw7-ed-Zhp" firstAttribute="leading" secondItem="V4k-gw-q9P" secondAttribute="leading" constant="2" id="k1w-ze-2yR"/>
+                                    <constraint firstItem="hcP-cD-I9f" firstAttribute="leading" secondItem="jQb-ak-2aA" secondAttribute="leading" constant="50" id="m43-sN-re6"/>
+                                    <constraint firstItem="quf-X5-lNa" firstAttribute="leading" secondItem="uQR-qJ-5Y6" secondAttribute="trailing" constant="13" id="mgE-2U-Z1l"/>
+                                    <constraint firstItem="Cui-2h-cgb" firstAttribute="centerX" secondItem="jQb-ak-2aA" secondAttribute="centerX" id="n8d-n3-Mwj"/>
+                                    <constraint firstAttribute="trailing" secondItem="V4k-gw-q9P" secondAttribute="trailing" constant="50" id="nuL-4E-dpB"/>
+                                    <constraint firstItem="hcP-cD-I9f" firstAttribute="centerX" secondItem="jQb-ak-2aA" secondAttribute="centerX" id="sea-WP-7gU"/>
+                                    <constraint firstItem="ELa-7N-x0K" firstAttribute="leading" secondItem="hcP-cD-I9f" secondAttribute="leading" constant="2" id="yeb-zz-Rg2"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedal_txt" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-vW-hVN">
-                                <rect key="frame" x="113" y="76" width="189" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -258,7 +304,11 @@
                         <viewLayoutGuide key="safeArea" id="0MX-Qv-l7K"/>
                     </view>
                     <connections>
+                        <outlet property="baseView" destination="jQb-ak-2aA" id="lYK-Ce-71b"/>
+                        <outlet property="baseViewTopConstraint" destination="tv5-pe-UHi" id="o5d-oh-VpI"/>
                         <outlet property="pedalName" destination="V4k-gw-q9P" id="3to-Qh-8Wi"/>
+                        <outlet property="titleLabel" destination="bn2-ic-Q2E" id="RE4-Pt-g65"/>
+                        <outletCollection property="knobsTxtFieldCollection" destination="hcP-cD-I9f" collectionClass="NSMutableArray" id="Vp9-gS-Cuz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBd-Dk-4RO" userLabel="First Responder" sceneMemberID="firstResponder"/>

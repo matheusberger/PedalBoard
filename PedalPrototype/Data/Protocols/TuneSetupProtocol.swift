@@ -16,5 +16,5 @@ protocol TuneSetupProtocol {
     
     static func updateSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void)
     
-    static func daleteSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void)
+    static func deleteSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void)
 }

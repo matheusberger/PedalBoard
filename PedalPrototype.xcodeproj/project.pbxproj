@@ -279,13 +279,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0A381E2B204CC26B001D7DB9 /* CreatePedal */ = {
+		0A381E2B204CC26B001D7DB9 /* ConfigurePedal */ = {
 			isa = PBXGroup;
 			children = (
 				0A381E2C204CC274001D7DB9 /* View */,
 				0A381E2D204CC27A001D7DB9 /* ViewModel */,
 			);
-			path = CreatePedal;
+			path = ConfigurePedal;
 			sourceTree = "<group>";
 		};
 		0A381E2C204CC274001D7DB9 /* View */ = {
@@ -747,7 +747,7 @@
 			children = (
 				0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */,
 				0A6129752054AB6A005A3099 /* PedalList */,
-				0A381E2B204CC26B001D7DB9 /* CreatePedal */,
+				0A381E2B204CC26B001D7DB9 /* ConfigurePedal */,
 			);
 			path = Pedal;
 			sourceTree = "<group>";

@@ -13,7 +13,7 @@ class PurpleThinTextField: PurpleTextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.frame.size.height = 20
+        self.heightAnchor.constraint(equalToConstant: 20)
     }
 
 }
