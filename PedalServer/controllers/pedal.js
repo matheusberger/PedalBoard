@@ -18,31 +18,39 @@ router.post('/', [
 ], (req, res, next) => {
 
 	try {
+
 		validationResult(req).throw();
 
-		if (req.session.userId) {
+		if (!req.session.userId)
+			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
-			Pedal.create({
-				name: req.body.name,
-				knobs: req.body.knobs
-			}, function(insertPedalError, pedal) {
+		Pedal.create({
+			name: req.body.name,
+			knobs: req.body.knobs
+		}).then((pedal) => {
 
-				if (insertPedalError) {
-					return res.status(500).json({ errors: { msg: 'There was a problem adding the pedal to the database.' }});
+			User.findOne({ _id: req.session.userId}, function(findError, user) {
+
+				if (findError)
+					return res.status(500).json({ errors: { msg: findError.message }});
+				else if (!user)
+					return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+				else {
+
+					user.pedals.push(pedal._id);
+					user.save(function(saveError, user) {
+
+						if (saveError)
+							return res.status(500).json({ errors: { msg: saveError.message }});
+						else
+							return res.sendStatus(200);
+					});
 				}
-
-				User.addPedal(req.session.userId, pedal._id, function(insertPedalToUserError) {
-
-					if (insertPedalToUserError) {
-						return res.status(500).json({ errors: { msg: insertPedalToUserError.message}});
-					}
-
-					return res.sendStatus(200);
-				});
 			});
 
-		} else
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		}).catch((createError) => {
+			return res.status(500).json({ errors: { msg: createError.message }});
+		});			
 
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });
@@ -50,108 +58,94 @@ router.post('/', [
 });
 
 
-router.get('/', function (req, res) {
+router.get('/', (req, res, next) => {
 
-	if (req.session.userId) {
-
-		User.findWithId(req.session.userId).then(user => {
-
-			Pedal.findWithIds(user.pedals).then(pedals => {
-
-				return res.status(200).send(pedals);
-
-			}).catch(() => {
-
-				return res.status(500).json({ errors: { msg: 'There was a problem while getting the pedals from the database.' }});
-			});
-
-		}).catch(() => {
-			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-		});
-
-	} else
+	if (!req.session.userId)
 		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
-});
 
+	User.findOne({ _id: req.session.userId}, function(findError, user) {
 
-router.get('/:id', [
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!user)
+			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+		else {
 
-	check('id', 'The pedal id was not informed.').exists()
+			Pedal.find({ _id: {$in: user.pedals} },function(findPedalsError, pedals) {
 
-], (req, res, next) => {
-
-	try {
-		validationResult(req).throw();
-
-		if (req.session.userId) {
-
-			Pedal.findWithId(req.params.id).then(pedal => {
-
-				return res.status(200).send(pedal);
-
-			}).catch(() => {
-				return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
+				if (findPedalsError)
+					return res.status(500).json({ errors: { msg: findPedalsError.message }});
+				else
+					return res.status(200).send(pedals);
 			});
-
-		} else
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
-
-	} catch (validationError) {
-		return res.status(422).json({ errors: validationError.mapped() });
-	}
+		}
+	});	
 });
 
 
-router.delete('/:id', [
+router.get('/:id', (req, res, next) => {
 
-	check('id', 'The pedal id was not informed.').exists()
+	if (!req.session.userId)
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
-], (req, res, next) => {
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
 
-	try {
-		validationResult(req).throw();
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
+		else
+			return res.status(200).send(pedal);
 
-		if (req.session.userId) {
+	});
 
-			Pedal.findWithId(req.params.id).then(pedal => {
+});
 
-				Tune.findUsingPedalId(req.params.id).then(tunes => {
 
-					if (tunes.length > 0) {
-						return res.status(401).json({ errors: { msg: 'The pedal is beeing used in some tune.' }});
-					}
+router.delete('/:id', (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
+		else {
+
+			Tune.findOne({ pedals: req.params.id}, function(findTuneError, tune) {
+
+				if (findTuneError)
+					return res.status(500).json({ errors: { msg: findTuneError.message }});
+				else if (tune)
+					return res.status(401).json({ errors: { msg: 'The pedal is beeing used in some tune.' }});
+				else {
 
 					Pedal.remove({ _id: req.params.id}, function(removeError) {
 
-						if (removeError) {
-							return res.status(500).json({ errors: { msg: 'There was a problem while removing the pedal from the database.' }});
+						if (removeError)
+							return res.status(500).json({ errors: { msg: removeError.message }});
+						else {
+
+							User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
+
+								if (updateUserError)
+									return res.status(500).json({ errors: { msg: updateUserError.message }});
+								else 
+									return res.sendStatus(200);
+							});
 						}
-
-						User.removePedal(req.session.userId, req.params.id).then(() => {
-
-							return res.sendStatus(200);
-
-						}).catch(() => {
-
-							return res.status(500).json({ errors: { msg: 'There was a problem while removing the pedal from the database.' }});
-						});
 					});
+				}
 
-				}).catch(() => {
-					return res.status(500).json({ errors: { msg: 'There was a problem while getting the tunes from the database.' }});
-				});
-
-			}).catch(() => {
-				return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
 			});
 
-		} else
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		}
+		
+	});
 
-	} catch (validationError) {
-		return res.status(422).json({ errors: validationError.mapped() });
-	}
 });
-
 
 module.exports = router;

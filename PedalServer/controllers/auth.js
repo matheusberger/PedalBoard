@@ -1,4 +1,6 @@
 var express = require('express');
+var bcrypt = require('bcrypt');
+
 var router = express.Router();
 
 var User = require('../models/user');
@@ -22,15 +24,26 @@ router.post('/', [
 	try {
 		validationResult(req).throw();
 
-		const reqFields = matchedData(req);
+		const requestParams = matchedData(req);
 
-		User.authenticate(reqFields.email, reqFields.password, function(authError, user) {
-			if (authError) {
-				return res.status(403).json({ errors: { msg: authError.message }});
-			}
+		User.findOne({ email: requestParams.email }, function(findError, user) {
 
-			req.session.userId = user._id;
-			return res.sendStatus(200);
+			if (findError)
+				return res.status(500).json({ errors: { msg: findError.message }});
+			else if (!user)
+				return res.status(404).json({ errors: { msg: 'No user with the provided email.' }});
+
+			bcrypt.compare(requestParams.password, user.password, function(compareError, result) {
+				if (compareError)
+					return res.status(500).json({ errors: { msg: compareError.message }});
+				else if (result == false)
+					return res.status(403).json({ errors: { msg: 'The provided password is incorrect.' }});
+				else {
+					req.session.userId = user._id;
+					return res.sendStatus(200);
+				}
+			});
+
 		});
 
 	} catch (validationError) {
@@ -38,18 +51,20 @@ router.post('/', [
 	}
 });
 
-router.delete('/', function (req, res) {
-	if (req.session.userId) {
-		req.session.destroy(function(destroyError) {
-			if (destroyError)
-				return res.status(500).json({ errors: { msg: 'There was a problem when logging-out the user.' }});
-			else {
-				req.session = null;
-				return res.sendStatus(200);
-			}
-		});
-	} else
+router.delete('/', (req, res, next) => {
+
+	if (!req.session.userId)
 		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
+	req.session.destroy(function(destroyError) {
+		if (destroyError)
+			return res.status(500).json({ errors: { msg: 'There was a problem when logging-out the user.' }});
+		else {
+			req.session = null;
+			return res.sendStatus(200);
+		}
+	});
+		
 });
 
 module.exports = router;

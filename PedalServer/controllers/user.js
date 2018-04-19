@@ -25,25 +25,29 @@ router.post('/', [
 ], (req, res, next) => {
 
 	try {
+		
 		validationResult(req).throw();
 
-		const reqFields = matchedData(req);
-		
-		User.findWithEmail(reqFields.email).then(users => {
-			if (users.length > 0) {
-				return res.status(403).json({ errors: { msg: 'The email is already registered in the database.' }});
-			}
+		const requestParams = matchedData(req);
 
-			User.create({
-				email: reqFields.email,
-				password: reqFields.password,
-				name: reqFields.name
-			}).then(user => {
-				req.session.userId = user._id;
-				return res.sendStatus(200);
-			}).catch(() => {
-				return res.status(500).json({ errors: { msg: 'There was a problem adding the user to the database.' }});
-			});
+		User.findOne({ email: requestParams.email }, function(findError, user) {
+
+			if (findError)
+				return res.status(500).json({ errors: { msg: findError.message }});
+			else if (user)
+				return res.status(403).json({ errors: { msg: 'The email is already registered in the database.' }});
+			else {
+				User.create({
+					email: requestParams.email,
+					password: requestParams.password,
+					name: requestParams.name
+				}).then((user) => {
+					req.session.userId = user._id;
+					return res.sendStatus(200);
+				}).catch((createError) => {
+					return res.status(500).json({ errors: { msg: createError.message }});
+				});
+			}
 		});
 
 	} catch (validationError) {
@@ -52,26 +56,30 @@ router.post('/', [
 });
 
 
-router.get('/', function (req, res) {
+router.get('/', (req, res, next) => {
 
-	if (req.session.userId) {
+	if (!req.session.userId)
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
-		User.findWithId(req.session.userId).then(user => {
+	User.findOne({ _id: req.session.userId }, function(findError, user) {
 
-			let userPublicInformations = new User({
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!user)
+			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+		else {
+
+			let publicUser = new User({
 				_id: user._id,
 				name: user.name,
 				pedals: user.pedals,
 				tunes: user.tunes
 			});
 
-			return res.status(200).send(userPublicInformations);
-		}).catch(() => {
-			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-		});
-
-	} else
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+			return res.status(200).send(publicUser);
+		} 
+	});
+		
 });
 
 
@@ -82,33 +90,37 @@ router.put('/', [
 ], (req, res, next) => {
 
 	try {
+
 		validationResult(req).throw();
 
-	if (req.session.userId) {
+		if (!req.session.userId)
+			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
-		User.findWithId(req.session.userId).then(user => {
+		User.findOne({ _id: req.session.userId}, function(findError, user) {
 
-			user.updateName(req.body.name).then((updatedUser) => {
+			if (findError)
+				return res.status(500).json({ errors: { msg: findError.message }});
+			else if (!user)
+				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+			else {
 
-				let userPublicInformations = new User({
-					_id: updatedUser._id,
-					name: updatedUser.name,
-					pedals: updatedUser.pedals,
-					tunes: updatedUser.tunes
+				user.name = req.body.name;
+				user.save(function(saveError, updatedUser) {
+
+					if (saveError)
+						return res.status(500).json({ errors: { msg: saveError.message }});
+
+					let publicUser = new User({
+						_id: updatedUser._id,
+						name: updatedUser.name,
+						pedals: updatedUser.pedals,
+						tunes: updatedUser.tunes
+					});
+
+					return res.status(200).send(publicUser);
 				});
-
-				return res.status(200).send(userPublicInformations);
-
-			}).catch(() => {
-				return res.status(500).json({ errors: { msg: 'There was a problem while updating the user.' }});
-			});
-
-		}).catch(() => {
-			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+			}
 		});
-
-	} else
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });

@@ -20,14 +20,6 @@ var pedalSchema = new Schema({
 	}]
 });
 
-pedalSchema.statics.findWithIds = function(ids, callback) {
-	return this.find({ _id: {$in: ids} }, callback);
-};
-
-pedalSchema.statics.findWithId = function(id, callback) {
-	return this.findById(id, callback);
-};
-
 var Pedal = mongoose.model('Pedal', pedalSchema);
 
 module.exports = Pedal;
