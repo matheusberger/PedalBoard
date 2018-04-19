@@ -12,6 +12,7 @@ target 'PedalPrototype' do
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'MSCircularSlider', '~> 1.2'
+  pod 'IQKeyboardManagerSwift'
 
   target 'PedalPrototypeTests' do
     inherit! :search_paths
