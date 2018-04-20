@@ -89,12 +89,12 @@ router.put('/', [
 
 ], (req, res, next) => {
 
+	if (!req.session.userId) 
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
 	try {
 
 		validationResult(req).throw();
-
-		if (!req.session.userId)
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
 		User.findOne({ _id: req.session.userId}, function(findError, user) {
 

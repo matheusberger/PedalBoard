@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 
@@ -17,12 +18,12 @@ router.post('/', [
 
 ], (req, res, next) => {
 
+	if (!req.session.userId) 
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
 	try {
 
 		validationResult(req).throw();
-
-		if (!req.session.userId)
-			return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
 
 		Pedal.create({
 			name: req.body.name,
@@ -102,6 +103,62 @@ router.get('/:id', (req, res, next) => {
 });
 
 
+router.put('/:id/knob/:kid', [
+
+	check('value')
+		.exists().withMessage('The value was not informed.')
+		.isInt({ min: 0, max: 100 }).withMessage('The value must ben between 0 and 100.')
+
+], (req, res, next) => {
+
+	if (!req.session.userId)
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
+	try {
+
+		validationResult(req).throw();
+
+		Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+			if (findError)
+				return res.status(500).json({ errors: { msg: findError.message }});
+			else if (!pedal)
+				return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
+			else {
+
+				var hasKnob = false;
+				var searchKnobId = mongoose.Types.ObjectId(req.params.kid);
+
+				for (var i = 0; i < pedal.knobs.length; i++) {
+					let knobId = pedal.knobs[i]._id;
+					if (knobId.equals(searchKnobId)) {
+						pedal.knobs[i].value = req.body.value;
+						hasKnob = true;
+						break;
+					}
+				}
+				
+				if (!hasKnob)
+					return res.status(404).json({ errors: { msg: 'The knob not exist in the pedal.' }});
+				else {
+					pedal.save(function(saveError, pedal) {
+
+						if (saveError)
+							return res.status(500).json({ errors: { msg: saveError.message }});
+						else
+							return res.sendStatus(200);
+					});
+				}
+			}
+
+		});
+
+	} catch (validationError) {
+		return res.status(422).json({ errors: validationError.mapped() });
+	}
+
+});
+
 router.delete('/:id', (req, res, next) => {
 
 	if (!req.session.userId) 
@@ -115,33 +172,21 @@ router.delete('/:id', (req, res, next) => {
 			return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
 		else {
 
-			Tune.findOne({ pedals: req.params.id}, function(findTuneError, tune) {
+			Pedal.remove({ _id: req.params.id}, function(removeError) {
 
-				if (findTuneError)
-					return res.status(500).json({ errors: { msg: findTuneError.message }});
-				else if (tune)
-					return res.status(401).json({ errors: { msg: 'The pedal is beeing used in some tune.' }});
+				if (removeError)
+					return res.status(500).json({ errors: { msg: removeError.message }});
 				else {
 
-					Pedal.remove({ _id: req.params.id}, function(removeError) {
+					User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
 
-						if (removeError)
-							return res.status(500).json({ errors: { msg: removeError.message }});
-						else {
-
-							User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
-
-								if (updateUserError)
-									return res.status(500).json({ errors: { msg: updateUserError.message }});
-								else 
-									return res.sendStatus(200);
-							});
-						}
+						if (updateUserError)
+							return res.status(500).json({ errors: { msg: updateUserError.message }});
+						else 
+							return res.sendStatus(200);
 					});
 				}
-
 			});
-
 		}
 		
 	});
