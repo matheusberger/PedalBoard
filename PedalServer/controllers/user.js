@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 
@@ -9,18 +10,22 @@ const { matchedData, sanitize } = require('express-validator/filter');
 router.post('/', [
 
 	check('email')
-		.exists().withMessage('The user email was not informed.')
+		.exists().withMessage('The email was not informed.')
+		.isString().withMessage('The email must be a string.')
 		.isEmail().withMessage('The email is not valid.')
 		.trim()
 		.normalizeEmail(),
 
 	check('password')
-		.exists().withMessage('The user password was not informed.')
+		.exists().withMessage('The password was not informed.')
+		.isString().withMessage('The password must be a string.')
 		.isLength({ 
 			min: 6
 		}).withMessage('The password must be at least 6 chars long.'),
 
-	check('name', 'The user name was not informed.').exists()
+	check('name')
+		.exists().withMessage('The user name was not informed.')
+		.isString().withMessage('The password must be a string.')
 
 ], (req, res, next) => {
 
@@ -42,7 +47,6 @@ router.post('/', [
 					password: requestParams.password,
 					name: requestParams.name
 				}).then((user) => {
-					req.session.userId = user._id;
 					return res.sendStatus(200);
 				}).catch((createError) => {
 					return res.status(500).json({ errors: { msg: createError.message }});
@@ -83,11 +87,13 @@ router.get('/', (req, res, next) => {
 });
 
 
-router.put('/', [
+router.put('/name', [
 
-	check('name', 'The new user name was not informed.').exists()
+	check('name')
+		.exists().withMessage('The user name was not informed.')
+		.isString().withMessage('The password must be a string.')
 
-], (req, res, next) => {
+],(req, res, next) => {
 
 	if (!req.session.userId) 
 		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
@@ -109,15 +115,8 @@ router.put('/', [
 
 					if (saveError)
 						return res.status(500).json({ errors: { msg: saveError.message }});
-
-					let publicUser = new User({
-						_id: updatedUser._id,
-						name: updatedUser.name,
-						pedals: updatedUser.pedals,
-						tunes: updatedUser.tunes
-					});
-
-					return res.status(200).send(publicUser);
+					else
+						return res.sendStatus(200);
 				});
 			}
 		});
@@ -125,6 +124,106 @@ router.put('/', [
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });
 	}
+});
+
+
+router.put('/pedal/:id', (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'This pedal not exist in the database.' }});
+		else {
+
+			User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+
+				if (findUserError)
+					return res.status(500).json({ errors: { msg: findUserError.message }});
+				else if (!user)
+					return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+				else {
+
+					var userHasPedal = false;
+
+					for (i = 0; i < user.pedals.length; i++) {
+						if (user.pedals[i].equals(pedal._id)) {
+							userHasPedal = true;
+							break;
+						}
+					}
+
+					if (userHasPedal)
+						return res.status(401).json({ errors: { msg: 'This pedal is already linked to the user.' }});
+					else {
+
+						user.update({ 'pedals': { $push: pedal._id }}, function(updateError, user) {
+
+							if (updateError)
+								return res.status(500).json({ errors: { msg: updateError.message }});
+							else
+								return res.sendStatus(200);
+						});
+					}
+
+				}
+			});
+		}
+	});
+});
+
+
+router.delete('/pedal/:id', (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'This pedal not exist in the database.' }});
+		else {
+
+			User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+
+				if (findUserError)
+					return res.status(500).json({ errors: { msg: findUserError.message }});
+				else if (!user)
+					return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+				else {
+
+					var userHasPedal = false;
+
+					for (i = 0; i < user.pedals.length; i++) {
+						if (user.pedals[i].equals(pedal._id)) {
+							userHasPedal = true;
+							break;
+						}
+					}
+
+					if (!userHasPedal)
+						return res.status(401).json({ errors: { msg: 'This pedal is not linked to the user.' }});
+					else {
+
+						user.update({ 'pedals': { $pull: pedal._id }}, function(updateError, user) {
+
+							if (updateError)
+								return res.status(500).json({ errors: { msg: updateError.message }});
+							else
+								return res.sendStatus(200);
+						});
+					}
+
+				}
+			});
+		}
+	});
 });
 
 module.exports = router;
