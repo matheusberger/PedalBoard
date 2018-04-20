@@ -1,17 +1,6 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-var tuneSchema = new Schema({
-	name: { 
-		type: String,
-		required: true
-	},
-	artist: {
-		type: String,
-		required: true
-	},
-	pedals: [Schema.ObjectId]
-});
+var tuneSchema = require('./schemas/tuneSchema');
 
 var Tune = mongoose.model('Tune', tuneSchema);
 

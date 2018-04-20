@@ -11,13 +11,15 @@ const { matchedData, sanitize } = require('express-validator/filter');
 router.post('/', [
 
 	check('email')
-		.exists().withMessage('The user email was not informed.')
+		.exists().withMessage('The email was not informed.')
+		.isString().withMessage('The email must be a string.')
 		.isEmail().withMessage('The email is not valid.')
 		.trim()
 		.normalizeEmail(),
 
 	check('password')
-		.exists().withMessage('The user password was not informed.')
+		.exists().withMessage('The password was not informed.')
+		.isString().withMessage('The password must be a string.')
 		
 ], (req, res, next) => {
 	
@@ -31,17 +33,16 @@ router.post('/', [
 			if (findError)
 				return res.status(500).json({ errors: { msg: findError.message }});
 			else if (!user)
-				return res.status(404).json({ errors: { msg: 'No user with the provided email.' }});
+				return res.status(404).json({ errors: { msg: 'User not found.' }});
 
 			bcrypt.compare(requestParams.password, user.password, function(compareError, result) {
 				if (compareError)
 					return res.status(500).json({ errors: { msg: compareError.message }});
 				else if (result == false)
-					return res.status(403).json({ errors: { msg: 'The provided password is incorrect.' }});
-				else {
-					req.session.userId = user._id;
-					return res.sendStatus(200);
-				}
+					return res.status(401).json({ errors: { msg: 'The password is incorrect.' }});
+
+				req.session.userId = user._id;
+				return res.sendStatus(200);
 			});
 
 		});
@@ -54,15 +55,14 @@ router.post('/', [
 router.delete('/', (req, res, next) => {
 
 	if (!req.session.userId)
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	req.session.destroy(function(destroyError) {
 		if (destroyError)
 			return res.status(500).json({ errors: { msg: 'There was a problem when logging-out the user.' }});
-		else {
-			req.session = null;
-			return res.sendStatus(200);
-		}
+
+		req.session = null;
+		return res.sendStatus(200);
 	});
 		
 });

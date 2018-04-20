@@ -1,15 +1,14 @@
+var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 
 var User = require('../models/user');
 var Tune = require('../models/tune');
 var Pedal = require('../models/pedal');
+var Knob = require('../models/knob');
+var PedalSetup = require('../models/pedalSetup');
 
 const { check, validationResult } = require('express-validator/check');
-
-
-
-/*
 
 router.post('/', [
 
@@ -24,7 +23,7 @@ router.post('/', [
 ], (req, res, next) => {
 
 	if (!req.session.userId) 
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	try {
 
@@ -34,9 +33,7 @@ router.post('/', [
 			name: req.body.name,
 			artist: req.body.artist
 		}).then((tune) => {
-
 			return res.status(200).send(tune);
-
 		}).catch((createError) => {
 			return res.status(500).json({ errors: { msg: createError.message}});
 		});
@@ -44,15 +41,67 @@ router.post('/', [
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });
 	}
+});
+
+
+router.get('/:id', (req, res, next) => {
+
+	if (!req.session.userId)
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
+
+	Tune.findOne({ _id: req.params.id}, function(findError, tune) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!tune)
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
+
+		return res.status(200).send(tune);
+	});
 
 });
 
 
-router.put('/:id', [
+router.put('/:id/name', [
 
 	check('name')
 		.exists().withMessage('The tune name was not informed.')
 		.isString().withMessage('The tune name must be a string.'),
+
+], (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
+
+	try {
+
+		validationResult(req).throw();
+
+		Tune.findOne({ _id: req.params.id }, function(findError, tune) {
+
+			if (findError)
+				return res.status(500).json({ errors: { msg: findError.message}});
+			else if (!tune)
+				return res.status(404).json({ errors: { msg: 'Tune not found.' }});
+
+				tune.name = req.body.name;
+
+			tune.save(function(saveError, updatedTune) {
+
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message}});
+
+				return res.sendStatus(200);
+			});
+		});
+
+	} catch (validationError) {
+		return res.status(422).json({ errors: validationError.mapped() });
+	}
+});
+
+
+router.put('/:id/artist', [
 
 	check('artist')
 		.exists().withMessage('The artist name was not informed.')
@@ -61,7 +110,7 @@ router.put('/:id', [
 ], (req, res, next) => {
 
 	if (!req.session.userId) 
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	try {
 
@@ -72,156 +121,162 @@ router.put('/:id', [
 			if (findError)
 				return res.status(500).json({ errors: { msg: findError.message}});
 			else if (!tune)
-				return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
-			else {
+				return res.status(404).json({ errors: { msg: 'Tune not found.' }});
 
-				tune.name = req.body.name;
-				tune.artist = req.body.artist;
+			tune.artist = req.body.artist;
 
-				tune.save(function(saveError, updatedTune) {
+			tune.save(function(saveError, updatedTune) {
 
-					if (saveError)
-						return res.status(500).json({ errors: { msg: saveError.message}});
-					else
-						return res.status(200).send(updatedTune);
-				});
-			}
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message}});
 
+				return res.sendStatus(200);
+			});
 		});
 
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });
 	}
 });
-
-
-
 
 
 router.delete('/:id', (req, res, next) => {
 
 	if (!req.session.userId)
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	Tune.findOne({ _id: req.params.id }, function(findError, tune) {
 
 		if (findError)
 			return res.status(500).json({ errors: { msg: findError.message}});
 		else if (!tune)
-			return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
-		else {
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
+
+		User.findOne({ 'tunes': { $in: [tune._id] }}, function(findUserError, user) {
+
+			if (findUserError)	
+				return res.status(500).json({ errors: { msg: findUserError.message }});
+			else if (user)
+				return res.status(403).json({ errors: { msg: 'This tune is linked to a user.' }});
+
 
 			Tune.remove({ _id: req.params.id }, function(removeError) {
 
 				if (removeError)
 					return res.status(500).json({ errors: { msg: removeError.message}});
-				else {
 
-					User.findByIdAndUpdate(req.session.userId, { $pull: { 'pedals': req.params.id } }, function(updateUserError, user) {
-						
-						if (updateUserError)
-							return res.status(500).json({ errors: { msg: updateUserError.message}});
-						else
-							return res.sendStatus(200);
-					});
-				}
+			
+					return res.sendStatus(200);
 			});
-
-		}
+		});
 	});
-
 });
 
 
 router.put('/:id/pedal/:pid', (req, res, next) => {
 
-	if (!req.session.userId)
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+	if (!req.session.userId) 
+		return res.status(401).json({ errors: { msg: 'Uset not logged.' }});
 
-	try {
+	Tune.findOne({ _id: req.params.id }, function(findError, tune) {
 
-		validationResult(req).throw();
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!tune)
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
 
-		Tune.findOne({ _id: req.params.id }, function(findError, tune) {
+		let pedalId = mongoose.Types.ObjectId(req.params.pid);
 
-			if (findError)
-				return res.status(500).json({ errors: { msg: findError.message}});
-			else if (!tune)
-				return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
-			else {
-
-				Pedal.findOne({ _id: req.params.pid }, function(findPedalError, pedal) {
-
-					if (findPedalError)
-						return res.status(500).json({ errors: { msg: findPedalError.message}});
-					else if (!pedal)
-						return res.status(404).json({ errors: { msg: 'The pedal not exist in the database.' }});
-					else {
-
-						Pedal.create({
-							name: pedal.name,
-							knobs: pedal.knobs
-						}).then((copyPedal) => {
-
-								tune.pedals.push(copyPedal._id);
-								tune.save(function(saveError, tune) {
-
-									if (saveError)
-										return res.status(500).json({ errors: { msg: saveError.message}});
-									else
-										return res.status(200).send(copyPedal);
-								});
-
-						}).catch((createError) => {
-							return res.status(500).json({ errors: { msg: createError.message}});
-						})
-					}
-
-				});
+		let tuneHasPedal = false;
+		for (i = 0; i < tune.pedalSetups.length; i++) {
+			if (tune.pedalSetups[i].pedal.equals(pedalId)) {
+				tuneHasPedal = true;
+				break;
 			}
-		});
+		}
 
-	} catch (validationError) {
-		return res.status(422).json({ errors: validationError.mapped() });
-	}
+		if (tuneHasPedal)
+			return res.status(403).json({ errors: { msg: 'This pedal is already linked to the tune.' }});
+
+		Pedal.findOne({ _id: req.params.pid }, function(findPedalError, pedal) {
+
+			if (findPedalError)
+				return res.status(500).json({ errors: { msg: findPedalError.message }});
+			else if (!pedal)
+				return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+
+			let ksValues = pedal.knobs.map(function(knob) {
+				return {
+					knob: knob,
+					value: 0
+				}
+			});
+
+			let pedalSetup = new PedalSetup({
+				pedal: pedal._id
+			});
+			pedalSetup.knobsValue.push(...ksValues);
+
+			tune.pedalSetups.push(pedalSetup);
+
+			tune.save(function(saveError) {
+
+				if (saveError)
+					return res.status(500).json({ errors: { msg: createKnobsError.message }});
+
+				return res.sendStatus(200);
+			});
+		});
+	});;
 });
 
 
 router.delete('/:id/pedal/:pid', (req, res, next) => {
 
-	if (!req.session.userId)
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+	if (!req.session.userId) 
+		return res.status(401).json({ errors: { msg: 'Uset not logged.' }});
 
 	Tune.findOne({ _id: req.params.id }, function(findError, tune) {
 
 		if (findError)
-			return res.status(500).json({ errors: { msg: findError.message}});
+			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!tune)
-			return res.status(404).json({ errors: { msg: 'The tune not exist in the database.' }});
-		else {
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
 
-			var hasPedal = false;
-			for (i = 0; i < tune.pedals.length; i++) {
-				if (tune.pedals[i].equals(req.params.pid)) {
-					hasPedal = true;
-				}
-			}
+		let pedalId = mongoose.Types.ObjectId(req.params.pid);
 
-			if (!hasPedal)
-				return res.status(401).json({ errors: { msg: 'The pedal is not in the tune.' }});
-			else {
-
-				tune.update({ $pull: { 'pedals': req.params.pid }, function(updateError, tune) {
-
-					if (updateError) {
-
-					}
-				});
+		let tuneHasPedal = false;
+		for (i = 0; i < tune.pedalSetups.length; i++) {
+			if (tune.pedalSetups[i].pedal.equals(pedalId)) {
+				tuneHasPedal = true;
+				break;
 			}
 		}
-	});
 
+		if (!tuneHasPedal)
+			return res.status(403).json({ errors: { msg: 'This pedal is not linked to the tune.' }});
+
+		Pedal.findOne({ _id: req.params.pid }, function(findPedalError, pedal) {
+
+			if (findPedalError)
+				return res.status(500).json({ errors: { msg: findPedalError.message }});
+			else if (!pedal)
+				return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+
+			tune.pedalSetups = tune.pedalSetups.filter(function(pedalSetup) {
+				return !pedalSetup.pedal.equals(pedal._id);
+			});
+
+			tune.save(function(saveError) {
+
+				if (saveError)
+					return res.status(500).json({ errors: { msg: createKnobsError.message }});
+
+				return res.sendStatus(200);
+			});
+
+		});
+	});;
 });
-*/
 
 module.exports = router;

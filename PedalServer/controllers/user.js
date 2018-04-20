@@ -3,6 +3,8 @@ var express = require('express');
 var router = express.Router();
 
 var User = require('../models/user');
+var Pedal = require('../models/pedal');
+var Tune = require('../models/tune');
 
 const { check, validationResult } = require('express-validator/check');
 const { matchedData, sanitize } = require('express-validator/filter');
@@ -40,18 +42,17 @@ router.post('/', [
 			if (findError)
 				return res.status(500).json({ errors: { msg: findError.message }});
 			else if (user)
-				return res.status(403).json({ errors: { msg: 'The email is already registered in the database.' }});
-			else {
-				User.create({
-					email: requestParams.email,
-					password: requestParams.password,
-					name: requestParams.name
-				}).then((user) => {
-					return res.sendStatus(200);
-				}).catch((createError) => {
-					return res.status(500).json({ errors: { msg: createError.message }});
-				});
-			}
+				return res.status(401).json({ errors: { msg: 'The email is already registered in the database.' }});
+
+			User.create({
+				email: requestParams.email,
+				password: requestParams.password,
+				name: requestParams.name
+			}).then((user) => {
+				return res.sendStatus(200);
+			}).catch((createError) => {
+				return res.status(500).json({ errors: { msg: createError.message }});
+			});
 		});
 
 	} catch (validationError) {
@@ -63,7 +64,7 @@ router.post('/', [
 router.get('/', (req, res, next) => {
 
 	if (!req.session.userId)
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'Uset not logged.' }});
 
 	User.findOne({ _id: req.session.userId }, function(findError, user) {
 
@@ -71,17 +72,15 @@ router.get('/', (req, res, next) => {
 			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!user)
 			return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-		else {
 
-			let publicUser = new User({
-				_id: user._id,
-				name: user.name,
-				pedals: user.pedals,
-				tunes: user.tunes
-			});
+		let publicUser = new User({
+			_id: user._id,
+			name: user.name,
+			pedals: user.pedals,
+			tunes: user.tunes
+		});
 
-			return res.status(200).send(publicUser);
-		} 
+		return res.status(200).send(publicUser); 
 	});
 		
 });
@@ -96,7 +95,7 @@ router.put('/name', [
 ],(req, res, next) => {
 
 	if (!req.session.userId) 
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	try {
 
@@ -108,17 +107,15 @@ router.put('/name', [
 				return res.status(500).json({ errors: { msg: findError.message }});
 			else if (!user)
 				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-			else {
 
-				user.name = req.body.name;
-				user.save(function(saveError, updatedUser) {
+			user.name = req.body.name;
+			user.save(function(saveError, updatedUser) {
 
-					if (saveError)
-						return res.status(500).json({ errors: { msg: saveError.message }});
-					else
-						return res.sendStatus(200);
-				});
-			}
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message }});
+				else
+					return res.sendStatus(200);
+			});
 		});
 
 	} catch (validationError) {
@@ -130,49 +127,43 @@ router.put('/name', [
 router.put('/pedal/:id', (req, res, next) => {
 
 	if (!req.session.userId) 
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'Uset not logged.' }});
 
-	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+	Pedal.findOne({ _id: req.params.id }, function(findError, pedal) {
 
 		if (findError)
 			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!pedal)
-			return res.status(404).json({ errors: { msg: 'This pedal not exist in the database.' }});
-		else {
+			return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
 
-			User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+		User.findOne({ _id: req.session.userId}, function(findUserError, user) {
 
-				if (findUserError)
-					return res.status(500).json({ errors: { msg: findUserError.message }});
-				else if (!user)
-					return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-				else {
+			if (findUserError)
+				return res.status(500).json({ errors: { msg: findUserError.message }});
+			else if (!user)
+				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
 
-					var userHasPedal = false;
+			var userHasPedal = false;
 
-					for (i = 0; i < user.pedals.length; i++) {
-						if (user.pedals[i].equals(pedal._id)) {
-							userHasPedal = true;
-							break;
-						}
-					}
-
-					if (userHasPedal)
-						return res.status(401).json({ errors: { msg: 'This pedal is already linked to the user.' }});
-					else {
-
-						user.update({ 'pedals': { $push: pedal._id }}, function(updateError, user) {
-
-							if (updateError)
-								return res.status(500).json({ errors: { msg: updateError.message }});
-							else
-								return res.sendStatus(200);
-						});
-					}
-
+			for (i = 0; i < user.pedals.length; i++) {
+				if (user.pedals[i].equals(pedal._id)) {
+					userHasPedal = true;
+					break;
 				}
+			}
+
+			if (userHasPedal)
+				return res.status(403).json({ errors: { msg: 'This pedal is already linked to the user.' }});
+
+			user.pedals.push({ _id: pedal._id });
+
+			user.save(function(saveError,) {
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message }});
+
+				return res.sendStatus(200);
 			});
-		}
+		});
 	});
 });
 
@@ -180,50 +171,135 @@ router.put('/pedal/:id', (req, res, next) => {
 router.delete('/pedal/:id', (req, res, next) => {
 
 	if (!req.session.userId) 
-		return res.status(403).json({ errors: { msg: 'No user is current logged.' }});
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
 
 		if (findError)
 			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!pedal)
-			return res.status(404).json({ errors: { msg: 'This pedal not exist in the database.' }});
-		else {
+			return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
 
-			User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+		User.findOne({ _id: req.session.userId}, function(findUserError, user) {
 
-				if (findUserError)
-					return res.status(500).json({ errors: { msg: findUserError.message }});
-				else if (!user)
-					return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
-				else {
+			if (findUserError)
+				return res.status(500).json({ errors: { msg: findUserError.message }});
+			else if (!user)
+				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
 
-					var userHasPedal = false;
+			var userHasPedal = false;
 
-					for (i = 0; i < user.pedals.length; i++) {
-						if (user.pedals[i].equals(pedal._id)) {
-							userHasPedal = true;
-							break;
-						}
-					}
-
-					if (!userHasPedal)
-						return res.status(401).json({ errors: { msg: 'This pedal is not linked to the user.' }});
-					else {
-
-						user.update({ 'pedals': { $pull: pedal._id }}, function(updateError, user) {
-
-							if (updateError)
-								return res.status(500).json({ errors: { msg: updateError.message }});
-							else
-								return res.sendStatus(200);
-						});
-					}
-
+			for (i = 0; i < user.pedals.length; i++) {
+				if (user.pedals[i].equals(pedal._id)) {
+					userHasPedal = true;
+					break;
 				}
+			}
+
+			if (!userHasPedal)
+				return res.status(403).json({ errors: { msg: 'This pedal is not linked to the user.' }});
+
+			user.pedals.pull({ _id:  pedal._id});
+
+			user.save(function(saveError) {
+
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message }});
+
+				return res.sendStatus(200);
 			});
-		}
+		});
 	});
 });
+
+
+router.put('/tune/:id', (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(401).json({ errors: { msg: 'Uset not logged.' }});
+
+	Tune.findOne({ _id: req.params.id }, function(findError, tune) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!tune)
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
+
+		User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+
+			if (findUserError)
+				return res.status(500).json({ errors: { msg: findUserError.message }});
+			else if (!user)
+				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+
+			var userHasTune = false;
+
+			for (i = 0; i < user.tunes.length; i++) {
+				if (user.tunes[i].equals(tune._id)) {
+					userHasTune = true;
+					break;
+				}
+			}
+
+			if (userHasTune)
+				return res.status(403).json({ errors: { msg: 'This tune is already linked to the user.' }});
+
+			user.tunes.push({ _id: tune._id });
+
+			user.save(function(saveError,) {
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message }});
+
+				return res.sendStatus(200);
+			});
+		});
+	});
+});
+
+
+router.delete('/tune/:id', (req, res, next) => {
+
+	if (!req.session.userId) 
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
+
+	Tune.findOne({ _id: req.params.id}, function(findError, tune) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!tune)
+			return res.status(404).json({ errors: { msg: 'Tune not found.' }});
+
+		User.findOne({ _id: req.session.userId}, function(findUserError, user) {
+
+			if (findUserError)
+				return res.status(500).json({ errors: { msg: findUserError.message }});
+			else if (!user)
+				return res.status(500).json({ errors: { msg: 'There was a problem while getting the user from the database.' }});
+
+			var userHasTune = false;
+
+			for (i = 0; i < user.tunes.length; i++) {
+				if (user.tunes[i].equals(tune._id)) {
+					userHasTune = true;
+					break;
+				}
+			}
+
+			if (!userHasTune)
+				return res.status(403).json({ errors: { msg: 'This tune is not linked to the user.' }});
+
+			user.tunes.pull({ _id: tune._id});
+
+			user.save(function(saveError) {
+
+				if (saveError)
+					return res.status(500).json({ errors: { msg: saveError.message }});
+
+				return res.sendStatus(200);
+			});
+		});
+	});
+});
+
 
 module.exports = router;

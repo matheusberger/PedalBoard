@@ -21,16 +21,18 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 var AuthController = require('./controllers/auth');
 var UserController = require('./controllers/user');
 var PedalController = require('./controllers/pedal');
+var KnobController = require('./controllers/knob');
 var TuneController = require('./controllers/tune');
 
 app.use('/auth', AuthController);
 app.use('/user', UserController);
 app.use('/pedal', PedalController);
+app.use('/knob', KnobController);
 app.use('/tune', TuneController);
 
 module.exports = app;
