@@ -8,6 +8,7 @@ target 'PedalPrototype' do
   # Pods for PedalPrototype
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'PromiseKit/Alamofire', '~> 6.0'
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
