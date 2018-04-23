@@ -10,10 +10,11 @@ var key = fs.readFileSync('encryption/key.pem');
 var cert = fs.readFileSync('encryption/cert.pem');
 
 var options = {
-  key: key,
-  cert: cert,
-  requestCert: true,
-  rejectUnauthorized: false,
+	url: 'https://54.207.101.234:3000/',
+	key: key,
+ 	cert: cert,
+ 	requestCert: false,
+  	rejectUnauthorized: false,
 };
 
 https.createServer(options, app).listen(port, function() {
