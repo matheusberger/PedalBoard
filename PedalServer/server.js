@@ -10,8 +10,7 @@ var ca = fs.readFileSync('./encryption/intermediate.crt');
 
 var options = {
   key: key,
-  cert: cert,
-  ca: ca
+  cert: cert
 };
 
 https.createServer(options, app).listen(port, function() {
