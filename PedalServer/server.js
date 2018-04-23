@@ -4,9 +4,8 @@ var https = require('https');
 
 var port = process.env.PORT || 3000;
 
-var key = fs.readFileSync('./encryption/private.key');
-var cert = fs.readFileSync('./encryption/primary.crt');
-var ca = fs.readFileSync('./encryption/intermediate.crt');
+var key = fs.readFileSync('encryption/key.pem');
+var cert = fs.readFileSync('encryption/cert.pem');
 
 var options = {
   key: key,
