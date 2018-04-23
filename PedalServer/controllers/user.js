@@ -78,6 +78,7 @@ router.get('/:id', (req, res, next) => {
 
 		let publicUser = new User({
 			_id: user._id,
+			email: user.email,
 			name: user.name,
 			pedals: user.pedals,
 			tunes: user.tunes
