@@ -21,7 +21,9 @@ router.post('/', [
 
 ], (req, res, next) => {
 
-	if (!req.session.userId) 
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId) 
 		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	try {
@@ -33,6 +35,7 @@ router.post('/', [
 		});
 
 		Pedal.create({
+			owner: currentAuthUserId,
 			name: req.body.name,
 			knobs: knobsIds
 		}).then((pedal) => {
@@ -49,7 +52,9 @@ router.post('/', [
 
 router.get('/:id', (req, res, next) => {
 
-	if (!req.session.userId)
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId)
 		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
@@ -67,7 +72,9 @@ router.get('/:id', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
 
-	if (!req.session.userId) 
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId) 
 		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
@@ -76,6 +83,8 @@ router.delete('/:id', (req, res, next) => {
 			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!pedal)
 			return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+		else if (!pedal.owner.equals(currentAuthUserId))
+			return res.status(409).json({ errors: { msg: 'User not allowed.' }});
 
 		User.findOne({ 'pedals': { $in: [pedal._id] }}, function(findUserError, user) {
 
@@ -92,19 +101,18 @@ router.delete('/:id', (req, res, next) => {
 				else if (tune)
 					return res.status(403).json({ errors: { msg: 'This pedal is linked to a tune.' }});
 
-				Tune.remove({ _id: { $in: pedal.knobs }}, function(removeKnobsError) {
+				Knob.remove({ _id: { $in: pedal.knobs }}, function(removeKnobsError) {
 
 					if (removeKnobsError)
 						return res.status(500).json({ errors: { msg: removeError.message }});
-					else
-						Pedal.remove({ _id: req.params.id}, function(removeError) {
-							if (removeError)
-								return res.status(500).json({ errors: { msg: removeError.message }});
-						
-							return res.sendStatus(200);
+
+					Pedal.remove({ _id: pedal._id}, function(removeError) {
+						if (removeError)
+							return res.status(500).json({ errors: { msg: removeError.message }});
+					
+						return res.sendStatus(200);
 					});
 				});
-					
 			});
 		});
 	});
@@ -112,7 +120,7 @@ router.delete('/:id', (req, res, next) => {
 });
 
 
-router.put('/:id/name/', [
+router.patch('/:id/name/', [
 
 	check('name')
 		.exists().withMessage('The new name was not informed.')
@@ -120,7 +128,9 @@ router.put('/:id/name/', [
 
 ], (req, res, next) => {
 
-	if (!req.session.userId) 
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId) 
 		return res.status(401).json({ errors: { msg: 'User not logged.' }});
 
 	try {
@@ -132,7 +142,9 @@ router.put('/:id/name/', [
 			if (findError)
 				return res.status(500).json({ errors: { msg: findError.message }});
 			else if (!pedal)
-				return res.status(500).json({ errors: { msg: 'There was a problem while getting the pedal from the database.' }});
+				return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+			else if (!pedal.owner.equals(currentAuthUserId))
+				return res.status(409).json({ errors: { msg: 'User not allowed.' }});
 
 			pedal.name = req.body.name;
 
@@ -147,6 +159,90 @@ router.put('/:id/name/', [
 	} catch (validationError) {
 		return res.status(422).json({ errors: validationError.mapped() });
 	}
+});
+
+
+router.put('/:id/knob/:kid', (req, res, next) => {
+
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId) 
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
+
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+		else if (!pedal.owner.equals(currentAuthUserId))
+			return res.status(409).json({ errors: { msg: 'User not allowed.' }});
+
+		let knobId = mongoose.Types.ObjectId(req.params.kid);
+
+		let pedalHasKnob = false;
+		for (i = 0; i < pedal.knobs.length; i++) {
+			if (pedal.knobs[i].equals(knobId)) {
+				pedalHasKnob = true;
+				break;
+			}
+		}
+
+		if (pedalHasKnob)
+			return res.status(403).json({ errors: { msg: 'This knob is already linked to the pedal.' }});
+
+		pedal.knobs.push(knobId);
+
+		pedal.save(function(saveError, updatedUser) {
+			if (saveError)
+				return res.status(500).json({ errors: { msg: saveError.message }});
+		
+			return res.sendStatus(200);
+		});
+	});
+});
+
+
+router.delete('/:id/knob/:kid', (req, res, next) => {
+
+	let currentAuthUserId = mongoose.Types.ObjectId(req.session.userId);
+
+	if (!currentAuthUserId) 
+		return res.status(401).json({ errors: { msg: 'User not logged.' }});
+
+	Pedal.findOne({ _id: req.params.id}, function(findError, pedal) {
+
+		if (findError)
+			return res.status(500).json({ errors: { msg: findError.message }});
+		else if (!pedal)
+			return res.status(404).json({ errors: { msg: 'Pedal not found.' }});
+		else if (!pedal.owner.equals(currentAuthUserId))
+			return res.status(409).json({ errors: { msg: 'User not allowed.' }});
+
+		let knobId = mongoose.Types.ObjectId(req.params.kid);
+
+		let pedalHasKnob = false;
+		for (i = 0; i < pedal.knobs.length; i++) {
+			if (pedal.knobs[i].equals(knobId)) {
+				pedalHasKnob = true;
+				break;
+			}
+		}
+
+		if (!pedalHasKnob)
+			return res.status(403).json({ errors: { msg: 'This knob is not linked to the pedal.' }});
+
+		pedal.knobs = pedal.knobs.filter(function(knob) {
+			return !knob.equals(knobId);
+		});
+
+		pedal.save(function(saveError, updatedUser) {
+			if (saveError)
+				return res.status(500).json({ errors: { msg: saveError.message }});
+		
+			return res.sendStatus(200);
+		});
+	});
 });
 
 module.exports = router;

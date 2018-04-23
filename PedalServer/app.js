@@ -21,7 +21,7 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 var AuthController = require('./controllers/auth');
 var UserController = require('./controllers/user');

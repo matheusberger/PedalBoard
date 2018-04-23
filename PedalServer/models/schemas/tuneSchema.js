@@ -4,6 +4,10 @@ var Schema = mongoose.Schema;
 var pedalSetupSchema = require('./pedalSetupSchema');
 
 var tuneSchema = new Schema({
+	owner: {
+		type: Schema.ObjectId,
+		required: true
+	},
 	name: { 
 		type: String,
 		required: true
@@ -15,4 +19,4 @@ var tuneSchema = new Schema({
 	pedalSetups: [pedalSetupSchema]
 });
 
-exports.module = tuneSchema;
+module.exports = tuneSchema;

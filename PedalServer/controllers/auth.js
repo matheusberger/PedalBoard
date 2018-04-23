@@ -23,6 +23,9 @@ router.post('/', [
 		
 ], (req, res, next) => {
 	
+	if (req.session.userId)
+		return res.status(401).json({ errors: { msg: 'User already logged.' }});
+
 	try {
 		validationResult(req).throw();
 
@@ -39,7 +42,7 @@ router.post('/', [
 				if (compareError)
 					return res.status(500).json({ errors: { msg: compareError.message }});
 				else if (result == false)
-					return res.status(401).json({ errors: { msg: 'The password is incorrect.' }});
+					return res.status(403).json({ errors: { msg: 'The password is incorrect.' }});
 
 				req.session.userId = user._id;
 				return res.sendStatus(200);
