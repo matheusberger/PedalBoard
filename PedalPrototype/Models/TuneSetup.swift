@@ -17,14 +17,14 @@ class TuneSetup {
         self.pedals = pedals!
     }
     
-    func toDictionary() -> [String : [String : Int]] {
-        
-        var dictionary = [String : [String : Int]]()
-        
-        for pedal in self.pedals {
-            dictionary[pedal.key!] = pedal.knobs
-        }
-        
-        return dictionary
-    }
+//    func toDictionary() -> [String : [String : Int]] {
+//        
+//        var dictionary = [String : [String : Int]]()
+//        
+//        for pedal in self.pedals {
+//            dictionary[pedal.key!] = pedal.knobs
+//        }
+//        
+//        return dictionary
+//    }
 }

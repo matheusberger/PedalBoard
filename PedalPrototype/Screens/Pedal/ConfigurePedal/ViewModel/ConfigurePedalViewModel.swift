@@ -14,17 +14,17 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     
     init(withPedal pedal: Pedal?) {
         
-        if pedal != nil {
+//        if pedal != nil {
             self.pedal = pedal!
-        }
-        else {
-            self.pedal = Pedal(withName: "", andKnobs: [String : Int]())
-        }
+//        }
+//        else {
+//            self.pedal = Pedal(withName: "", andKnobs: [String : Int]())
+//        }
     }
     
     func configurePedal(withName name: String, andKnobs knobNames: [String], withCompletionBlock completionBlock: @escaping () -> Void) {
         
-        guard let userUID = PBUserProvider.getCurrentUserUID() else {
+        guard let userUID = PBUserProvider.getCurrentUserID() else {
             return
         }
         
@@ -35,7 +35,7 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
         }
         
         self.pedal.name = name
-        self.pedal.knobs = knobs
+//        self.pedal.knobs = knobs
         
         if pedal.key != nil {
             PedalProvider.update(pedal: self.pedal, forUser: userUID) { (success) in
@@ -64,8 +64,8 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     
     func getKnobs(withContinuousBlock continuousBlock: @escaping (String) -> Void) {
         
-        for (knob, _) in self.pedal.knobs {
-            continuousBlock(knob)
-        }
+//        for (knob, _) in self.pedal.knobs {
+//            continuousBlock(knob)
+//        }
     }
 }

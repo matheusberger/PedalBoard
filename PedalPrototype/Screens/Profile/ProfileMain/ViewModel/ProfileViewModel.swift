@@ -20,7 +20,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     func getUserName() -> String {
-        return currentUser.fullName
+        return currentUser.name
     }
     
     func getUserEmail() -> String {

@@ -10,15 +10,12 @@ import Foundation
 
 protocol AuthProtocol {
     
-    static func createUser(withEmail: String,
-                           password: String,
-                           andName: String,
-                           withCompletionBlock: @escaping (_ user: PBUser?, Error?) -> Void)
+    static func singIn(withEmail email: String,
+                           andPassword password: String,
+                           withCompletionBlock completionBlock: @escaping (_ userId: String) -> Void,
+                           withFailureBlock failureBlock: @escaping (_ error: AuthRequestError) -> Void)
     
-    static func singInUser(withEmail: String,
-                          andPassword: String,
-                          withCompletionBlock: @escaping (_ user: PBUser?, Error?) -> Void)
-    
-    static func signOutUser(withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func signOut(withCompletionBlock completionBlock: @escaping () -> Void,
+                            withFailureBlock failureBlock: @escaping (_ error: AuthRequestError) -> Void)
     
 }

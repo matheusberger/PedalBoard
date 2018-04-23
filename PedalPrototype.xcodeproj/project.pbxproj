@@ -15,7 +15,7 @@
 		0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */; };
 		0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EB205DF77D00A641BD /* PBUser.swift */; };
 		0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */; };
-		0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */; };
+		0A25C6F0205E88CC00A641BD /* PBUser+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6EF205E88CC00A641BD /* PBUser+JSON.swift */; };
 		0A25C6F2205E9AA100A641BD /* PBUserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */; };
 		0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */; };
 		0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25C6F6205EA94300A641BD /* LoginViewModel.swift */; };
@@ -102,6 +102,12 @@
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
+		B80294A1208E0E1100BDC2BC /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A0208E0E1100BDC2BC /* Knob.swift */; };
+		B80294A4208E0F9500BDC2BC /* AuthRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */; };
+		B844F137208E26570059E601 /* UserRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844F136208E26570059E601 /* UserRequestError.swift */; };
+		B84547EE208E13490095983E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84547ED208E13490095983E /* Constants.swift */; };
+		B84547F1208E1B8D0095983E /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B84547EF208E1B8C0095983E /* key.pem */; };
+		B84547F2208E1B8D0095983E /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = B84547F0208E1B8C0095983E /* cert.pem */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,7 +137,7 @@
 		0A25C6E9205DF5E300A641BD /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		0A25C6EB205DF77D00A641BD /* PBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUser.swift; sourceTree = "<group>"; };
 		0A25C6ED205E877500A641BD /* EmailAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthProvider.swift; sourceTree = "<group>"; };
-		0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBUser+Firebase.swift"; sourceTree = "<group>"; };
+		0A25C6EF205E88CC00A641BD /* PBUser+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PBUser+JSON.swift"; sourceTree = "<group>"; };
 		0A25C6F1205E9AA100A641BD /* PBUserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProtocol.swift; sourceTree = "<group>"; };
 		0A25C6F3205E9E2800A641BD /* PBUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBUserProvider.swift; sourceTree = "<group>"; };
 		0A25C6F6205EA94300A641BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +235,12 @@
 		A2D5FC43F3A592EA09C9F068 /* Pods-PedalPrototypeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototypeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototypeTests/Pods-PedalPrototypeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3B9BB065BBE05EDF78D2843 /* Pods-PedalPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 		AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80294A0208E0E1100BDC2BC /* Knob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
+		B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestError.swift; sourceTree = "<group>"; };
+		B844F136208E26570059E601 /* UserRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestError.swift; sourceTree = "<group>"; };
+		B84547ED208E13490095983E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B84547EF208E1B8C0095983E /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
+		B84547F0208E1B8C0095983E /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
 		CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -310,27 +322,30 @@
 			children = (
 				0A25C6EB205DF77D00A641BD /* PBUser.swift */,
 				0A532EAA2048163300CA8FEA /* Pedal.swift */,
+				B80294A0208E0E1100BDC2BC /* Knob.swift */,
 				0A8F67702062A03C00A148E8 /* Tune.swift */,
 				0A817903206B0BE2008A00B8 /* TuneSetup.swift */,
-				0A532EAE20481AB000CA8FEA /* Models+Firebase */,
+				0A532EAE20481AB000CA8FEA /* Encoding & Decoding Extensions */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0A532EAE20481AB000CA8FEA /* Models+Firebase */ = {
+		0A532EAE20481AB000CA8FEA /* Encoding & Decoding Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A25C6EF205E88CC00A641BD /* PBUser+JSON.swift */,
 				0A532EAF20481ACB00CA8FEA /* Pedal+Firebase.swift */,
-				0A25C6EF205E88CC00A641BD /* PBUser+Firebase.swift */,
 				0A8AFEA5206A7FBF00388F10 /* Tune+Firebase.swift */,
 				0A8B7168207067970046F59A /* TuneSetup+Firebase.swift */,
 			);
-			path = "Models+Firebase";
+			path = "Encoding & Decoding Extensions";
 			sourceTree = "<group>";
 		};
 		0A532EB120481B0700CA8FEA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B84547ED208E13490095983E /* Constants.swift */,
+				B80294A2208E0F6200BDC2BC /* Enums */,
 				0A532EB220481B1900CA8FEA /* Protocols */,
 				0A532EB320481B2200CA8FEA /* Providers */,
 			);
@@ -364,6 +379,8 @@
 		0A532EB620481DAD00CA8FEA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B84547F0208E1B8C0095983E /* cert.pem */,
+				B84547EF208E1B8C0095983E /* key.pem */,
 				0A90CEF120478615002FA202 /* AppDelegate.swift */,
 				0A90CEFD20478615002FA202 /* Info.plist */,
 				0A532EB82048203400CA8FEA /* GoogleService-Info.plist */,
@@ -832,6 +849,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B80294A2208E0F6200BDC2BC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */,
+				B844F136208E26570059E601 /* UserRequestError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		CA42D4BF530B1FE6842F04BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,7 +989,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */,
+				B84547F2208E1B8D0095983E /* cert.pem in Resources */,
 				0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */,
+				B84547F1208E1B8D0095983E /* key.pem in Resources */,
 				0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */,
 				0A532EB92048203400CA8FEA /* GoogleService-Info.plist in Resources */,
 				0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */,
@@ -1138,13 +1166,14 @@
 				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
 				0AE4AEF2207E4D240095EF6F /* KnobSlider.swift in Sources */,
 				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
-				0A25C6F0205E88CC00A641BD /* PBUser+Firebase.swift in Sources */,
+				0A25C6F0205E88CC00A641BD /* PBUser+JSON.swift in Sources */,
 				0A532EB520481B5D00CA8FEA /* PedalProtocol.swift in Sources */,
 				0A8B7169207067970046F59A /* TuneSetup+Firebase.swift in Sources */,
 				0ABFB03F2075189300B221D3 /* BaseViewController.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */,
 				0A6FB75720755F0000621E38 /* UIColor+Silversand.swift in Sources */,
+				B84547EE208E13490095983E /* Constants.swift in Sources */,
 				0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */,
 				0A532EB020481ACB00CA8FEA /* Pedal+Firebase.swift in Sources */,
 				0A6FB75D2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift in Sources */,
@@ -1156,6 +1185,7 @@
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
+				B844F137208E26570059E601 /* UserRequestError.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
 				0ABB124F207D3EEC00790FC0 /* UIColor+Watermelon.swift in Sources */,
 				0A092D0A2071BDA800E048E3 /* TuneSetupViewModelDelegate.swift in Sources */,
@@ -1168,7 +1198,9 @@
 				0A85744C206B33AC00F1FDEC /* TuneSetupViewModel.swift in Sources */,
 				0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */,
 				0AA7929020731D3000177C04 /* SignupViewModelDelegate.swift in Sources */,
+				B80294A1208E0E1100BDC2BC /* Knob.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* ConfigurePedalViewModel.swift in Sources */,
+				B80294A4208E0F9500BDC2BC /* AuthRequestError.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0ABB1255207D587F00790FC0 /* CircleButton.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,

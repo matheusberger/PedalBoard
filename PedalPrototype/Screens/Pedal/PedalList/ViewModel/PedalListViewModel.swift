@@ -21,7 +21,7 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
     }
     
     func getPedals() {
-        PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserUID()!) { (pedal) in
+        PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserID()!) { (pedal) in
             self.pedals.append(pedal)
         }
     }
@@ -40,7 +40,7 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
     
     func getCellHeight(forIndex index: Int) -> Int {
         let knobs = self.pedals[index].knobs
-        let knobCount = knobs.keys.count
+        let knobCount = 0//knobs.keys.count
         
         if knobCount > 5 {
             return 158

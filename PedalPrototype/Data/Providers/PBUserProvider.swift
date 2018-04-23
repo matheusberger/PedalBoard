@@ -7,33 +7,81 @@
 //
 
 import Foundation
-import Firebase
+import Alamofire
+import SwiftyJSON
 
 class PBUserProvider: PBUserProtocol {
     
+    static func setCurrent(user: PBUser) {
+        let userJSONString = user.toJSONString()
+        
+        UserDefaults.standard.set(userJSONString, forKey: "PBUser.default")
+    }
+    
+    static func removeCurrent() {
+        UserDefaults.standard.removeObject(forKey: "PBUser.default")
+    }
+    
     static func getCurrentUser() -> PBUser? {
-        return PBUser.from(firebaseUser: Auth.auth().currentUser!)
-    }
-    
-    static func getCurrentUserUID() -> String? {
-        
-        guard let user = PBUserProvider.getCurrentUser() else {
+        guard let userJSONString = UserDefaults.standard.string(forKey: "PBUser.default") else {
             return nil
         }
         
-        guard let uid = user.uid else {
+        return PBUser.from(jsonString: userJSONString)
+    }
+    
+    static func getCurrentUserID() -> String? {
+        guard let user = self.getCurrentUser() else {
             return nil
         }
         
-        return uid
+        return user.id
     }
     
-    static func update(user: PBUser, withCompletionBlock completionBlock: @escaping (Error?) -> Void) {
+    static func load(withId id: String,
+                     withCompletionBlock completionBlock: @escaping (_ user: PBUser) -> Void,
+                     withFailureBlock failureBlock: @escaping (_ error: UserRequestError) -> Void) {
         
-        let updateRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        updateRequest?.displayName = user.fullName
-        updateRequest?.commitChanges(completion: { (error) in
-            completionBlock(error)
-        })
+        let requestURL = String(format: Constants.API.URL_USER_ID, id)
+        
+        Alamofire.request(requestURL, method: .get)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (responseData) -> Void in
+                switch (responseData.result) {
+                case .success(let response):
+                    
+                    guard let status = responseData.response?.statusCode else {
+                        failureBlock(.Unexpected)
+                        return
+                    }
+                    
+                    switch (status) {
+                    case 401:
+                        failureBlock(.NotAuthenticated)
+                    case 404:
+                        failureBlock(.UserNotFound)
+                    case 200:
+                        let jsonData = JSON(response)
+                        if let user = PBUser.from(data: jsonData) {
+                            completionBlock(user)
+                        } else {
+                            failureBlock(.Unexpected)
+                        }
+                    default:
+                        failureBlock(.Unexpected)
+                    }
+                    
+                case .failure(_):
+                    failureBlock(.Unexpected)
+                }
+        }
+    }
+    
+    static func create(withEmail email: String,
+                       password: String,
+                       andName name: String,
+                       withCompletionBlock completionBlock: @escaping (_ user: PBUser) -> Void,
+                       withFailureBlock failureBlock: @escaping (_ error: UserRequestError) -> Void) {
+        
     }
 }

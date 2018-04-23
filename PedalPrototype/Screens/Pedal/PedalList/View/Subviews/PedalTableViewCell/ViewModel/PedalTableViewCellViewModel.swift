@@ -33,7 +33,8 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
             return [String : Int]()
         }
 
-        return pedal.knobs
+        return [:]
+//        return pedal.knobs
     }
     
     func edit() {

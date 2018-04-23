@@ -19,7 +19,7 @@ class CreateTuneViewModel: CreateTuneViewModelProtocol {
     
     func createTune(withName name: String,andArtist artist: String, withCompletionBlock completionBlock: @escaping () -> Void) {
         let tune = Tune(withName: name, withArtist: artist)
-        TuneProvider.create(tune: tune, forUser: PBUserProvider.getCurrentUserUID()!) { (success) in
+        TuneProvider.create(tune: tune, forUser: PBUserProvider.getCurrentUserID()!) { (success) in
             if success {
                 self.tune = tune
                 completionBlock()

@@ -13,8 +13,20 @@ class LoginViewModel: LoginViewModelProtocol {
     var delegate: LoginViewModelDelegate?
     
     func signIn(withEmail email: String, andPassword password: String) {
-        EmailAuthProvider.singInUser(withEmail: email, andPassword: password) { (user: PBUser?, error: Error?) in
-            self.delegate?.didSignIn()
-        }
+        
+        EmailAuthProvider.singIn(withEmail: email, andPassword: password, withCompletionBlock: { (userId) in
+            
+            PBUserProvider.load(withId: userId, withCompletionBlock: { (user) in
+                
+                PBUserProvider.setCurrent(user: user)
+                
+                
+            }, withFailureBlock: { (UserRequestError) in
+                //TODO: handle errors
+            })
+            
+        }, withFailureBlock: { (AuthRequestError) in
+            //TODO: handle errors
+        })
     }
 }

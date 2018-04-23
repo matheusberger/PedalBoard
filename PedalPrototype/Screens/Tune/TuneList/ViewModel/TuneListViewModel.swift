@@ -42,7 +42,7 @@ class TuneListViewModel: TuneListViewModelProtocol {
             return
         }
         
-        TuneProvider.getTunes(forUser: user.uid!) { (tune) in
+        TuneProvider.getTunes(forUser: user.id) { (tune) in
             self.tunes.append(tune)
         }
     }

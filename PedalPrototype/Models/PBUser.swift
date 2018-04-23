@@ -10,25 +10,22 @@ import Foundation
 
 class PBUser {
     
-    var uid: String?
-    
+    var id: String
     var email: String
-    var firstName: String
-    var surname: String
+    var name: String
+    var pedals: [String]
+    var tunes: [String]
     
-    var fullName: String {
-        return self.firstName + self.surname
-    }
-    
-    init(withUID uid: String? = nil,
+    init(withID id: String,
          withEmail email: String,
-         withFirstName firstName: String,
-         andSurname surname: String? = "") {
+         withName name: String,
+         withPedals pedals: [String],
+         withTunes tunes: [String]) {
         
-        self.uid = uid
-        
+        self.id = id
         self.email = email
-        self.firstName = firstName
-        self.surname = surname!
+        self.name = name
+        self.pedals = pedals
+        self.tunes = tunes
     }
 }

@@ -7,48 +7,80 @@
 //
 
 import Foundation
-import FirebaseAuth
+import Alamofire
+import SwiftyJSON
 
 class EmailAuthProvider: AuthProtocol {
     
-    static func createUser(withEmail email: String, password: String, andName name: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
+    static func singIn(withEmail email: String,
+                           andPassword password: String,
+                           withCompletionBlock completionBlock: @escaping (String) -> Void,
+                           withFailureBlock failureBlock: @escaping (AuthRequestError) -> Void) {
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
-            guard let user = user else {
-                print(error!)
-                return
-            }
-            
-            completionBlock(PBUser.newFrom(firebaseUser: user, withName: name)!, error)
+        let requestParameters: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        
+        Alamofire.request(Constants.API.URL_AUTH, method: .post,
+                          parameters: requestParameters, encoding: JSONEncoding.default)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (responseData) -> Void in
+                switch (responseData.result) {
+                case .success(let response):
+                    
+                    guard let status = responseData.response?.statusCode else {
+                        failureBlock(.Unexpected)
+                        return
+                    }
+                    
+                    switch (status) {
+                    case 401:
+                        failureBlock(.AlreadyAuthenticated)
+                    case 403:
+                        failureBlock(.CredentialsIncorrect)
+                    case 404:
+                        failureBlock(.UserNotFound)
+                    case 200:
+                        let jsonData = JSON(response)
+                        
+                        guard let userUID = jsonData["user"]["id"].string else {
+                            failureBlock(.Unexpected)
+                            return
+                        }
+                        
+                        completionBlock(userUID)
+    
+                    default:
+                        failureBlock(.Unexpected)
+                    }
+                    
+                case .failure(_):
+                    failureBlock(.Unexpected)
+                }
         }
     }
     
-    static func singInUser(withEmail email: String, andPassword password: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
+    
+    static func signOut(withCompletionBlock completionBlock: @escaping () -> Void,
+                            withFailureBlock failureBlock: @escaping (AuthRequestError) -> Void) {
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user: User?, error: Error?) in
-            guard let user = user else {
-                print(error!)
-                return
-            }
-            
-            completionBlock(PBUser.from(firebaseUser: user), error)
+        Alamofire.request(Constants.API.URL_AUTH, method: .delete)
+            .responseJSON { (responseData) -> Void in
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 200:
+                    completionBlock()
+                default:
+                    failureBlock(.Unexpected)
+                }
         }
-    }
-    
-    
-    
-    static func signOutUser(withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
-        
-        var success = true
-        
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("failed to sign out")
-            success = false
-        }
-        
-        completionBlock(success)
     }
     
 }

@@ -27,7 +27,7 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
             print("getting the setup for \(pedal.name)")
         }
         
-        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserUID()!) { () in
+        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserID()!) { () in
             //show setup
             print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
             
@@ -37,7 +37,7 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     func saveTuneSetup(withCompletionBlock completionBlock: @escaping () -> Void) {
         
-        guard let userUID = PBUserProvider.getCurrentUserUID() else {
+        guard let userUID = PBUserProvider.getCurrentUserID() else {
             return
         }
         
@@ -61,21 +61,23 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     }
     
     func updateSetupForPedal(atIndex index: Int, forKnobNamed knobName: String, withValue value: Int) {
-        
-        let setup = self.tune.tuneSetup!
-        
-        setup.pedals[index].knobs[knobName] = value
+//
+//        let setup = self.tune.tuneSetup!
+//
+//        setup.pedals[index].knobs[knobName] = value
     }
     
     func getKnob(forPedalAtSection section: Int, withIndex index: Int) -> [String : Int] {
         
-        let setup = self.tune.tuneSetup!
-        let pedal = setup.pedals[section]
+//        let setup = self.tune.tuneSetup!
+//        let pedal = setup.pedals[section]
+//
+//        let knobs = Array(pedal.knobs.keys)
+//        let knob = [knobs[index] : pedal.knobs[knobs[index]]!]
+//
+//        return knob
         
-        let knobs = Array(pedal.knobs.keys)
-        let knob = [knobs[index] : pedal.knobs[knobs[index]]!]
-        
-        return knob
+        return [:]
     }
     
     func getKnobsCount(forPedalAtIndex index: Int) -> Int {
@@ -90,12 +92,12 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
         let setup = self.tune.tuneSetup!
         let pedal = setup.pedals[section]
         
-        let knobs = Array(pedal.knobs.keys)
-        let knobName = knobs[index]
-        
-        let viewModel = KnobSetupTVCViewModel(withName: knobName, andValue: pedal.knobs[knobName]!) { (value) in
-            pedal.knobs[knobName] = value
-        }
-        return viewModel
+//        let knobs = Array(pedal.knobs.keys)
+//        let knobName = "" //knobs[index]
+//
+//        let viewModel = KnobSetupTVCViewModel(withName: knobName, andValue: pedal.knobs[knobName]!) { (value) in
+//            pedal.knobs[knobName] = value
+//        }
+        return KnobSetupTVCViewModel(withName: "", andValue: 1, withCompletionHandler: { _ in })
     }
 }

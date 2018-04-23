@@ -13,29 +13,28 @@ class Pedal {
     var key: String?
     
     var name: String
-    var knobs: [String : Int]
+    var knobs: [Knob]
     
-    
-    init(withKey key: String? = nil, withName name: String, andKnobs knobs: [String : Int]) {
-        
+    init(withKey key: String? = nil, withName name: String, andKnobs knobs: [Knob]) {
         self.key = key
+        
         self.name = name
         self.knobs = knobs
     }
     
-    func toDictionary() -> [String : Any] {
-        
-        var dictionary: [String : Any] = [String : Any]()
-        
-        var knobsDictionary: [String : Int] = [String : Int]()
-        
-        for (knob, value) in self.knobs {
-            knobsDictionary[knob] = value
-        }
-        
-        dictionary["name"] = self.name
-        dictionary["knobs"] = knobsDictionary
-        
-        return dictionary
-    }
+//    func toDictionary() -> [String : Any] {
+//
+//        var dictionary: [String : Any] = [String : Any]()
+//
+//        var knobsDictionary: [String : Int] = [String : Int]()
+//
+//        for (knob, value) in self.knobs {
+//            knobsDictionary[knob] = value
+//        }
+//
+//        dictionary["name"] = self.name
+//        dictionary["knobs"] = knobsDictionary
+//
+//        return dictionary
+//    }
 }
