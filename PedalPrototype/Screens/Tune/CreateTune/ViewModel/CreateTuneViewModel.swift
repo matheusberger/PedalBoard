@@ -18,13 +18,13 @@ class CreateTuneViewModel: CreateTuneViewModelProtocol {
     }
     
     func createTune(withName name: String,andArtist artist: String, withCompletionBlock completionBlock: @escaping () -> Void) {
-        let tune = Tune(withName: name, withArtist: artist)
-        TuneProvider.create(tune: tune, forUser: PBUserProvider.getCurrentUserID()!) { (success) in
-            if success {
-                self.tune = tune
-                completionBlock()
-            }
-        }
+//        let tune = Tune(withId: 0withName: name, withArtist: artist)
+//        TuneProvider.create(tune: tune, forUser: PBUserProvider.getCurrentUserID()!) { (success) in
+//            if success {
+//                self.tune = tune
+//                completionBlock()
+//            }
+//        }
     }
     
     func getTuneSetupViewModel(forIndexPaths indexPaths: [IndexPath]) -> TuneSetupViewModel {
@@ -35,8 +35,8 @@ class CreateTuneViewModel: CreateTuneViewModelProtocol {
             selectedPedals.append(self.pedals[index.row])
         }
         
-        let setup = TuneSetup(withPedals: selectedPedals)
-        self.tune?.tuneSetup = setup
+//        let setup = PedalSetup(withPedals: selectedPedals)
+//        self.tune?.tuneSetup = setup
         
         return TuneSetupViewModel(withTune: tune!)
     }

@@ -10,7 +10,7 @@ import Foundation
 
 class LoginViewModel: LoginViewModelProtocol {
     
-    var delegate: LoginViewModelDelegate?
+    weak var delegate: LoginViewModelDelegate?
     
     func signIn(withEmail email: String, andPassword password: String) {
         
@@ -20,12 +20,13 @@ class LoginViewModel: LoginViewModelProtocol {
                 
                 PBUserProvider.setCurrent(user: user)
                 
+                self.delegate?.didSignIn()
                 
-            }, withFailureBlock: { (UserRequestError) in
+            }, withFailureBlock: { (userRequestError) in
                 //TODO: handle errors
             })
             
-        }, withFailureBlock: { (AuthRequestError) in
+        }, withFailureBlock: { (authRequestError) in
             //TODO: handle errors
         })
     }

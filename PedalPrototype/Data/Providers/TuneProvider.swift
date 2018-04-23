@@ -7,61 +7,89 @@
 //
 
 import Foundation
-import Firebase
+import Alamofire
+import SwiftyJSON
 
 class TuneProvider: TuneProtocol {
     
-    static func getTunes(forUser user: String, withContinuousFetchBlock continuousBlock: @escaping (Tune) -> Void) {
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let tunesReference: DatabaseReference = databaseReference.child("tunes").child(user)
-//
-//        tunesReference.queryOrdered(byChild: "name").observe(.childAdded) { (dataSnapshot) in
-//
-//            if dataSnapshot.exists() {
-//                if let tune: Tune = Tune.from(dataSnapshot: dataSnapshot) {
-//                    continuousBlock(tune)
-//                }
-//            }
-//        }
+    static func load(withId id: String,
+                     withCompletionBlock completionBlock: @escaping (Tune) -> Void,
+                     withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
+        let requestURL = String(format: Constants.API.URL_TUNE_ID, id)
+        
+        Alamofire.request(requestURL, method: .get)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    guard let response = responseData.result.value else {
+                        failureBlock(.Unexpected)
+                        return
+                    }
+                    
+                    let jsonData = JSON(response)
+                    
+                    if let tune = Tune.from(data: jsonData) {
+                        completionBlock(tune)
+                    } else {
+                        failureBlock(.Unexpected)
+                    }
+                    
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 404:
+                    failureBlock(.TuneNotFound)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
     }
     
-    static func create(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let tunesReference = databaseReference.child("tunes").child(user).childByAutoId()
-//
-//        tune.key = tunesReference.key
-//        tunesReference.setValue(tune.toDictionary()) { (error, databaseReferences) in
-//            completionBlock(error == nil)
-//        }
+    static func create(withName name: String, andArtist artist: String,
+                       withCompletionBlock completionBlock: @escaping (Tune) -> Void,
+                       withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
     }
     
-    static func delete(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
-//
-//        guard let tuneKey = tune.key else {
-//            return
-//        }
-//
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let tunesReference = databaseReference.child("tunes").child(user).child(tuneKey)
-//        tunesReference.removeValue { (error, databaseReference) in
-//            completionBlock(error == nil)
-//        }
+    static func updateName(tune: Tune,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
     }
     
-    static func update(tune: Tune, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
-//        
-//        guard let tuneKey = tune.key else {
-//            return
-//        }
-//        
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//        
-//        let tunesReference = databaseReference.child("tunes").child(user).child(tuneKey)
-//        tunesReference.setValue(tune.toDictionary()) { (error, databaseReference) in
-//            completionBlock(error == nil)
-//        }
+    static func updateArtist(tune: Tune,
+                             withCompletionBlock completionBlock: @escaping () -> Void,
+                             withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
+    }
+    
+    static func delete(tune: Tune,
+                       withCompletionBlock completionBlock: @escaping () -> Void,
+                       withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
+    }
+    
+    static func associate(tune: Tune, pedal: Pedal,
+                          withCompletionBlock completionBlock: @escaping () -> Void,
+                          withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
+    }
+    
+    static func dissociate(tune: Tune, pedal: Pedal,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
+    }
+    
+    static func updateValue(tune: Tune, pedal: Pedal, knob: Knob,
+                            withCompletionBlock completionBlock: @escaping () -> Void,
+                            withFailureBlock failureBlock: @escaping (TuneRequestError) -> Void) {
+        
     }
 }

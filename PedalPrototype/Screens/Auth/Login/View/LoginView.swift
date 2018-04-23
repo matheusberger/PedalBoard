@@ -47,6 +47,7 @@ class LoginView: BaseViewController {
         }
         
         self.viewModel.signIn(withEmail: email, andPassword: password)
+        self.performSegue(withIdentifier: "login", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

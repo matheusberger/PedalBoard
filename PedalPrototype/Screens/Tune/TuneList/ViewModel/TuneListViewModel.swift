@@ -42,8 +42,12 @@ class TuneListViewModel: TuneListViewModelProtocol {
             return
         }
         
-        TuneProvider.getTunes(forUser: user.id) { (tune) in
-            self.tunes.append(tune)
+        for tuneId in user.tunesId {
+            TuneProvider.load(withId: tuneId, withCompletionBlock: { (tune) in
+                self.tunes.append(tune)
+            }, withFailureBlock: { (tuneRequestError) in
+                //TODO: handle errors
+            })
         }
     }
     

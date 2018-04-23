@@ -7,74 +7,78 @@
 //
 
 import Foundation
-import FirebaseDatabase
+import Alamofire
+import SwiftyJSON
 
 class PedalProvider: PedalProtocol {
     
-    static func getPedals(forUser user: String, withContinuousFetchBlock continuousBlock: @escaping (_ pedal: Pedal) -> Void) {
-//
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user)
-//
-//        pedalsReference.queryOrdered(byChild: "name").observe(.childAdded) { (dataSnapshot) in
-//
-//            if dataSnapshot.exists() {
-//                if let pedal: Pedal = Pedal.from(dataSnapshot: dataSnapshot) {
-//                    continuousBlock(pedal)
-//                }
-//            }
-//        }
-    }
-    
-    static func getPedal(pedalKey: String, forUser user: String, withCompletionBlock completionBlock: @escaping (Pedal?) -> Void) {
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let pedalsReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
-//
-//        pedalsReference.observeSingleEvent(of: .value) { (dataSnapshot) in
-//            completionBlock(Pedal.from(dataSnapshot: dataSnapshot))
-//        }
-    }
-    
-    static func create(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).childByAutoId()
-//
-//        pedal.key = pedalReference.key
-//        pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
-//            completionBlock(error == nil)
-//        }
-    }
-    
-    static func delete(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
+    static func load(withId id: String,
+                     withCompletionBlock completionBlock: @escaping (Pedal) -> Void,
+                     withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
         
-//        guard let pedalKey = pedal.key else {
-//            return
-//        }
-//        
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//
-//        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
-//
-//        pedalReference.removeValue() { (error, databaseReference) in
-//            completionBlock(error == nil)
-//        }
+        let requestURL = String(format: Constants.API.URL_PEDAL_ID, id)
+        
+        Alamofire.request(requestURL, method: .get)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    guard let response = responseData.result.value else {
+                        failureBlock(.Unexpected)
+                        return
+                    }
+                    
+                    let jsonData = JSON(response)
+                    
+                    if let pedal = Pedal.from(data: jsonData) {
+                        completionBlock(pedal)
+                    } else {
+                        failureBlock(.Unexpected)
+                    }
+                    
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 404:
+                    failureBlock(.PedalNotFound)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
+        
     }
     
-    static func update(pedal: Pedal, forUser user: String, withCompletionBlock completionBlock: @escaping (Bool) -> Void) {
+    static func create(withName name: String, andKnobs knobs: [Knob],
+                       withCompletionBlock completionBlock: @escaping (Pedal) -> Void,
+                       withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
         
-//        guard let pedalKey = pedal.key else {
-//            return
-//        }
-//        
-//        let databaseReference: DatabaseReference = Database.database().reference()
-//        
-//        let pedalReference: DatabaseReference = databaseReference.child("pedals").child(user).child(pedalKey)
-//        
-//        pedalReference.setValue(pedal.toDictionary()) { (error, databaseReference) in
-//            completionBlock(error == nil)
-//        }
+    }
+    
+    static func delete(pedal: Pedal,
+                       withCompletionBlock completionBlock: @escaping () -> Void,
+                       withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
+        
+    }
+    
+    static func updateName(pedal: Pedal,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
+        
+    }
+    
+    static func associate(pedal: Pedal, knob: Knob,
+                          withCompletionBlock completionBlock: @escaping () -> Void,
+                          withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
+        
+    }
+    
+    static func dissociate(pedal: Pedal, knob: Knob,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (PedalRequestError) -> Void) {
+        
     }
 }

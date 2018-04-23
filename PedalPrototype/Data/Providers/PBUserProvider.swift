@@ -39,39 +39,38 @@ class PBUserProvider: PBUserProtocol {
     }
     
     static func load(withId id: String,
-                     withCompletionBlock completionBlock: @escaping (_ user: PBUser) -> Void,
-                     withFailureBlock failureBlock: @escaping (_ error: UserRequestError) -> Void) {
+                     withCompletionBlock completionBlock: @escaping (PBUser) -> Void,
+                     withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
         
         let requestURL = String(format: Constants.API.URL_USER_ID, id)
         
         Alamofire.request(requestURL, method: .get)
-            .validate(contentType: ["application/json"])
-            .responseJSON { (responseData) -> Void in
-                switch (responseData.result) {
-                case .success(let response):
-                    
-                    guard let status = responseData.response?.statusCode else {
+            .responseJSON { (responseData) in
+    
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    guard let response = responseData.result.value else {
                         failureBlock(.Unexpected)
                         return
                     }
                     
-                    switch (status) {
-                    case 401:
-                        failureBlock(.NotAuthenticated)
-                    case 404:
-                        failureBlock(.UserNotFound)
-                    case 200:
-                        let jsonData = JSON(response)
-                        if let user = PBUser.from(data: jsonData) {
-                            completionBlock(user)
-                        } else {
-                            failureBlock(.Unexpected)
-                        }
-                    default:
+                    let jsonData = JSON(response)
+                    
+                    if let user = PBUser.from(data: jsonData) {
+                        completionBlock(user)
+                    } else {
                         failureBlock(.Unexpected)
                     }
-                    
-                case .failure(_):
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 404:
+                    failureBlock(.UserNotFound)
+                default:
                     failureBlock(.Unexpected)
                 }
         }
@@ -80,8 +79,187 @@ class PBUserProvider: PBUserProtocol {
     static func create(withEmail email: String,
                        password: String,
                        andName name: String,
-                       withCompletionBlock completionBlock: @escaping (_ user: PBUser) -> Void,
+                       withCompletionBlock completionBlock: @escaping () -> Void,
+                       withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
+        
+        let requestParameters: Parameters = [
+            "email": email,
+            "password": password,
+            "name": name
+        ]
+        
+        Alamofire.request(Constants.API.URL_USER, method: .post, parameters: requestParameters, encoding: JSONEncoding.default)
+            .responseJSON{ (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 403:
+                    failureBlock(.EmailAlreadyRegistered)
+                default:
+                    failureBlock(.Unexpected)
+                }
+                
+            }
+    }
+    
+    static func updateName(user: PBUser,
+                       withCompletionBlock completionBlock: @escaping () -> Void,
                        withFailureBlock failureBlock: @escaping (_ error: UserRequestError) -> Void) {
         
+        let requestURL = String(format: Constants.API.URL_USER_ID_NAME, user.id)
+        
+        let requestParameters: Parameters = [
+            "name": user.name
+        ]
+        
+        Alamofire.request(requestURL, method: .patch, parameters: requestParameters, encoding: JSONEncoding.default)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 409:
+                    failureBlock(.AuthenticationNotAllowed)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
+    }
+    
+    static func associate(user: PBUser, pedal: Pedal,
+                          withCompletionBlock completionBlock: @escaping () -> Void,
+                          withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
+        
+        let requestURL = String(format: Constants.API.URL_USER_ID_PEDAL_ID, user.id, pedal.id)
+        
+        Alamofire.request(requestURL, method: .put)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 403:
+                    failureBlock(.PedalAlredyAssociated)
+                case 404:
+                    failureBlock(.PedalNotFound)
+                case 409:
+                    failureBlock(.AuthenticationNotAllowed)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
+    }
+    
+    static func dissociate(user: PBUser, pedal: Pedal,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
+        
+        let requestURL = String(format: Constants.API.URL_USER_ID_PEDAL_ID, user.id, pedal.id)
+        
+        Alamofire.request(requestURL, method: .delete)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 403:
+                    failureBlock(.PedalNotAssociated)
+                case 404:
+                    failureBlock(.PedalNotFound)
+                case 409:
+                    failureBlock(.AuthenticationNotAllowed)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
+    }
+    
+    static func associate(user: PBUser, tune: Tune,
+                          withCompletionBlock completionBlock: @escaping () -> Void,
+                          withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
+        
+        let requestURL = String(format: Constants.API.URL_USER_ID_TUNE_ID, user.id, tune.id)
+        
+        Alamofire.request(requestURL, method: .put)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 403:
+                    failureBlock(.TuneAlreadyAssociated)
+                case 404:
+                    failureBlock(.TuneNotFound)
+                case 409:
+                    failureBlock(.AuthenticationNotAllowed)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
+    }
+    
+    static func dissociate(user: PBUser, tune: Tune,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (UserRequestError) -> Void) {
+        
+        let requestURL = String(format: Constants.API.URL_USER_ID_TUNE_ID, user.id, tune.id)
+        
+        Alamofire.request(requestURL, method: .delete)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
+                case 403:
+                    failureBlock(.TuneNotAssociated)
+                case 404:
+                    failureBlock(.TuneNotFound)
+                case 409:
+                    failureBlock(.AuthenticationNotAllowed)
+                default:
+                    failureBlock(.Unexpected)
+                }
+        }
     }
 }

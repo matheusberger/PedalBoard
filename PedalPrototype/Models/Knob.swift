@@ -10,14 +10,13 @@ import Foundation
 
 class Knob {
     
-    var key: String?
+    var id: String
     
     var name: String
     var value: Int
     
-    init(withKey key: String? = nil, withName name: String, andValue value: Int) {
-        self.key = key
-        
+    init(withId id: String, withName name: String = "Information not available", andValue value: Int = 0) {
+        self.id = id
         self.name = name
         self.value = value
     }

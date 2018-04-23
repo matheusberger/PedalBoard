@@ -54,7 +54,7 @@ extension PBUser {
             return jsonId.string ?? ""
         }
         
-        return PBUser(withID: id, withEmail: email, withName: name, withPedals: pedals, withTunes: tunes)
+        return PBUser(withID: id, withEmail: email, withName: name, withPedalsId: pedals, withTunesId: tunes)
     }
     
     func toJSONString() -> String {
@@ -63,54 +63,10 @@ extension PBUser {
             "_id": self.id,
             "email": self.email,
             "name": self.name,
-            "pedals": self.pedals,
-            "tunes": self.tunes
+            "pedals": self.pedalsId,
+            "tunes": self.tunesId
         ]
         
         return json.rawString()!
     }
-
-
-//    static func from(firebaseUser: User) -> PBUser? {
-//        
-//        let uid = firebaseUser.uid
-//        
-//        guard let name = firebaseUser.displayName else {
-//            return nil
-//        }
-//        
-//        guard let email = firebaseUser.email else {
-//            return nil
-//        }
-//        
-//        var full = name.components(separatedBy: " ")
-//        let first = full[0]
-//        full.remove(at: 0)
-//        
-//        var last: String = String()
-//        for surname in full {
-//            last = last + " " + surname
-//        }
-//        
-//        return PBUser(withUID: uid, withEmail: email, withFirstName: first, andSurname: last)
-//    }
-//    
-//    static func newFrom(firebaseUser: User, withName name: String) -> PBUser? {
-//        let uid = firebaseUser.uid
-//        
-//        guard let email = firebaseUser.email else {
-//            return nil
-//        }
-//        
-//        var full = name.components(separatedBy: " ")
-//        let first = full[0]
-//        full.remove(at: 0)
-//        
-//        var last: String = String()
-//        for surname in full {
-//            last = last + " " + surname
-//        }
-//        
-//        return PBUser(withUID: uid, withEmail: email, withFirstName: first, andSurname: last)
-//    }
 }

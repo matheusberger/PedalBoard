@@ -9,5 +9,9 @@
 import Foundation
 
 enum AuthRequestError {
-    case UserNotFound, CredentialsIncorrect, AlreadyAuthenticated, NotAuthenticated, Unexpected
+    case UserNotFound
+    case CredentialsIncorrect
+    case AlreadyAuthenticated
+    case NotAuthenticated
+    case Unexpected
 }

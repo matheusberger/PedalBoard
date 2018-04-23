@@ -22,40 +22,36 @@ class EmailAuthProvider: AuthProtocol {
             "password": password
         ]
         
-        Alamofire.request(Constants.API.URL_AUTH, method: .post,
-                          parameters: requestParameters, encoding: JSONEncoding.default)
-            .validate(contentType: ["application/json"])
-            .responseJSON { (responseData) -> Void in
-                switch (responseData.result) {
-                case .success(let response):
-                    
-                    guard let status = responseData.response?.statusCode else {
+        Alamofire.request(Constants.API.URL_AUTH, method: .post, parameters: requestParameters, encoding: JSONEncoding.default)
+            .responseJSON { (responseData) in
+                
+                guard let status = responseData.response?.statusCode else {
+                    failureBlock(.Unexpected)
+                    return
+                }
+                
+                switch (status) {
+                case 200:
+                    guard let response = responseData.result.value else {
                         failureBlock(.Unexpected)
                         return
                     }
                     
-                    switch (status) {
-                    case 401:
-                        failureBlock(.AlreadyAuthenticated)
-                    case 403:
-                        failureBlock(.CredentialsIncorrect)
-                    case 404:
-                        failureBlock(.UserNotFound)
-                    case 200:
-                        let jsonData = JSON(response)
-                        
-                        guard let userUID = jsonData["user"]["id"].string else {
-                            failureBlock(.Unexpected)
-                            return
-                        }
-                        
-                        completionBlock(userUID)
-    
-                    default:
+                    let jsonData = JSON(response)
+                    
+                    guard let userUID = jsonData["user"]["id"].string else {
                         failureBlock(.Unexpected)
+                        return
                     }
                     
-                case .failure(_):
+                    completionBlock(userUID)
+                case 401:
+                    failureBlock(.AlreadyAuthenticated)
+                case 403:
+                    failureBlock(.CredentialsIncorrect)
+                case 404:
+                    failureBlock(.UserNotFound)
+                default:
                     failureBlock(.Unexpected)
                 }
         }
@@ -66,17 +62,18 @@ class EmailAuthProvider: AuthProtocol {
                             withFailureBlock failureBlock: @escaping (AuthRequestError) -> Void) {
         
         Alamofire.request(Constants.API.URL_AUTH, method: .delete)
-            .responseJSON { (responseData) -> Void in
+            .responseJSON { (responseData) in
+                
                 guard let status = responseData.response?.statusCode else {
                     failureBlock(.Unexpected)
                     return
                 }
                 
                 switch (status) {
-                case 401:
-                    failureBlock(.NotAuthenticated)
                 case 200:
                     completionBlock()
+                case 401:
+                    failureBlock(.NotAuthenticated)
                 default:
                     failureBlock(.Unexpected)
                 }

@@ -21,8 +21,17 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
     }
     
     func getPedals() {
-        PedalProvider.getPedals(forUser: PBUserProvider.getCurrentUserID()!) { (pedal) in
-            self.pedals.append(pedal)
+        
+        guard let user = PBUserProvider.getCurrentUser() else {
+            return
+        }
+        
+        for pedalId in user.pedalsId {
+            PedalProvider.load(withId: pedalId, withCompletionBlock: { (pedal) in
+                self.pedals.append(pedal)
+            }, withFailureBlock: { (pedalRequestError) in
+                //TODO: handle errors
+            })
         }
     }
     

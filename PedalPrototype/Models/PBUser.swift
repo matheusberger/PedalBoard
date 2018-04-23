@@ -11,21 +11,23 @@ import Foundation
 class PBUser {
     
     var id: String
+    
     var email: String
     var name: String
-    var pedals: [String]
-    var tunes: [String]
+    
+    var pedalsId: [String]
+    var tunesId: [String]
     
     init(withID id: String,
          withEmail email: String,
          withName name: String,
-         withPedals pedals: [String],
-         withTunes tunes: [String]) {
+         withPedalsId pedalsId: [String],
+         withTunesId tunesId: [String]) {
         
         self.id = id
         self.email = email
         self.name = name
-        self.pedals = pedals
-        self.tunes = tunes
+        self.pedalsId = pedalsId
+        self.tunesId = tunesId
     }
 }

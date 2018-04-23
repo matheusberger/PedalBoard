@@ -16,23 +16,23 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     init(withTune tune: Tune) {
         self.tune = tune
         
-        if self.tune.tuneSetup == nil {
-            self.tune.tuneSetup = TuneSetup()
-        }
+//        if self.tune.tuneSetup == nil {
+//            self.tune.tuneSetup = PedalSetup()
+//        }
     }
     
     func getTuneSetup() {
         
-        for pedal in self.tune.tuneSetup!.pedals {
-            print("getting the setup for \(pedal.name)")
-        }
-        
-        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserID()!) { () in
-            //show setup
-            print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
-            
-            self.delegate?.didUpdateSetupList()
-        }
+//        for pedal in self.tune.tuneSetup!.pedals {
+//            print("getting the setup for \(pedal.name)")
+//        }
+//
+//        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserID()!) { () in
+//            //show setup
+//            print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
+//
+//            self.delegate?.didUpdateSetupList()
+//        }
     }
     
     func saveTuneSetup(withCompletionBlock completionBlock: @escaping () -> Void) {
@@ -48,16 +48,18 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     func getPedalCount() -> Int {
         
-        let setup = self.tune.tuneSetup!
+//        let setup = self.tune.tuneSetup!
         
-        return setup.pedals.count
+//        return setup.pedals.count
+        return 0
     }
     
     func getPedalName(atIndex index: Int) -> String {
         
-        let setup = self.tune.tuneSetup!
-        
-        return setup.pedals[index].name
+//        let setup = self.tune.tuneSetup!
+//
+//        return setup.pedals[index].name
+        return ""
     }
     
     func updateSetupForPedal(atIndex index: Int, forKnobNamed knobName: String, withValue value: Int) {
@@ -82,15 +84,16 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     func getKnobsCount(forPedalAtIndex index: Int) -> Int {
         
-        let setup = self.tune.tuneSetup!
+//        let setup = self.tune.tuneSetup!
         
-        return setup.pedals[index].knobs.count
+//        return setup.pedals[index].knobs.count
+        return 0
     }
     
     func getKnobSetupViewModel(forPedalAtSection section: Int, withIndex index: Int) -> KnobSetupTVCViewModel {
         
-        let setup = self.tune.tuneSetup!
-        let pedal = setup.pedals[section]
+//        let setup = self.tune.tuneSetup!
+//        let pedal = setup.pedals[section]
         
 //        let knobs = Array(pedal.knobs.keys)
 //        let knobName = "" //knobs[index]

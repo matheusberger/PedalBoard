@@ -34,19 +34,19 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
             knobs[name] = 0
         }
         
-        self.pedal.name = name
+//        self.pedal.name = name
 //        self.pedal.knobs = knobs
         
-        if pedal.key != nil {
-            PedalProvider.update(pedal: self.pedal, forUser: userUID) { (success) in
-                completionBlock()
-            }
-        }
-        else {
-            PedalProvider.create(pedal: self.pedal, forUser: userUID) { (success) in
-                completionBlock()
-            }
-        }
+//        if pedal.id != nil {
+//            PedalProvider.update(pedal: self.pedal, forUser: userUID) { (success) in
+//                completionBlock()
+//            }
+//        }
+//        else {
+//            PedalProvider.create(pedal: self.pedal, forUser: userUID) { (success) in
+//                completionBlock()
+//            }
+//        }
     }
     
     func getPedalName() -> String {
@@ -54,7 +54,7 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     }
     
     func isEditingPedal() -> Bool {
-        if self.pedal.key == nil {
+        if self.pedal.id == nil {
             return false
         }
         else {

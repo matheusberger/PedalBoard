@@ -10,11 +10,35 @@ import Foundation
 
 protocol TuneProtocol {
     
-    static func getTunes(forUser: String, withContinuousFetchBlock: @escaping (_ Tune: Tune) -> Void)
+    static func load(withId id: String,
+                    withCompletionBlock completionBlock: @escaping (_ Tune: Tune) -> Void,
+                    withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void) //ok
     
-    static func create(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func create(withName name: String, andArtist artist: String,
+                       withCompletionBlock completionBlock: @escaping (_ tune: Tune) -> Void,
+                       withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
     
-    static func delete(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func updateName(tune: Tune,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
     
-    static func update(tune: Tune, forUser: String, withCompletionBlock: @escaping (_ success: Bool) -> Void)
+    static func updateArtist(tune: Tune,
+                             withCompletionBlock completionBlock: @escaping () -> Void,
+                             withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
+    
+    static func delete(tune: Tune,
+                       withCompletionBlock completionBlock: @escaping () -> Void,
+                       withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
+    
+    static func associate(tune: Tune, pedal: Pedal,
+                          withCompletionBlock completionBlock: @escaping () -> Void,
+                          withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
+    
+    static func dissociate(tune: Tune, pedal: Pedal,
+                           withCompletionBlock completionBlock: @escaping () -> Void,
+                           withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
+    
+    static func updateValue(tune: Tune, pedal: Pedal, knob: Knob,
+                            withCompletionBlock completionBlock: @escaping () -> Void,
+                            withFailureBlock failureBlock: @escaping (_ error: TuneRequestError) -> Void)
 }

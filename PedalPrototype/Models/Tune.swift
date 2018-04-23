@@ -10,27 +10,21 @@ import Foundation
 
 class Tune {
     
-    var key: String?
+    var id: String
     
     var name: String
     var artist: String
-    var tuneSetup: TuneSetup?
     
-    init(withKey key: String? = nil, withName name: String, withArtist artist: String, andTuneSetup config: TuneSetup? = nil) {
+    var pedalSetups: [PedalSetup]
+    
+    init(withId id: String,
+         withName name: String,
+         withArtist artist: String,
+         andPedalSetups pedalSetups: [PedalSetup]) {
         
-        self.key = key
-        
+        self.id = id
         self.name = name
         self.artist = artist
-        self.tuneSetup = config
+        self.pedalSetups = pedalSetups
     }
-    
-//    func toDictionary() -> [String : Any] {
-//        var dictionary: [String : Any] = [String : Any]()
-//
-//        dictionary["name"] = self.name
-//        dictionary["artist"] = self.artist
-//
-//        return dictionary
-//    }
 }
