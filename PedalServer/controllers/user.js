@@ -158,7 +158,7 @@ router.put('/:id/pedal/:pid', (req, res, next) => {
 			else if (!user)
 				return res.status(500).json({ errors: { msg: 'User not found.' }});
 
-			var userHasPedal = false;
+			let userHasPedal = false;
 
 			for (i = 0; i < user.pedals.length; i++) {
 				if (user.pedals[i].equals(pedal._id)) {
@@ -209,7 +209,7 @@ router.delete('/:id/pedal/:pid', (req, res, next) => {
 			else if (!user)
 				return res.status(500).json({ errors: { msg: 'User not found.' }});
 
-			var userHasPedal = false;
+			let userHasPedal = false;
 
 			for (i = 0; i < user.pedals.length; i++) {
 				if (user.pedals[i].equals(pedal._id)) {
@@ -261,7 +261,7 @@ router.put('/:id/tune/:tid', (req, res, next) => {
 			else if (!user)
 				return res.status(500).json({ errors: { msg: 'User not found.' }});
 
-			var userHasTune = false;
+			let userHasTune = false;
 
 			for (i = 0; i < user.tunes.length; i++) {
 				if (user.tunes[i].equals(tune._id)) {
@@ -312,7 +312,7 @@ router.delete('/:id/tune/:tid', (req, res, next) => {
 			else if (!user)
 				return res.status(500).json({ errors: { msg: 'User not found.' }});
 
-			var userHasTune = false;
+			let userHasTune = false;
 
 			for (i = 0; i < user.tunes.length; i++) {
 				if (user.tunes[i].equals(tune._id)) {
