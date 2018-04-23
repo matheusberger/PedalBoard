@@ -45,7 +45,7 @@ router.post('/', [
 					return res.status(403).json({ errors: { msg: 'The password is incorrect.' }});
 
 				req.session.userId = user._id;
-				return res.status(200).json(user._id);
+				return res.status(200).json({ user: { id: user._id }});
 			});
 
 		});
