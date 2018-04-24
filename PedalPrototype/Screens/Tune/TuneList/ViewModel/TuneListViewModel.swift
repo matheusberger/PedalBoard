@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class TuneListViewModel: TuneListViewModelProtocol {
 
@@ -42,13 +43,25 @@ class TuneListViewModel: TuneListViewModelProtocol {
             return
         }
         
-        for tuneId in user.tunesId {
-            TuneProvider.load(withId: tuneId, withCompletionBlock: { (tune) in
-                self.tunes.append(tune)
-            }, withFailureBlock: { (tuneRequestError) in
-                //TODO: handle errors
-            })
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        let requestTunes = user.tunesId.map { (tuneId) -> Promise<Tune> in
+            return TuneProvider.load(withId: tuneId)
         }
+        
+        when(fulfilled: requestTunes).done { (tunes) in
+            self.tunes = tunes
+        }.ensure {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }.catch { error in
+            
+            let error = error as NSError
+            if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                //TODO: handle requestError!
+            }
+        }
+        
     }
     
     func getTuneCount() -> Int {

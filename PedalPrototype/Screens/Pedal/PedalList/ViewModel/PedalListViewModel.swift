@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewModelDelegate {
     
@@ -26,12 +27,33 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
             return
         }
         
-        for pedalId in user.pedalsId {
-            PedalProvider.load(withId: pedalId, withCompletionBlock: { (pedal) in
-                self.pedals.append(pedal)
-            }, withFailureBlock: { (pedalRequestError) in
-                //TODO: handle errors
-            })
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        let requestPedals = user.pedalsId.map { (pedalId) in
+            
+            return PedalProvider.load(withId: pedalId).then { pedal -> Promise<Void> in
+                
+                let knobsRequest = pedal.knobs.map { knob -> Promise<Knob> in
+                    return KnobProvider.load(withId: knob.id)
+                }
+                
+                return when(fulfilled: knobsRequest).done { (knobs) in
+                    pedal.knobs = knobs
+                    
+                    self.pedals.append(pedal)
+                }
+            }
+        }
+        
+        when(fulfilled: requestPedals).ensure {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }.catch { error in
+                
+                let error = error as NSError
+                if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                    let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                    //TODO: handle requestError!
+                }
         }
     }
     

@@ -33,8 +33,9 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
             return [String : Int]()
         }
 
-        return [:]
-//        return pedal.knobs
+        return pedal.knobs.reduce(into: [String: Int]()) {
+            $0[$1.name] = $1.value
+        }
     }
     
     func edit() {

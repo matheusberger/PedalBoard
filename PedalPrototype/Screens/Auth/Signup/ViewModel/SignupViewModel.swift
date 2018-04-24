@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class SignupViewModel: SignupViewModelProtocol {
     
@@ -14,26 +15,27 @@ class SignupViewModel: SignupViewModelProtocol {
     
     func signUp(withEmail email: String, password: String, andName name: String) {
         
-        PBUserProvider.create(withEmail: email, password: password, andName: name, withCompletionBlock: {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-            EmailAuthProvider.singIn(withEmail: email, andPassword: password, withCompletionBlock: { (userId) in
-                
-                PBUserProvider.load(withId: userId, withCompletionBlock: { (user) in
-                    
-                    PBUserProvider.setCurrent(user: user)
-                    
-                    self.delegate?.didSignUp()
-                    
-                }, withFailureBlock: { (userLoadRequestError) in
-                    //TODO: handle errors
-                })
-                
-            }, withFailureBlock: { (authRequestError) in
-                //TODO: handle errors
-            })
+        firstly {
+            PBUserProvider.create(withEmail: email, withPassword: password, andName: name)
+        }.then {
+            EmailAuthProvider.singIn(withEmail: email, andPassword: password)
+        }.then { userId in
+            PBUserProvider.load(withId: userId)
+        }.done { user in
+            PBUserProvider.setCurrent(user: user)
+            self.delegate?.didSignUp()
+        }.ensure {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }.catch { error in
             
-        }, withFailureBlock: { (userCreateRequestError) in
-            //TODO: handle errors
-        })
+            let error = error as NSError
+            if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                //TODO: handle requestError!
+                //self.delegate?.faliedToLogin()
+            }
+        }
     }
 }

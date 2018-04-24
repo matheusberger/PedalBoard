@@ -103,17 +103,14 @@
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
 		B80294A1208E0E1100BDC2BC /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A0208E0E1100BDC2BC /* Knob.swift */; };
-		B80294A4208E0F9500BDC2BC /* AuthRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */; };
-		B844F137208E26570059E601 /* UserRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B844F136208E26570059E601 /* UserRequestError.swift */; };
+		B80294A4208E0F9500BDC2BC /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A3208E0F9500BDC2BC /* RequestError.swift */; };
 		B84547EE208E13490095983E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84547ED208E13490095983E /* Constants.swift */; };
 		B84547F1208E1B8D0095983E /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B84547EF208E1B8C0095983E /* key.pem */; };
 		B84547F2208E1B8D0095983E /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = B84547F0208E1B8C0095983E /* cert.pem */; };
-		B8828BEB208E828B00130F3C /* TuneRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BEA208E828B00130F3C /* TuneRequestError.swift */; };
 		B8828BEF208E8AA800130F3C /* Knob+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BEE208E8AA800130F3C /* Knob+JSON.swift */; };
-		B8828BF1208E9A9E00130F3C /* PedalRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF0208E9A9E00130F3C /* PedalRequestError.swift */; };
 		B8828BF3208EA2FD00130F3C /* KnobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF2208EA2FD00130F3C /* KnobProtocol.swift */; };
-		B8828BF5208EA33100130F3C /* KnobRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF4208EA33100130F3C /* KnobRequestError.swift */; };
 		B8828BF7208EA3C200130F3C /* KnobProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF6208EA3C200130F3C /* KnobProvider.swift */; };
+		B8828BF9208ECB2300130F3C /* RequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF8208ECB2300130F3C /* RequestEndpoint.swift */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -242,17 +239,14 @@
 		A3B9BB065BBE05EDF78D2843 /* Pods-PedalPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 		AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80294A0208E0E1100BDC2BC /* Knob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
-		B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestError.swift; sourceTree = "<group>"; };
-		B844F136208E26570059E601 /* UserRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestError.swift; sourceTree = "<group>"; };
+		B80294A3208E0F9500BDC2BC /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		B84547ED208E13490095983E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B84547EF208E1B8C0095983E /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
 		B84547F0208E1B8C0095983E /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
-		B8828BEA208E828B00130F3C /* TuneRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneRequestError.swift; sourceTree = "<group>"; };
 		B8828BEE208E8AA800130F3C /* Knob+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Knob+JSON.swift"; sourceTree = "<group>"; };
-		B8828BF0208E9A9E00130F3C /* PedalRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalRequestError.swift; sourceTree = "<group>"; };
 		B8828BF2208EA2FD00130F3C /* KnobProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobProtocol.swift; sourceTree = "<group>"; };
-		B8828BF4208EA33100130F3C /* KnobRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobRequestError.swift; sourceTree = "<group>"; };
 		B8828BF6208EA3C200130F3C /* KnobProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobProvider.swift; sourceTree = "<group>"; };
+		B8828BF8208ECB2300130F3C /* RequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEndpoint.swift; sourceTree = "<group>"; };
 		CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -867,11 +861,8 @@
 		B80294A2208E0F6200BDC2BC /* Requests Errors Enumerations */ = {
 			isa = PBXGroup;
 			children = (
-				B80294A3208E0F9500BDC2BC /* AuthRequestError.swift */,
-				B844F136208E26570059E601 /* UserRequestError.swift */,
-				B8828BEA208E828B00130F3C /* TuneRequestError.swift */,
-				B8828BF0208E9A9E00130F3C /* PedalRequestError.swift */,
-				B8828BF4208EA33100130F3C /* KnobRequestError.swift */,
+				B80294A3208E0F9500BDC2BC /* RequestError.swift */,
+				B8828BF8208ECB2300130F3C /* RequestEndpoint.swift */,
 			);
 			path = "Requests Errors Enumerations";
 			sourceTree = "<group>";
@@ -1183,6 +1174,7 @@
 				0A381E2A204B93DC001D7DB9 /* ConfigurePedalView.swift in Sources */,
 				0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */,
 				0A1D37AD20782435003CE3F3 /* UIColor+Bluechalk.swift in Sources */,
+				B8828BF9208ECB2300130F3C /* RequestEndpoint.swift in Sources */,
 				0A25C6F9205EA96600A641BD /* LoginViewModelProtocol.swift in Sources */,
 				0AE4AEF2207E4D240095EF6F /* KnobSlider.swift in Sources */,
 				0A25C6F4205E9E2800A641BD /* PBUserProvider.swift in Sources */,
@@ -1206,9 +1198,7 @@
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
-				B844F137208E26570059E601 /* UserRequestError.swift in Sources */,
 				0A6129872054B2AC005A3099 /* PedalListView.swift in Sources */,
-				B8828BEB208E828B00130F3C /* TuneRequestError.swift in Sources */,
 				0ABB124F207D3EEC00790FC0 /* UIColor+Watermelon.swift in Sources */,
 				0A092D0A2071BDA800E048E3 /* TuneSetupViewModelDelegate.swift in Sources */,
 				0A25C6EA205DF5E300A641BD /* AuthProtocol.swift in Sources */,
@@ -1223,8 +1213,7 @@
 				B80294A1208E0E1100BDC2BC /* Knob.swift in Sources */,
 				0A381E2F204CC309001D7DB9 /* ConfigurePedalViewModel.swift in Sources */,
 				B8828BF7208EA3C200130F3C /* KnobProvider.swift in Sources */,
-				B8828BF1208E9A9E00130F3C /* PedalRequestError.swift in Sources */,
-				B80294A4208E0F9500BDC2BC /* AuthRequestError.swift in Sources */,
+				B80294A4208E0F9500BDC2BC /* RequestError.swift in Sources */,
 				0A25C6EE205E877500A641BD /* EmailAuthProvider.swift in Sources */,
 				0ABB1255207D587F00790FC0 /* CircleButton.swift in Sources */,
 				0A8AFE9D206A77BE00388F10 /* TuneListViewModelProtocol.swift in Sources */,
@@ -1243,7 +1232,6 @@
 				0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,
 				0ABB124D207D319B00790FC0 /* RoundShadowView.swift in Sources */,
-				B8828BF5208EA33100130F3C /* KnobRequestError.swift in Sources */,
 				0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */,
 				0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */,
 				0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */,
