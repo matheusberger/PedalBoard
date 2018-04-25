@@ -100,6 +100,7 @@
 		0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2620798CAE00C832A9 /* ProfileView.swift */; };
 		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
+		0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
@@ -221,6 +222,7 @@
 		0AEFAA2620798CAE00C832A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
 		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
+		0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageKnobSlider.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31155E3FE56981148C12F111 /* Pods-PedalPrototypeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototypeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 				0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */,
+				0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */,
 				0AA792862073131400177C04 /* StatusBarNavigationController.swift in Sources */,
 				0A8F67712062A03C00A148E8 /* Tune.swift in Sources */,
+				0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,

@@ -35,7 +35,7 @@ class PedalTableViewCellView: UITableViewCell {
         var j = 0
         
         for (knob, value) in knobs {
-            let knobView = KnobSlider(withTitle: knob,
+            let knobView = PercentageKnobSlider(withTitle: knob,
                                       andValue: value,
                                       withFrame: CGRect(x: 50 * i, y: j * 50 , width: 20, height: 30))
             
