@@ -51,7 +51,7 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
     
     func didSelectSetup(atIndex index: Int) {
         self.viewModel.selectedTune = index
-        self.performSegue(withIdentifier: "tuneSetup", sender: nil)
+        self.performSegue(withIdentifier: "createTune", sender: nil)
     }
     
     @IBAction func createTuneButton(_ sender: Any){
@@ -60,20 +60,11 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let index = self.viewModel.selectedTune
-
+    
         if segue.identifier == "createTune" {
-            let viewModel = self.viewModel.getCreateTuneViewModel()
-            let view = segue.destination as! CreateTuneView
+            let viewModel = self.viewModel.getConfigureTuneViewModel()
+            let view = segue.destination as! ConfigureTuneView
             view.viewModel = viewModel
-        }
-        else {
-            if segue.identifier == "tuneSetup" {
-                let viewModel = self.viewModel.getTuneSetupViewModel(forTuneInIndex: index!)
-                let view = segue.destination as! TuneSetupView
-                view.viewModel = viewModel
-            }
         }
     }
  

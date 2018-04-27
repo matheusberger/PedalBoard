@@ -174,7 +174,6 @@
                     <connections>
                         <outlet property="searchTxtField" destination="cA2-9E-eHy" id="Kxx-jp-Gl5"/>
                         <outlet property="tableView" destination="7qL-ff-cxN" id="loY-vC-fJv"/>
-                        <segue destination="YJG-n5-dd4" kind="show" identifier="tuneSetup" id="5BV-M2-5tp"/>
                         <segue destination="J26-ba-xc7" kind="show" identifier="createTune" id="TaP-aD-BFz"/>
                     </connections>
                 </viewController>
@@ -268,12 +267,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4e-yp-6kM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="115"/>
+            <point key="canvasLocation" x="1588" y="-608"/>
         </scene>
-        <!--Create Tune View-->
+        <!--View Controller-->
+        <scene sceneID="Wul-JU-gh6">
+            <objects>
+                <viewController id="jxW-7c-k4B" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fhY-qs-6Ke">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="epg-An-bBt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7g-sl-0SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1586" y="114"/>
+        </scene>
+        <!--Configure Tune View-->
         <scene sceneID="Hys-yO-HDe">
             <objects>
-                <viewController id="J26-ba-xc7" customClass="CreateTuneView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J26-ba-xc7" customClass="ConfigureTuneView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k31-er-zJK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,6 +371,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <state key="normal" title="SETUP SETTINGS"/>
+                                        <connections>
+                                            <segue destination="jxW-7c-k4B" kind="show" id="G6k-C1-XRa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
