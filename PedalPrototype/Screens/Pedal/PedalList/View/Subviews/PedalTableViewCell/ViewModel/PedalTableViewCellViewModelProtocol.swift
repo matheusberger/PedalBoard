@@ -14,7 +14,9 @@ protocol PedalTableViewCellViewModelProtocol {
     
     func getPedalName() -> String
     
-    func getKnobs() -> [String : Int]
+    func getKnobCount() -> Int
+    
+    func getKnobCollectionViewCellViewModel(forIndexPath: IndexPath) -> KnobCollectionViewCellViewModel
     
     func edit()
 }

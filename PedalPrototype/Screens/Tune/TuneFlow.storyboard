@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="-99" y="115"/>
         </scene>
-        <!--Tune Setup View-->
+        <!--View Controller-->
         <scene sceneID="g3s-Jk-djh">
             <objects>
-                <viewController id="YJG-n5-dd4" customClass="TuneSetupView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YJG-n5-dd4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uEh-2n-byB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,12 +267,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4e-yp-6kM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-608"/>
+            <point key="canvasLocation" x="1308" y="-423"/>
         </scene>
-        <!--View Controller-->
+        <!--Tune Setup View-->
         <scene sceneID="Wul-JU-gh6">
             <objects>
-                <viewController id="jxW-7c-k4B" sceneMemberID="viewController">
+                <viewController id="jxW-7c-k4B" customClass="TuneSetupView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhY-qs-6Ke">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7g-sl-0SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="114"/>
+            <point key="canvasLocation" x="1403" y="114"/>
         </scene>
         <!--Configure Tune View-->
         <scene sceneID="Hys-yO-HDe">
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-sA-NuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="116"/>
+            <point key="canvasLocation" x="653" y="114"/>
         </scene>
     </scenes>
     <resources>

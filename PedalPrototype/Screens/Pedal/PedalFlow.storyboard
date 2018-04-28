@@ -57,24 +57,41 @@
                                                                 <constraint firstAttribute="height" constant="3" id="de7-MV-Yci"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-5U-sOj">
-                                                            <rect key="frame" x="25" y="58.5" width="230" height="36.5"/>
+                                                        <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-fN-PuB">
+                                                            <rect key="frame" x="24" y="55" width="232" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kcj-j4-TgR">
+                                                                <size key="itemSize" width="20" height="30"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="KnobCollectionViewCell" id="Qdt-Ix-fEp" customClass="KnobCollectionViewCell" customModule="PedalPrototype" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </view>
+                                                                    <size key="customSize" width="20" height="30"/>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="aeh-5U-sOj" firstAttribute="top" secondItem="zb2-Ux-UMl" secondAttribute="bottom" constant="11" id="Bj8-dE-cxY"/>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="leading" secondItem="Lsx-FM-yho" secondAttribute="trailing" constant="41" id="E1I-A0-QQI"/>
-                                                        <constraint firstItem="aeh-5U-sOj" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="25" id="PC5-m1-5dL"/>
+                                                        <constraint firstItem="aJ2-fN-PuB" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="55" id="IYD-3H-2qh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aJ2-fN-PuB" secondAttribute="bottom" constant="12" id="QPU-Bu-alv"/>
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" id="RxB-Zv-b1J"/>
-                                                        <constraint firstAttribute="bottom" secondItem="aeh-5U-sOj" secondAttribute="bottom" constant="12" id="SxE-7o-W8d"/>
-                                                        <constraint firstAttribute="trailing" secondItem="aeh-5U-sOj" secondAttribute="trailing" constant="25" id="aAZ-Hh-akr"/>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="12" id="hFJ-6G-i7x"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aJ2-fN-PuB" secondAttribute="trailing" constant="24" id="hav-XZ-2IC"/>
                                                         <constraint firstItem="Lsx-FM-yho" firstAttribute="centerY" secondItem="NRo-NC-uMz" secondAttribute="centerY" id="kar-rP-o8D"/>
                                                         <constraint firstAttribute="trailing" secondItem="zb2-Ux-UMl" secondAttribute="trailing" id="nHF-w8-ilw"/>
                                                         <constraint firstItem="Lsx-FM-yho" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="12" id="oUU-Qq-EFu"/>
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="Lsx-FM-yho" secondAttribute="bottom" constant="14" id="qvb-UG-Owa"/>
+                                                        <constraint firstItem="aJ2-fN-PuB" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="24" id="r5V-Xv-UVO"/>
                                                         <constraint firstAttribute="trailing" secondItem="NRo-NC-uMz" secondAttribute="trailing" constant="12" id="v9L-yc-Xhq"/>
                                                     </constraints>
                                                 </view>
@@ -88,7 +105,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="knobBaseView" destination="aeh-5U-sOj" id="PlB-dR-oKN"/>
+                                            <outlet property="knobCollectionView" destination="aJ2-fN-PuB" id="ieI-pd-hyl"/>
                                             <outlet property="pedalName" destination="Lsx-FM-yho" id="cAV-Y2-SIe"/>
                                             <outlet property="roundView" destination="DAy-cy-qFT" id="YEp-bI-TWo"/>
                                         </connections>
