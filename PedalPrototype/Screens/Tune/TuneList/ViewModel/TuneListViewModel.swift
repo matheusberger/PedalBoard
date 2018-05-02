@@ -67,8 +67,10 @@ class TuneListViewModel: TuneListViewModelProtocol {
     
     func getConfigureTuneViewModel() -> ConfigureTuneViewModelProtocol {
         
-        let viewModel = ConfigureTuneViewModel(withTune: self.tunes[self.selectedTune!])
-        
-        return viewModel
+        guard let selected = self.selectedTune else {
+            return ConfigureTuneViewModel()
+        }
+
+        return ConfigureTuneViewModel(withTune: self.tunes[selected])
     }
 }

@@ -27,4 +27,15 @@ class ProfileViewModel: ProfileViewModelProtocol {
     func getNumberOfPedals() -> Int {
         return 0
     }
+    
+    func logout(withCompletionBlock completionBlock: @escaping () -> Void) {
+        EmailAuthProvider.signOutUser { (success) in
+            if success {
+                completionBlock()
+            }
+            else {
+                print("deu ruim")
+            }
+        }
+    }
 }

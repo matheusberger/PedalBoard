@@ -15,4 +15,6 @@ protocol ProfileViewModelProtocol {
     func getUserEmail() -> String
     
     func getNumberOfPedals() -> Int
+    
+    func logout(withCompletionBlock: @escaping ()-> Void)
 }
