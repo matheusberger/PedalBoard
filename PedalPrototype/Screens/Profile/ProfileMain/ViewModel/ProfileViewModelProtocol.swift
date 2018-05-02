@@ -15,6 +15,4 @@ protocol ProfileViewModelProtocol {
     func getUserEmail() -> String
     
     func getNumberOfPedals() -> Int
-    
-    func getPedalListViewModel() -> PedalListViewModelProtocol
 }

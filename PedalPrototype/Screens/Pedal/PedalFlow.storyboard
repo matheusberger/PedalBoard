@@ -58,23 +58,23 @@
                                                             </constraints>
                                                         </imageView>
                                                         <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-fN-PuB">
-                                                            <rect key="frame" x="24" y="55" width="232" height="40"/>
+                                                            <rect key="frame" x="24" y="58" width="232" height="37"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kcj-j4-TgR">
-                                                                <size key="itemSize" width="20" height="30"/>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="31" id="Kcj-j4-TgR">
+                                                                <size key="itemSize" width="20" height="32"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="KnobCollectionViewCell" id="Qdt-Ix-fEp" customClass="KnobCollectionViewCell" customModule="PedalPrototype" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                     </view>
-                                                                    <size key="customSize" width="20" height="30"/>
+                                                                    <size key="customSize" width="20" height="32"/>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -82,7 +82,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="leading" secondItem="Lsx-FM-yho" secondAttribute="trailing" constant="41" id="E1I-A0-QQI"/>
-                                                        <constraint firstItem="aJ2-fN-PuB" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="55" id="IYD-3H-2qh"/>
+                                                        <constraint firstItem="aJ2-fN-PuB" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="58" id="IYD-3H-2qh"/>
                                                         <constraint firstAttribute="bottom" secondItem="aJ2-fN-PuB" secondAttribute="bottom" constant="12" id="QPU-Bu-alv"/>
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" id="RxB-Zv-b1J"/>
                                                         <constraint firstItem="NRo-NC-uMz" firstAttribute="top" secondItem="DAy-cy-qFT" secondAttribute="top" constant="12" id="hFJ-6G-i7x"/>
@@ -173,6 +173,7 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="filterTxtField" destination="bgb-qe-Zf2" id="1Yv-1T-Xe9"/>
                         <outlet property="pedalTableView" destination="tPM-Bw-L22" id="5pm-AP-1X7"/>
                         <segue destination="9GK-uk-bnK" kind="show" identifier="configurePedalSegue" id="S8N-2R-Pil"/>
                     </connections>

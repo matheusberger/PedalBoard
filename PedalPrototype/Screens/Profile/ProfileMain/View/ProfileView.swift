@@ -23,6 +23,7 @@ class ProfileView: BaseViewController {
         didSet {
             self.userNameLabel.text = viewModel.getUserName()
             self.emailLabel.text = viewModel.getUserEmail()
+            self.numRegisteredPedals.text = "\(viewModel.getNumberOfPedals()) pedals registered"
         }
     }
 
@@ -53,8 +54,7 @@ class ProfileView: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "pedalListSegue" {
-            let pedalList = segue.destination as! PedalListView
-            pedalList.viewModel = self.viewModel.getPedalListViewModel()
+            //
         }
     }
 

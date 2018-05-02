@@ -11,12 +11,9 @@ import Foundation
 class ProfileViewModel: ProfileViewModelProtocol {
     
     fileprivate var currentUser: PBUser
-    fileprivate var pedalsViewModel: PedalListViewModelProtocol
     
     init() {
         self.currentUser = PBUserProvider.getCurrentUser()!
-        self.pedalsViewModel = PedalListViewModel()
-        self.pedalsViewModel.getPedals()
     }
     
     func getUserName() -> String {
@@ -28,10 +25,6 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     func getNumberOfPedals() -> Int {
-        return self.pedalsViewModel.getPedalCount()
-    }
-    
-    func getPedalListViewModel() -> PedalListViewModelProtocol {
-        return self.pedalsViewModel
+        return 0
     }
 }

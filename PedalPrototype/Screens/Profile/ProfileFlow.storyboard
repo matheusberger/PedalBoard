@@ -86,6 +86,10 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="onU-ax-h8R" appends="YES" id="HJV-7D-MwU"/>
+                                        </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-hn-TBW" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="50" y="206" width="220" height="40"/>
@@ -136,6 +140,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vU1-lG-1ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="onU-ax-h8R">
+                    <connections>
+                        <segue destination="Pef-Qw-rqL" kind="show" identifier="pedalListSegue" id="ZTD-RC-mgT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="69.375" y="119.36619718309859"/>
         </scene>
@@ -154,4 +163,7 @@
         <image name="profile_txt" width="216" height="89"/>
         <image name="settings_button" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZTD-RC-mgT"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -18,13 +18,11 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.viewModel = TuneListViewModel()
+        
         self.navigationController?.isNavigationBarHidden = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        self.searchTxtField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
-        
-        self.viewModel = TuneListViewModel()
         
         self.viewModel.delegate = self
         self.viewModel.getTunes()
@@ -35,14 +33,6 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
         
         let rootTabBarController = self.tabBarController as! RootTabController
         rootTabBarController.toogleTabBar(on: true)
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        self.viewModel.filter = textField.text
-    }
-    
-    func setViewModel(viewModel: TuneListViewModel) {
-        self.viewModel = viewModel
     }
     
     func didUpdateTuneList() {
@@ -68,6 +58,10 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
         }
     }
  
+    @IBAction func setFilter(_ sender: Any) {
+        self.viewModel.filter = self.searchTxtField.text
+    }
+    
     @IBAction func beginSearch(_ sender: Any) {
         self.searchTxtField.becomeFirstResponder()
     }

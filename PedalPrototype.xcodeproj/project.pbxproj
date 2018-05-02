@@ -103,6 +103,7 @@
 		0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2620798CAE00C832A9 /* ProfileView.swift */; };
 		0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
+		0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */; };
 		0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
@@ -228,6 +229,7 @@
 		0AEFAA2620798CAE00C832A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTuneView.swift; sourceTree = "<group>"; };
 		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
+		0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobCVCViewModelDelegate.swift; sourceTree = "<group>"; };
 		0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageKnobSlider.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,7 +427,6 @@
 		0A61297C2054ACAD005A3099 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				0ACAC72A2093C5FD00DE47FF /* KnobCollectionViewCell */,
 				0A61297F2054ACD3005A3099 /* PedalTableViewCell */,
 			);
 			path = Subviews;
@@ -444,7 +445,7 @@
 		0A61297E2054ACBC005A3099 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */,
+				0AF838142099FCD600556A29 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -786,6 +787,7 @@
 			isa = PBXGroup;
 			children = (
 				0ACAC72F2093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift */,
+				0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */,
 				0ACAC7312093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -856,6 +858,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0AF838142099FCD600556A29 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */,
+				0ACAC72A2093C5FD00DE47FF /* KnobCollectionViewCell */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		314F6528288BC78E8D35DA7E /* Frameworks */ = {
@@ -1213,6 +1224,7 @@
 				0A381E31204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift in Sources */,
 				0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */,
 				0A4F7EB9207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift in Sources */,
+				0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */,
 				0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
 				0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */,

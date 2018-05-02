@@ -10,6 +10,8 @@ import Foundation
 
 protocol PedalListViewModelProtocol {
     
+    var filter: String? { get set }
+    
     var delegate: PedalListViewModelDelegate? { get set }
     
     func getPedals()

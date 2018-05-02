@@ -10,9 +10,26 @@ import UIKit
 
 class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewModelDelegate {
     
+    var filter: String? {
+        didSet {
+            self.filteredPedals = []
+            for pedal in self.pedals {
+                if pedal.name.lowercased().contains(filter!) {
+                    self.filteredPedals.append(pedal)
+                }
+            }
+        }
+    }
+    
     weak var delegate: PedalListViewModelDelegate?
     
-    var selectedPedal: Pedal?
+    fileprivate var selectedPedal: Pedal?
+    
+    fileprivate var filteredPedals: [Pedal] = [] {
+        didSet {
+            self.delegate?.didUpdatePedalList()
+        }
+    }
     
     fileprivate var pedals: [Pedal] = [] {
         didSet {
@@ -28,18 +45,40 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
     
     func getPedalCellViewModel(forIndex index: Int) -> PedalTableViewCellViewModelProtocol {
         
-        let viewModel = PedalTableViewCellViewModel(withPedal: self.pedals[index])
+        var viewModel: PedalTableViewCellViewModel
+        
+        if self.filter == "" || self.filter == nil {
+            viewModel = PedalTableViewCellViewModel(withPedal: self.pedals[index])
+        }
+        else {
+            viewModel = PedalTableViewCellViewModel(withPedal: self.filteredPedals[index])
+        }
+    
         viewModel.delegate = self
         
         return viewModel
     }
     
     func getPedalCount() -> Int {
-        return self.pedals.count
+        if self.filter == "" || self.filter == nil {
+            return self.pedals.count
+        }
+        else {
+            return self.filteredPedals.count
+        }
     }
     
     func getCellHeight(forIndex index: Int) -> Int {
-        let knobs = self.pedals[index].knobs
+        
+        var knobs: [String : Int]
+        
+        if self.filter == "" || self.filter == nil {
+            knobs = self.pedals[index].knobs
+        }
+        else {
+            knobs = self.filteredPedals[index].knobs
+        }
+        
         let knobCount = knobs.keys.count
         
         if knobCount > 5 {

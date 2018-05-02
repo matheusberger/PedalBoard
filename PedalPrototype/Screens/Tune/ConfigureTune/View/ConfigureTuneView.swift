@@ -52,8 +52,7 @@ class ConfigureTuneView: UIViewController {
         }
         
         self.viewModel.createTune(withName: name, andArtist: artist) {
-            
-//            self.performSegue(withIdentifier: "initialTuneSetup", sender: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
