@@ -180,20 +180,62 @@
             </objects>
             <point key="canvasLocation" x="1112" y="-460"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View-->
         <scene sceneID="Ogo-Ws-DuC">
             <objects>
-                <viewController id="4vG-Uf-55e" sceneMemberID="viewController">
+                <viewController id="4vG-Uf-55e" customClass="EditProfileView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dkf-y3-nDm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-uG-DUA" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="aIg-sF-zRn"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH0-br-ohE" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-Hu-HRf">
+                                        <rect key="frame" x="12" y="12" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="cancel_button"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="4vG-Uf-55e" eventType="touchUpInside" id="i7q-8C-5QN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoR-ao-rFS">
+                                <rect key="frame" x="64" y="134" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pickProfilePicture:" destination="4vG-Uf-55e" eventType="touchUpInside" id="rMa-GL-LPN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X4w-uG-DUA" firstAttribute="leading" secondItem="oAu-bq-dDG" secondAttribute="leading" id="3cS-ZZ-fEC"/>
+                            <constraint firstItem="gH0-br-ohE" firstAttribute="leading" secondItem="oAu-bq-dDG" secondAttribute="leading" id="NHC-5Q-xLY"/>
+                            <constraint firstItem="oAu-bq-dDG" firstAttribute="trailing" secondItem="gH0-br-ohE" secondAttribute="trailing" id="Nxt-m0-pIi"/>
+                            <constraint firstItem="X4w-uG-DUA" firstAttribute="top" secondItem="Dkf-y3-nDm" secondAttribute="top" id="U6g-J1-V6g"/>
+                            <constraint firstItem="oAu-bq-dDG" firstAttribute="trailing" secondItem="X4w-uG-DUA" secondAttribute="trailing" id="cTk-Pl-rIH"/>
+                            <constraint firstItem="oAu-bq-dDG" firstAttribute="bottom" secondItem="gH0-br-ohE" secondAttribute="bottom" id="euj-YB-Y9m"/>
+                            <constraint firstItem="gH0-br-ohE" firstAttribute="top" secondItem="oAu-bq-dDG" secondAttribute="top" constant="262" id="t3L-hC-BhQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oAu-bq-dDG"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="X4w-uG-DUA" id="l8h-ig-PuX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8E-iB-jjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="118"/>
+            <point key="canvasLocation" x="1111.875" y="117.25352112676056"/>
         </scene>
     </scenes>
     <resources>

@@ -33,6 +33,9 @@
 		0A532EBA2048203400CA8FEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
 		0A532EBB2048203400CA8FEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
 		0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EBC2048275900CA8FEA /* PedalProvider.swift */; };
+		0A5C386E209A5B3300962084 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C386D209A5B3300962084 /* EditProfileView.swift */; };
+		0A5C3870209A5C4C00962084 /* EditProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */; };
+		0A5C3872209A5D9A00962084 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */; };
 		0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129782054ABA8005A3099 /* PedalListViewModelProtocol.swift */; };
 		0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61297A2054ABD1005A3099 /* PedalListViewModelDelegate.swift */; };
 		0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129802054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift */; };
@@ -152,6 +155,9 @@
 		0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProtocol.swift; sourceTree = "<group>"; };
 		0A532EB82048203400CA8FEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A532EBC2048275900CA8FEA /* PedalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProvider.swift; sourceTree = "<group>"; };
+		0A5C386D209A5B3300962084 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		0A6129782054ABA8005A3099 /* PedalListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A61297A2054ABD1005A3099 /* PedalListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A6129802054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -849,6 +855,8 @@
 		0AEFAA2A20798D4E00C832A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */,
+				0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -856,6 +864,7 @@
 		0AEFAA2B20798D5300C832A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C386D209A5B3300962084 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1219,6 +1228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5C3872209A5D9A00962084 /* EditProfileViewModel.swift in Sources */,
 				0AA7929220731E0600177C04 /* SignupView.swift in Sources */,
 				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift in Sources */,
@@ -1236,11 +1246,13 @@
 				0A8B7167207065320046F59A /* TuneSetupProvider.swift in Sources */,
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
+				0A5C3870209A5C4C00962084 /* EditProfileViewModelProtocol.swift in Sources */,
 				0A1D37AF207824D5003CE3F3 /* UIColor+Concrete.swift in Sources */,
 				0ACAC7322093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift in Sources */,
 				0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0AA7928020730B4700177C04 /* RoundView.swift in Sources */,
+				0A5C386E209A5B3300962084 /* EditProfileView.swift in Sources */,
 				0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */,
 				0AA7927E2073094D00177C04 /* PurpleShadowButton.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* ConfigurePedalView.swift in Sources */,
