@@ -82,15 +82,12 @@ class TuneListViewModel: TuneListViewModelProtocol {
         }
     }
     
-    func getCreateTuneViewModel() -> CreateTuneViewModelProtocol {
+    func getConfigureTuneViewModel() -> ConfigureTuneViewModelProtocol {
         
-        let viewModel = CreateTuneViewModel(withPedals: [Pedal]())
-        
-        return viewModel
+        guard let selected = self.selectedTune else {
+            return ConfigureTuneViewModel()
+        }
+
+        return ConfigureTuneViewModel(withTune: self.tunes[selected])
     }
-    
-    func getTuneSetupViewModel(forTuneInIndex index: Int) -> TuneSetupViewModelProtocol {
-        return TuneSetupViewModel(withTune: self.tunes[index])
-    }
-    
 }

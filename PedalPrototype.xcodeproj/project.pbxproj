@@ -33,6 +33,9 @@
 		0A532EBA2048203400CA8FEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
 		0A532EBB2048203400CA8FEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
 		0A532EBD2048275900CA8FEA /* PedalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A532EBC2048275900CA8FEA /* PedalProvider.swift */; };
+		0A5C386E209A5B3300962084 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C386D209A5B3300962084 /* EditProfileView.swift */; };
+		0A5C3870209A5C4C00962084 /* EditProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */; };
+		0A5C3872209A5D9A00962084 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */; };
 		0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129782054ABA8005A3099 /* PedalListViewModelProtocol.swift */; };
 		0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61297A2054ABD1005A3099 /* PedalListViewModelDelegate.swift */; };
 		0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6129802054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift */; };
@@ -49,8 +52,8 @@
 		0A6FB75920756B4D00621E38 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75820756B4D00621E38 /* LoadingView.swift */; };
 		0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75A2075756A00621E38 /* PurpleButton.swift */; };
 		0A6FB75D2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */; };
-		0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */; };
-		0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */; };
+		0A7490922066B42E002AF1E8 /* ConfigureTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* ConfigureTuneViewModelProtocol.swift */; };
+		0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */; };
 		0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */; };
 		0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */; };
 		0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */; };
@@ -93,13 +96,18 @@
 		0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */; };
 		0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */; };
 		0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */; };
+		0ACAC72E2093C6C200DE47FF /* KnobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAC72D2093C6C200DE47FF /* KnobCollectionViewCell.swift */; };
+		0ACAC7302093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAC72F2093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift */; };
+		0ACAC7322093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAC7312093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift */; };
 		0AE4AEF2207E4D240095EF6F /* KnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */; };
 		0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */; };
 		0AEFAA212079431200C832A9 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */; };
 		0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */; };
 		0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2620798CAE00C832A9 /* ProfileView.swift */; };
-		0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */; };
+		0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
+		0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */; };
+		0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */; };
 		12FE2F9F69736527A5E01929 /* Pods_PedalPrototypeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */; };
 		32423B06B57B2B412B03BB9E /* Pods_PedalPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9FF0D2AF9AB56519EEA50 /* Pods_PedalPrototype.framework */; };
 		B80294A1208E0E1100BDC2BC /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80294A0208E0E1100BDC2BC /* Knob.swift */; };
@@ -156,6 +164,9 @@
 		0A532EB420481B5D00CA8FEA /* PedalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProtocol.swift; sourceTree = "<group>"; };
 		0A532EB82048203400CA8FEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A532EBC2048275900CA8FEA /* PedalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalProvider.swift; sourceTree = "<group>"; };
+		0A5C386D209A5B3300962084 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		0A6129782054ABA8005A3099 /* PedalListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A61297A2054ABD1005A3099 /* PedalListViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalListViewModelDelegate.swift; sourceTree = "<group>"; };
 		0A6129802054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalTableViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -172,8 +183,8 @@
 		0A6FB75820756B4D00621E38 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0A6FB75A2075756A00621E38 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneTableViewCellViewModelDelegate.swift; sourceTree = "<group>"; };
-		0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModelProtocol.swift; sourceTree = "<group>"; };
-		0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneViewModel.swift; sourceTree = "<group>"; };
+		0A7490912066B42D002AF1E8 /* ConfigureTuneViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTuneViewModelProtocol.swift; sourceTree = "<group>"; };
+		0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTuneViewModel.swift; sourceTree = "<group>"; };
 		0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCView.swift; sourceTree = "<group>"; };
 		0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModelProtocol.swift; sourceTree = "<group>"; };
 		0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSetupTVCViewModel.swift; sourceTree = "<group>"; };
@@ -223,13 +234,18 @@
 		0ABFB04020751B3E00B221D3 /* RootSetupFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootSetupFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuneFlow.storyboard; sourceTree = "<group>"; };
 		0ABFB04420751EB700B221D3 /* PedalFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PedalFlow.storyboard; sourceTree = "<group>"; };
+		0ACAC72D2093C6C200DE47FF /* KnobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobCollectionViewCell.swift; sourceTree = "<group>"; };
+		0ACAC72F2093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		0ACAC7312093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobSlider.swift; sourceTree = "<group>"; };
 		0AEFAA1D20790CD900C832A9 /* PurpleThinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleThinTextField.swift; sourceTree = "<group>"; };
 		0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileFlow.storyboard; sourceTree = "<group>"; };
 		0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleLetterButton.swift; sourceTree = "<group>"; };
 		0AEFAA2620798CAE00C832A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTuneView.swift; sourceTree = "<group>"; };
+		0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTuneView.swift; sourceTree = "<group>"; };
 		0AF50481206D5D8F004881F0 /* TuneSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSetupView.swift; sourceTree = "<group>"; };
+		0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobCVCViewModelDelegate.swift; sourceTree = "<group>"; };
+		0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageKnobSlider.swift; sourceTree = "<group>"; };
 		0DC2FFDB53C82A56F28146B4 /* Pods-PedalPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		2B31C63235C8238F1D1E52C4 /* Pods_PedalPrototypeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PedalPrototypeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31155E3FE56981148C12F111 /* Pods-PedalPrototypeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PedalPrototypeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -461,7 +477,7 @@
 		0A61297E2054ACBC005A3099 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */,
+				0AF838142099FCD600556A29 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,20 +554,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0A74908D2066B404002AF1E8 /* CreateTune */ = {
+		0A74908D2066B404002AF1E8 /* ConfigureTune */ = {
 			isa = PBXGroup;
 			children = (
 				0A74908F2066B415002AF1E8 /* View */,
 				0A74908E2066B40E002AF1E8 /* ViewModel */,
 			);
-			path = CreateTune;
+			path = ConfigureTune;
 			sourceTree = "<group>";
 		};
 		0A74908E2066B40E002AF1E8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0A7490952066BCD7002AF1E8 /* CreateTuneViewModel.swift */,
-				0A7490912066B42D002AF1E8 /* CreateTuneViewModelProtocol.swift */,
+				0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */,
+				0A7490912066B42D002AF1E8 /* ConfigureTuneViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -559,7 +575,7 @@
 		0A74908F2066B415002AF1E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0AF5047F206C5A6D004881F0 /* CreateTuneView.swift */,
+				0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -714,6 +730,7 @@
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 				0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */,
+				0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -783,10 +800,37 @@
 			children = (
 				0ABFB04220751DA100B221D3 /* TuneFlow.storyboard */,
 				0A74908A2066B397002AF1E8 /* TuneList */,
-				0A74908D2066B404002AF1E8 /* CreateTune */,
+				0A74908D2066B404002AF1E8 /* ConfigureTune */,
 				0A857446206B334E00F1FDEC /* TuneSetup */,
 			);
 			path = Tune;
+			sourceTree = "<group>";
+		};
+		0ACAC72A2093C5FD00DE47FF /* KnobCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0ACAC72C2093C62B00DE47FF /* View */,
+				0ACAC72B2093C62400DE47FF /* ViewModel */,
+			);
+			path = KnobCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0ACAC72B2093C62400DE47FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0ACAC72F2093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift */,
+				0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */,
+				0ACAC7312093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0ACAC72C2093C62B00DE47FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ACAC72D2093C6C200DE47FF /* KnobCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0AEFAA1F20791EF900C832A9 /* Profile */ = {
@@ -837,6 +881,8 @@
 		0AEFAA2A20798D4E00C832A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C3871209A5D9A00962084 /* EditProfileViewModel.swift */,
+				0A5C386F209A5C4C00962084 /* EditProfileViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -844,8 +890,18 @@
 		0AEFAA2B20798D5300C832A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A5C386D209A5B3300962084 /* EditProfileView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0AF838142099FCD600556A29 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A6129882054B70C005A3099 /* PedalTableViewCellView.swift */,
+				0ACAC72A2093C5FD00DE47FF /* KnobCollectionViewCell */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		314F6528288BC78E8D35DA7E /* Frameworks */ = {
@@ -1116,6 +1172,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MSCircularSlider/MSCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1131,6 +1188,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1149,14 +1207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5C3872209A5D9A00962084 /* EditProfileViewModel.swift in Sources */,
 				0AA7929220731E0600177C04 /* SignupView.swift in Sources */,
 				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
 				0A381E31204CC31B001D7DB9 /* ConfigurePedalViewModelProtocol.swift in Sources */,
 				0A817904206B0BE2008A00B8 /* PedalSetup.swift in Sources */,
 				0A4F7EB9207FCC3A000FA1D9 /* PedalTableViewCellViewModelDelegate.swift in Sources */,
+				0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */,
 				0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
-				0AF50480206C5A6D004881F0 /* CreateTuneView.swift in Sources */,
+				0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0AA792792072E7C700177C04 /* PurpleImageView.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+JSON.swift in Sources */,
@@ -1165,10 +1225,13 @@
 				0A8B7167207065320046F59A /* TuneSetupProvider.swift in Sources */,
 				0A25C6FB205EAC4000A641BD /* LoginViewModelDelegate.swift in Sources */,
 				0A6707D7206BD97C008B796D /* TuneTableViewCellView.swift in Sources */,
+				0A5C3870209A5C4C00962084 /* EditProfileViewModelProtocol.swift in Sources */,
 				0A1D37AF207824D5003CE3F3 /* UIColor+Concrete.swift in Sources */,
+				0ACAC7322093CC2C00DE47FF /* KnobCollectionViewCellViewModel.swift in Sources */,
 				0AEFAA1E20790CD900C832A9 /* PurpleThinTextField.swift in Sources */,
 				0A61297B2054ABD1005A3099 /* PedalListViewModelDelegate.swift in Sources */,
 				0AA7928020730B4700177C04 /* RoundView.swift in Sources */,
+				0A5C386E209A5B3300962084 /* EditProfileView.swift in Sources */,
 				0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */,
 				0AA7927E2073094D00177C04 /* PurpleShadowButton.swift in Sources */,
 				0A381E2A204B93DC001D7DB9 /* ConfigurePedalView.swift in Sources */,
@@ -1185,6 +1248,7 @@
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				B8828BF3208EA2FD00130F3C /* KnobProtocol.swift in Sources */,
 				0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */,
+				0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */,
 				0A6FB75720755F0000621E38 /* UIColor+Silversand.swift in Sources */,
 				B84547EE208E13490095983E /* Constants.swift in Sources */,
 				0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */,
@@ -1195,6 +1259,8 @@
 				0A85744A206B337400F1FDEC /* TuneSetupViewModelProtocol.swift in Sources */,
 				0AA792862073131400177C04 /* StatusBarNavigationController.swift in Sources */,
 				0A8F67712062A03C00A148E8 /* Tune.swift in Sources */,
+				0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */,
+				0ACAC72E2093C6C200DE47FF /* KnobCollectionViewCell.swift in Sources */,
 				0A6129832054ADEB005A3099 /* PedalListViewModel.swift in Sources */,
 				0A6707DC206BDAC1008B796D /* TuneTableViewCellViewModel.swift in Sources */,
 				0A6707CE206BD242008B796D /* TuneListView.swift in Sources */,
@@ -1225,6 +1291,7 @@
 				0A1D37AB2078235A003CE3F3 /* PurpleTextField.swift in Sources */,
 				0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */,
 				0ABB1251207D42A300790FC0 /* ProfileViewModelProtocol.swift in Sources */,
+				0ACAC7302093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTableViewCellView.swift in Sources */,
 				0AA7928C20731CFA00177C04 /* SignupViewModelProtocol.swift in Sources */,
 				0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */,
@@ -1232,7 +1299,7 @@
 				0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */,
 				0A90CEF220478615002FA202 /* AppDelegate.swift in Sources */,
 				0ABB124D207D319B00790FC0 /* RoundShadowView.swift in Sources */,
-				0A7490922066B42E002AF1E8 /* CreateTuneViewModelProtocol.swift in Sources */,
+				0A7490922066B42E002AF1E8 /* ConfigureTuneViewModelProtocol.swift in Sources */,
 				0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */,
 				0A6129812054AD15005A3099 /* PedalTableViewCellViewModelProtocol.swift in Sources */,
 				0A6707D0206BD79A008B796D /* TuneListViewModelDelegate.swift in Sources */,

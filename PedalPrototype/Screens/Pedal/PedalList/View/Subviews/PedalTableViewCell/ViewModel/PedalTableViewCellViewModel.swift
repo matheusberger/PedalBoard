@@ -12,21 +12,27 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
     
     weak var delegate: PedalTableViewCellViewModelDelegate?
     
-    private var pedal: Pedal?
+    private var pedal: Pedal
     
-    init(withPedal pedal: Pedal?) {
-        self.pedal = pedal
+    init(withPedal pedal: Pedal? = nil) {
+        
+        if pedal != nil {
+            self.pedal = pedal!
+        }
+        else {
+            self.pedal = Pedal(withName: "", andKnobs: [String : Int]())
+        }
+        
     }
     
     func getPedalName() -> String {
-        
-        guard let pedal = self.pedal else {
-             return ""
-        }
-       
         return pedal.name
     }
     
+    func getKnobCount() -> Int {
+        return self.pedal.knobs.keys.count
+    }
+      
     func getKnobs() -> [String : Int] {
         
         guard let pedal = self.pedal else {
@@ -38,7 +44,13 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
         }
     }
     
+    func getKnobCollectionViewCellViewModel(forIndexPath index: IndexPath) -> KnobCollectionViewCellViewModel {
+        let keys = Array(self.pedal.knobs.keys)
+        let knobKey = keys[index.row]
+        return KnobCollectionViewCellViewModel(withName: knobKey, andPercentage: 50)
+    }
+    
     func edit() {
-        self.delegate?.setEditingPedal(pedal: self.pedal!)
+        self.delegate?.setEditingPedal(pedal: self.pedal)
     }
 }

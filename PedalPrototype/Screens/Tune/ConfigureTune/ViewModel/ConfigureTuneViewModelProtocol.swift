@@ -1,5 +1,5 @@
 //
-//  CreateTuneViewModelProtocol.swift
+//  ConfigureTuneViewModelProtocol.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 24/03/18.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol CreateTuneViewModelProtocol {
+protocol ConfigureTuneViewModelProtocol {
     
     func createTune(withName: String, andArtist: String,
                     withCompletionBlock: @escaping () -> Void)
     
-    func getPedalForExhibition(atIndex: Int) -> String
+    func getTuneSetupViewModel() -> TuneSetupViewModel
     
-    func getPedalCount() -> Int
+    func getTuneName() -> String
     
-    func getTuneSetupViewModel(forIndexPaths: [IndexPath]) -> TuneSetupViewModel
+    func getArtistName() -> String
 }

@@ -16,5 +16,5 @@ protocol ProfileViewModelProtocol {
     
     func getNumberOfPedals() -> Int
     
-    func getPedalListViewModel() -> PedalListViewModelProtocol
+    func logout(withCompletionBlock: @escaping ()-> Void)
 }

@@ -1,5 +1,5 @@
 //
-//  CreateTuneView.swift
+//  ConfigureTuneView.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 28/03/18.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CreateTuneView: UIViewController {
+class ConfigureTuneView: UIViewController {
 
-    var viewModel: CreateTuneViewModelProtocol!
+    var viewModel: ConfigureTuneViewModelProtocol!
     
     
     @IBOutlet weak var tuneNameTxtField: UITextField!
@@ -32,6 +32,9 @@ class CreateTuneView: UIViewController {
         
         let rootTabBarController = self.tabBarController as! RootTabController
         rootTabBarController.toogleTabBar(on: false)
+        
+        self.tuneNameTxtField.text = self.viewModel.getTuneName()
+        self.artistNameTxtField.text = self.viewModel.getArtistName()
     }
 
     @IBAction func cancelButton(_ sender: Any) {
@@ -49,8 +52,7 @@ class CreateTuneView: UIViewController {
         }
         
         self.viewModel.createTune(withName: name, andArtist: artist) {
-            
-//            self.performSegue(withIdentifier: "initialTuneSetup", sender: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -58,8 +60,11 @@ class CreateTuneView: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "tuneSetup" {
+            let viewModel = self.viewModel.getTuneSetupViewModel()
+            let view = segue.destination as! TuneSetupView
+            view.viewModel = viewModel
+        }
     }
 
 }

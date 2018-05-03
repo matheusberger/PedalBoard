@@ -521,8 +521,8 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B1C4AAFAF49036C7007633DAA3C806AD;
-			remoteInfo = GTMOAuth2;
+			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
+			remoteInfo = GoogleToolboxForMac;
 		};
 		6F602DC04A0F72966D5E8A37B18BB649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1198,14 +1198,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76119BFC3F7D28885FDCC80458A5B292 /* Frameworks */ = {
+		81A5C814ACEB86CB06CD6C51383982FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F46BD604AECC7F1159470A74794366 /* Foundation.framework in Frameworks */,
-				CB8DEAB39CEA8CBFA79C0EE66C0B119A /* GTMSessionFetcher.framework in Frameworks */,
-				216FD026B6CF3F6C3477A41C7F805FA4 /* Security.framework in Frameworks */,
-				05392B9C091E3E274235625B87D6C7BC /* SystemConfiguration.framework in Frameworks */,
+				BB04209DDB72CD325AE09D2EC3EBC380 /* CoreGraphics.framework in Frameworks */,
+				A25F717B5E0C4E6A6DE933B0BF0F6417 /* Foundation.framework in Frameworks */,
+				81A2F975614A9B94F265CD3BA816B0A4 /* QuartzCore.framework in Frameworks */,
+				EE20C85515D53DE61D8435080677F58E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,7 +1383,7 @@
 				C90580EA3E2B6ED762B62C15289A568D /* GTMSessionUploadFetcher.h */,
 				3D81A789338739B0843A82A2C3DD8FA2 /* GTMSessionUploadFetcher.m */,
 			);
-			name = Core;
+			path = Bolts;
 			sourceTree = "<group>";
 		};
 		3581816F562B71C7C324A45E5A55A47F /* Alamofire */ = {
@@ -1770,7 +1770,7 @@
 				413065D42E4799975FB2F21788B2DED7 /* Pods-PedalPrototypeTests */,
 				908056C4AD14AC435E331FB528DA5283 /* Pods-PedalPrototypeUITests */,
 			);
-			name = "Targets Support Files";
+			path = GTMOAuth2;
 			sourceTree = "<group>";
 		};
 		742B5D3925362E0EB8033268A5E257E1 /* CorePromise */ = {
@@ -2043,8 +2043,7 @@
 				9F3BB797EB05C1B48D39B13895200B1D /* GTMOAuth2-umbrella.h */,
 				A67DCA8B03428D62EBF8FBA4AE1E4C8D /* Info.plist */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GTMOAuth2";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		A2D006894827B69F08DC2FEC3B05B35A /* NSData+zlib */ = {
@@ -2074,8 +2073,7 @@
 				9453B7B594FC0556243D35523160C73A /* FBSDKCoreKit-umbrella.h */,
 				942417781386BEA1F58B617FBAD3AB6B /* Info.plist */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/FBSDKCoreKit";
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		B0C6914998E3E71DA9A7D3DEDFF79095 /* FirebaseInstanceID */ = {
@@ -2960,6 +2958,7 @@
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
 				B1C4AAFAF49036C7007633DAA3C806AD /* GTMOAuth2 */,
 				681BE6E3D02A43F9BA63777AC435C8FD /* GTMSessionFetcher */,
+				C235F77E101E742652CCF98FFDFA5182 /* IQKeyboardManagerSwift */,
 				3B08C49A396BAA0D9DCAD4460CC52F95 /* leveldb-library */,
 				F92DB2A9C791B7C1A3A693C123747AF2 /* MSCircularSlider */,
 				E4DD95323C54A78F879DAB0F1508B8E7 /* nanopb */,
@@ -2973,6 +2972,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		918D58E08AC7FD6CC66B75FF048005F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2FE216328BFC23AF9D30EAEFAA2303 /* IQKeyboardManager.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A24F0E031696F19181AAFE34AFDB90FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3353,6 +3360,12 @@
 			name = GoogleToolboxForMac;
 			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
 			targetProxy = AA263FA2A8F049D00B1F80A1838E7EE0 /* PBXContainerItemProxy */;
+		};
+		3E788517877A7D58694EBBC26D07B5A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = C235F77E101E742652CCF98FFDFA5182 /* IQKeyboardManagerSwift */;
+			targetProxy = 831BFCDD5CE1BE410EF29BDC3FBE63C2 /* PBXContainerItemProxy */;
 		};
 		5BB325A61E43D2A27F0766ED06A51AA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

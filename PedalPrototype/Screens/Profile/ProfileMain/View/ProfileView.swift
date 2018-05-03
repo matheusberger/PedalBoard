@@ -23,6 +23,7 @@ class ProfileView: BaseViewController {
         didSet {
             self.userNameLabel.text = viewModel.getUserName()
             self.emailLabel.text = viewModel.getUserEmail()
+            self.numRegisteredPedals.text = "\(viewModel.getNumberOfPedals()) pedals registered"
         }
     }
 
@@ -47,14 +48,19 @@ class ProfileView: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func logoutButton(_ sender: Any) {
+        self.viewModel.logout {
+            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "pedalListSegue" {
-            let pedalList = segue.destination as! PedalListView
-            pedalList.viewModel = self.viewModel.getPedalListViewModel()
+            //
         }
     }
 

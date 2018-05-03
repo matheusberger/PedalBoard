@@ -58,6 +58,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
+  - IQKeyboardManagerSwift (5.0.0)
   - leveldb-library (1.20)
   - MSCircularSlider (1.2.1)
   - nanopb (0.3.8):
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - GoogleSignIn
+  - IQKeyboardManagerSwift
   - MSCircularSlider (~> 1.2)
   - PromiseKit/Alamofire (~> 6.0)
   - SwiftyJSON (~> 4.0)
@@ -119,6 +121,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MSCircularSlider: e0107e17c0c756c4e6a7d4d6c157a474ac08f7ca
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3

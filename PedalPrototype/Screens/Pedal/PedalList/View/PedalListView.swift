@@ -10,23 +10,35 @@ import UIKit
 
 class PedalListView: BaseViewController {
 
-    var viewModel: PedalListViewModelProtocol!
+    var viewModel: PedalListViewModel!
     
     @IBOutlet weak var pedalTableView: UITableView!
+    @IBOutlet weak var filterTxtField: PurpleThinTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.viewModel = PedalListViewModel()
         self.viewModel.delegate = self
+        
+        self.viewModel.getPedals()
         
         self.pedalTableView.delegate = self
         self.pedalTableView.dataSource = self
+        
+        self.filterTxtField.addTarget(self, action: #selector(setFilter(_:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        self.pedalTableView.reloadData()
         
         self.viewModel.clearSelectedPedal()
+    }
+    
+    @objc func setFilter(_ textField: UITextField) {
+        self.viewModel.filter = textField.text
     }
     
     @IBAction func backButton(_ sender: Any) {

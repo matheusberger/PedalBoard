@@ -18,6 +18,7 @@ target 'PedalPrototype' do
   pod 'FBSDKLoginKit'
 
   pod 'MSCircularSlider', '~> 1.2'
+  pod 'IQKeyboardManagerSwift'
 
   target 'PedalPrototypeTests' do
     inherit! :search_paths

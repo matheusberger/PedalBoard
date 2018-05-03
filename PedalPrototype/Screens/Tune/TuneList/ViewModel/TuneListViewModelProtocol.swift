@@ -10,13 +10,17 @@ import Foundation
 
 protocol TuneListViewModelProtocol {
     
+    var filter: String? { get set }
+    
+    var selectedTune: Int? { get set }
+    
     var delegate: TuneListViewModelDelegate? { get set }
     
     func getTunes()
     
+    func getTuneCount() -> Int
+    
     func getTuneCellViewModel(forIndex: Int) -> TuneTableViewCellViewModelProtocol
     
-    func getCreateTuneViewModel() -> CreateTuneViewModelProtocol
-    
-    func getTuneSetupViewModel(forTuneInIndex: Int) -> TuneSetupViewModelProtocol
+    func getConfigureTuneViewModel() -> ConfigureTuneViewModelProtocol
 }

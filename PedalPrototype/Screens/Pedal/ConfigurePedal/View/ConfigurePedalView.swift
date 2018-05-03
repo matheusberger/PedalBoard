@@ -47,6 +47,8 @@ class ConfigurePedalView: BaseViewController {
         else {
             self.titleLabel.text = "NEW PEDAL"
         }
+        
+        self.dismissKeyboard()
     }
     
     @IBAction func createPedalButton(_ sender: Any) {
