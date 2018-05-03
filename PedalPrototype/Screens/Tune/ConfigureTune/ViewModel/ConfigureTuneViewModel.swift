@@ -14,12 +14,12 @@ class ConfigureTuneViewModel: ConfigureTuneViewModelProtocol {
     
     init(withTune tune: Tune? = nil) {
         
-        if tune != nil {
+//        if tune != nil {
             self.tune = tune!
-        }
-        else {
-            self.tune = Tune(withName: "", withArtist: "")
-        }
+//        }
+//        else {
+//            self.tune = Tune(withName: "", withArtist: "")
+//        }
     }
     
     func createTune(withName name: String,andArtist artist: String, withCompletionBlock completionBlock: @escaping () -> Void) {

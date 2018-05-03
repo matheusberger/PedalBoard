@@ -53,7 +53,6 @@
 		0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75A2075756A00621E38 /* PurpleButton.swift */; };
 		0A6FB75D2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */; };
 		0A7490922066B42E002AF1E8 /* ConfigureTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* ConfigureTuneViewModelProtocol.swift */; };
-		0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */; };
 		0A7CE30A207158FC00183B91 /* KnobSetupTVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE309207158FC00183B91 /* KnobSetupTVCView.swift */; };
 		0A7CE30C2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30B2071591B00183B91 /* KnobSetupTVCViewModelProtocol.swift */; };
 		0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE30D2071597D00183B91 /* KnobSetupTVCViewModel.swift */; };
@@ -104,7 +103,6 @@
 		0AEFAA212079431200C832A9 /* ProfileFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEFAA202079431200C832A9 /* ProfileFlow.storyboard */; };
 		0AEFAA2320794FF500C832A9 /* PurpleLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2220794FF500C832A9 /* PurpleLetterButton.swift */; };
 		0AEFAA2720798CAE00C832A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFAA2620798CAE00C832A9 /* ProfileView.swift */; };
-		0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */; };
 		0AF50482206D5D8F004881F0 /* TuneSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF50481206D5D8F004881F0 /* TuneSetupView.swift */; };
 		0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF838122099FA6D00556A29 /* KnobCVCViewModelDelegate.swift */; };
 		0AFD3E782089090800F6F5F8 /* PercentageKnobSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD3E772089090800F6F5F8 /* PercentageKnobSlider.swift */; };
@@ -119,6 +117,8 @@
 		B8828BF3208EA2FD00130F3C /* KnobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF2208EA2FD00130F3C /* KnobProtocol.swift */; };
 		B8828BF7208EA3C200130F3C /* KnobProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF6208EA3C200130F3C /* KnobProvider.swift */; };
 		B8828BF9208ECB2300130F3C /* RequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8828BF8208ECB2300130F3C /* RequestEndpoint.swift */; };
+		B8BD8E5B209BD7AF00C19ACF /* ConfigureTuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF5047F206C5A6D004881F0 /* ConfigureTuneView.swift */; };
+		B8BD8E5C209BD7AF00C19ACF /* ConfigureTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */; };
 		BE9874A92A95A1260AB902DB /* Pods_PedalPrototypeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FE514A3663B8DA18D6A58 /* Pods_PedalPrototypeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -1207,6 +1207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BD8E5B209BD7AF00C19ACF /* ConfigureTuneView.swift in Sources */,
+				B8BD8E5C209BD7AF00C19ACF /* ConfigureTuneViewModel.swift in Sources */,
 				0A5C3872209A5D9A00962084 /* EditProfileViewModel.swift in Sources */,
 				0AA7929220731E0600177C04 /* SignupView.swift in Sources */,
 				0A7CE30E2071597D00183B91 /* KnobSetupTVCViewModel.swift in Sources */,
@@ -1216,7 +1218,6 @@
 				0AF838132099FA6D00556A29 /* KnobCVCViewModelDelegate.swift in Sources */,
 				0A8B7165207064500046F59A /* TuneSetupProtocol.swift in Sources */,
 				0A25C6F7205EA94300A641BD /* LoginViewModel.swift in Sources */,
-				0AF50480206C5A6D004881F0 /* ConfigureTuneView.swift in Sources */,
 				0A6129852054AF19005A3099 /* PedalTableViewCellViewModel.swift in Sources */,
 				0AA792792072E7C700177C04 /* PurpleImageView.swift in Sources */,
 				0A8AFEA6206A7FBF00388F10 /* Tune+JSON.swift in Sources */,
@@ -1247,8 +1248,6 @@
 				0ABFB03F2075189300B221D3 /* BaseViewController.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				B8828BF3208EA2FD00130F3C /* KnobProtocol.swift in Sources */,
-				0A7490962066BCD7002AF1E8 /* CreateTuneViewModel.swift in Sources */,
-				0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */,
 				0A6FB75720755F0000621E38 /* UIColor+Silversand.swift in Sources */,
 				B84547EE208E13490095983E /* Constants.swift in Sources */,
 				0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */,

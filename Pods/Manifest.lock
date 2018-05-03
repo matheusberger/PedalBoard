@@ -100,6 +100,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - leveldb-library
     - MSCircularSlider
     - nanopb
@@ -128,6 +129,6 @@ SPEC CHECKSUMS:
   PromiseKit: 625b1fc69944fc839503748101c5968cf54b527b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 296614e40463bcabf79aa13a023a1f7ac31e8cf0
+PODFILE CHECKSUM: e0762b4d107e8dc804434c9b4207c122964b27c2
 
 COCOAPODS: 1.5.0

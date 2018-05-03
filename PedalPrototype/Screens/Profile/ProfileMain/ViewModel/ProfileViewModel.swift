@@ -29,13 +29,13 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     func logout(withCompletionBlock completionBlock: @escaping () -> Void) {
-        EmailAuthProvider.signOutUser { (success) in
-            if success {
-                completionBlock()
-            }
-            else {
-                print("deu ruim")
-            }
-        }
+//        EmailAuthProvider.signOutUser { (success) in
+//            if success {
+//                completionBlock()
+//            }
+//            else {
+//                print("deu ruim")
+//            }
+//        }
     }
 }

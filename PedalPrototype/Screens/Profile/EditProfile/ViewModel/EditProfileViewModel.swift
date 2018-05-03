@@ -18,7 +18,7 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
     }
     
     func getUserName() -> String {
-        return self.user.fullName
+        return self.user.name
     }
     
     func getUserEmail() -> String {
@@ -30,13 +30,13 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
     }
     
     func updateUser(withCompletionBlock completionBlock: @escaping () -> Void) {
-        PBUserProvider.update(user: self.user) { (error) in
-            if error == nil {
-                completionBlock()
-            }
-            else {
-                print(error!)
-            }
-        }
+//        PBUserProvider.update(user: self.user) { (error) in
+//            if error == nil {
+//                completionBlock()
+//            }
+//            else {
+//                print(error!)
+//            }
+//        }
     }
 }
