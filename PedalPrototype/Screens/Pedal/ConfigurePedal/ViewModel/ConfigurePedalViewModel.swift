@@ -105,32 +105,6 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
                 }
             }
         }
-        
-        
-        
-//        guard let userUID = PBUserProvider.getCurrentUserID() else {
-//            return
-//        }
-        
-//        var knobs = [String : Int]()
-//
-//        for name in knobNames {
-//            knobs[name] = 0
-//        }
-        
-//        self.pedal.name = name
-//        self.pedal.knobs = knobs
-        
-//        if pedal.id != nil {
-//            PedalProvider.update(pedal: self.pedal, forUser: userUID) { (success) in
-//                completionBlock()
-//            }
-//        }
-//        else {
-//            PedalProvider.create(pedal: self.pedal, forUser: userUID) { (success) in
-//                completionBlock()
-//            }
-//        }
     }
     
     func getPedalName() -> String {
