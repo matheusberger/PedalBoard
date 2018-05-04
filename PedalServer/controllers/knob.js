@@ -88,7 +88,7 @@ router.patch('/:id/name', [
 			if (findError)
 				return res.status(500).json({ errors: { msg: findError.message }});
 			else if (!knob)
-				return res.status(500).json({ errors: { msg: 'Knob not found.' }});
+				return res.status(404).json({ errors: { msg: 'Knob not found.' }});
 			else if (!knob.owner.equals(currentAuthUserId))
 				return res.status(409).json({ errors: { msg: 'User not allowed.' }});
 
@@ -120,7 +120,7 @@ router.delete('/:id', (req, res, next) => {
 		if (findError)
 			return res.status(500).json({ errors: { msg: findError.message }});
 		else if (!knob)
-			return res.status(500).json({ errors: { msg: 'Knob not found.' }});
+			return res.status(404).json({ errors: { msg: 'Knob not found.' }});
 		else if (!knob.owner.equals(currentAuthUserId))
 			return res.status(409).json({ errors: { msg: 'User not allowed.' }});
 
