@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class ProfileViewModel: ProfileViewModelProtocol {
     
@@ -17,25 +18,35 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     func getUserName() -> String {
-        return currentUser.name
+        return self.currentUser.name
     }
     
     func getUserEmail() -> String {
-        return currentUser.email
+        return self.currentUser.email
     }
     
     func getNumberOfPedals() -> Int {
-        return 0
+        return self.currentUser.pedalsId.count
     }
     
     func logout(withCompletionBlock completionBlock: @escaping () -> Void) {
-//        EmailAuthProvider.signOutUser { (success) in
-//            if success {
-//                completionBlock()
-//            }
-//            else {
-//                print("deu ruim")
-//            }
-//        }
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        firstly {
+            EmailAuthProvider.singOut()
+        }.done {
+            completionBlock()
+        }.ensure {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }.catch { error in
+            
+            let error = error as NSError
+            if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                //TODO: handle requestError!
+                
+            }
+        }
     }
 }

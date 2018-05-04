@@ -54,6 +54,32 @@ class EmailAuthProvider: AuthProtocol {
             }
         }
     }
+    static func singOut() -> Promise<Void> {
+        let requestURL: String = Constants.API.URL_AUTH
+        
+        return Promise { seal in
+            
+            Alamofire.request(requestURL,
+                              method: .delete).responseJSON { responseData in
+                                
+                if let responseCode = responseData.response?.statusCode {
+                    
+                    guard responseCode == 200 else {
+                        let error = NSError(domain: "Auth_Loggout", code: responseCode, userInfo: nil)
+                        seal.reject(error)
+                        return
+                    }
+                    
+                    seal.resolve(nil)
+                    
+                } else {
+                    let error = NSError(domain: "Auth_Loggout", code: 501, userInfo: nil)
+                    seal.reject(error)
+                }
+            }
+            
+        }
+    }
     
 //    static func signOut(withCompletionBlock completionBlock: @escaping () -> Void,
 //                            withFailureBlock failureBlock: @escaping (AuthRequestError) -> Void) {

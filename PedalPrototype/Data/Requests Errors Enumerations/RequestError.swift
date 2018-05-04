@@ -54,7 +54,12 @@ enum RequestError: Error {
             }
             
         case .Auth_Loggout:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            default:
+                break
+            }
             
         case .User_Create:
             switch errorCode {
