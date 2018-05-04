@@ -9,19 +9,32 @@
 import Foundation
 
 enum RequestError: Error {
+    
     case NotAuthenticated
     case AlreadyAuthenticated
     case AuthenticationNotAllowed
+    
     case CredentialsIncorrect
     case EmailAlreadyRegistered
+    
     case UserNotFound
     case TuneNotFound
     case PedalNotFound
     case KnobNotFound
-    case PedalAlredyAssociated
-    case PedalNotAssociated
+    
+    case KnobAlreadyAssociated
+    case PedalAlreadyAssociated
     case TuneAlreadyAssociated
+    
+    case KnobNotAssociated
+    case PedalNotAssociated
     case TuneNotAssociated
+    
+    case KnobLinkedToPedal
+    case PedalLinkedToTune
+    case PedalLinkedToUser
+    case TuneLinkedToUser
+    
     case ParametersInvalid
     case ServerCouldNotProcess
     case Unexpected
@@ -86,7 +99,17 @@ enum RequestError: Error {
             return .Unexpected
             
         case .User_Pedal_Link:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 404:
+                return .PedalNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            case 403:
+                return .PedalAlreadyAssociated
+            default: break
+            }
             
         case .User_Pedal_Unlink:
             return .Unexpected
@@ -98,7 +121,12 @@ enum RequestError: Error {
             return .Unexpected
             
         case .Pedal_Create:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            default:
+                break
+            }
             
         case .Pedal_Read:
             switch errorCode {
@@ -111,7 +139,16 @@ enum RequestError: Error {
             }
             
         case .Pedal_UpdateName:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 404:
+                return .PedalNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            default:
+                break
+            }
             
         case .Pedal_UpdateArtist:
             return .Unexpected
@@ -120,10 +157,32 @@ enum RequestError: Error {
             return .Unexpected
             
         case .Pedal_Knob_Link:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 403:
+                return .KnobAlreadyAssociated
+            case 404:
+                return .PedalNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            default:
+                break
+            }
             
         case .Pedal_Knob_Unlink:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 403:
+                return .KnobNotAssociated
+            case 404:
+                return .PedalNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            default:
+                break
+            }
             
         case .Tune_Create:
             return .Unexpected
@@ -157,7 +216,12 @@ enum RequestError: Error {
             return .Unexpected
             
         case .Knob_Create:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            default:
+                break
+            }
             
         case .Knob_Read:
             switch errorCode {
@@ -170,10 +234,30 @@ enum RequestError: Error {
             }
             
         case .Knob_UpdateName:
-            return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 404:
+                return .KnobNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            default:
+                break
+            }
             
         case .Knob_Remove:
-           return .Unexpected
+            switch errorCode {
+            case 401:
+                return .NotAuthenticated
+            case 403:
+                return .KnobLinkedToPedal
+            case 404:
+                return .KnobNotFound
+            case 409:
+                return .AuthenticationNotAllowed
+            default:
+                break
+            }
             
         }
         

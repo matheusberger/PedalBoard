@@ -25,4 +25,8 @@ protocol PedalListViewModelProtocol {
     func getCreatePedalViewModel() -> ConfigurePedalViewModelProtocol
     
     func clearSelectedPedal()
+    
+    func didCreate(pedal: Pedal)
+    
+    func didEdit(pedal: Pedal)
 }

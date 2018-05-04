@@ -15,7 +15,4 @@ protocol AuthProtocol {
     
     static func singOut() -> Promise<Void>
 
-//    static func signOut(withCompletionBlock completionBlock: @escaping () -> Void,
-//                            withFailureBlock failureBlock: @escaping (_ error: AuthRequestError) -> Void) //ok
-    
 }

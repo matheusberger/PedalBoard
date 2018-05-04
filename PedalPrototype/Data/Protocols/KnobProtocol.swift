@@ -13,20 +13,9 @@ protocol KnobProtocol {
     
     static func load(withId id: String) -> Promise<Knob>
     
-//    static func load(withId id: String,
-//                     withCompletionBlock completionBlock: @escaping (_ knob: Knob) -> Void,
-//                     withFailureBlock failureBlock: @escaping (_ error: KnobRequestError) -> Void)
-//    
-//    static func create(withName name: String,
-//                       withCompletionBlock completionBlock: @escaping (_ knob: Knob) -> Void,
-//                       withFailureBlock failureBlock: @escaping (_ error: KnobRequestError) -> Void)
-//    
-//    static func updateName(knob: Knob,
-//                           withCompletionBlock completionBlock: @escaping () -> Void,
-//                           withFailureBlock failureBlock: @escaping (_ error: KnobRequestError) -> Void)
-//    
-//    static func delete(knob: Knob,
-//                           withCompletionBlock completionBlock: @escaping () -> Void,
-//                           withFailureBlock failureBlock: @escaping (_ error: KnobRequestError) -> Void)
+    static func create(withName name: String) -> Promise<Knob>
     
+    static func updateName(knob: Knob) -> Promise<Void>
+    
+    static func delete(knob: Knob) -> Promise<Void>
 }

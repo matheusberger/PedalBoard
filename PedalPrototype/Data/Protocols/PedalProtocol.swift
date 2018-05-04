@@ -13,27 +13,12 @@ protocol PedalProtocol {
 
     static func load(withId id: String) -> Promise<Pedal>
     
-//    static func load(withId id: String,
-//                     withCompletionBlock completionBlock: @escaping (_ pedal: Pedal) -> Void,
-//                     withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
-//
-//    static func create(withName name: String, andKnobs knobs: [Knob],
-//                       withCompletionBlock completionBlock: @escaping (_ pedal: Pedal) -> Void,
-//                       withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
-//
-//    static func delete(pedal: Pedal,
-//                       withCompletionBlock completionBlock: @escaping () -> Void,
-//                       withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
-//
-//    static func updateName(pedal: Pedal,
-//                           withCompletionBlock completionBlock: @escaping () -> Void,
-//                           withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
-//
-//    static func associate(pedal: Pedal, knob: Knob,
-//                          withCompletionBlock completionBlock: @escaping () -> Void,
-//                          withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
-//
-//    static func dissociate(pedal: Pedal, knob: Knob,
-//                          withCompletionBlock completionBlock: @escaping () -> Void,
-//                          withFailureBlock failureBlock: @escaping (_ error: PedalRequestError) -> Void)
+    static func create(withName name: String, andKnobs knobs: [Knob]) -> Promise<Pedal>
+    
+    static func updateName(pedal: Pedal) -> Promise<Void>
+    
+    static func associate(knob: Knob, withPedal pedal: Pedal) -> Promise<Void>
+    
+    static func dissociate(knob: Knob, withPedal pedal: Pedal) -> Promise<Void>
+    
 }

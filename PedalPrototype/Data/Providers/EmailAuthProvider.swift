@@ -54,6 +54,7 @@ class EmailAuthProvider: AuthProtocol {
             }
         }
     }
+    
     static func singOut() -> Promise<Void> {
         let requestURL: String = Constants.API.URL_AUTH
         
@@ -80,27 +81,4 @@ class EmailAuthProvider: AuthProtocol {
             
         }
     }
-    
-//    static func signOut(withCompletionBlock completionBlock: @escaping () -> Void,
-//                            withFailureBlock failureBlock: @escaping (AuthRequestError) -> Void) {
-//
-//        Alamofire.request(Constants.API.URL_AUTH, method: .delete)
-//            .responseJSON { (responseData) in
-//
-//                guard let status = responseData.response?.statusCode else {
-//                    failureBlock(.Unexpected)
-//                    return
-//                }
-//
-//                switch (status) {
-//                case 200:
-//                    completionBlock()
-//                case 401:
-//                    failureBlock(.NotAuthenticated)
-//                default:
-//                    failureBlock(.Unexpected)
-//                }
-//        }
-//    }
-    
 }

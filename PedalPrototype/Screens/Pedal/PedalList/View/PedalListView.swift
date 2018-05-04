@@ -54,6 +54,7 @@ class PedalListView: BaseViewController {
         if segue.identifier == "configurePedalSegue" {
             let createPedal = segue.destination as! ConfigurePedalView
             createPedal.viewModel = self.viewModel.getCreatePedalViewModel()
+            createPedal.delegate = self
         }
     }
 }
@@ -66,6 +67,17 @@ extension PedalListView: PedalListViewModelDelegate {
     
     func editPedal() {
         self.performSegue(withIdentifier: "configurePedalSegue", sender: nil)
+    }
+}
+
+extension PedalListView: ConfigurePedalViewDelegate {
+    
+    func didCreate(pedal: Pedal) {
+        self.viewModel.didCreate(pedal: pedal)
+    }
+    
+    func didEdit(pedal: Pedal) {
+        
     }
 }
 

@@ -38,6 +38,26 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
         }
     }
     
+    func didCreate(pedal: Pedal) {
+        guard let user = PBUserProvider.getCurrentUser() else {
+            return
+        }
+        
+        user.pedalsId.append(pedal.id)
+        PBUserProvider.setCurrent(user: user)
+        
+        self.pedals.append(pedal)
+    }
+    
+    func didEdit(pedal: Pedal) {
+        for i in 0..<self.pedals.count {
+            if (self.pedals[i].id == pedal.id) {
+                self.pedals[i] = pedal
+                break
+            }
+        }
+    }
+    
     func getPedals() {
         
         guard let user = PBUserProvider.getCurrentUser() else {
@@ -47,16 +67,13 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let requestPedals = user.pedalsId.map { (pedalId) in
-            
             return PedalProvider.load(withId: pedalId).then { pedal -> Promise<Void> in
-                
                 let knobsRequest = pedal.knobs.map { knob -> Promise<Knob> in
                     return KnobProvider.load(withId: knob.id)
                 }
                 
                 return when(fulfilled: knobsRequest).done { (knobs) in
                     pedal.knobs = knobs
-                    
                     self.pedals.append(pedal)
                 }
             }
@@ -66,11 +83,11 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }.catch { error in
                 
-                let error = error as NSError
-                if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
-                    let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
-                    //TODO: handle requestError!
-                }
+            let error = error as NSError
+            if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                //TODO: handle requestError!
+            }
         }
     }
     

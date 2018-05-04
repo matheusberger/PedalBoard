@@ -7,32 +7,116 @@
 //
 
 import UIKit
+import PromiseKit
 
 class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     
-    var pedal: Pedal
+    var pedal: Pedal!
     
     init(withPedal pedal: Pedal?) {
-        
-//        if pedal != nil {
-            self.pedal = pedal!
-//        }
-//        else {
-//            self.pedal = Pedal(withName: "", andKnobs: [String : Int]())
-//        }
+        if let pedal = pedal {
+            self.pedal = pedal
+        }
     }
     
-    func configurePedal(withName name: String, andKnobs knobNames: [String], withCompletionBlock completionBlock: @escaping () -> Void) {
+    func configurePedal(withName name: String,
+                        andKnobs knobNames: [String],
+                        withCompletionBlock completionBlock: @escaping (Pedal) -> Void) {
         
-        guard let userUID = PBUserProvider.getCurrentUserID() else {
+        guard let user = PBUserProvider.getCurrentUser() else {
             return
         }
         
-        var knobs = [String : Int]()
-        
-        for name in knobNames {
-            knobs[name] = 0
+        if self.isEditingPedal() {
+            
+            var requests: [Promise<Void>] = []
+            
+            if name != self.pedal.name {
+                self.pedal.name = name
+                requests.append(PedalProvider.updateName(pedal: self.pedal))
+            }
+            
+            //Updated Knobs
+            for i in 0..<self.pedal.knobs.count {
+                let associatedKnob = self.pedal.knobs[i]
+                
+                if i < knobNames.count {
+                    let possibleNewKnobName = knobNames[i]
+                    
+                    if associatedKnob.name != possibleNewKnobName {
+                        associatedKnob.name = possibleNewKnobName
+                        requests.append(KnobProvider.updateName(knob: associatedKnob))
+                    }
+                }
+            }
+            
+            //Added Knobs
+            if self.pedal.knobs.count < knobNames.count {
+                
+                for i in self.pedal.knobs.count..<knobNames.count {
+                    let newKnobName = knobNames[i]
+                    
+                    let createKnobRequest = KnobProvider.create(withName: newKnobName)
+                    let pedalAssociateKnobRequest = createKnobRequest.then { knob -> Promise<Void> in
+                        self.pedal.knobs.append(knob)
+                        return PedalProvider.associate(knob: knob, withPedal: self.pedal)
+                    }
+                    
+                    requests.append(pedalAssociateKnobRequest)
+                }
+            }
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            
+            when(fulfilled: requests).done {
+                completionBlock(self.pedal)
+            }.ensure {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }.catch { error in
+                let error = error as NSError
+                if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                    let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                    //TODO: handle requestError!
+                }
+            }
+            
+        } else {
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            
+            let requestKnobs = knobNames.map { (knobName) in
+               return KnobProvider.create(withName: knobName)
+            }
+            
+            when(fulfilled: requestKnobs).then { knobs in
+                PedalProvider.create(withName: name, andKnobs: knobs)
+            }.then { pedal -> Promise<Void> in
+                self.pedal = pedal
+                return PBUserProvider.associate(user: user, withPedal: pedal)
+            }.done {
+                completionBlock(self.pedal)
+            }.ensure {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }.catch { error in 
+                let error = error as NSError
+                if let requestEndpoint = RequestEndpoint(rawValue: error.domain) {
+                    let requestError = RequestError.from(endpoint: requestEndpoint, withHttpErrorCode: error.code)
+                    //TODO: handle requestError!
+                }
+            }
         }
+        
+        
+        
+//        guard let userUID = PBUserProvider.getCurrentUserID() else {
+//            return
+//        }
+        
+//        var knobs = [String : Int]()
+//
+//        for name in knobNames {
+//            knobs[name] = 0
+//        }
         
 //        self.pedal.name = name
 //        self.pedal.knobs = knobs
@@ -50,22 +134,25 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     }
     
     func getPedalName() -> String {
-        return self.pedal.name
+        
+        guard let pedal = self.pedal else {
+            return ""
+        }
+        return pedal.name
     }
     
     func isEditingPedal() -> Bool {
-        if self.pedal.id == nil {
-            return false
-        }
-        else {
-            return true
-        }
+        return self.pedal != nil
     }
     
     func getKnobs(withContinuousBlock continuousBlock: @escaping (String) -> Void) {
         
-//        for (knob, _) in self.pedal.knobs {
-//            continuousBlock(knob)
-//        }
+        guard let pedal = self.pedal else {
+            return
+        }
+        
+        for knob in pedal.knobs {
+            continuousBlock(knob.name)
+        }
     }
 }

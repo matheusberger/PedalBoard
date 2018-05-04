@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ConfigurePedalView: BaseViewController {
+class ConfigurePedalView: BaseViewController, ConfigurePedalViewProtocol {
+    
+    weak var delegate: ConfigurePedalViewDelegate?
     
     @IBOutlet weak var pedalName: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,7 +19,6 @@ class ConfigurePedalView: BaseViewController {
     @IBOutlet weak var baseView: RoundView!
     @IBOutlet weak var baseViewTopConstraint: NSLayoutConstraint!
     
-    var knobs: [String]!
     var viewModel: ConfigurePedalViewModelProtocol!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -27,8 +28,8 @@ class ConfigurePedalView: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.knobs = [String]()
         self.pedalName.text = self.viewModel.getPedalName()
+        
         self.knobsTxtFieldCollection[0].delegate = self
     }
     
@@ -57,16 +58,18 @@ class ConfigurePedalView: BaseViewController {
             return
         }
         
-        for txtField in self.knobsTxtFieldCollection {
-            if let name = txtField.text {
-                if name != ""{
-                    self.knobs.append(name)
-                }
-            }
-        }
+        let knobs: [String] = self.knobsTxtFieldCollection.compactMap({ $0.text }).filter({ $0 != "" })
         
-        self.viewModel.configurePedal(withName: name, andKnobs: self.knobs) {
+        self.viewModel.configurePedal(withName: name, andKnobs: knobs) { pedal in
+            
             self.navigationController?.popViewController(animated: true)
+            
+            let editing = self.viewModel.isEditingPedal()
+            if editing {
+                self.delegate?.didCreate(pedal: pedal)
+            } else {
+                self.delegate?.didEdit(pedal: pedal)
+            }
         }
     }
     

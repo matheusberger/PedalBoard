@@ -42,9 +42,8 @@ class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
     }
     
     func getKnobCollectionViewCellViewModel(forIndexPath index: IndexPath) -> KnobCollectionViewCellViewModel {
-//        let keys = Array(self.pedal.knobs.keys)
-//        let knobKey = keys[index.row]
-        return KnobCollectionViewCellViewModel(withName: "bla", andPercentage: 50)
+        let knobName = self.pedal.knobs[index.row].name
+        return KnobCollectionViewCellViewModel(withName: knobName, andPercentage: 50)
     }
     
     func edit() {

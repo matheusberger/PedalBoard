@@ -12,7 +12,7 @@ protocol ConfigurePedalViewModelProtocol {
     
     func configurePedal(withName: String,
                      andKnobs: [String],
-                     withCompletionBlock completionBlock: @escaping () -> Void)
+                     withCompletionBlock completionBlock: @escaping (_ pedal: Pedal) -> Void)
     
     func getPedalName() -> String
     

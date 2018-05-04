@@ -23,7 +23,6 @@ class ProfileView: BaseViewController {
         didSet {
             self.userNameLabel.text = viewModel.getUserName()
             self.emailLabel.text = viewModel.getUserEmail()
-            self.numRegisteredPedals.text = "\(viewModel.getNumberOfPedals()) pedals registered"
         }
     }
 
@@ -42,6 +41,9 @@ class ProfileView: BaseViewController {
         
         let rootTabController = self.tabBarController as! RootTabController
         rootTabController.toogleTabBar(on: false)
+        
+        //Mainten the number of pedals synced
+        self.numRegisteredPedals.text = "\(self.viewModel.getNumberOfPedals()) pedals registered"
     }
     
     @IBAction func cancelButton(_ sender: Any) {
