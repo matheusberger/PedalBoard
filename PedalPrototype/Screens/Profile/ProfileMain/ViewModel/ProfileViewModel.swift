@@ -11,22 +11,29 @@ import PromiseKit
 
 class ProfileViewModel: ProfileViewModelProtocol {
     
-    fileprivate var currentUser: PBUser
-    
-    init() {
-        self.currentUser = PBUserProvider.getCurrentUser()!
-    }
     
     func getUserName() -> String {
-        return self.currentUser.name
+        guard let user = PBUserProvider.getCurrentUser() else {
+            return ""
+        }
+        
+        return user.name
     }
     
     func getUserEmail() -> String {
-        return self.currentUser.email
+        guard let user = PBUserProvider.getCurrentUser() else {
+            return ""
+        }
+        
+        return user.email
     }
     
     func getNumberOfPedals() -> Int {
-        return self.currentUser.pedalsId.count
+        guard let user = PBUserProvider.getCurrentUser() else {
+            return 0
+        }
+        
+        return user.pedalsId.count
     }
     
     func logout(withCompletionBlock completionBlock: @escaping () -> Void) {
