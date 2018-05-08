@@ -199,19 +199,52 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-Hu-HRf">
                                         <rect key="frame" x="12" y="12" width="24" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="cancel_button"/>
                                         <connections>
                                             <action selector="cancelButton:" destination="4vG-Uf-55e" eventType="touchUpInside" id="i7q-8C-5QN"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FULL NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6LM-lb-RPn" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="49" width="220" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EDIT PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FH9-g5-rCd">
+                                        <rect key="frame" x="41" y="18" width="63" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0L3-H8-JiN" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="115" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-ar-hvf" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="181" width="220" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                        <state key="normal" title="SAVE"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="4vG-Uf-55e" eventType="touchUpInside" id="afX-x1-U52"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6LM-lb-RPn" secondAttribute="trailing" constant="50" id="46Y-U6-4wj"/>
+                                    <constraint firstItem="6LM-lb-RPn" firstAttribute="leading" secondItem="gH0-br-ohE" secondAttribute="leading" constant="50" id="hpV-xg-Sbe"/>
+                                    <constraint firstItem="6LM-lb-RPn" firstAttribute="top" secondItem="gH0-br-ohE" secondAttribute="top" constant="49" id="jwC-Up-3Ah"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoR-ao-rFS">
-                                <rect key="frame" x="64" y="134" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoR-ao-rFS">
+                                <rect key="frame" x="131" y="131" width="59" height="36"/>
+                                <state key="normal" image="choose_picture"/>
                                 <connections>
                                     <action selector="pickProfilePicture:" destination="4vG-Uf-55e" eventType="touchUpInside" id="rMa-GL-LPN"/>
                                 </connections>
@@ -220,16 +253,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X4w-uG-DUA" firstAttribute="leading" secondItem="oAu-bq-dDG" secondAttribute="leading" id="3cS-ZZ-fEC"/>
+                            <constraint firstItem="DoR-ao-rFS" firstAttribute="centerX" secondItem="X4w-uG-DUA" secondAttribute="centerX" id="MAx-xV-gmy"/>
                             <constraint firstItem="gH0-br-ohE" firstAttribute="leading" secondItem="oAu-bq-dDG" secondAttribute="leading" id="NHC-5Q-xLY"/>
                             <constraint firstItem="oAu-bq-dDG" firstAttribute="trailing" secondItem="gH0-br-ohE" secondAttribute="trailing" id="Nxt-m0-pIi"/>
                             <constraint firstItem="X4w-uG-DUA" firstAttribute="top" secondItem="Dkf-y3-nDm" secondAttribute="top" id="U6g-J1-V6g"/>
                             <constraint firstItem="oAu-bq-dDG" firstAttribute="trailing" secondItem="X4w-uG-DUA" secondAttribute="trailing" id="cTk-Pl-rIH"/>
                             <constraint firstItem="oAu-bq-dDG" firstAttribute="bottom" secondItem="gH0-br-ohE" secondAttribute="bottom" id="euj-YB-Y9m"/>
                             <constraint firstItem="gH0-br-ohE" firstAttribute="top" secondItem="oAu-bq-dDG" secondAttribute="top" constant="262" id="t3L-hC-BhQ"/>
+                            <constraint firstItem="DoR-ao-rFS" firstAttribute="centerY" secondItem="X4w-uG-DUA" secondAttribute="centerY" id="ykh-P4-A16"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oAu-bq-dDG"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxtField" destination="0L3-H8-JiN" id="VQI-fC-sVc"/>
+                        <outlet property="nameTxtField" destination="6LM-lb-RPn" id="cRH-aK-Y88"/>
                         <outlet property="profileImageView" destination="X4w-uG-DUA" id="l8h-ig-PuX"/>
                     </connections>
                 </viewController>
@@ -240,6 +277,7 @@
     </scenes>
     <resources>
         <image name="cancel_button" width="10" height="9"/>
+        <image name="choose_picture" width="59" height="36"/>
         <image name="profile_icon" width="16" height="20"/>
         <image name="profile_txt" width="216" height="89"/>
         <image name="settings_button" width="20" height="20"/>

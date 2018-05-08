@@ -15,6 +15,8 @@ class PBUser {
     var email: String
     var firstName: String
     var surname: String
+    var picture: Data?
+    
     
     var fullName: String {
         return self.firstName + self.surname

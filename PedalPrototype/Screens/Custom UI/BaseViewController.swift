@@ -14,7 +14,9 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BaseViewController.dismissKeyboard))
+        let pan: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(BaseViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        self.view.addGestureRecognizer(pan)
     }
 
     @objc func dismissKeyboard() {

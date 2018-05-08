@@ -26,7 +26,16 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
     }
     
     func getUserPicture() -> UIImage {
-        return UIImage()
+        
+        guard let imgData = self.user.picture else {
+            return UIImage()
+        }
+        
+        guard let image = UIImage(data: imgData) else {
+            return UIImage()
+        }
+        
+        return image
     }
     
     func updateUser(withCompletionBlock completionBlock: @escaping () -> Void) {

@@ -47,6 +47,10 @@ class ConfigurePedalView: BaseViewController {
         else {
             self.titleLabel.text = "NEW PEDAL"
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         self.dismissKeyboard()
     }
