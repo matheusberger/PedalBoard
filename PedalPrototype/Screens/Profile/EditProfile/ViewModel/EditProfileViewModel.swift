@@ -14,7 +14,7 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
     var user: PBUser
     
     init() {
-        self.user = PBUserProvider.getCurrentUser()!
+        self.user = PBUserProvider.getCurrentUser()
     }
     
     func getUserName() -> String {
@@ -25,7 +25,7 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
         return self.user.email
     }
     
-    func getUserPicture() -> UIImage {
+    func getUserImage() -> UIImage {
         
         guard let imgData = self.user.picture else {
             return UIImage()
@@ -36,6 +36,11 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
         }
         
         return image
+    }
+    
+    func setUserImage(_ image: UIImage) {
+        let data = UIImagePNGRepresentation(image)
+        self.user.picture = data
     }
     
     func updateUser(withCompletionBlock completionBlock: @escaping () -> Void) {

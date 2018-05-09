@@ -146,6 +146,7 @@
                         <outlet property="emailLabel" destination="Czf-mh-1My" id="kxV-pP-S4q"/>
                         <outlet property="logoutButtonOutlet" destination="b3w-hn-TBW" id="2ps-Vh-N89"/>
                         <outlet property="numRegisteredPedals" destination="6mb-W3-vCa" id="5W1-NT-Agf"/>
+                        <outlet property="userImageView" destination="bi5-R7-3V6" id="7LA-cd-q2V"/>
                         <outlet property="userNameLabel" destination="RTR-Ek-WMb" id="gJJ-xK-Q1T"/>
                         <segue destination="Y1u-9v-0Yf" kind="presentation" identifier="logoutSegue" id="SQm-0F-SkU"/>
                     </connections>

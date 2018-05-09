@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProfileViewModelProtocol {
     
@@ -15,6 +16,8 @@ protocol ProfileViewModelProtocol {
     func getUserEmail() -> String
     
     func getNumberOfPedals() -> Int
+    
+    func getUserImage() -> UIImage
     
     func logout(withCompletionBlock: @escaping ()-> Void)
 }

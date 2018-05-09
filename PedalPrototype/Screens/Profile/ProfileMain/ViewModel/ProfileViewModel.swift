@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileViewModel: ProfileViewModelProtocol {
     
     fileprivate var currentUser: PBUser
     
     init() {
-        self.currentUser = PBUserProvider.getCurrentUser()!
+        self.currentUser = PBUserProvider.getCurrentUser()
     }
     
     func getUserName() -> String {
@@ -26,6 +27,18 @@ class ProfileViewModel: ProfileViewModelProtocol {
     
     func getNumberOfPedals() -> Int {
         return 0
+    }
+    
+    func getUserImage() -> UIImage {
+        guard let imageData = self.currentUser.picture else {
+            return UIImage()
+        }
+        
+        guard let image = UIImage(data: imageData) else {
+            return UIImage()
+        }
+        
+        return image
     }
     
     func logout(withCompletionBlock completionBlock: @escaping () -> Void) {

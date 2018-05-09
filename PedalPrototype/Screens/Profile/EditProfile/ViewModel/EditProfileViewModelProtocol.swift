@@ -15,7 +15,9 @@ protocol EditProfileViewModelProtocol {
     
     func getUserEmail() -> String
     
-    func getUserPicture() -> UIImage
+    func getUserImage() -> UIImage
+    
+    func setUserImage(_ image: UIImage)
     
     func updateUser(withCompletionBlock: @escaping () -> Void)
 }

@@ -38,9 +38,7 @@ class TuneListViewModel: TuneListViewModelProtocol {
     
     func getTunes() {
         
-        guard let user = PBUserProvider.getCurrentUser() else {
-            return
-        }
+        let user = PBUserProvider.getCurrentUser()
         
         TuneProvider.getTunes(forUser: user.uid!) { (tune) in
             self.tunes.append(tune)

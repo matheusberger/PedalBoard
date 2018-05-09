@@ -12,6 +12,7 @@ class ProfileView: BaseViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var userImageView: PurpleImageView!
     @IBOutlet weak var numRegisteredPedals: UILabel!
     @IBOutlet weak var logoutButtonOutlet: PurpleShadowButton!
     
@@ -24,6 +25,7 @@ class ProfileView: BaseViewController {
             self.userNameLabel.text = viewModel.getUserName()
             self.emailLabel.text = viewModel.getUserEmail()
             self.numRegisteredPedals.text = "\(viewModel.getNumberOfPedals()) pedals registered"
+            self.userImageView.setImage(viewModel.getUserImage())
         }
     }
 
