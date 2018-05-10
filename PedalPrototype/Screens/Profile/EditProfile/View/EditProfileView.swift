@@ -50,17 +50,13 @@ class EditProfileView: BaseViewController {
                 }
             }
         }
-        self.imgPicker.allowsEditing = false
+        self.imgPicker.allowsEditing = true
         self.imgPicker.sourceType = .photoLibrary
         
         self.present(self.imgPicker, animated: true, completion: nil)
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        
-        if let image = self.profileImageView.image {
-            self.viewModel.setUserImage(image)
-        }
         
         self.viewModel.updateUser {
             self.navigationController?.popViewController(animated: true)
@@ -77,7 +73,11 @@ extension EditProfileView: UIImagePickerControllerDelegate, UINavigationControll
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            self.profileImageView.setImage(pickedImage)
+            if let compressedImg = pickedImage.compressTo(1) {
+                self.viewModel.setUserImage(compressedImg)
+                self.profileImageView.setImage(compressedImg)
+            }
+            
         }
         
         dismiss(animated: true, completion: nil)

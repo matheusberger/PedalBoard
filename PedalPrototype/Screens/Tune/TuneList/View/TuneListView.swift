@@ -14,6 +14,7 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTxtField: PurpleTextField!
+    @IBOutlet weak var userProfileButton: CircleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class TuneListView: BaseViewController, TuneListViewModelDelegate, TuneTableView
         
         self.viewModel.delegate = self
         self.viewModel.getTunes()
+        self.userProfileButton.setImage(self.viewModel.getUserImage(), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

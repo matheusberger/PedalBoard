@@ -19,5 +19,28 @@ class CircleButton: UIButton {
         self.layer.shadowOpacity = 0.2
         self.layer.shadowOffset = CGSize(width: 0, height: 20)
         self.imageView?.layer.cornerRadius = self.layer.cornerRadius
+        self.imageView?.contentMode = .scaleAspectFill
+    }
+    
+    override func setImage(_ image: UIImage?, for state: UIControlState) {
+        self.purple(source: image, for: state)
+    }
+    
+    fileprivate func purple(source: UIImage?, for state: UIControlState) {
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0.0)
+        
+        let purple = UIColor.hanPurple
+        purple.setFill()
+        
+        let bounds = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        UIRectFill(bounds)
+        
+        var image = source
+        image?.draw(in: bounds, blendMode: .hardLight, alpha: 1)
+        image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        super.setImage(image, for: state)
+        
+        UIGraphicsEndImageContext()
     }
 }

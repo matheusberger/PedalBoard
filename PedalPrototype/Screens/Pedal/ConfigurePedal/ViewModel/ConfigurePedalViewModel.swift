@@ -24,7 +24,7 @@ class ConfigurePedalViewModel: ConfigurePedalViewModelProtocol {
     
     func configurePedal(withName name: String, andKnobs knobNames: [String], withCompletionBlock completionBlock: @escaping () -> Void) {
         
-        guard let userUID = PBUserProvider.getCurrentUserUID() else {
+        guard let userUID = PBUserProvider.getCurrentUser().uid else {
             return
         }
         

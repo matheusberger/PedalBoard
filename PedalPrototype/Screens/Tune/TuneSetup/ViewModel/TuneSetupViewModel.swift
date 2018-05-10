@@ -27,7 +27,11 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
             print("getting the setup for \(pedal.name)")
         }
         
-        TuneSetupProvider.getSetup(forTune: self.tune, forUser: PBUserProvider.getCurrentUserUID()!) { () in
+        guard let userUID = PBUserProvider.getCurrentUser().uid else {
+            return
+        }
+        
+        TuneSetupProvider.getSetup(forTune: self.tune, forUser: userUID) { () in
             //show setup
             print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
             
@@ -37,7 +41,7 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     func saveTuneSetup(withCompletionBlock completionBlock: @escaping () -> Void) {
         
-        guard let userUID = PBUserProvider.getCurrentUserUID() else {
+        guard let userUID = PBUserProvider.getCurrentUser().uid else {
             return
         }
         

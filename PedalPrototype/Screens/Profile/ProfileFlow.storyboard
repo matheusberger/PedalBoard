@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-R7-3V6" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-R7-3V6" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="298" id="USC-VP-6Te"/>
@@ -189,7 +189,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-uG-DUA" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-uG-DUA" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="298" id="aIg-sF-zRn"/>

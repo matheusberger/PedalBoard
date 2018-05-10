@@ -10,15 +10,11 @@ import Foundation
 
 protocol PBUserProtocol {
     
-    var user: PBUser! { get set }
+    static func observeCurrentUser()
     
-    static var shared: PBUserProvider { get }
-    
-    static func getCurrentUser() -> PBUser
+    static func userDataIsAvailable(completionBlock: @escaping () -> Void)
     
     static func getUserImage()
-    
-    static func observeCurrentUser()
     
     static func update(user: PBUser, withCompletionBlock: @escaping (_ error: Error?) -> Void)
 }

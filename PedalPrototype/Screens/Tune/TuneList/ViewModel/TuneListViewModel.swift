@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TuneListViewModel: TuneListViewModelProtocol {
 
@@ -52,6 +53,18 @@ class TuneListViewModel: TuneListViewModelProtocol {
         else {
            return self.filteredTunes.count
         }
+    }
+    
+    func getUserImage() -> UIImage {
+        guard let imageData = PBUserProvider.getCurrentUser().picture else {
+            return UIImage()
+        }
+        
+        guard let image = UIImage(data: imageData) else {
+            return UIImage()
+        }
+        
+        return image
     }
     
     func getTuneCellViewModel(forIndex index: Int) -> TuneTableViewCellViewModelProtocol {

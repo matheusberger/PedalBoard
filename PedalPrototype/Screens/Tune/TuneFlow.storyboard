@@ -136,18 +136,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2i-QL-ixu">
-                                <rect key="frame" x="20" y="40" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="276" y="40" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add_button"/>
                                 <connections>
                                     <action selector="createTuneButton:" destination="icz-dT-XO7" eventType="touchUpInside" id="xe1-Ue-d7p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-JS-Q5a" customClass="CircleButton" customModule="PedalPrototype" customModuleProvider="target">
-                                <rect key="frame" x="260" y="40" width="40" height="40"/>
+                                <rect key="frame" x="20" y="40" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="PROFILE" image="signup_picture"/>
+                                <state key="normal" image="signup_picture"/>
                                 <connections>
                                     <segue destination="3Yn-LA-P1j" kind="show" id="Iq6-Y9-NK8"/>
                                 </connections>
@@ -176,6 +176,7 @@
                     <connections>
                         <outlet property="searchTxtField" destination="cA2-9E-eHy" id="Kxx-jp-Gl5"/>
                         <outlet property="tableView" destination="7qL-ff-cxN" id="loY-vC-fJv"/>
+                        <outlet property="userProfileButton" destination="Rxr-JS-Q5a" id="XxX-8u-lCd"/>
                         <segue destination="J26-ba-xc7" kind="show" identifier="createTune" id="TaP-aD-BFz"/>
                     </connections>
                 </viewController>

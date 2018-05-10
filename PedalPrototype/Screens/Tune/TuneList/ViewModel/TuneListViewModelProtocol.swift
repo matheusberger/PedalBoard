@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TuneListViewModelProtocol {
     
@@ -19,6 +20,8 @@ protocol TuneListViewModelProtocol {
     func getTunes()
     
     func getTuneCount() -> Int
+    
+    func getUserImage() -> UIImage
     
     func getTuneCellViewModel(forIndex: Int) -> TuneTableViewCellViewModelProtocol
     

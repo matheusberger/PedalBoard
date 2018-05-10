@@ -15,7 +15,9 @@ class LoadingView: UIViewController, LoginViewModelDelegate, SignupViewModelDele
     }
     
     func didSignIn() {
-        self.performSegue(withIdentifier: "success", sender: nil)
+        PBUserProvider.userDataIsAvailable {
+            self.performSegue(withIdentifier: "success", sender: nil)
+        }
     }
     
     func faliedToLogin() {
@@ -23,7 +25,9 @@ class LoadingView: UIViewController, LoginViewModelDelegate, SignupViewModelDele
     }
     
     func didSignUp() {
-        self.performSegue(withIdentifier: "success", sender: nil)
+        PBUserProvider.userDataIsAvailable {
+            self.performSegue(withIdentifier: "success", sender: nil)
+        }
     }
     
     func faliedToSignup() {

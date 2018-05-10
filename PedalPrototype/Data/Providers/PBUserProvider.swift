@@ -11,36 +11,12 @@ import Firebase
 
 class PBUserProvider: PBUserProtocol {
 
-    internal var user: PBUser! {
-        didSet {
-            self.listenerBlock!(user)
-        }
-    }
+    internal var user: PBUser!
     
-    internal var listenerBlock: ((PBUser) -> Void)?
-    
-    internal static var shared: PBUserProvider = PBUserProvider()
+    static var shared: PBUserProvider!
     
     init() {
         PBUserProvider.observeCurrentUser()
-    }
-    
-    static func getCurrentUser() -> PBUser {
-        return PBUserProvider.shared.user    
-    }
-    
-    static func getUserImage() {
-        let storage = Storage.storage()
-        let ref = storage.reference(withPath: "/profile_images/\(PBUserProvider.getCurrentUser().uid!)img")
-        
-        ref.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
-            if error == nil {
-                PBUserProvider.getCurrentUser().picture = data
-            }
-            else {
-                print(error!.localizedDescription)
-            }
-        }
     }
     
     static func observeCurrentUser() {
@@ -52,13 +28,28 @@ class PBUserProvider: PBUserProtocol {
         }
     }
     
-    static func getCurrentUserUID() -> String? {
-
-        guard let uid = PBUserProvider.getCurrentUser().uid else {
-            return nil
-        }
+    static func userDataIsAvailable(completionBlock: @escaping () -> Void) {
+        while PBUserProvider.shared.user == nil {}
         
-        return uid
+        completionBlock()
+    }
+    
+    static func getCurrentUser() -> PBUser {
+        return PBUserProvider.shared.user    
+    }
+    
+    static func getUserImage() {
+        let storage = Storage.storage()
+        let ref = storage.reference(withPath: "/profile_images/\(PBUserProvider.getCurrentUser().uid!)img")
+        
+        ref.getData(maxSize: 2 * 1024 * 1024) { (data, error) in
+            if error == nil {
+                PBUserProvider.getCurrentUser().picture = data
+            }
+            else {
+                print(error!.localizedDescription)
+            }
+        }
     }
     
     static func update(user: PBUser, withCompletionBlock completionBlock: @escaping (Error?) -> Void) {
