@@ -12,6 +12,8 @@ protocol TuneSetupProtocol {
     
     static func getSetup(forTune: Tune, forUser: String, withContinuousFetchBlock: @escaping () -> Void)
     
+    static func getSetup(forTune: Tune, forPedal: Pedal, forUser: String, withCompletionBlock: @escaping () -> Void)
+    
     static func createSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void)
     
     static func updateSetup(forTune: Tune, forUser: String, withCompletionBlock: @escaping () -> Void)

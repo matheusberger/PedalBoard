@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TuneSetupView: UIViewController {
+class TuneSetupView: BaseViewController {
     
     var viewModel: TuneSetupViewModelProtocol!
 
@@ -17,7 +17,6 @@ class TuneSetupView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.viewModel.delegate = self
         self.viewModel.getTuneSetup()
         self.tableView.delegate = self
@@ -36,6 +35,9 @@ class TuneSetupView: UIViewController {
         }
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

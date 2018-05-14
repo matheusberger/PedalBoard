@@ -17,7 +17,6 @@ class TuneSetupProvider: TuneSetupProtocol {
             return
         }
         
-        
         let databaseReference = Database.database().reference()
         let tuneSetupReference = databaseReference.child("setups").child(tuneKey).child(userUID)
         
@@ -27,6 +26,27 @@ class TuneSetupProvider: TuneSetupProtocol {
                 tune.tuneSetup?.setup(pedal: pedal!, fromDataSnapshot: dataSnapshot)
                 continuousFetchBlock()
             })
+        }
+    }
+    
+    static func getSetup(forTune tune: Tune, forPedal pedal: Pedal, forUser userUID: String, withCompletionBlock completionBlock: @escaping () -> Void) {
+        
+        guard let tuneKey = tune.key else {
+            return
+        }
+        
+        guard let pedalKey = pedal.key else {
+            return
+        }
+        
+        let databaseReference = Database.database().reference()
+        let pedalSetupReference = databaseReference.child("setups").child(tuneKey).child(userUID).child(pedalKey)
+        
+        pedalSetupReference.observe(.value) { (dataSnapshot) in
+            if dataSnapshot.exists() {
+                tune.tuneSetup?.setup(pedal: pedal, fromDataSnapshot: dataSnapshot)
+                completionBlock()
+            }
         }
     }
     

@@ -191,9 +191,27 @@
                     <view key="view" contentMode="scaleToFill" id="fhY-qs-6Ke">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-9R-pAi">
+                                <rect key="frame" x="20" y="40" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_button"/>
+                                <connections>
+                                    <action selector="backButton:" destination="jxW-7c-k4B" eventType="touchUpInside" id="dbB-vY-aU2"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i1t-DE-yxl">
+                                <rect key="frame" x="40" y="334" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="epg-An-bBt"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="i1t-DE-yxl" id="X9E-zC-90u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7g-sl-0SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,7 +305,7 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <state key="normal" title="SETUP SETTINGS"/>
                                         <connections>
-                                            <segue destination="jxW-7c-k4B" kind="show" id="G6k-C1-XRa"/>
+                                            <segue destination="jxW-7c-k4B" kind="show" identifier="tuneSetupSegue" id="G6k-C1-XRa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -318,6 +336,7 @@
     </scenes>
     <resources>
         <image name="add_button" width="21" height="19"/>
+        <image name="back_button" width="20" height="6"/>
         <image name="cancel_button" width="10" height="9"/>
         <image name="search_button" width="15" height="15"/>
         <image name="signup_picture" width="320" height="300"/>

@@ -11,10 +11,12 @@ import Foundation
 class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     var tune: Tune
+    var pedals: [Pedal]
     weak var delegate: TuneSetupViewModelDelegate?
     
     init(withTune tune: Tune) {
         self.tune = tune
+        self.pedals = []
         
         if self.tune.tuneSetup == nil {
             self.tune.tuneSetup = TuneSetup()
@@ -31,12 +33,16 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
             return
         }
         
-        TuneSetupProvider.getSetup(forTune: self.tune, forUser: userUID) { () in
-            //show setup
-            print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
-            
-            self.delegate?.didUpdateSetupList()
+        PedalProvider.getPedals(forUser: userUID) { (pedal) in
+            self.pedals.append(pedal)
+            self.delegate?.didUpdatePedalList()
         }
+//        TuneSetupProvider.getSetup(forTune: self.tune, forUser: userUID) { () in
+//            //show setup
+//            print("just found a setup for \(self.tune.tuneSetup!.pedals.last!.name)")
+//
+//            self.delegate?.didUpdateSetupList()
+//        }
     }
     
     func saveTuneSetup(withCompletionBlock completionBlock: @escaping () -> Void) {

@@ -60,7 +60,7 @@ class ConfigureTuneView: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "tuneSetup" {
+        if segue.identifier == "tuneSetupSegue" {
             let viewModel = self.viewModel.getTuneSetupViewModel()
             let view = segue.destination as! TuneSetupView
             view.viewModel = viewModel
