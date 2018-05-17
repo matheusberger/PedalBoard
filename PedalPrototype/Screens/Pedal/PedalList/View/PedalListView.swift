@@ -81,7 +81,7 @@ extension PedalListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PedalTableViewCell", for: indexPath) as! PedalTableViewCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PedalTVC", for: indexPath) as! PedalTVCView
         
         cell.viewModel = self.viewModel.getPedalCellViewModel(forIndex: indexPath.item)
         

@@ -1,5 +1,5 @@
 //
-//  PedalTableViewCellViewModelDelegate.swift
+//  PedalTVCViewModelDelegate.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 12/04/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PedalTableViewCellViewModelDelegate: class {
+protocol PedalTVCViewModelDelegate: class {
     
     func setEditingPedal(pedal: Pedal)
 }

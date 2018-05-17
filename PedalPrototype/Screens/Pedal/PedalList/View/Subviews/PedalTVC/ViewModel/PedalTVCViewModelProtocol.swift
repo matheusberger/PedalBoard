@@ -1,5 +1,5 @@
 //
-//  PedalTableViewCellViewModelProtocol.swift
+//  PedalTVCViewModelProtocol.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 10/03/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol PedalTableViewCellViewModelProtocol {
+protocol PedalTVCViewModelProtocol {
     
-    var delegate: PedalTableViewCellViewModelDelegate? { get set }
+    var delegate: PedalTVCViewModelDelegate? { get set }
     
     func getPedalName() -> String
     

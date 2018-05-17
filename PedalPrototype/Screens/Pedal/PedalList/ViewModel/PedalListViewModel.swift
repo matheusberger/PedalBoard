@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewModelDelegate {
+class PedalListViewModel: PedalListViewModelProtocol, PedalTVCViewModelDelegate {
     
     var filter: String? {
         didSet {
@@ -48,15 +48,15 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTableViewCellViewMode
         }
     }
     
-    func getPedalCellViewModel(forIndex index: Int) -> PedalTableViewCellViewModelProtocol {
+    func getPedalCellViewModel(forIndex index: Int) -> PedalTVCViewModelProtocol {
         
-        var viewModel: PedalTableViewCellViewModel
+        var viewModel: PedalTVCViewModel
         
         if self.filter == "" || self.filter == nil {
-            viewModel = PedalTableViewCellViewModel(withPedal: self.pedals[index])
+            viewModel = PedalTVCViewModel(withPedal: self.pedals[index])
         }
         else {
-            viewModel = PedalTableViewCellViewModel(withPedal: self.filteredPedals[index])
+            viewModel = PedalTVCViewModel(withPedal: self.filteredPedals[index])
         }
     
         viewModel.delegate = self

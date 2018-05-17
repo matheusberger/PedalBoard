@@ -1,5 +1,5 @@
 //
-//  PedalTableViewCellView.swift
+//  PedalTVCView.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 10/03/18.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class PedalTableViewCellView: UITableViewCell {
+class PedalTVCView: UITableViewCell {
     
     @IBOutlet weak var pedalName: UILabel!
     @IBOutlet weak var roundView: RoundShadowView!
-//    @IBOutlet weak var knobBaseView: UIView!
     @IBOutlet weak var knobCollectionView: UICollectionView!
     
-    var viewModel: PedalTableViewCellViewModelProtocol? {
+    var viewModel: PedalTVCViewModelProtocol? {
         didSet {
             self.knobCollectionView.dataSource = self
             
@@ -29,7 +28,7 @@ class PedalTableViewCellView: UITableViewCell {
 }
 
 
-extension PedalTableViewCellView: UICollectionViewDataSource {
+extension PedalTVCView: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

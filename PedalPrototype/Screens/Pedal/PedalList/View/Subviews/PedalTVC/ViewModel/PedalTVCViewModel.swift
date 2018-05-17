@@ -1,5 +1,5 @@
 //
-//  PedalTableViewCellViewModel.swift
+//  PedalTVCViewModel.swift
 //  PedalPrototype
 //
 //  Created by Matheus Coelho Berger on 10/03/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class PedalTableViewCellViewModel: PedalTableViewCellViewModelProtocol {
+class PedalTVCViewModel: PedalTVCViewModelProtocol {
     
-    weak var delegate: PedalTableViewCellViewModelDelegate?
+    weak var delegate: PedalTVCViewModelDelegate?
     
     private var pedal: Pedal
     

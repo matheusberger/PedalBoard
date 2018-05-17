@@ -16,9 +16,7 @@ class TuneSetupView: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.viewModel.delegate = self
-        self.viewModel.getTuneSetup()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -29,10 +27,7 @@ class TuneSetupView: BaseViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        
-        self.viewModel.saveTuneSetup {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        er
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -49,40 +44,20 @@ class TuneSetupView: BaseViewController {
     */
 }
 
-extension TuneSetupView: TuneSetupViewModelDelegate {
-    
-    func didUpdateSetup() {
-        self.tableView.reloadData()
-    }
-    
-    func didUpdatePedalList() {
-        self.tableView.reloadData()
-    }
-}
-
 extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return self.viewModel.getPedalName(atIndex: section)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 112
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "setupCell") as! KnobSetupTVCView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TuneSetupTVCell")
         
-        if cell.viewModel == nil {
-            cell.viewModel = self.viewModel.getKnobSetupViewModel(forPedalAtSection: indexPath.section, withIndex: indexPath.row)
-        }
-        
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.getPedalCount()
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.getKnobsCount(forPedalAtIndex: section)
+        return 0
     }
 }
