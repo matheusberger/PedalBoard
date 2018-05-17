@@ -12,8 +12,10 @@ class KnobCollectionViewCell: UICollectionViewCell {
     
     var viewmodel: KnobCollectionViewCellProtocol! {
         didSet {
-            let knobview = KnobSlider(withTitle: self.viewmodel.getKnobName(), andValue: self.viewmodel.getPercentage(), withFrame: self.bounds)
-            self.addSubview(knobview)
+            let origin = CGPoint(x: 0, y: 0)
+            let knobView = KnobSlider(withTitle: self.viewmodel.getKnobName(), andValue: self.viewmodel.getPercentage(), atPosition: origin)
+            
+            self.addSubview(knobView)
         }
     }
 }

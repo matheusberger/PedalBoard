@@ -51,7 +51,11 @@ class TuneSetupView: BaseViewController {
 
 extension TuneSetupView: TuneSetupViewModelDelegate {
     
-    func didUpdateSetupList() {
+    func didUpdateSetup() {
+        self.tableView.reloadData()
+    }
+    
+    func didUpdatePedalList() {
         self.tableView.reloadData()
     }
 }
@@ -66,7 +70,6 @@ extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "setupCell") as! KnobSetupTVCView
-        
         
         if cell.viewModel == nil {
             cell.viewModel = self.viewModel.getKnobSetupViewModel(forPedalAtSection: indexPath.section, withIndex: indexPath.row)

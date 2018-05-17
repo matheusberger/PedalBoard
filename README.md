@@ -11,5 +11,7 @@ The app is in MVVM archtecture using Firebase as Authentication and Database ser
 
 Feel free to use any code in this repo as a research material and copy if you want, I tried to keep every aspect of the app modular enough to be reused in other context.
 
+A special thanks to my friends Mateus Bolsoni (https://www.behance.net/mbolsoni) for making the most awesome interface design I've ever seen and Daniel Maranhão (https://github.com/dbm2) for programming the whole backend server (in Node.js) and database with MongoDB.
+
 Thanks for your attention, 
 Matheus Berger

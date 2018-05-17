@@ -10,14 +10,9 @@ import UIKit
 
 class KnobSetupTVCView: UITableViewCell {
     
-    @IBOutlet weak var knobValue: UILabel!
-    @IBOutlet weak var knobName: UILabel!
-    @IBOutlet weak var knobSlider: UISlider!
-    
     fileprivate var value: Float! {
         didSet {
             let intV = Int(value)
-            self.knobValue.text = String(intV)
             self.viewModel.setKnobValue(value: intV)
             self.viewModel.completionHandler(intV)
         }
@@ -26,13 +21,7 @@ class KnobSetupTVCView: UITableViewCell {
     
     var viewModel: KnobSetupTVCViewModelProtocol! {
         didSet {
-            self.knobName.text = viewModel.getKnobName()
-            self.knobValue.text = String(viewModel.getKnobValue())
-            self.knobSlider.setValue(Float(viewModel.getKnobValue()), animated: true)
+            print(viewModel.getKnobName(), viewModel.getKnobValue())
         }
-    }
-    
-    @IBAction func didChangeValue(_ sender: Any) {
-        self.value = self.knobSlider.value
     }
 }

@@ -12,5 +12,5 @@ protocol TuneSetupViewModelDelegate: class {
     
     func didUpdatePedalList()
     
-    func didUpdateSetupList()
+    func didUpdateSetup()
 }
