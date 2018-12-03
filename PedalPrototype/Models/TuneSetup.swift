@@ -17,6 +17,17 @@ class TuneSetup {
         self.pedals = pedals!
     }
     
+    func contains(_ pedal: Pedal) -> Bool {
+        
+        for p in self.pedals {
+            if p.key == pedal.key {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func toDictionary() -> [String : [String : Int]] {
         
         var dictionary = [String : [String : Int]]()

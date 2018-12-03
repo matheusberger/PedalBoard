@@ -200,7 +200,7 @@
                                     <action selector="backButton:" destination="jxW-7c-k4B" eventType="touchUpInside" id="dbB-vY-aU2"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="112" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i1t-DE-yxl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i1t-DE-yxl">
                                 <rect key="frame" x="40" y="72" width="240" height="476"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,18 +276,18 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="MZv-w6-lVu" firstAttribute="top" secondItem="i1E-Bf-aBI" secondAttribute="top" constant="2.5" id="0dz-2u-WgZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="MZv-w6-lVu" secondAttribute="bottom" constant="2.5" id="JW6-Ab-Cem"/>
-                                                <constraint firstItem="MZv-w6-lVu" firstAttribute="centerY" secondItem="i1E-Bf-aBI" secondAttribute="centerY" id="LDU-hw-FoV"/>
                                                 <constraint firstAttribute="trailing" secondItem="MZv-w6-lVu" secondAttribute="trailing" constant="20" id="mUP-hv-DQW"/>
                                                 <constraint firstItem="MZv-w6-lVu" firstAttribute="leading" secondItem="i1E-Bf-aBI" secondAttribute="leading" constant="20" id="v2T-f6-ukL"/>
-                                                <constraint firstItem="MZv-w6-lVu" firstAttribute="top" secondItem="i1E-Bf-aBI" secondAttribute="top" constant="2.5" id="xqg-eX-npg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="knobCV" destination="U9E-jM-wBf" id="6pm-xL-s6B"/>
-                                            <outlet property="pedalNameLabel" destination="ZlT-Tc-Zur" id="Xc8-v6-nxd"/>
-                                            <outlet property="roundView" destination="MZv-w6-lVu" id="sSL-KU-hAn"/>
-                                            <outlet property="setupButton" destination="OOe-1s-adz" id="BMH-uK-mfi"/>
+                                            <outlet property="button" destination="OOe-1s-adz" id="TNm-63-tuZ"/>
+                                            <outlet property="knobCV" destination="U9E-jM-wBf" id="oxc-m5-dmM"/>
+                                            <outlet property="pedalNameLabel" destination="ZlT-Tc-Zur" id="uFR-z9-TPl"/>
+                                            <outlet property="roundBaseView" destination="MZv-w6-lVu" id="osE-VF-ABq"/>
+                                            <outlet property="topRoundViewCons" destination="0dz-2u-WgZ" id="NwX-Ri-aGF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TuneSetupView: BaseViewController {
+class TuneSetupView: BaseViewController, TuneSetupViewModelDelegate {
     
     var viewModel: TuneSetupViewModelProtocol!
 
@@ -19,15 +19,12 @@ class TuneSetupView: BaseViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.viewModel.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func saveButton(_ sender: Any) {
-        er
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -42,22 +39,30 @@ class TuneSetupView: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func didUpdatePedalList() {
+        self.tableView.reloadData()
+    }
 }
 
 extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 112
+        
+        let height = CGFloat(self.viewModel.getTVCHeightForPedal(atIndex: indexPath))
+        
+        return height
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TuneSetupTVCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TuneSetupTVCell") as! TuneSetupTVCView
+        cell.viewModel = self.viewModel.getTuneSetupTVCViewModelForPedal(atIndex: indexPath)
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.getNumberOfPedals()
     }
 }
