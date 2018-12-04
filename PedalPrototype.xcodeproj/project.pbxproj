@@ -73,6 +73,8 @@
 		0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CEFA20478615002FA202 /* LaunchScreen.storyboard */; };
 		0A90CF0720478615002FA202 /* PedalPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF0620478615002FA202 /* PedalPrototypeTests.swift */; };
 		0A90CF1220478615002FA202 /* PedalPrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */; };
+		0AA7762F21B60F0B00816F01 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7762D21B60F0B00816F01 /* ListViewController.swift */; };
+		0AA7763021B60F0B00816F01 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA7762E21B60F0B00816F01 /* ListViewController.xib */; };
 		0AA792792072E7C700177C04 /* PurpleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA792782072E7C700177C04 /* PurpleImageView.swift */; };
 		0AA7927C2073089B00177C04 /* UIColor+Hanpurple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */; };
 		0AA7927E2073094D00177C04 /* PurpleShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7927D2073094D00177C04 /* PurpleShadowButton.swift */; };
@@ -201,6 +203,8 @@
 		0A90CF0D20478615002FA202 /* PedalPrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedalPrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A90CF1120478615002FA202 /* PedalPrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalPrototypeUITests.swift; sourceTree = "<group>"; };
 		0A90CF1320478615002FA202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA7762D21B60F0B00816F01 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0AA7762E21B60F0B00816F01 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		0AA792782072E7C700177C04 /* PurpleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleImageView.swift; sourceTree = "<group>"; };
 		0AA7927B2073089B00177C04 /* UIColor+Hanpurple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hanpurple.swift"; sourceTree = "<group>"; };
 		0AA7927D2073094D00177C04 /* PurpleShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleShadowButton.swift; sourceTree = "<group>"; };
@@ -669,6 +673,8 @@
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 				0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */,
+				0AA7762D21B60F0B00816F01 /* ListViewController.swift */,
+				0AA7762E21B60F0B00816F01 /* ListViewController.xib */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -1021,6 +1027,7 @@
 			files = (
 				0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */,
 				0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */,
+				0AA7763021B60F0B00816F01 /* ListViewController.xib in Resources */,
 				0A785BC021B5DB6800ACB3A4 /* GoogleService-Info.plist in Resources */,
 				0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */,
 				0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */,
@@ -1203,6 +1210,7 @@
 				0ABFB03F2075189300B221D3 /* BaseViewController.swift in Sources */,
 				0A25C6EC205DF77D00A641BD /* PBUser.swift in Sources */,
 				0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */,
+				0AA7762F21B60F0B00816F01 /* ListViewController.swift in Sources */,
 				0AEAA40E20B5B2A8004F3876 /* TuneSetupTVCViewModelProtocol.swift in Sources */,
 				0A6FB75720755F0000621E38 /* UIColor+Silversand.swift in Sources */,
 				0AA7928220730D7F00177C04 /* PurpleNegativeButton.swift in Sources */,
