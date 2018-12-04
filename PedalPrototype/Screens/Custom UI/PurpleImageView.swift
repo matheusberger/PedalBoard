@@ -49,7 +49,7 @@ extension UIImage {
         var imgData:Data?
         var compressingValue:CGFloat = 1.0
         while (needCompress && compressingValue > 0.0) {
-            if let data:Data = UIImageJPEGRepresentation(self, compressingValue) {
+            if let data:Data = self.jpegData(compressionQuality: compressingValue) {
                 if data.count < sizeInBytes {
                     needCompress = false
                     imgData = data

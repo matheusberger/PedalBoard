@@ -22,11 +22,11 @@ class CircleButton: UIButton {
         self.imageView?.contentMode = .scaleAspectFill
     }
     
-    override func setImage(_ image: UIImage?, for state: UIControlState) {
+    override func setImage(_ image: UIImage?, for state: UIControl.State) {
         self.purple(source: image, for: state)
     }
     
-    fileprivate func purple(source: UIImage?, for state: UIControlState) {
+    fileprivate func purple(source: UIImage?, for state: UIControl.State) {
         UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0.0)
         
         let purple = UIColor.hanPurple

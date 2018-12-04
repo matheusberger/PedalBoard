@@ -17,8 +17,15 @@ class PedalTVCView: UITableViewCell {
     var viewModel: PedalTVCViewModelProtocol? {
         didSet {
             self.knobCollectionView.dataSource = self
-            
+        
             self.pedalName.text = self.viewModel?.getPedalName()
+            let knobCount = self.viewModel!.getKnobCount()
+            if (self.layer.frame.width < 400 && 5 < knobCount) {
+                self.knobCollectionView.heightAnchor.constraint(equalToConstant: 87).isActive = true
+            }
+            else if (self.layer.frame.width < 500 && 6 < knobCount) {
+                self.knobCollectionView.heightAnchor.constraint(equalToConstant: 87).isActive = true
+            }
         }
     }
     

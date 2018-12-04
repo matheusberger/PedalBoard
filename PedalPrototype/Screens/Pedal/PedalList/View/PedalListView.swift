@@ -26,6 +26,9 @@ class PedalListView: BaseViewController {
         self.pedalTableView.delegate = self
         self.pedalTableView.dataSource = self
         
+        self.pedalTableView.rowHeight = UITableView.automaticDimension
+        self.pedalTableView.estimatedRowHeight = 112
+        
         self.filterTxtField.addTarget(self, action: #selector(setFilter(_:)), for: .editingChanged)
     }
     
@@ -73,10 +76,6 @@ extension PedalListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.getPedalCount()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(self.viewModel.getCellHeight(forIndex: indexPath.row))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

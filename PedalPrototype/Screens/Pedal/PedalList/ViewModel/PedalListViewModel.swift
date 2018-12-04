@@ -73,26 +73,6 @@ class PedalListViewModel: PedalListViewModelProtocol, PedalTVCViewModelDelegate 
         }
     }
     
-    func getCellHeight(forIndex index: Int) -> Int {
-        
-        var knobs: [String : Int]
-        
-        if self.filter == "" || self.filter == nil {
-            knobs = self.pedals[index].knobs
-        }
-        else {
-            knobs = self.filteredPedals[index].knobs
-        }
-        
-        let knobCount = knobs.keys.count
-        
-        if knobCount > 5 {
-            return 158
-        }
-        
-        return 112
-    }
-    
     func getCreatePedalViewModel() -> ConfigurePedalViewModelProtocol {
         return ConfigurePedalViewModel(withPedal: self.selectedPedal)
     }

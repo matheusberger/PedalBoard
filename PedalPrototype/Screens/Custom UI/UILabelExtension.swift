@@ -23,7 +23,7 @@ extension UILabel {
                 text = nil
             }
             
-            attributedString.addAttribute(kCTKernAttributeName as NSAttributedStringKey,
+            attributedString.addAttribute(kCTKernAttributeName as NSAttributedString.Key,
                                           value: newValue,
                                           range: NSRange(location: 0, length: attributedString.length))
             
@@ -31,7 +31,7 @@ extension UILabel {
         }
         
         get {
-            if let currentLetterSpace = attributedText?.attribute(kCTKernAttributeName as NSAttributedStringKey, at: 0, effectiveRange: .none) as? CGFloat {
+            if let currentLetterSpace = attributedText?.attribute(kCTKernAttributeName as NSAttributedString.Key, at: 0, effectiveRange: .none) as? CGFloat {
                 return currentLetterSpace
             }
             else {

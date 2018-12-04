@@ -39,7 +39,7 @@ class PurpleTextField: UITextField {
         self.autocapitalizationType = .none
         
         
-        self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.blueChalk])
+        self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedString.Key.foregroundColor : UIColor.blueChalk])
         
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.blueChalk.cgColor

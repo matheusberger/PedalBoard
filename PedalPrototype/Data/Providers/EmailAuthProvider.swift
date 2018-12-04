@@ -13,20 +13,20 @@ class EmailAuthProvider: AuthProtocol {
     
     static func createUser(withEmail email: String, password: String, andName name: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user: User?, error: Error?) in
-            guard let user = user else {
+        Auth.auth().createUser(withEmail: email, password: password) { (result: AuthDataResult?, error: Error?) in
+            guard let user = result?.user else {
                 print(error!)
                 return
             }
             
-            completionBlock(PBUser.newFrom(firebaseUser: user, withName: name)!, error)
+            completionBlock(PBUser.newFrom(firebaseUser: user, withName: name), error)
         }
     }
     
     static func singInUser(withEmail email: String, andPassword password: String, withCompletionBlock completionBlock: @escaping (PBUser?, Error?) -> Void) {
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user: User?, error: Error?) in
-            guard let user = user else {
+        Auth.auth().signIn(withEmail: email, password: password) { (result: AuthDataResult?, error: Error?) in
+            guard let user = result?.user else {
                 print(error!)
                 return
             }

@@ -52,6 +52,7 @@
 		0A6FB75D2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FB75C2075C7CA00621E38 /* TuneTableViewCellViewModelDelegate.swift */; };
 		0A7490922066B42E002AF1E8 /* ConfigureTuneViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490912066B42D002AF1E8 /* ConfigureTuneViewModelProtocol.swift */; };
 		0A7490962066BCD7002AF1E8 /* ConfigureTuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7490952066BCD7002AF1E8 /* ConfigureTuneViewModel.swift */; };
+		0A785BC021B5DB6800ACB3A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A532EB82048203400CA8FEA /* GoogleService-Info.plist */; };
 		0A817904206B0BE2008A00B8 /* TuneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A817903206B0BE2008A00B8 /* TuneSetup.swift */; };
 		0A835943205C0C51004B29EB /* AuthFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A835942205C0C51004B29EB /* AuthFlow.storyboard */; };
 		0A835946205C0CA1004B29EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A835945205C0CA1004B29EB /* LoginView.swift */; };
@@ -929,8 +930,6 @@
 				0A90CEFE20478615002FA202 /* Sources */,
 				0A90CEFF20478615002FA202 /* Frameworks */,
 				0A90CF0020478615002FA202 /* Resources */,
-				DB292886A8B9CB1551718661 /* [CP] Embed Pods Frameworks */,
-				621CB073B30F8F284993A801 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -950,8 +949,6 @@
 				0A90CF0920478615002FA202 /* Sources */,
 				0A90CF0A20478615002FA202 /* Frameworks */,
 				0A90CF0B20478615002FA202 /* Resources */,
-				21B1C6447AAE1323D1B17208 /* [CP] Embed Pods Frameworks */,
-				318EA4B53BA61BBD23940EB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -975,6 +972,7 @@
 				TargetAttributes = {
 					0A90CEED20478615002FA202 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -984,11 +982,13 @@
 					};
 					0A90CF0120478615002FA202 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0A90CEED20478615002FA202;
 					};
 					0A90CF0C20478615002FA202 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0A90CEED20478615002FA202;
 					};
@@ -1021,6 +1021,7 @@
 			files = (
 				0ABFB04320751DA100B221D3 /* TuneFlow.storyboard in Resources */,
 				0ABFB04520751EB700B221D3 /* PedalFlow.storyboard in Resources */,
+				0A785BC021B5DB6800ACB3A4 /* GoogleService-Info.plist in Resources */,
 				0A90CEFC20478615002FA202 /* LaunchScreen.storyboard in Resources */,
 				0ABFB04120751B3E00B221D3 /* RootSetupFlow.storyboard in Resources */,
 				0A90CEF920478615002FA202 /* Assets.xcassets in Resources */,
@@ -1049,36 +1050,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21B1C6447AAE1323D1B17208 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		318EA4B53BA61BBD23940EB0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototypeUITests/Pods-PedalPrototypeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		46796036C7F70195222432C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1095,21 +1066,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		621CB073B30F8F284993A801 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototypeTests/Pods-PedalPrototypeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		76805D7744A7441A178B4523 /* [CP] Check Pods Manifest.lock */ = {
@@ -1141,7 +1097,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1176,9 +1132,9 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MSCircularSlider/MSCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -1189,9 +1145,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1200,21 +1156,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototype/Pods-PedalPrototype-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB292886A8B9CB1551718661 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PedalPrototypeTests/Pods-PedalPrototypeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1489,7 +1430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototype;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1507,7 +1448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototype;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1524,7 +1465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedalPrototype.app/PedalPrototype";
 			};
@@ -1542,7 +1483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedalPrototype.app/PedalPrototype";
 			};
@@ -1559,7 +1500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototypeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PedalPrototype;
 			};
@@ -1576,7 +1517,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.mcb3.PedalPrototypeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PedalPrototype;
 			};

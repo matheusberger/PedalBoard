@@ -39,7 +39,7 @@ class EditProfileViewModel: EditProfileViewModelProtocol {
     }
     
     func setUserImage(_ image: UIImage) {
-        let data = UIImageJPEGRepresentation(image, 1)
+        let data = image.jpegData(compressionQuality: 1)
         self.user.picture = data
     }
     

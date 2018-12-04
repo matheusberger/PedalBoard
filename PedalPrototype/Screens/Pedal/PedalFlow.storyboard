@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xlf-cs-9sf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xlf-cs-9sf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,31 +15,31 @@
             <objects>
                 <viewController id="xlf-cs-9sf" customClass="PedalListView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wDk-Qi-OOe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="112" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tPM-Bw-L22">
-                                <rect key="frame" x="0.0" y="151.5" width="600" height="448.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tPM-Bw-L22">
+                                <rect key="frame" x="0.0" y="151.5" width="375" height="515.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PedalTVC" rowHeight="112" id="8q3-Uh-oPV" customClass="PedalTVCView" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="112"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8q3-Uh-oPV" id="CRg-lp-txh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-cy-qFT" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="2.5" width="280" height="107"/>
+                                                    <rect key="frame" x="20" y="2.5" width="335" height="107"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-FM-yho">
-                                                            <rect key="frame" x="12" y="14.5" width="171" height="16"/>
+                                                            <rect key="frame" x="12" y="14" width="226" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-NC-uMz" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
-                                                            <rect key="frame" x="224" y="12" width="44" height="20"/>
+                                                            <rect key="frame" x="279" y="12" width="44" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="ZRT-cJ-Qn9"/>
                                                                 <constraint firstAttribute="height" constant="20" id="uuY-hO-hPg"/>
@@ -48,13 +51,13 @@
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-Ux-UMl">
-                                                            <rect key="frame" x="0.0" y="44.5" width="280" height="3"/>
+                                                            <rect key="frame" x="0.0" y="44" width="335" height="3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="3" id="de7-MV-Yci"/>
                                                             </constraints>
                                                         </imageView>
                                                         <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-fN-PuB">
-                                                            <rect key="frame" x="24" y="58" width="232" height="37"/>
+                                                            <rect key="frame" x="24" y="58" width="287" height="37"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="31" id="Kcj-j4-TgR">
                                                                 <size key="itemSize" width="20" height="32"/>
@@ -89,6 +92,7 @@
                                                         <constraint firstItem="zb2-Ux-UMl" firstAttribute="top" secondItem="Lsx-FM-yho" secondAttribute="bottom" constant="14" id="qvb-UG-Owa"/>
                                                         <constraint firstItem="aJ2-fN-PuB" firstAttribute="leading" secondItem="DAy-cy-qFT" secondAttribute="leading" constant="24" id="r5V-Xv-UVO"/>
                                                         <constraint firstAttribute="trailing" secondItem="NRo-NC-uMz" secondAttribute="trailing" constant="12" id="v9L-yc-Xhq"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="107" id="z5m-oR-xub"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -109,7 +113,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedallist_txt" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-sE-cCC">
-                                <rect key="frame" x="93" y="42.5" width="253" height="100"/>
+                                <rect key="frame" x="33" y="48" width="253" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR PEDALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLF-Kd-E0C">
@@ -119,7 +123,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SEARCH HERE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-qe-Zf2" customClass="PurpleThinTextField" customModule="PedalPrototype" customModuleProvider="target">
-                                <rect key="frame" x="51" y="113" width="500" height="30"/>
+                                <rect key="frame" x="51" y="113.5" width="275" height="30"/>
                                 <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -132,7 +136,7 @@
                                 <state key="normal" image="search_button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDY-qc-RJp">
-                                <rect key="frame" x="537" y="42" width="24" height="24"/>
+                                <rect key="frame" x="327" y="47" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add_button"/>
                                 <connections>
@@ -140,7 +144,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-tO-ivD">
-                                <rect key="frame" x="38.5" y="42" width="24" height="24"/>
+                                <rect key="frame" x="23" y="47" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
@@ -183,21 +187,21 @@
             <objects>
                 <viewController id="9GK-uk-bnK" customClass="ConfigurePedalView" customModule="PedalPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ht-S2-76N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_picture" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-Wi-fEA" customClass="PurpleImageView" customModule="PedalPrototype" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="298"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="298"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="298" id="AET-VO-iA9"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedal_txt" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-vW-hVN">
-                                <rect key="frame" x="354.5" y="81.5" width="189" height="150"/>
+                                <rect key="frame" x="160" y="93" width="189" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQb-ak-2aA" customClass="RoundView" customModule="PedalPrototype" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="282" width="600" height="318"/>
+                                <rect key="frame" x="0.0" y="282" width="375" height="385"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ul-YE-lMp">
                                         <rect key="frame" x="10" y="10" width="22" height="22"/>
@@ -226,7 +230,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PEDAL NAME" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="V4k-gw-q9P" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="65" width="500" height="68"/>
+                                        <rect key="frame" x="50" y="65" width="275" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="V4k-gw-q9P" secondAttribute="height" multiplier="22:3" id="zx2-PA-CxA"/>
                                         </constraints>
@@ -235,13 +239,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHICH KNOBS DOES IT HAVE?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELa-7N-x0K">
-                                        <rect key="frame" x="52" y="147" width="91" height="8"/>
+                                        <rect key="frame" x="52" y="116.5" width="91" height="8"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="6"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REVERB, OVERDRIVE, BASS..." minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-cD-I9f" customClass="PurpleTextField" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="161" width="500" height="68.5"/>
+                                        <rect key="frame" x="50" y="130.5" width="275" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hcP-cD-I9f" secondAttribute="height" multiplier="22:3" id="wK7-zg-ZeC"/>
                                         </constraints>
@@ -250,7 +254,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQR-qJ-5Y6">
-                                        <rect key="frame" x="53" y="198" width="22" height="22"/>
+                                        <rect key="frame" x="53" y="265" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uQR-qJ-5Y6" secondAttribute="height" multiplier="1:1" id="F0R-z9-58H"/>
                                         </constraints>
@@ -260,13 +264,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD MORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quf-X5-lNa">
-                                        <rect key="frame" x="88" y="203" width="56" height="13"/>
+                                        <rect key="frame" x="88" y="269.5" width="56" height="13"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                         <color key="textColor" red="0.30196078430000001" green="0.019607843140000001" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-2h-cgb" customClass="PurpleShadowButton" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="190" y="238" width="220" height="40"/>
+                                        <rect key="frame" x="77.5" y="305" width="220" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Cui-2h-cgb" secondAttribute="height" multiplier="11:2" id="DMU-4H-Ek9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="c7W-Dx-BxA"/>
