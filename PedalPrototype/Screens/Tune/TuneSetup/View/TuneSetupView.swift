@@ -10,21 +10,27 @@ import UIKit
 
 class TuneSetupView: BaseViewController, TuneSetupViewModelDelegate {
     
-    var viewModel: TuneSetupViewModelProtocol!
+    var viewModel: TuneSetupViewModel!
 
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var filterTxtField: PurpleThinTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         self.viewModel.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func setFilter(_ sender: Any) {
+        self.viewModel.filter = self.filterTxtField.text
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -41,28 +47,20 @@ class TuneSetupView: BaseViewController, TuneSetupViewModelDelegate {
     */
     
     func didUpdatePedalList() {
-        self.tableView.reloadData()
+        self.collectionView.reloadData()
     }
 }
 
-extension TuneSetupView: UITableViewDelegate, UITableViewDataSource {
+extension TuneSetupView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let height = CGFloat(self.viewModel.getTVCHeightForPedal(atIndex: indexPath))
-        
-        return height
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TuneSetupTVCell") as! TuneSetupTVCView
-        cell.viewModel = self.viewModel.getTuneSetupTVCViewModelForPedal(atIndex: indexPath)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel.getNumberOfPedals()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TuneSetupCVCell", for: indexPath) as! TuneSetupCVCView
+        cell.viewModel = self.viewModel.getTuneSetupCVCViewModelForPedal(atIndex: indexPath) as? TuneSetupCVCViewModel
+    
+        return cell
     }
 }

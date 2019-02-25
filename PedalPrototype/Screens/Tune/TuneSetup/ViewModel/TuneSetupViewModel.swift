@@ -16,6 +16,23 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     
     weak var delegate: TuneSetupViewModelDelegate?
     
+    var filter: String? {
+        didSet {
+            self.filteredPedals = []
+            for pedal in self.pedals {
+                if pedal.name.lowercased().contains(filter!) {
+                    self.filteredPedals.append(pedal)
+                }
+            }
+        }
+    }
+    
+    fileprivate var filteredPedals: [Pedal] = [] {
+        didSet {
+            self.delegate?.didUpdatePedalList()
+        }
+    }
+    
     init(withTune tune: Tune) {
         self.tune = tune
         self.pedals = []
@@ -37,7 +54,12 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
     }
     
     func getNumberOfPedals() -> Int {
-        return self.pedals.count
+        if filter == "" || filter == nil {
+            return self.pedals.count
+        }
+        else {
+            return self.filteredPedals.count
+        }
     }
     
     func getTVCHeightForPedal(atIndex index: IndexPath) -> Int {
@@ -49,10 +71,16 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
         }
     }
     
-    func getTuneSetupTVCViewModelForPedal(atIndex index: IndexPath) -> TuneSetupTVCViewModelProtocol {
-    
-        let pedal = self.pedals[index.row]
+    func getTuneSetupCVCViewModelForPedal(atIndex index: IndexPath) -> TuneSetupCVCViewModelProtocol {
+        var pedal: Pedal
+        if filter == "" || filter == nil {
+            pedal = self.pedals[index.row]
+        }
+        else {
+            pedal = self.filteredPedals[index.row]
+        }
+        
         let belongs = self.indexOfPedals.contains(index.row)
-        return TuneSetupTVCViewModel(withPedal: pedal, inSetup: belongs)
+        return TuneSetupCVCViewModel()
     }
 }

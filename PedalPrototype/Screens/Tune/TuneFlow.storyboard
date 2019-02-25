@@ -193,111 +193,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-9R-pAi">
-                                <rect key="frame" x="20" y="40" width="24" height="24"/>
+                                <rect key="frame" x="20" y="40" width="24" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
                                     <action selector="backButton:" destination="jxW-7c-k4B" eventType="touchUpInside" id="dbB-vY-aU2"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i1t-DE-yxl">
-                                <rect key="frame" x="40" y="92" width="240" height="476"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p65-gf-Xvt">
+                                <rect key="frame" x="10" y="168" width="300" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TuneSetupTVCell" rowHeight="112" id="Gv3-Sg-DfI" customClass="TuneSetupTVCView" customModule="PedalPrototype" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="112"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gv3-Sg-DfI" id="i1E-Bf-aBI" customClass="TuneSetupTVCView" customModule="PedalPrototype" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="111.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="54O-M9-yCl">
+                                    <size key="itemSize" width="90" height="116"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TuneSetupCVCell" id="shC-kD-3HK" customClass="TuneSetupCVCView" customModule="PedalPrototype" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="116"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-w6-lVu" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="2.5" width="200" height="106.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlT-Tc-Zur">
-                                                            <rect key="frame" x="12" y="14" width="91" height="16"/>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOe-1s-adz" customClass="PurpleButton" customModule="PedalPrototype" customModuleProvider="target">
-                                                            <rect key="frame" x="144" y="12" width="44" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="fEs-8q-CiJ"/>
-                                                                <constraint firstAttribute="width" constant="44" id="hZJ-vJ-8kR"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="8"/>
-                                                            <state key="normal" title="EDIT"/>
-                                                        </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="b0m-hf-vzm">
-                                                            <rect key="frame" x="0.0" y="44" width="200" height="3"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="3" id="ncA-c3-L0U"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-jM-wBf">
-                                                            <rect key="frame" x="24" y="58" width="152" height="36.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="31" id="w1B-5c-JHm">
-                                                                <size key="itemSize" width="20" height="32"/>
-                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                            </collectionViewFlowLayout>
-                                                            <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="KnobCollectionViewCell" id="ebG-eQ-DkJ" customClass="KnobCollectionViewCell" customModule="PedalPrototype" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </view>
-                                                                    <size key="customSize" width="20" height="32"/>
-                                                                </collectionViewCell>
-                                                            </cells>
-                                                        </collectionView>
-                                                    </subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-a5-nwt">
+                                                    <rect key="frame" x="20" y="14" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-h6-tiw" customClass="KnobSlider" customModule="PedalPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="2" y="52" width="86" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstItem="ZlT-Tc-Zur" firstAttribute="leading" secondItem="MZv-w6-lVu" secondAttribute="leading" constant="12" id="29L-nH-k66"/>
-                                                        <constraint firstItem="b0m-hf-vzm" firstAttribute="top" secondItem="ZlT-Tc-Zur" secondAttribute="bottom" constant="14" id="Czo-xi-RhX"/>
-                                                        <constraint firstItem="ZlT-Tc-Zur" firstAttribute="centerY" secondItem="OOe-1s-adz" secondAttribute="centerY" id="Maj-bF-0EO"/>
-                                                        <constraint firstItem="OOe-1s-adz" firstAttribute="top" secondItem="MZv-w6-lVu" secondAttribute="top" constant="12" id="NvD-7o-sGu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="OOe-1s-adz" secondAttribute="trailing" constant="12" id="bg5-1A-GXW"/>
-                                                        <constraint firstItem="U9E-jM-wBf" firstAttribute="leading" secondItem="MZv-w6-lVu" secondAttribute="leading" constant="24" id="jr1-rA-gXO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="b0m-hf-vzm" secondAttribute="trailing" id="kfF-6Q-H7Z"/>
-                                                        <constraint firstItem="b0m-hf-vzm" firstAttribute="leading" secondItem="MZv-w6-lVu" secondAttribute="leading" id="pRX-Sm-U6F"/>
-                                                        <constraint firstAttribute="trailing" secondItem="U9E-jM-wBf" secondAttribute="trailing" constant="24" id="tBK-IY-IzA"/>
-                                                        <constraint firstItem="OOe-1s-adz" firstAttribute="leading" secondItem="ZlT-Tc-Zur" secondAttribute="trailing" constant="41" id="uYy-lu-vzU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="U9E-jM-wBf" secondAttribute="bottom" constant="12" id="wVT-kN-k0f"/>
-                                                        <constraint firstItem="U9E-jM-wBf" firstAttribute="top" secondItem="MZv-w6-lVu" secondAttribute="top" constant="58" id="weo-xS-Uyb"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="MZv-w6-lVu" firstAttribute="top" secondItem="i1E-Bf-aBI" secondAttribute="top" constant="2.5" id="0dz-2u-WgZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="MZv-w6-lVu" secondAttribute="bottom" constant="2.5" id="JW6-Ab-Cem"/>
-                                                <constraint firstAttribute="trailing" secondItem="MZv-w6-lVu" secondAttribute="trailing" constant="20" id="mUP-hv-DQW"/>
-                                                <constraint firstItem="MZv-w6-lVu" firstAttribute="leading" secondItem="i1E-Bf-aBI" secondAttribute="leading" constant="20" id="v2T-f6-ukL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="button" destination="OOe-1s-adz" id="TNm-63-tuZ"/>
-                                            <outlet property="knobCV" destination="U9E-jM-wBf" id="oxc-m5-dmM"/>
-                                            <outlet property="pedalNameLabel" destination="ZlT-Tc-Zur" id="uFR-z9-TPl"/>
-                                            <outlet property="roundBaseView" destination="MZv-w6-lVu" id="osE-VF-ABq"/>
-                                            <outlet property="topRoundViewCons" destination="0dz-2u-WgZ" id="NwX-Ri-aGF"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fdS-S3-sb2" customClass="PurpleThinTextField" customModule="PedalPrototype" customModuleProvider="target">
+                                <rect key="frame" x="70" y="104" width="212" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setFilter:" destination="jxW-7c-k4B" eventType="editingChanged" id="Mfr-wh-FrR"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p65-gf-Xvt" firstAttribute="top" secondItem="epg-An-bBt" secondAttribute="top" constant="148" id="XAs-pb-nEO"/>
+                            <constraint firstItem="epg-An-bBt" firstAttribute="trailing" secondItem="p65-gf-Xvt" secondAttribute="trailing" constant="10" id="ZLZ-uc-fW0"/>
+                            <constraint firstItem="p65-gf-Xvt" firstAttribute="leading" secondItem="epg-An-bBt" secondAttribute="leading" constant="10" id="sgY-eP-Rlm"/>
+                            <constraint firstItem="epg-An-bBt" firstAttribute="bottom" secondItem="p65-gf-Xvt" secondAttribute="bottom" id="ubg-Zc-Kng"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="epg-An-bBt"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="i1t-DE-yxl" id="X9E-zC-90u"/>
+                        <outlet property="collectionView" destination="p65-gf-Xvt" id="jM6-sf-GLv"/>
+                        <outlet property="filterTxtField" destination="fdS-S3-sb2" id="AYx-CW-9Sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7g-sl-0SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -425,7 +384,6 @@
         <image name="add_button" width="21" height="19"/>
         <image name="back_button" width="20" height="6"/>
         <image name="cancel_button" width="10" height="9"/>
-        <image name="line" width="280" height="2"/>
         <image name="search_button" width="15" height="15"/>
         <image name="signup_picture" width="320" height="300"/>
         <image name="tunelist_txt" width="157" height="89"/>

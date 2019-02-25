@@ -11,11 +11,10 @@ import Foundation
 protocol TuneSetupViewModelProtocol {
     
     var delegate: TuneSetupViewModelDelegate? { get set }
-
     
     func getNumberOfPedals() -> Int
     
     func getTVCHeightForPedal(atIndex: IndexPath) -> Int
     
-    func getTuneSetupTVCViewModelForPedal(atIndex: IndexPath) -> TuneSetupTVCViewModelProtocol
+    func getTuneSetupCVCViewModelForPedal(atIndex: IndexPath) -> TuneSetupCVCViewModelProtocol
 }
