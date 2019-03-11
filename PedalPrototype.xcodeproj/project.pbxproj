@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A02DA762236A98100C6ED41 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02DA752236A98100C6ED41 /* KnobView.swift */; };
 		0A0F06C5206C1E4E005DF6E5 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */; };
 		0A1D37AB2078235A003CE3F3 /* PurpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D37AA2078235A003CE3F3 /* PurpleTextField.swift */; };
 		0A1D37AD20782435003CE3F3 /* UIColor+Bluechalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D37AC20782435003CE3F3 /* UIColor+Bluechalk.swift */; };
@@ -130,6 +131,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A02DA752236A98100C6ED41 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		0A0F06C4206C1E4E005DF6E5 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		0A1D37AA2078235A003CE3F3 /* PurpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurpleTextField.swift; path = "PedalPrototype/Screens/Custom UI/PurpleTextField.swift"; sourceTree = SOURCE_ROOT; };
 		0A1D37AC20782435003CE3F3 /* UIColor+Bluechalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Bluechalk.swift"; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 				0AA7928120730D7F00177C04 /* PurpleNegativeButton.swift */,
 				0A3FCEF020747AC200B7CF79 /* UILabelExtension.swift */,
 				0AE4AEF1207E4D240095EF6F /* KnobSlider.swift */,
+				0A02DA752236A98100C6ED41 /* KnobView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -1243,6 +1246,7 @@
 				0ACAC7302093CB6200DE47FF /* KnobCollectionViewCellProtocol.swift in Sources */,
 				0A6129892054B70C005A3099 /* PedalTVCView.swift in Sources */,
 				0AA7928C20731CFA00177C04 /* SignupViewModelProtocol.swift in Sources */,
+				0A02DA762236A98100C6ED41 /* KnobView.swift in Sources */,
 				0A8F676F20629FB900A148E8 /* TuneProtocol.swift in Sources */,
 				0A6129792054ABA8005A3099 /* PedalListViewModelProtocol.swift in Sources */,
 				0A6FB75B2075756A00621E38 /* PurpleButton.swift in Sources */,

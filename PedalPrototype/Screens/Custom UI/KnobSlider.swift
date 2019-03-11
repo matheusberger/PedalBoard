@@ -74,9 +74,6 @@ class KnobSlider: UIView {
         self.slider.delegate = self
         
         self.knobImageView = UIImageView(image: UIImage.init(named: "knob_icon"))
-        self.knobImageView.frame.size = CGSize(width: 12, height: 12)
-        self.knobImageView.center = self.slider.center
-        
         self.knobTransform = self.knobImageView.transform
         
         if showText {
@@ -88,9 +85,11 @@ class KnobSlider: UIView {
             self.titleLabel.textAlignment = .center
             self.addSubview(self.titleLabel)
         }
-
+        
         self.addSubview(self.knobImageView)
         self.addSubview(self.slider)
+        
+        self.setConstraints()
     }
     
     func setConstraints() {
