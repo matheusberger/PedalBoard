@@ -13,53 +13,31 @@ class KnobSlider: UIView {
     
     var slider: MSCircularSlider!
     var knobImageView: UIImageView!
-    var titleLabel: UILabel!
-    var percentageLabel: UILabel!
     
     var value: Int!
     
-    fileprivate var yOffset: Int = 0
     fileprivate var knobTransform: CGAffineTransform!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.setupView(showText: false)
+        self.setupView()
     }
     
-    init(withTitle title: String, andValue value: Int, atPosition position: CGPoint, showPercentage: Bool? = false) {
-        
-        if showPercentage! {
-            self.yOffset = 12
-        }
-        
-        let frame = CGRect(x: position.x, y: position.y, width: 20, height: CGFloat(32 + self.yOffset))
+    init(atPosition position: CGPoint) {
+        let frame = CGRect(x: position.x, y: position.y, width: 20, height: 32)
         super.init(frame: frame)
         
-        self.setupView(showText: true)
-        
-        self.titleLabel.text = title
+        self.setupView()
         self.slider._currentValue = Double(value)
     }
     
-    func setupView(showText: Bool) {
+    func setupView() {
         
         self.value = 0
         
-        let percentageRect = CGRect(x: 0, y: 0, width: 20, height: 8)
-        self.percentageLabel = UILabel(frame: percentageRect)
-        
-        if self.yOffset != 0 {
-            self.percentageLabel.center.x = self.center.x
-            self.percentageLabel.textColor = UIColor.hanPurple
-            self.percentageLabel.font = UIFont(name: "Futura", size: 8)
-            self.percentageLabel.textAlignment = .center
-            
-            self.addSubview(self.percentageLabel)
-        }
-        
         self.slider = MSCircularSlider()
-        self.slider.frame = CGRect(x: 0, y: self.yOffset, width: 20, height: 20)
+        self.slider.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         self.slider._filledColor = UIColor.hanPurple
         self.slider.unfilledColor = UIColor.silverSand
         self.slider.handleType = .smallCircle
@@ -75,16 +53,6 @@ class KnobSlider: UIView {
         
         self.knobImageView = UIImageView(image: UIImage.init(named: "knob_icon"))
         self.knobTransform = self.knobImageView.transform
-        
-        if showText {
-            let labelRect = CGRect(x: 0, y: 22 + self.yOffset, width: 45, height: 10)
-            self.titleLabel = UILabel(frame: labelRect)
-            self.titleLabel.center.x = self.slider.center.x
-            self.titleLabel.textColor = UIColor.silverSand
-            self.titleLabel.font = UIFont(name: "Futura", size: 8)
-            self.titleLabel.textAlignment = .center
-            self.addSubview(self.titleLabel)
-        }
         
         self.addSubview(self.knobImageView)
         self.addSubview(self.slider)
@@ -107,13 +75,13 @@ class KnobSlider: UIView {
         self.knobImageView.centerXAnchor.constraint(equalTo: self.slider.centerXAnchor, constant: 0).isActive = true
         self.knobImageView.centerYAnchor.constraint(equalTo: self.slider.centerYAnchor, constant: 0).isActive = true
     }
+
 }
 
 extension KnobSlider: MSCircularSliderDelegate {
     func circularSlider(_ slider: MSCircularSlider, valueChangedTo value: Double, fromUser: Bool) {
         self.knobImageView.transform = self.knobTransform.rotated(by: CGFloat(value/22))
         self.value = Int(value)
-        self.percentageLabel.text = "\(self.value!)%"
     }
     
     func circularSlider(_ slider: MSCircularSlider, startedTrackingWith value: Double) {
