@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TuneSetupCVCViewModelProtocol {
-    
+    func getPedalName() -> String
+    func isPedalActive() -> Bool
 }

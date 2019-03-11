@@ -200,7 +200,7 @@
                                     <action selector="backButton:" destination="jxW-7c-k4B" eventType="touchUpInside" id="dbB-vY-aU2"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p65-gf-Xvt">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p65-gf-Xvt">
                                 <rect key="frame" x="10" y="168" width="300" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="54O-M9-yCl">
@@ -210,27 +210,45 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TuneSetupCVCell" id="shC-kD-3HK" customClass="TuneSetupCVCView" customModule="PedalPrototype" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TuneSetupCVCell" id="shC-kD-3HK" customClass="TuneSetupCVCView" customModule="PedalPrototype" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-a5-nwt">
-                                                    <rect key="frame" x="20" y="14" width="42" height="21"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="700-Kp-1ll" customClass="RoundShadowView" customModule="PedalPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="116"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-a5-nwt">
+                                                    <rect key="frame" x="10" y="7" width="70" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-h6-tiw" customClass="KnobSlider" customModule="PedalPrototype" customModuleProvider="target">
-                                                    <rect key="frame" x="2" y="52" width="86" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-h6-tiw" customClass="KnobSlider" customModule="PedalPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="23" y="66" width="44" height="43"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="700-Kp-1ll" firstAttribute="leading" secondItem="shC-kD-3HK" secondAttribute="leading" id="3bi-1O-mTy"/>
+                                            <constraint firstItem="700-Kp-1ll" firstAttribute="top" secondItem="shC-kD-3HK" secondAttribute="top" id="8y6-rg-L91"/>
+                                            <constraint firstAttribute="bottom" secondItem="700-Kp-1ll" secondAttribute="bottom" id="EZM-V1-1Jw"/>
+                                            <constraint firstItem="BZr-h6-tiw" firstAttribute="top" secondItem="700-Kp-1ll" secondAttribute="top" constant="66" id="UXr-tA-7ij"/>
+                                            <constraint firstAttribute="trailing" secondItem="BZr-h6-tiw" secondAttribute="trailing" constant="23" id="WmM-ff-czX"/>
+                                            <constraint firstAttribute="trailing" secondItem="700-Kp-1ll" secondAttribute="trailing" id="baK-zC-eVN"/>
+                                            <constraint firstItem="BZr-h6-tiw" firstAttribute="leading" secondItem="shC-kD-3HK" secondAttribute="leading" constant="23" id="hEc-xq-I5P"/>
+                                            <constraint firstItem="BZr-h6-tiw" firstAttribute="centerX" secondItem="700-Kp-1ll" secondAttribute="centerX" id="puq-eu-fib"/>
+                                            <constraint firstItem="BZr-h6-tiw" firstAttribute="bottom" secondItem="700-Kp-1ll" secondAttribute="bottom" constant="-7" id="srs-dA-zQB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="knobSlider" destination="BZr-h6-tiw" id="4Az-cB-qiD"/>
+                                            <outlet property="pedalNameLabel" destination="MFD-a5-nwt" id="Nh9-Kr-NXU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

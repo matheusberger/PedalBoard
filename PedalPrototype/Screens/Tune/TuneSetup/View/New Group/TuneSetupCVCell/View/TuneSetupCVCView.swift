@@ -9,5 +9,16 @@
 import UIKit
 
 class TuneSetupCVCView: UICollectionViewCell {
-    var viewModel: TuneSetupCVCViewModel!
+    
+    @IBOutlet weak var pedalNameLabel: UILabel!
+    @IBOutlet weak var knobSlider: KnobSlider!
+    
+    var viewModel: TuneSetupCVCViewModelProtocol! {
+        didSet {
+            self.pedalNameLabel.text = viewModel.getPedalName()
+            self.knobSlider.translatesAutoresizingMaskIntoConstraints = false
+            self.knobSlider.heightAnchor.constraint(equalToConstant: 43).isActive = true
+            self.knobSlider.widthAnchor.constraint(equalToConstant: 43).isActive = true
+        }
+    }
 }

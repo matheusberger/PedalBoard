@@ -81,6 +81,6 @@ class TuneSetupViewModel: TuneSetupViewModelProtocol {
         }
         
         let belongs = self.indexOfPedals.contains(index.row)
-        return TuneSetupCVCViewModel()
+        return TuneSetupCVCViewModel(withPedal: pedal, active: belongs)
     }
 }
