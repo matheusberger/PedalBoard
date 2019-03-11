@@ -16,9 +16,8 @@ class TuneSetupCVCView: UICollectionViewCell {
     var viewModel: TuneSetupCVCViewModelProtocol! {
         didSet {
             self.pedalNameLabel.text = viewModel.getPedalName()
-            self.knobSlider.translatesAutoresizingMaskIntoConstraints = false
-            self.knobSlider.heightAnchor.constraint(equalToConstant: 43).isActive = true
-            self.knobSlider.widthAnchor.constraint(equalToConstant: 43).isActive = true
+//            self.knobSlider.setSliderSize(widith: 43, height: 43)
+            self.knobSlider.setConstraints()
         }
     }
 }

@@ -24,7 +24,7 @@ class KnobSlider: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.setupView()
+        self.setupView(showText: false)
     }
     
     init(withTitle title: String, andValue value: Int, atPosition position: CGPoint, showPercentage: Bool? = false) {
@@ -36,13 +36,13 @@ class KnobSlider: UIView {
         let frame = CGRect(x: position.x, y: position.y, width: 20, height: CGFloat(32 + self.yOffset))
         super.init(frame: frame)
         
-        self.setupView()
+        self.setupView(showText: true)
         
         self.titleLabel.text = title
         self.slider._currentValue = Double(value)
     }
     
-    func setupView() {
+    func setupView(showText: Bool) {
         
         self.value = 0
         
@@ -79,18 +79,42 @@ class KnobSlider: UIView {
         
         self.knobTransform = self.knobImageView.transform
         
-        let labelRect = CGRect(x: 0, y: 22 + self.yOffset, width: 45, height: 10)
-        self.titleLabel = UILabel(frame: labelRect)
-        self.titleLabel.center.x = self.slider.center.x
-        self.titleLabel.textColor = UIColor.silverSand
-        self.titleLabel.font = UIFont(name: "Futura", size: 8)
-        self.titleLabel.textAlignment = .center
-        
+        if showText {
+            let labelRect = CGRect(x: 0, y: 22 + self.yOffset, width: 45, height: 10)
+            self.titleLabel = UILabel(frame: labelRect)
+            self.titleLabel.center.x = self.slider.center.x
+            self.titleLabel.textColor = UIColor.silverSand
+            self.titleLabel.font = UIFont(name: "Futura", size: 8)
+            self.titleLabel.textAlignment = .center
+            self.addSubview(self.titleLabel)
+        }
+
         self.addSubview(self.knobImageView)
         self.addSubview(self.slider)
-        self.addSubview(self.titleLabel)
     }
-
+    
+    func setSliderSize(width: CGFloat, height: CGFloat) {
+        self.slider.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
+        self.slider.frame.size = CGSize(width: width, height: height)
+        self.knobImageView.frame.size = CGSize(width: width/2, height: height/2)
+        self.knobImageView.center = self.slider.center
+    }
+    
+    func setConstraints() {
+        self.slider.translatesAutoresizingMaskIntoConstraints = false
+        self.knobImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.slider.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        self.slider.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        self.slider.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        self.slider.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        self.slider.updateConstraints()
+        
+        self.knobImageView.heightAnchor.constraint(equalToConstant: self.slider.frame.height/2).isActive = true
+        self.knobImageView.widthAnchor.constraint(equalToConstant: self.slider.frame.width/2).isActive = true
+        self.knobImageView.centerXAnchor.constraint(equalTo: self.slider.centerXAnchor, constant: 0).isActive = true
+        self.knobImageView.centerYAnchor.constraint(equalTo: self.slider.centerYAnchor, constant: 0).isActive = true
+    }
 }
 
 extension KnobSlider: MSCircularSliderDelegate {
