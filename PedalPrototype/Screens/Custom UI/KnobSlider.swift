@@ -93,13 +93,6 @@ class KnobSlider: UIView {
         self.addSubview(self.slider)
     }
     
-    func setSliderSize(width: CGFloat, height: CGFloat) {
-        self.slider.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
-        self.slider.frame.size = CGSize(width: width, height: height)
-        self.knobImageView.frame.size = CGSize(width: width/2, height: height/2)
-        self.knobImageView.center = self.slider.center
-    }
-    
     func setConstraints() {
         self.slider.translatesAutoresizingMaskIntoConstraints = false
         self.knobImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -110,8 +103,8 @@ class KnobSlider: UIView {
         self.slider.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         self.slider.updateConstraints()
         
-        self.knobImageView.heightAnchor.constraint(equalToConstant: self.slider.frame.height/2).isActive = true
-        self.knobImageView.widthAnchor.constraint(equalToConstant: self.slider.frame.width/2).isActive = true
+        self.knobImageView.heightAnchor.constraint(equalToConstant: self.slider.frame.height).isActive = true
+        self.knobImageView.widthAnchor.constraint(equalToConstant: self.slider.frame.width * 1.15).isActive = true
         self.knobImageView.centerXAnchor.constraint(equalTo: self.slider.centerXAnchor, constant: 0).isActive = true
         self.knobImageView.centerYAnchor.constraint(equalTo: self.slider.centerYAnchor, constant: 0).isActive = true
     }
